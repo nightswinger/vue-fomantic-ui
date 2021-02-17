@@ -582,6 +582,75 @@
           </sui-button-group>
         </div>
       </doc-example>
+
+      <doc-example
+        title="Colored Buttons"
+        description="Groups can have a shared color"
+        :code="coloredButtonsExample"
+      >
+        <sui-button-group color="blue">
+          <sui-button>One</sui-button>
+          <sui-button>Two</sui-button>
+          <sui-button>Three</sui-button>
+        </sui-button-group>
+      </doc-example>
+
+      <doc-example
+        title="Basic Buttons"
+        description="A button group can be less pronounced"
+        :code="basicButtonsExample"
+      >
+        <div>
+          <sui-button-group basic>
+            <sui-button>One</sui-button>
+            <sui-button>Two</sui-button>
+            <sui-button>Three</sui-button>
+          </sui-button-group>
+          <sui-divider />
+          <sui-button-group basic vertical>
+            <sui-button>One</sui-button>
+            <sui-button>Two</sui-button>
+            <sui-button>Three</sui-button>
+          </sui-button-group>
+        </div>
+      </doc-example>
+
+      <doc-example :code="basicButtonsExample2">
+        <sui-button-group>
+          <sui-button basic color="red">One</sui-button>
+          <sui-button basic color="blue">Two</sui-button>
+          <sui-button basic color="green">Three</sui-button>
+        </sui-button-group>
+      </doc-example>
+
+      <doc-example
+        title="Group Sizes"
+        description="Groups can have a shared size"
+        :code="groupSizesExample"
+      >
+        <sui-button-group size="large">
+          <sui-button>One</sui-button>
+          <sui-button>Two</sui-button>
+          <sui-button>Three</sui-button>
+        </sui-button-group>
+      </doc-example>
+
+      <doc-example :code="groupSizesExample2">
+        <sui-button-group basic icon size="small">
+          <sui-button><sui-icon name="file" /></sui-button>
+          <sui-button><sui-icon name="save" /></sui-button>
+          <sui-button><sui-icon name="upload" /></sui-button>
+          <sui-button><sui-icon name="download" /></sui-button>
+        </sui-button-group>
+      </doc-example>
+
+      <doc-example :code="groupSizesExample3">
+        <sui-button-group size="large">
+          <sui-button>One</sui-button>
+          <div class="or"></div>
+          <sui-button>Two</sui-button>
+        </sui-button-group>
+      </doc-example>
     </sui-container>
   </div>
 </template>
@@ -1046,6 +1115,63 @@ export default defineComponent({
   </div>
 </template>`
 
+    const coloredButtonsExample = `<template>
+  <sui-button-group color="blue">
+    <sui-button>One</sui-button>
+    <sui-button>Two</sui-button>
+    <sui-button>Three</sui-button>
+  </sui-button-group>
+</template>`
+
+    const basicButtonsExample = `<template>
+  <div>
+    <sui-button-group basic>
+      <sui-button>One</sui-button>
+      <sui-button>Two</sui-button>
+      <sui-button>Three</sui-button>
+    </sui-button-group>
+    <sui-divider />
+    <sui-button-group basic vertical>
+      <sui-button>One</sui-button>
+      <sui-button>Two</sui-button>
+      <sui-button>Three</sui-button>
+    </sui-button-group>
+  </div>
+</template>`
+
+    const basicButtonsExample2 = `<template>
+  <sui-button-group>
+    <sui-button basic color="red">One</sui-button>
+    <sui-button basic color="blue">Two</sui-button>
+    <sui-button basic color="green">Three</sui-button>
+  </sui-button-group>
+</template>`
+
+    const groupSizesExample = `<template>
+  <sui-button-group size="large">
+    <sui-button>One</sui-button>
+    <sui-button>Two</sui-button>
+    <sui-button>Three</sui-button>
+  </sui-button-group>
+</template>`
+
+    const groupSizesExample2 = `<template>
+  <sui-button-group basic icon size="small">
+    <sui-button><sui-icon name="file" /></sui-button>
+    <sui-button><sui-icon name="save" /></sui-button>
+    <sui-button><sui-icon name="upload" /></sui-button>
+    <sui-button><sui-icon name="download" /></sui-button>
+  </sui-button-group>
+</template>`
+
+    const groupSizesExample3 = `<template>
+  <sui-button-group size="large">
+    <sui-button>One</sui-button>
+    <div class="or"></div>
+    <sui-button>Two</sui-button>
+  </sui-button-group>
+</template>`
+
     return {
       active,
       toggle,
@@ -1085,7 +1211,13 @@ export default defineComponent({
       verticalButtonsExample,
       labeledIconButtonsExample,
       mixedGroupExample,
-      equalWidthExample
+      equalWidthExample,
+      coloredButtonsExample,
+      basicButtonsExample,
+      basicButtonsExample2,
+      groupSizesExample,
+      groupSizesExample2,
+      groupSizesExample3
     }
   }
 })

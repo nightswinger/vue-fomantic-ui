@@ -7,10 +7,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "fomantic-ui-css": "^2.8.7",
     "prismjs": "^1.23.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-vue-next": "file:../semantic-ui-vue-next-0.1.0.tgz",
     "vue": "^3.0.5",
+    "vue-fomantic-ui": "file:../vue-fomantic-ui-0.1.0.tgz",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
