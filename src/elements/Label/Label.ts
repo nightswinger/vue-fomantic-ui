@@ -27,7 +27,8 @@ export default defineComponent({
     floating: Boolean,
     empty: Boolean,
     circular: Boolean,
-    ...useColorProps
+    ...useColorProps,
+    size: String
   },
   setup(props, { slots }) {
     const { colorClass } = useColorClass(props as ColorProps)
@@ -46,27 +47,30 @@ export default defineComponent({
       }
     })
 
-    const labelClasses = clsx(
-      'ui',
-      colorClass.value,
-      pointingClass.value,
-      cornerClass.value,
-      {
-        tag: props.tag,
-        image: props.image,
-        basic: props.basic,
-        prompt: props.prompt,
-        horizontal: props.horizontal,
-        floating: props.floating,
-        empty: props.empty,
-        circular: props.circular,
-      },
-      'label'
-    )
+    const labelClasses = computed(() => {
+      return clsx(
+        'ui',
+        props.size,
+        colorClass.value,
+        pointingClass.value,
+        cornerClass.value,
+        {
+          tag: props.tag,
+          image: props.image,
+          basic: props.basic,
+          prompt: props.prompt,
+          horizontal: props.horizontal,
+          floating: props.floating,
+          empty: props.empty,
+          circular: props.circular,
+        },
+        'label'
+      )
+    })
 
     return () => (
       h(props.as, {
-        class: labelClasses
+        class: labelClasses.value
       }, slots.default?.())
     )
   }
