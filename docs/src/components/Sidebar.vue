@@ -15,7 +15,7 @@
           <sui-menu-menu>
             <sui-menu-item as="router-link" name="Button" to="/elements/button" :active="isActive('/elements/button')" />
             <sui-menu-item as="router-link" name="Container" to="/elements/container" :active="isActive('/elements/container')" />
-            <sui-menu-item as="a" name="Divider" />
+            <sui-menu-item as="router-link" name="Divider" to="/elements/divider" :active="isActive('/elements/divider')" />
             <sui-menu-item as="a" name="Flag" />
             <sui-menu-item as="a" name="Header" />
             <sui-menu-item as="a" name="Icon" />

@@ -3,6 +3,7 @@ import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
 import ButtonDoc from './pages/ButtonDoc.vue'
 import ContainerDoc from './pages/ContainerDoc.vue'
+import DividerDoc from './pages/DividerDoc.vue'
 
 const routes: any = [
   {
@@ -10,7 +11,8 @@ const routes: any = [
     children: [
       { path: '/', component: GettingStarted },
       { path: 'elements/button', component: ButtonDoc },
-      { path: 'elements/container', component: ContainerDoc }
+      { path: 'elements/container', component: ContainerDoc },
+      { path: 'elements/divider', component: DividerDoc }
     ]
   }
 ]

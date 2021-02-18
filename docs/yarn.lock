@@ -1267,7 +1267,7 @@
   "version" "0.3.3"
 
 "vue-fomantic-ui@file:../vue-fomantic-ui-0.1.0.tgz":
-  "integrity" "sha512-zRgmwl1nZFGK8w7xKvX+6nUMzQ5GEBtENqVE5WpqYpESAe8tMlbzjPWXstm+VoesR//pjVIl74DbUZeO0OguaA=="
+  "integrity" "sha512-/3mo3m09Ns4IicIaT+xSKQs7FAK9c94IwG4FQK3KVYLEKABxPQXCI7P72lrDZ5IDF4R7oBpqbX0ralfo8UKqSw=="
   "resolved" "file:../vue-fomantic-ui-0.1.0.tgz"
   "version" "0.1.0"
   dependencies:
