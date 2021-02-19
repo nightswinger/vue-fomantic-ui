@@ -9,6 +9,7 @@ import FlagDoc from './pages/FlagDoc.vue'
 import HeaderDoc from './pages/HeaderDoc.vue'
 import IconDoc from './pages/IconDoc.vue'
 import ImageDoc from './pages/ImageDoc.vue'
+import InputDoc from './pages/InputDoc.vue'
 
 const routes: any = [
   {
@@ -22,7 +23,8 @@ const routes: any = [
       { path: 'elements/flag', component: FlagDoc },
       { path: 'elements/Header', component: HeaderDoc },
       { path: 'elements/Icon', component: IconDoc },
-      { path: 'elements/Image', component: ImageDoc }
+      { path: 'elements/Image', component: ImageDoc },
+      { path: 'elements/Input', component: InputDoc }
     ]
   }
 ]
