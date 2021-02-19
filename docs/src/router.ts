@@ -8,6 +8,7 @@ import EmojiDoc from './pages/EmojiDoc.vue'
 import FlagDoc from './pages/FlagDoc.vue'
 import HeaderDoc from './pages/HeaderDoc.vue'
 import IconDoc from './pages/IconDoc.vue'
+import ImageDoc from './pages/ImageDoc.vue'
 
 const routes: any = [
   {
@@ -20,7 +21,8 @@ const routes: any = [
       { path: 'elements/emoji', component: EmojiDoc },
       { path: 'elements/flag', component: FlagDoc },
       { path: 'elements/Header', component: HeaderDoc },
-      { path: 'elements/Icon', component: IconDoc }
+      { path: 'elements/Icon', component: IconDoc },
+      { path: 'elements/Image', component: ImageDoc }
     ]
   }
 ]
