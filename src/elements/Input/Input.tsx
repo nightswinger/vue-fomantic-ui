@@ -17,6 +17,7 @@ export default defineComponent({
     iconPosition: String,
     inverted: Boolean,
     label: String,
+    labeled: Boolean,
     loading: Boolean,
     placeholder: String,
     size: String,
@@ -25,6 +26,10 @@ export default defineComponent({
   setup(props) {
     const hasIcon = computed(() => {
       return ((typeof props.icon === 'string') || props.loading)
+    })
+
+    const hasLabel = computed(() => {
+      return (!!props.label || props.labeled)
     })
 
     const computedClass = computed(() => {
@@ -41,6 +46,7 @@ export default defineComponent({
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.loading, 'loading'),
         computeKeyOnly(props.transparent, 'transparent'),
+        computeKeyOnly(hasLabel.value, 'labeled'),
         'input'
       )
     })
