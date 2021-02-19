@@ -21,37 +21,21 @@ export default defineComponent({
     size: String
   },
   setup(props) {
-    const {
-      bordered,
-      circular,
-      color,
-      corner,
-      disabled,
-      fitted,
-      flipped,
-      inverted,
-      link,
-      loading,
-      name,
-      rotated,
-      size
-    } = props
-
     const computedClass = computed(() => {
       return clsx(
-        name,
-        color,
-        size,
-        computeKeyOnly(bordered, 'bordered'),
-        computeKeyOnly(circular, 'circular'),
-        computeKeyOnly(disabled, 'disabled'),
-        computeKeyOnly(fitted, 'fitted'),
-        computeKeyOnly(inverted, 'inverted'),
-        computeKeyOnly(link, 'link'),
-        computeKeyOnly(loading, 'loading'),
-        computeKeyValue(flipped, 'flipped'),
-        computeKeyValue(rotated, 'rotated'),
-        computeKeyOrKeyValue(corner, 'corner'),
+        props.color,
+        props.name,
+        props.size,
+        computeKeyOnly(props.bordered, 'bordered'),
+        computeKeyOnly(props.circular, 'circular'),
+        computeKeyOnly(props.disabled, 'disabled'),
+        computeKeyOnly(props.fitted, 'fitted'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.link, 'link'),
+        computeKeyOnly(props.loading, 'loading'),
+        computeKeyValue(props.flipped, 'flipped'),
+        computeKeyValue(props.rotated, 'rotated'),
+        computeKeyOrKeyValue(props.corner, 'corner'),
         'icon'
       )
     })

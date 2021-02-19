@@ -8,11 +8,9 @@ export default defineComponent({
     size: String
   },
   setup(props) {
-    const { size } = props
-
     const computedClass = computed(() => {
       return clsx(
-        size,
+        props.size,
         'icons'
       )
     })
