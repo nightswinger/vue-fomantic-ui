@@ -1266,10 +1266,10 @@
   "resolved" "https://registry.npmjs.org/vscode-web-custom-data/-/vscode-web-custom-data-0.3.3.tgz"
   "version" "0.3.3"
 
-"vue-fomantic-ui@file:../vue-fomantic-ui-0.1.0.tgz":
-  "integrity" "sha512-hjnuxVQp7SVKFj2DqkOF6Nnk4D6RyQfVAb6sIv6p3J7splGBtmkZvFL0+7OyhkOuD+LsyVbmbLU8zG46kVRHZA=="
-  "resolved" "file:../vue-fomantic-ui-0.1.0.tgz"
-  "version" "0.1.0"
+"vue-fomantic-ui@file:../vue-fomantic-ui-0.2.0.tgz":
+  "integrity" "sha512-h64KYSAFoL4LWlV3kkLa+FyQmMGvfjyeijdSA2gCTD0uOrWZKSCXoG/3nWu6v4dFOhwwtGpU2z0aXWRNU692yw=="
+  "resolved" "file:../vue-fomantic-ui-0.2.0.tgz"
+  "version" "0.2.0"
   dependencies:
     "clsx" "^1.1.1"
 

@@ -6,6 +6,7 @@ import ContainerDoc from './pages/ContainerDoc.vue'
 import DividerDoc from './pages/DividerDoc.vue'
 import EmojiDoc from './pages/EmojiDoc.vue'
 import FlagDoc from './pages/FlagDoc.vue'
+import HeaderDoc from './pages/HeaderDoc.vue'
 
 const routes: any = [
   {
@@ -16,7 +17,8 @@ const routes: any = [
       { path: 'elements/container', component: ContainerDoc },
       { path: 'elements/divider', component: DividerDoc },
       { path: 'elements/emoji', component: EmojiDoc },
-      { path: 'elements/flag', component: FlagDoc }
+      { path: 'elements/flag', component: FlagDoc },
+      { path: 'elements/Header', component: HeaderDoc }
     ]
   }
 ]
