@@ -19,7 +19,7 @@
             <sui-menu-item as="router-link" name="Emoji" to="/elements/emoji" :active="isActive('/elements/emoji')" />
             <sui-menu-item as="router-link" name="Flag" to="/elements/flag" :active="isActive('/elements/flag')" />
             <sui-menu-item as="router-link" name="Header" to="/elements/header" :active="isActive('/elements/header')" />
-            <sui-menu-item as="a" name="Icon" />
+            <sui-menu-item as="router-link" name="Icon" to="/elements/icon" :active="isActive('/elements/icon')" />
             <sui-menu-item as="a" name="Image" />
             <sui-menu-item as="a" name="Input" />
             <sui-menu-item as="a" name="Label" />
