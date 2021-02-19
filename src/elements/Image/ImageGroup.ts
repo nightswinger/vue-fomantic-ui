@@ -1,22 +1,23 @@
 import clsx from 'clsx'
-import { defineComponent, h } from 'vue'
-import { useSizeProps } from '../../composables/size'
+import { computed, defineComponent, h } from 'vue'
 
 export default defineComponent({
   name: 'SuiImageGroup',
   props: {
-    ...useSizeProps
+    size: String,
   },
   setup(props, { slots }) {
-    const imageGroupClasses = clsx(
-      'ui',
-      props.size,
-      'images'
-    )
+    const computedClass = computed(() => {
+      return clsx(
+        'ui',
+        props.size,
+        'images'
+      )
+    })
 
     return () => (
       h('div', {
-        class: imageGroupClasses,
+        class: computedClass.value,
       }, slots.default?.())
     )
   }

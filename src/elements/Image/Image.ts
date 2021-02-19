@@ -1,12 +1,12 @@
-import { defineComponent, h } from 'vue'
+import { computed, defineComponent, h, resolveComponent } from 'vue'
 import clsx from "clsx"
 
-import { useSizeProps } from "../../composables/size"
 import { useVerticalAlignProps, useVerticalAlignClass } from "../../composables/verticalAlign"
 import { useFloatedProps, useFloatedClass } from "../../composables/floated"
 
 import type { VerticalAlignProps } from "../../composables/verticalAlign"
 import type { FloatedProps } from "../../composables/floated"
+import { computeKeyOnly } from '../../utils/classNameHelper'
 
 export default defineComponent({
   name: 'SuiImage',
@@ -24,8 +24,8 @@ export default defineComponent({
     rounded: Boolean,
     circular: Boolean,
     centered: Boolean,
+    size: String,
     spaced: Boolean,
-    ...useSizeProps,
     ...useVerticalAlignProps,
     ...useFloatedProps
   },
@@ -33,27 +33,35 @@ export default defineComponent({
     const { verticalAlignClass } = useVerticalAlignClass(props as VerticalAlignProps)
     const { floatedClass } = useFloatedClass(props as FloatedProps)
 
-    const imageClasses = clsx(
-      'ui',
-      props.size,
-      props.hidden,
-      props.disabled,
-      props.avatar,
-      props.bordered,
-      props.fluid,
-      props.rounded,
-      props.circular,
-      props.centered,
-      props.spaced,
-      verticalAlignClass.value,
-      floatedClass.value,
-      'image'
-    )
+    const imageClasses = computed(() => {
+      return clsx(
+        'ui',
+        props.size,
+        verticalAlignClass.value,
+        floatedClass.value,
+        computeKeyOnly(props.avatar, 'avatar'),
+        computeKeyOnly(props.bordered, 'bordered'),
+        computeKeyOnly(props.centered, 'centered'),
+        computeKeyOnly(props.circular, 'circular'),
+        computeKeyOnly(props.disabled, 'disabled'),
+        computeKeyOnly(props.fluid, 'fluid'),
+        computeKeyOnly(props.hidden, 'hidden'),
+        computeKeyOnly(props.rounded, 'rounded'),
+        computeKeyOnly(props.spaced, 'spaced'),
+        'image'
+      )
+    })
 
-    if (props.as === 'a') {
+    if (props.as === 'a' || props.as === 'router-link') {
+      let elementType: any = props.as
+
+      if (props.as === 'router-link') {
+        elementType = resolveComponent(props.as)
+      }
+
       return () => (
-        h('a', {
-          class: imageClasses,
+        h(elementType, {
+          class: imageClasses.value,
           href: props.href,
           target: props.target && props.target
         }, h('img', { src: props.src }, slots.default?.()))
@@ -63,14 +71,14 @@ export default defineComponent({
     if (props.wrapped) {
       return () => (
         h('div', {
-          class: imageClasses
+          class: imageClasses.value
         }, h('img', { src: props.src }, slots.default?.()))
       )
     }
 
     return () => (
       h('img', {
-        class: imageClasses,
+        class: imageClasses.value,
         src: props.src
       }, slots.default?.())
     )
