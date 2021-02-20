@@ -1,33 +1,32 @@
 import clsx from "clsx";
-import { defineComponent, h } from "vue";
-import { ColorProps, useColorClass, useColorProps } from "../../composables/color";
-import { useSizeProps } from "../../composables/size";
+import { computed, defineComponent, h } from "vue";
+import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiLabelGroup',
   props: {
-    ...useSizeProps,
-    ...useColorProps,
-    tag: Boolean,
-    circular: Boolean
+    basic: Boolean,
+    circular: Boolean,
+    color: String,
+    size: String,
+    tag: Boolean
   },
   setup(props, { slots }) {
-    const { colorClass } = useColorClass(props as ColorProps)
-
-    const labelGroupClasses = clsx(
-      'ui',
-      colorClass.value,
-      props.size,
-      {
-        tag: props.tag,
-        circular: props.circular
-      },
-      'labels'
-    )
+    const computedClass = computed(() => {
+      return clsx(
+        'ui',
+        props.color,
+        props.size,
+        computeKeyOnly(props.basic, 'basic'),
+        computeKeyOnly(props.circular, 'circular'),
+        computeKeyOnly(props.tag, 'tag'),
+        'labels'
+      )
+    })
 
     return () => (
       h('div', {
-        class: labelGroupClasses
+        class: computedClass.value
       }, slots.default?.())
     )
   }

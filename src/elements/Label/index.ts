@@ -1,6 +1,6 @@
 import { App, Plugin } from 'vue';
 import Label from "./Label";
-import LabelDetail from "./LabelDetail.vue";
+import LabelDetail from "./LabelDetail";
 import LabelGroup from "./LabelGroup"
 
 export default {

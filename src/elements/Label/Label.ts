@@ -1,75 +1,65 @@
 import { computed, defineComponent, h } from 'vue'
 import clsx from 'clsx'
 
-import { useColorProps, useColorClass } from "../../composables/color"
-import type { ColorProps } from "../../composables/color"
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '../../utils/classNameHelper'
+import { Icon } from '../Icon'
 
 export default defineComponent({
   name: 'SuiLabel',
   props: {
-    as: {
-      type: String,
-      default: 'div',
-      validator: (value: string) => ['a', 'div'].includes(value)
-    },
-    pointing: {
-      type: String,
-      validator: (value: string) => {
-        return ['below', 'left', 'right'].includes(value) || value.length === 0;
-      }
-    },
-    tag: Boolean,
+    as: String,
+    attached: String,
     basic: Boolean,
-    image: Boolean,
-    prompt: Boolean,
-    corner: String,
-    horizontal: Boolean,
-    floating: Boolean,
-    empty: Boolean,
     circular: Boolean,
-    ...useColorProps,
-    size: String
+    color: String,
+    corner: String,
+    empty: Boolean,
+    floating: Boolean,
+    horizontal: Boolean,
+    icon: String,
+    image: Boolean,
+    inverted: Boolean,
+    pointing: [Boolean, String],
+    prompt: Boolean,
+    ribbon: [Boolean, String],
+    size: String,
+    tag: Boolean
   },
   setup(props, { slots }) {
-    const { colorClass } = useColorClass(props as ColorProps)
-    const pointingClass = computed(() => {
-      if (!props.pointing) return null
-      if (props.pointing.length === 0) return 'pointing'
-
-      if (['below', 'left', 'right'].includes(props.pointing)) {
-        return `${props.pointing} pointing`
-      }
-    })
-    const cornerClass = computed(() => {
-      if (!props.corner) return null
-      if ((props.corner === 'right') || (props.corner === 'left')) {
-        return `${props.corner} corner`
-      }
-    })
-
     const labelClasses = computed(() => {
       return clsx(
         'ui',
         props.size,
-        colorClass.value,
-        pointingClass.value,
-        cornerClass.value,
-        {
-          tag: props.tag,
-          image: props.image,
-          basic: props.basic,
-          prompt: props.prompt,
-          horizontal: props.horizontal,
-          floating: props.floating,
-          empty: props.empty,
-          circular: props.circular,
-        },
+        props.color,
+        computeKeyOnly(props.basic, 'basic'),
+        computeKeyOnly(props.circular, 'circular'),
+        computeKeyOnly(props.empty, 'empty'),
+        computeKeyOnly(props.floating, 'floating'),
+        computeKeyOnly(props.horizontal, 'horizontal'),
+        computeKeyOnly(props.image, 'image'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.prompt, 'prompt'),
+        computeKeyOnly(props.tag, 'tag'),
+        computeKeyValue(props.attached, 'attached'),
+        computeKeyValue(props.corner, 'corner'),
+        computeKeyOrKeyValue(props.pointing, 'pointing'),
+        computeKeyOrKeyValue(props.ribbon, 'ribbon'),
         'label'
       )
     })
 
+    let elementType = props.as || 'div'
+
+    if (props.icon) {
+      return () => (
+        h(elementType, {
+          class: labelClasses.value
+        }, h(Icon, { name: props.icon }))
+      )
+    }
+
     return () => (
-      h(props.as, {
+      h(elementType, {
         class: labelClasses.value
       }, slots.default?.())
     )
