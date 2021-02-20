@@ -1,17 +1,28 @@
 import clsx from "clsx";
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiListItem',
-  props: {},
+  props: {
+    active: Boolean,
+    as: String,
+    disabled: Boolean
+  },
   setup(props, { slots }) {
-    const listItemClasses = clsx(
-      'item'
-    )
+    let elementType = props.as || 'div'
+
+    const computedClass = computed(() => {
+      return clsx(
+        computeKeyOnly(props.active, 'active'),
+        computeKeyOnly(props.disabled, 'disabled'),
+        'item'
+      )
+    })
 
     return () => (
-      h('div', {
-        class: listItemClasses
+      h(elementType, {
+        class: computedClass.value
       }, slots.default?.())
     )
   }

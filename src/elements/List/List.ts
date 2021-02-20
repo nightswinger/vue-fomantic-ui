@@ -1,38 +1,50 @@
 import clsx from "clsx";
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiList',
   props: {
-    as: {
-      type: String,
-      default: 'div',
-      validator: (value: string) => ['div', 'ul', 'ol'].includes(value)
-    },
+    animated: Boolean,
+    as: String,
     bulleted: Boolean,
+    celled: Boolean,
     divided: Boolean,
+    floated: String,
     horizontal: Boolean,
+    inverted: Boolean,
     ordered: Boolean,
     relaxed: Boolean,
     link: Boolean,
+    selection: Boolean,
+    verticalAlign: String,
   },
   setup(props, { slots }) {
-    const listClasses = clsx(
-      'ui',
-      {
-        bulleted: props.bulleted,
-        divided: props.divided,
-        horizontal: props.horizontal,
-        ordered: props.ordered,
-        relaxed: props.relaxed,
-        link: props.link
-      },
-      'list'
-    )
+    const listClasses = computed(() => {
+      return clsx(
+        'ui',
+        computeKeyOnly(props.animated, 'animated'),
+        computeKeyOnly(props.bulleted, 'bulleted'),
+        computeKeyOnly(props.celled, 'celled'),
+        computeKeyOnly(props.divided, 'divided'),
+        computeKeyOnly(props.horizontal, 'horizontal'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.link, 'link'),
+        computeKeyOnly(props.ordered, 'ordered'),
+        computeKeyOnly(props.relaxed, 'relaxed'),
+        computeKeyOnly(props.selection, 'selection'),
+        computeKeyValue(props.verticalAlign, 'aligned'),
+        computeKeyValue(props.floated, 'floated'),
+        'list'
+      )
+    })
+
+    let elementType = props.as || 'div'
+    
 
     return () => (
-      h(props.as, {
-        class: listClasses
+      h(elementType, {
+        class: listClasses.value
       }, slots.default?.())
     )
   }
