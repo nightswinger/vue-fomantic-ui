@@ -5,6 +5,7 @@ import ListIcon from "./ListIcon"
 import ListContent from "./ListContent"
 import ListHeader from "./ListHeader"
 import ListDescription from "./ListDescription"
+import ListList from "./ListList"
 
 export default {
   install(app: App) {
@@ -14,6 +15,7 @@ export default {
     app.component(ListContent.name, ListContent)
     app.component(ListHeader.name, ListHeader)
     app.component(ListDescription.name, ListDescription)
+    app.component(ListList.name, ListList)
   }
 } as Plugin
 
@@ -23,5 +25,6 @@ export {
   ListIcon,
   ListContent,
   ListHeader,
-  ListDescription
+  ListDescription,
+  ListList
 }
