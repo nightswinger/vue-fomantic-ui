@@ -13,22 +13,14 @@
         <sui-menu-item>
           <sui-menu-header content="Elements" />
           <sui-menu-menu>
-            <sui-menu-item as="router-link" name="Button" to="/elements/button" :active="isActive('/elements/button')" />
-            <sui-menu-item as="router-link" name="Container" to="/elements/container" :active="isActive('/elements/container')" />
-            <sui-menu-item as="router-link" name="Divider" to="/elements/divider" :active="isActive('/elements/divider')" />
-            <sui-menu-item as="router-link" name="Emoji" to="/elements/emoji" :active="isActive('/elements/emoji')" />
-            <sui-menu-item as="router-link" name="Flag" to="/elements/flag" :active="isActive('/elements/flag')" />
-            <sui-menu-item as="router-link" name="Header" to="/elements/header" :active="isActive('/elements/header')" />
-            <sui-menu-item as="router-link" name="Icon" to="/elements/icon" :active="isActive('/elements/icon')" />
-            <sui-menu-item as="router-link" name="Image" to="/elements/image" :active="isActive('/elements/image')" />
-            <sui-menu-item as="router-link" name="Input" to="/elements/input" :active="isActive('/elements/input')" />
-            <sui-menu-item as="router-link" name="Label" to="/elements/label" :active="isActive('/elements/label')" />
-            <sui-menu-item as="router-link" name="List" to="/elements/list" :active="isActive('/elements/list')" />
-            <sui-menu-item as="router-link" name="Loader" to="/elements/loader" :active="isActive('/elements/loader')" />
-            <sui-menu-item as="a" name="Rail" />
-            <sui-menu-item as="a" name="Reveal" />
-            <sui-menu-item as="a" name="Segment" />
-            <sui-menu-item as="a" name="Step" />
+            <sui-menu-item
+              v-for="el in elements"
+              :key="el.name"
+              :name="el.name"
+              :to="el.path"
+              :active="isActive(el.path)"
+              as="router-link"
+            />
           </sui-menu-menu>
         </sui-menu-item>
       </sui-menu>
@@ -48,7 +40,23 @@ export default defineComponent({
       return route.path === path
     }
 
-    return { isActive }
+    const elements = [
+      { name: 'Button', path: '/elements/button' },
+      { name: 'Container', path: '/elements/container' },
+      { name: 'Divider', path: '/elements/divider' },
+      { name: 'Emoji', path: '/elements/emoji' },
+      { name: 'Flag', path: '/elements/flag' },
+      { name: 'Header', path: '/elements/header' },
+      { name: 'Icon', path: '/elements/icon' },
+      { name: 'Image', path: '/elements/image' },
+      { name: 'Input', path: '/elements/input' },
+      { name: 'Label', path: '/elements/label' },
+      { name: 'List', path: '/elements/list' },
+      { name: 'Loader', path: '/elements/loader' },
+      { name: 'Rail', path: '/elements/rail' }
+    ]
+
+    return { isActive, elements }
   }
 })
 </script>

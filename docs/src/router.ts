@@ -13,6 +13,7 @@ import InputDoc from './pages/InputDoc.vue'
 import LabelDoc from './pages/LabelDoc.vue'
 import ListDoc from './pages/ListDoc.vue'
 import LoaderDoc from './pages/LoaderDoc.vue'
+import RailDoc from './pages/RailDoc.vue'
 
 const routes: any = [
   {
@@ -30,7 +31,8 @@ const routes: any = [
       { path: 'elements/input', component: InputDoc },
       { path: 'elements/label', component: LabelDoc },
       { path: 'elements/list', component: ListDoc },
-      { path: 'elements/loader', component: LoaderDoc }
+      { path: 'elements/loader', component: LoaderDoc },
+      { path: 'elements/rail', component: RailDoc }
     ]
   }
 ]
