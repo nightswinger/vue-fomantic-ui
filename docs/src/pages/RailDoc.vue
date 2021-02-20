@@ -266,25 +266,6 @@ export default defineComponent({
   </sui-grid-column>
 </sui-grid>`
 
-    const closeCode = `<sui-grid centered :columns="3">
-  <sui-grid-column>
-    <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
-
-      <sui-rail close position="left">
-        <sui-segment>
-          Left Rail Content
-        </sui-segment>
-      </sui-rail>
-      <sui-rail close position="right">
-        <sui-segment>
-          Right Rail Content
-        </sui-segment>
-      </sui-rail>
-    </sui-segment>
-  </sui-grid-column>
-</sui-grid>`
-
     const sizeCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
