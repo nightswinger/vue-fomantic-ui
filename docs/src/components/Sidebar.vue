@@ -22,7 +22,7 @@
             <sui-menu-item as="router-link" name="Icon" to="/elements/icon" :active="isActive('/elements/icon')" />
             <sui-menu-item as="router-link" name="Image" to="/elements/image" :active="isActive('/elements/image')" />
             <sui-menu-item as="router-link" name="Input" to="/elements/input" :active="isActive('/elements/input')" />
-            <sui-menu-item as="a" name="Label" />
+            <sui-menu-item as="router-link" name="Label" to="/elements/label" :active="isActive('/elements/label')" />
             <sui-menu-item as="a" name="List" />
             <sui-menu-item as="a" name="Loader" />
             <sui-menu-item as="a" name="Rail" />

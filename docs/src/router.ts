@@ -10,6 +10,7 @@ import HeaderDoc from './pages/HeaderDoc.vue'
 import IconDoc from './pages/IconDoc.vue'
 import ImageDoc from './pages/ImageDoc.vue'
 import InputDoc from './pages/InputDoc.vue'
+import LabelDoc from './pages/LabelDoc.vue'
 
 const routes: any = [
   {
@@ -21,10 +22,11 @@ const routes: any = [
       { path: 'elements/divider', component: DividerDoc },
       { path: 'elements/emoji', component: EmojiDoc },
       { path: 'elements/flag', component: FlagDoc },
-      { path: 'elements/Header', component: HeaderDoc },
-      { path: 'elements/Icon', component: IconDoc },
-      { path: 'elements/Image', component: ImageDoc },
-      { path: 'elements/Input', component: InputDoc }
+      { path: 'elements/header', component: HeaderDoc },
+      { path: 'elements/icon', component: IconDoc },
+      { path: 'elements/image', component: ImageDoc },
+      { path: 'elements/input', component: InputDoc },
+      { path: 'elements/label', component: LabelDoc }
     ]
   }
 ]

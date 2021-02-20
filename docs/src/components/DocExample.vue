@@ -11,7 +11,6 @@
         <sui-grid-column textAlign="right">
           <sui-icon
             name="code"
-            size="large"
             color="grey"
             @click="toggle"
             link
