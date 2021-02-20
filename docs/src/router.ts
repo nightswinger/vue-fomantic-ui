@@ -12,6 +12,7 @@ import ImageDoc from './pages/ImageDoc.vue'
 import InputDoc from './pages/InputDoc.vue'
 import LabelDoc from './pages/LabelDoc.vue'
 import ListDoc from './pages/ListDoc.vue'
+import LoaderDoc from './pages/LoaderDoc.vue'
 
 const routes: any = [
   {
@@ -28,7 +29,8 @@ const routes: any = [
       { path: 'elements/image', component: ImageDoc },
       { path: 'elements/input', component: InputDoc },
       { path: 'elements/label', component: LabelDoc },
-      { path: 'elements/list', component: ListDoc }
+      { path: 'elements/list', component: ListDoc },
+      { path: 'elements/loader', component: LoaderDoc }
     ]
   }
 ]
