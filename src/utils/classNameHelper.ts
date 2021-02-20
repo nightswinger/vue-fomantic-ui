@@ -10,6 +10,7 @@ export const computeKeyValue = (value: string | undefined, className: string) =>
 
 export const computeKeyOrKeyValue = (value: boolean | string | undefined, className: string) => {
   if (value === true) return className
+  if (value === 'below') return `${className} ${value}`
   if (typeof value === 'string') return `${value} ${className}`
 
   return ''
