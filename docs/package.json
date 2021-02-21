@@ -11,7 +11,7 @@
     "prismjs": "^1.23.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.0.5",
-    "vue-fomantic-ui": "file:../vue-fomantic-ui-0.2.0.tgz",
+    "vue-fomantic-ui": "^0.3.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
