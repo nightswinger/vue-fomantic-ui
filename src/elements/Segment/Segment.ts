@@ -5,7 +5,7 @@ import { FloatedProps, useFloatedClass, useFloatedProps } from '../../composable
 import { PaddedProps, usePaddedClass, usePaddedProps } from '../../composables/padded'
 import { useSizeProps } from '../../composables/size'
 import { TextAlignProps, useTextAlignClass, useTextAlignProps } from '../../composables/textAlign'
-import { computeKeyOrKeyValue } from '../../utils/classNameHelper'
+import { computeKeyOnly, computeKeyOrKeyValue } from '../../utils/classNameHelper'
 
 export default defineComponent({
   name: 'SuiSegment',
@@ -70,6 +70,7 @@ export default defineComponent({
         floatedClass.value,
         paddedClass.value,
         textAlignClass.value,
+        computeKeyOnly(props.clearing, 'clearing'),
         computeKeyOrKeyValue(props.attached, 'attached'),
         'segment'
       )
