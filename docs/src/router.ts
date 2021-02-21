@@ -38,7 +38,7 @@ const routes: any = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/vue-fomantic-ui/'),
   routes,
 })
 
