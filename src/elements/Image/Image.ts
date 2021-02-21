@@ -6,26 +6,28 @@ import { useFloatedProps, useFloatedClass } from "../../composables/floated"
 
 import type { VerticalAlignProps } from "../../composables/verticalAlign"
 import type { FloatedProps } from "../../composables/floated"
-import { computeKeyOnly } from '../../utils/classNameHelper'
+import { computeKeyOnly, computeKeyOrKeyValue } from '../../utils/classNameHelper'
+import { Label } from '../Label'
 
 export default defineComponent({
   name: 'SuiImage',
   props: {
     as: String,
-    href: String,
-    target: String,
-    src: String,
-    wrapped: Boolean,
-    hidden: Boolean,
-    disabled: Boolean,
     avatar: Boolean,
     bordered: Boolean,
-    fluid: Boolean,
-    rounded: Boolean,
-    circular: Boolean,
     centered: Boolean,
+    circular: Boolean,
+    disabled: Boolean,
+    fluid: Boolean,
+    hidden: Boolean,
+    href: String,
+    label: Object,
+    target: String,
+    wrapped: Boolean,
+    rounded: Boolean,
     size: String,
-    spaced: Boolean,
+    spaced: [Boolean, String],
+    src: String,
     ...useVerticalAlignProps,
     ...useFloatedProps
   },
@@ -47,7 +49,7 @@ export default defineComponent({
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.hidden, 'hidden'),
         computeKeyOnly(props.rounded, 'rounded'),
-        computeKeyOnly(props.spaced, 'spaced'),
+        computeKeyOrKeyValue(props.spaced, 'spaced'),
         'image'
       )
     })
@@ -73,6 +75,17 @@ export default defineComponent({
         h('div', {
           class: imageClasses.value
         }, h('img', { src: props.src }, slots.default?.()))
+      )
+    }
+
+    if (props.label) {
+      return () => (
+        h('div', {
+          class: imageClasses.value
+        }, [
+          h('img', { src: props.src }),
+          h(Label, { ...props.label })
+        ])
       )
     }
 
