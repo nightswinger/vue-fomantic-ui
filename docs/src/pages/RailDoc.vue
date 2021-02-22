@@ -34,7 +34,7 @@
         <sui-grid centered :columns="3">
           <sui-grid-column>
             <sui-segment>
-              <sui-image src="/src/assets/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
 
               <sui-rail position="left">
                 <sui-segment>
@@ -57,7 +57,7 @@
         :code="internalCode"
       >
         <sui-segment textAlign="center">
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
 
           <sui-rail internal position="left">
             <sui-segment>Left Rail Content</sui-segment>
@@ -77,7 +77,7 @@
         <sui-grid centered :columns="3">
           <sui-grid-column>
             <sui-segment>
-              <sui-image src="/src/assets/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
 
               <sui-rail dividing position="left">
                 <sui-segment>
@@ -104,7 +104,7 @@
         <sui-grid centered :columns="3">
           <sui-grid-column>
             <sui-segment>
-              <sui-image src="/src/assets/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
 
               <sui-rail attached position="left">
                 <sui-segment>
@@ -129,7 +129,7 @@
         <sui-grid centered :columns="3">
           <sui-grid-column>
             <sui-segment>
-              <sui-image src="/src/assets/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
 
               <sui-rail close position="left">
                 <sui-segment>
@@ -154,7 +154,7 @@
         <sui-grid centered :columns="3">
           <sui-grid-column>
             <sui-segment>
-              <sui-image src="/src/assets/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
 
               <sui-rail size="small" position="left">
                 Left Small Rail
@@ -181,7 +181,7 @@ export default defineComponent({
     const railCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
+      <sui-image src="/images/wireframe/short-paragraph.png" />
 
       <sui-rail position="left">
         <sui-segment>
@@ -198,7 +198,7 @@ export default defineComponent({
 </sui-grid>`
 
     const internalCode = `<sui-segment textAlign="center">
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 
   <sui-rail internal position="left">
     <sui-segment>Left Rail Content</sui-segment>
@@ -212,7 +212,7 @@ export default defineComponent({
     const dividingCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
+      <sui-image src="/images/wireframe/short-paragraph.png" />
 
       <sui-rail dividing position="left">
         <sui-segment>
@@ -231,7 +231,7 @@ export default defineComponent({
     const attachedCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
+      <sui-image src="/images/wireframe/short-paragraph.png" />
 
       <sui-rail attached position="left">
         <sui-segment>
@@ -250,7 +250,7 @@ export default defineComponent({
     const closeCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
+      <sui-image src="/images/wireframe/short-paragraph.png" />
 
       <sui-rail close position="left">
         <sui-segment>
@@ -269,7 +269,7 @@ export default defineComponent({
     const sizeCode = `<sui-grid centered :columns="3">
   <sui-grid-column>
     <sui-segment>
-      <sui-image src="/src/assets/short-paragraph.png" />
+      <sui-image src="/images/wireframe/short-paragraph.png" />
 
       <sui-rail size="small" position="left">
         Left Small Rail

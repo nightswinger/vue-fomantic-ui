@@ -143,7 +143,7 @@
       >
         <sui-list>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/rachel.png" />
+            <sui-image avatar src="/images/avatar/small/rachel.png" />
             <sui-list-content>
               <sui-list-header>Rachel</sui-list-header>
               <sui-list-description>
@@ -152,7 +152,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/lindsay.png" />
+            <sui-image avatar src="/images/avatar/small/lindsay.png" />
             <sui-list-content>
               <sui-list-header>Lindsay</sui-list-header>
               <sui-list-description>
@@ -161,7 +161,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/matthew.png" />
+            <sui-image avatar src="/images/avatar/small/matthew.png" />
             <sui-list-content>
               <sui-list-header>Matthew</sui-list-header>
               <sui-list-description>
@@ -170,7 +170,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/jenny.jpg" />
+            <sui-image avatar src="/images/avatar/small/jenny.jpg" />
             <sui-list-content>
               <sui-list-header>Jenny Hess</sui-list-header>
               <sui-list-description>
@@ -179,7 +179,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/veronika.jpg" />
+            <sui-image avatar src="/images/avatar/small/veronika.jpg" />
             <sui-list-content>
               <sui-list-header>Veronika Ossi</sui-list-header>
               <sui-list-description>
@@ -281,21 +281,21 @@
       >
         <sui-list horizontal>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/tom.jpg" />
+            <sui-image avatar src="/images/avatar/small/tom.jpg" />
             <sui-list-content>
               <sui-list-header>Tom</sui-list-header>
               Top Contributor
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+            <sui-image avatar src="/images/avatar/small/christian.jpg" />
             <sui-list-content>
               <sui-list-header>Christian Rocha</sui-list-header>
               Admin
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/matt.jpg" />
+            <sui-image avatar src="/images/avatar/small/matt.jpg" />
             <sui-list-content>
               <sui-list-header>Matt</sui-list-header>
               Top Rated User
@@ -340,19 +340,19 @@
       >
         <sui-list selection verticalAlign="middle">
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+            <sui-image avatar src="/images/avatar/small/helen.jpg" />
             <sui-list-content>
               <sui-list-header>Helen</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+            <sui-image avatar src="/images/avatar/small/christian.jpg" />
             <sui-list-content>
               <sui-list-header>Christian</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header>Daniel</sui-list-header>
             </sui-list-content>
@@ -367,19 +367,19 @@
       >
         <sui-list animated verticalAlign="middle">
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+            <sui-image avatar src="/images/avatar/small/helen.jpg" />
             <sui-list-content>
               <sui-list-header>Helen</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+            <sui-image avatar src="/images/avatar/small/christian.jpg" />
             <sui-list-content>
               <sui-list-header>Christian</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header>Daniel</sui-list-header>
             </sui-list-content>
@@ -394,7 +394,7 @@
       >
         <sui-list relaxed>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Daniel Louise</sui-list-header>
               <sui-list-description>
@@ -403,7 +403,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/stevie.jpg" />
+            <sui-image avatar src="/images/avatar/small/stevie.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Stevie Feliciano</sui-list-header>
               <sui-list-description>
@@ -412,7 +412,7 @@
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/elliot.jpg" />
+            <sui-image avatar src="/images/avatar/small/elliot.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Elliot Fu</sui-list-header>
               <sui-list-description>
@@ -430,19 +430,19 @@
       >
         <sui-list divided verticalAlign="middle">
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Daniel Louise</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/stevie.jpg" />
+            <sui-image avatar src="/images/avatar/small/stevie.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Stevie Feliciano</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/elliot.jpg" />
+            <sui-image avatar src="/images/avatar/small/elliot.jpg" />
             <sui-list-content>
               <sui-list-header as="a">Elliot Fu</sui-list-header>
             </sui-list-content>
@@ -457,21 +457,21 @@
       >
         <sui-list celled>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+            <sui-image avatar src="/images/avatar/small/helen.jpg" />
             <sui-list-content>
               <sui-list-header>Snickerdoodle</sui-list-header>
               An excellent companion
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header>Poodle</sui-list-header>
               A poodle, its pretty basic
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header>Paulo</sui-list-header>
               He's also a dog
@@ -487,19 +487,19 @@
       >
         <sui-list horizontal divided size="mini">
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+            <sui-image avatar src="/images/avatar/small/helen.jpg" />
             <sui-list-content>
               <sui-list-header>Helen</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+            <sui-image avatar src="/images/avatar/small/christian.jpg" />
             <sui-list-content>
               <sui-list-header>Christian</sui-list-header>
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+            <sui-image avatar src="/images/avatar/small/daniel.jpg" />
             <sui-list-content>
               <sui-list-header>Daniel</sui-list-header>
             </sui-list-content>
@@ -516,19 +516,19 @@
       >
         <sui-list horizontal>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+            <sui-image avatar src="/images/wireframe/square-image.png" />
             <sui-list-content verticalAlign="top">
               Top Aligned
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+            <sui-image avatar src="/images/wireframe/square-image.png" />
             <sui-list-content verticalAlign="middle">
               Middle
             </sui-list-content>
           </sui-list-item>
           <sui-list-item>
-            <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+            <sui-image avatar src="/images/wireframe/square-image.png" />
             <sui-list-content verticalAlign="bottom">
               Bottom
             </sui-list-content>
@@ -640,7 +640,7 @@ export default defineComponent({
 
     const imageContentCode = `<sui-list>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/rachel.png" />
+    <sui-image avatar src="/images/avatar/small/rachel.png" />
     <sui-list-content>
       <sui-list-header>Rachel</sui-list-header>
       <sui-list-description>
@@ -649,7 +649,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/lindsay.png" />
+    <sui-image avatar src="/images/avatar/small/lindsay.png" />
     <sui-list-content>
       <sui-list-header>Lindsay</sui-list-header>
       <sui-list-description>
@@ -658,7 +658,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/matthew.png" />
+    <sui-image avatar src="/images/avatar/small/matthew.png" />
     <sui-list-content>
       <sui-list-header>Matthew</sui-list-header>
       <sui-list-description>
@@ -667,7 +667,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/jenny.jpg" />
+    <sui-image avatar src="/images/avatar/small/jenny.jpg" />
     <sui-list-content>
       <sui-list-header>Jenny Hess</sui-list-header>
       <sui-list-description>
@@ -676,7 +676,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/veronika.jpg" />
+    <sui-image avatar src="/images/avatar/small/veronika.jpg" />
     <sui-list-content>
       <sui-list-header>Veronika Ossi</sui-list-header>
       <sui-list-description>
@@ -752,21 +752,21 @@ export default defineComponent({
 
     const horizontalVarCode = `<sui-list horizontal>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/tom.jpg" />
+    <sui-image avatar src="/images/avatar/small/tom.jpg" />
     <sui-list-content>
       <sui-list-header>Tom</sui-list-header>
       Top Contributor
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+    <sui-image avatar src="/images/avatar/small/christian.jpg" />
     <sui-list-content>
       <sui-list-header>Christian Rocha</sui-list-header>
       Admin
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/matt.jpg" />
+    <sui-image avatar src="/images/avatar/small/matt.jpg" />
     <sui-list-content>
       <sui-list-header>Matt</sui-list-header>
       Top Rated User
@@ -799,19 +799,19 @@ export default defineComponent({
 
     const selectionVarCode = `<sui-list selection verticalAlign="middle">
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+    <sui-image avatar src="/images/avatar/small/helen.jpg" />
     <sui-list-content>
       <sui-list-header>Helen</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+    <sui-image avatar src="/images/avatar/small/christian.jpg" />
     <sui-list-content>
       <sui-list-header>Christian</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header>Daniel</sui-list-header>
     </sui-list-content>
@@ -820,19 +820,19 @@ export default defineComponent({
 
     const animatedVarCode = `<sui-list animated verticalAlign="middle">
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+    <sui-image avatar src="/images/avatar/small/helen.jpg" />
     <sui-list-content>
       <sui-list-header>Helen</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+    <sui-image avatar src="/images/avatar/small/christian.jpg" />
     <sui-list-content>
       <sui-list-header>Christian</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header>Daniel</sui-list-header>
     </sui-list-content>
@@ -841,7 +841,7 @@ export default defineComponent({
 
     const relaxedVarCode = `<sui-list relaxed>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Daniel Louise</sui-list-header>
       <sui-list-description>
@@ -850,7 +850,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/stevie.jpg" />
+    <sui-image avatar src="/images/avatar/small/stevie.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Stevie Feliciano</sui-list-header>
       <sui-list-description>
@@ -859,7 +859,7 @@ export default defineComponent({
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/elliot.jpg" />
+    <sui-image avatar src="/images/avatar/small/elliot.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Elliot Fu</sui-list-header>
       <sui-list-description>
@@ -871,19 +871,19 @@ export default defineComponent({
 
     const dividedVarCode = `<sui-list divided verticalAlign="middle">
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Daniel Louise</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/stevie.jpg" />
+    <sui-image avatar src="/images/avatar/small/stevie.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Stevie Feliciano</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/elliot.jpg" />
+    <sui-image avatar src="/images/avatar/small/elliot.jpg" />
     <sui-list-content>
       <sui-list-header as="a">Elliot Fu</sui-list-header>
     </sui-list-content>
@@ -892,21 +892,21 @@ export default defineComponent({
 
     const celledVarCode = `<sui-list celled>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+    <sui-image avatar src="/images/avatar/small/helen.jpg" />
     <sui-list-content>
       <sui-list-header>Snickerdoodle</sui-list-header>
       An excellent companion
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header>Poodle</sui-list-header>
       A poodle, its pretty basic
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header>Paulo</sui-list-header>
       He's also a dog
@@ -916,19 +916,19 @@ export default defineComponent({
 
     const sizeCode = `<sui-list horizontal divided size="mini">
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/helen.jpg" />
+    <sui-image avatar src="/images/avatar/small/helen.jpg" />
     <sui-list-content>
       <sui-list-header>Helen</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/christian.jpg" />
+    <sui-image avatar src="/images/avatar/small/christian.jpg" />
     <sui-list-content>
       <sui-list-header>Christian</sui-list-header>
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/avatar/small/daniel.jpg" />
+    <sui-image avatar src="/images/avatar/small/daniel.jpg" />
     <sui-list-content>
       <sui-list-header>Daniel</sui-list-header>
     </sui-list-content>
@@ -937,19 +937,19 @@ export default defineComponent({
 
     const verticalAlignedCode = `<sui-list horizontal>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+    <sui-image avatar src="/images/wireframe/square-image.png" />
     <sui-list-content verticalAlign="top">
       Top Aligned
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+    <sui-image avatar src="/images/wireframe/square-image.png" />
     <sui-list-content verticalAlign="middle">
       Middle
     </sui-list-content>
   </sui-list-item>
   <sui-list-item>
-    <sui-image avatar src="/src/assets/wireframe/square-image.png" />
+    <sui-image avatar src="/images/wireframe/square-image.png" />
     <sui-list-content verticalAlign="bottom">
       Bottom
     </sui-list-content>

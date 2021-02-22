@@ -30,9 +30,9 @@
         :code="dividerCode"
       >
         <div>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
           <sui-divider />
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </div>
 
       </doc-example>
@@ -45,10 +45,10 @@
         <sui-segment>
           <sui-grid :columns="2" relaxed="very">
             <sui-grid-column>
-              <sui-image src="/images/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
             </sui-grid-column>
             <sui-grid-column>
-              <sui-image src="/images/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
             </sui-grid-column>
           </sui-grid>
           <sui-divider vertical>and</sui-divider>
@@ -63,13 +63,13 @@
         <sui-segment>
           <sui-grid relaxed="very">
             <sui-grid-column>
-              <sui-image src="/images/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
             </sui-grid-column>
           </sui-grid>
           <sui-divider horizontal>and</sui-divider>
           <sui-grid relaxed="very">
             <sui-grid-column>
-              <sui-image src="/images/short-paragraph.png" />
+              <sui-image src="/images/wireframe/short-paragraph.png" />
             </sui-grid-column>
           </sui-grid>
         </sui-segment>
@@ -110,9 +110,9 @@
         :code="invertedCode"
       >
         <sui-segment inverted>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
           <sui-divider inverted />
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -135,10 +135,10 @@
       >
         <div>
           <sui-header as="h3">Section One</sui-header>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
           <sui-divider hidden />
           <sui-header as="h3">Section Two</sui-header>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </div>
       </doc-example>
 
@@ -149,10 +149,10 @@
       >
         <div>
           <sui-header as="h3">Section One</sui-header>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
           <sui-divider section />
           <sui-header as="h3">Section Two</sui-header>
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </div>
       </doc-example>
 
@@ -164,7 +164,7 @@
         <sui-segment>
           <sui-header floated="right">Floated Content</sui-header>
           <sui-divider clearing />
-          <sui-image src="/images/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
     </sui-container>
@@ -180,18 +180,18 @@ export default defineComponent({
   components: { DocExample },
   setup() {
     const dividerCode = `<div>
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
   <sui-divider />
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
 </div>`
 
     const verticalDividerCode = `<sui-segment>
   <sui-grid :columns="2" relaxed="very">
     <sui-grid-column>
-      <sui-image wireframe src="/images/short-paragraph.png" />
+      <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
     </sui-grid-column>
     <sui-grid-column>
-      <sui-image wireframe src="/images/short-paragraph.png" />
+      <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
     </sui-grid-column>
   </sui-grid>
   <sui-divider vertical>and</sui-divider>
@@ -200,13 +200,13 @@ export default defineComponent({
     const horizontalDividerCode = `<sui-segment>
   <sui-grid relaxed="very">
     <sui-grid-column>
-      <sui-image wireframe src="/images/short-paragraph.png" />
+      <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
     </sui-grid-column>
   </sui-grid>
   <sui-divider horizontal>and</sui-divider>
   <sui-grid relaxed="very">
     <sui-grid-column>
-      <sui-image wireframe src="/images/short-paragraph.png" />
+      <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
     </sui-grid-column>
   </sui-grid>
 </sui-segment>`
@@ -233,9 +233,9 @@ export default defineComponent({
 </div>`
 
     const invertedCode = `<sui-segment inverted>
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
   <sui-divider inverted />
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const fittedCode = `<sui-segment>
@@ -248,24 +248,24 @@ export default defineComponent({
 
     const hiddenCode = `<div>
   <sui-header as="h3">Section One</sui-header>
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
   <sui-divider hidden />
   <sui-header as="h3">Section Two</sui-header>
-  <sui-image wireframe src="/images/short-paragraph.png" />
+  <sui-image wireframe src="/images/wireframe/short-paragraph.png" />
 </div>`
 
     const sectionCode = `<div>
   <sui-header as="h3">Section One</sui-header>
-  <sui-image src="/images/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
   <sui-divider section />
   <sui-header as="h3">Section Two</sui-header>
-  <sui-image src="/images/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </div>`
 
     const clearingCode = `<sui-segment>
   <sui-header floated="right">Floated Content</sui-header>
   <sui-divider clearing />
-  <sui-image src="/images/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     return {

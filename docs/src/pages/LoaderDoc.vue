@@ -36,7 +36,7 @@
             <sui-loader />
           </sui-dimmer>
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -50,7 +50,7 @@
             <sui-loader>Loading</sui-loader>
           </sui-dimmer>
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -66,7 +66,7 @@
             <sui-loader indeterminate>Preparing Files</sui-loader>
           </sui-dimmer>
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -78,7 +78,7 @@
         <sui-segment>
           <sui-loader active />
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -90,7 +90,7 @@
         <sui-segment>
           <sui-loader disabled />
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -158,7 +158,7 @@
             <sui-loader size="mini">Loading</sui-loader>
           </sui-dimmer>
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
 
@@ -172,7 +172,7 @@
             <sui-loader>Loading</sui-loader>
           </sui-dimmer>
 
-          <sui-image src="/src/assets/short-paragraph.png" />
+          <sui-image src="/images/wireframe/short-paragraph.png" />
         </sui-segment>
       </doc-example>
     </sui-container>
@@ -192,7 +192,7 @@ export default defineComponent({
     <sui-loader />
   </sui-dimmer>
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const textLoaderCode = `<sui-segment>
@@ -200,7 +200,7 @@ export default defineComponent({
     <sui-loader text>Loading</sui-loader>
   </sui-dimmer>
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const indeterminateCode = `<sui-segment>
@@ -208,19 +208,19 @@ export default defineComponent({
     <sui-loader indeterminate>Preparing Files</sui-loader>
   </sui-dimmer>
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const activeCode = `<sui-segment>
   <sui-loader active />
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const disabledCode = `<sui-segment>
   <sui-loader disabled />
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const inlineCode = `<sui-loader inline active />`
@@ -255,7 +255,7 @@ export default defineComponent({
     <sui-loader size="mini">Loading</sui-loader>
   </sui-dimmer>
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     const invertedCode = `<sui-segment>
@@ -263,7 +263,7 @@ export default defineComponent({
     <sui-loader>Loading</sui-loader>
   </sui-dimmer>
 
-  <sui-image src="/src/assets/short-paragraph.png" />
+  <sui-image src="/images/wireframe/short-paragraph.png" />
 </sui-segment>`
 
     return {
