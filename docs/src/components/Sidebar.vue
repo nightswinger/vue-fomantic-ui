@@ -55,7 +55,8 @@ export default defineComponent({
       { name: 'Loader', path: '/elements/loader' },
       { name: 'Rail', path: '/elements/rail' },
       { name: 'Reveal', path: '/elements/reveal' },
-      { name: 'Segment', path: '/elements/segment' }
+      { name: 'Segment', path: '/elements/segment' },
+      { name: 'Step', path: '/elements/step' }
     ]
 
     return { isActive, elements }
