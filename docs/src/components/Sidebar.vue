@@ -53,7 +53,8 @@ export default defineComponent({
       { name: 'Label', path: '/elements/label' },
       { name: 'List', path: '/elements/list' },
       { name: 'Loader', path: '/elements/loader' },
-      { name: 'Rail', path: '/elements/rail' }
+      { name: 'Rail', path: '/elements/rail' },
+      { name: 'Reveal', path: '/elements/reveal' }
     ]
 
     return { isActive, elements }
