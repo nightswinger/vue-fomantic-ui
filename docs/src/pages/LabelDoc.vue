@@ -43,15 +43,15 @@
       >
         <div>
           <sui-label as="a" image>
-            <img src="/src/assets/avatar/small/joe.jpg" />
+            <img src="/images/avatar/small/joe.jpg" />
             Joe
           </sui-label>
           <sui-label as="a" image>
-            <img src="/src/assets/avatar/small/elliot.jpg" />
+            <img src="/images/avatar/small/elliot.jpg" />
             Elliot
           </sui-label>
           <sui-label as="a" image>
-            <img src="/src/assets/avatar/small/stevie.jpg" />
+            <img src="/images/avatar/small/stevie.jpg" />
             Stevie
           </sui-label>
         </div>
@@ -97,14 +97,14 @@
           <sui-grid-column>
             <sui-image
               fluid
-              src="/src/assets/wireframe/image.png"
+              src="/images/wireframe/image.png"
               :label="{ corner: 'left', icon: 'heart' }"
             />
           </sui-grid-column>
           <sui-grid-column>
             <sui-image
               fluid
-              src="/src/assets/wireframe/image.png"
+              src="/images/wireframe/image.png"
               :label="{ corner: 'right', icon: 'save', color: 'red' }"
             />
           </sui-grid-column>
@@ -133,21 +133,21 @@
             <sui-segment raised>
               <sui-label as="a" ribbon color="red">Overview</sui-label>
               <span>Account Details</span>
-              <sui-image src="/src/assets/paragraph.png" />
+              <sui-image src="/images/wireframe/paragraph.png" />
 
               <sui-label as="a" ribbon color="blue">Community</sui-label>
               <span>User Reviews</span>
-              <sui-image src="/src/assets/paragraph.png" />
+              <sui-image src="/images/wireframe/paragraph.png" />
             </sui-segment>
           </sui-grid-column>
 
           <sui-grid-column>
             <sui-segment raised>
               <sui-label as="a" ribbon="right" color="orange">Specs</sui-label>
-              <sui-image src="/src/assets/paragraph.png" />
+              <sui-image src="/images/wireframe/paragraph.png" />
 
               <sui-label as="a" ribbon="right" color="teal">Reviews</sui-label>
-              <sui-image src="/src/assets/paragraph.png" />
+              <sui-image src="/images/wireframe/paragraph.png" />
             </sui-segment>
           </sui-grid-column>
         </sui-grid>
@@ -163,19 +163,19 @@
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="top">HTML</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="bottom">CSS</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="top right">Code</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
           </sui-grid-row>
@@ -184,19 +184,19 @@
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="top left">View</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="bottom left">User View</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
             <sui-grid-column>
               <sui-segment padded>
                 <sui-label attached="bottom right">Admin View</sui-label>
-                <sui-image src="/src/assets/paragraph.png" />
+                <sui-image src="/images/wireframe/paragraph.png" />
               </sui-segment>
             </sui-grid-column>
           </sui-grid-row>
@@ -282,11 +282,11 @@
       >
         <div>
           <sui-label as="a">
-            <sui-image avatar spaced="right" src="/src/assets/avatar/small/elliot.jpg" />
+            <sui-image avatar spaced="right" src="/images/avatar/small/elliot.jpg" />
             Elliot
           </sui-label>
           <sui-label as="a">
-            <img src="/src/assets/avatar/small/stevie.jpg" />
+            <img src="/images/avatar/small/stevie.jpg" />
             Stevie
           </sui-label>
         </div>
@@ -335,7 +335,7 @@
           <sui-label basic as="a">Basic</sui-label>
           <sui-label basic as="a" pointing>Pointing</sui-label>
           <sui-label basic as="a" image>
-            <img src="/src/assets/avatar/small/elliot.jpg" />
+            <img src="/images/avatar/small/elliot.jpg" />
             Elliot
           </sui-label>
           <sui-label basic as="a" pointing color="red">Red Pointing</sui-label>
@@ -506,15 +506,15 @@ export default defineComponent({
 
     const imageCode = `<div>
   <sui-label as="a" image>
-    <img src="/src/assets/avatar/small/joe.jpg" />
+    <img src="/images/avatar/small/joe.jpg" />
     Joe
   </sui-label>
   <sui-label as="a" image>
-    <img src="/src/assets/avatar/small/elliot.jpg" />
+    <img src="/images/avatar/small/elliot.jpg" />
     Elliot
   </sui-label>
   <sui-label as="a" image>
-    <img src="/src/assets/avatar/small/stevie.jpg" />
+    <img src="/images/avatar/small/stevie.jpg" />
     Stevie
   </sui-label>
 </div>`
@@ -548,14 +548,14 @@ export default defineComponent({
   <sui-grid-column>
     <sui-image
       fluid
-      src="/src/assets/wireframe/image.png"
+      src="/images/wireframe/image.png"
       :label="{ corner: 'left', icon: 'heart' }"
     />
   </sui-grid-column>
   <sui-grid-column>
     <sui-image
       fluid
-      src="/src/assets/wireframe/image.png"
+      src="/images/wireframe/image.png"
       :label="{ corner: 'right', icon: 'save', color: 'red' }"
     />
   </sui-grid-column>
@@ -572,21 +572,21 @@ export default defineComponent({
     <sui-segment raised>
       <sui-label as="a" ribbon color="red">Overview</sui-label>
       <span>Account Details</span>
-      <sui-image src="/images/paragraph.png" />
+      <sui-image src="/images/wireframe/paragraph.png" />
 
       <sui-label as="a" ribbon color="blue">Community</sui-label>
       <span>User Reviews</span>
-      <sui-image src="/images/paragraph.png" />
+      <sui-image src="/images/wireframe/paragraph.png" />
     </sui-segment>
   </sui-grid-column>
 
   <sui-grid-column>
     <sui-segment raised>
       <sui-label as="a" ribbon="right" color="orange">Specs</sui-label>
-      <sui-image src="/images/paragraph.png" />
+      <sui-image src="/images/wireframe/paragraph.png" />
 
       <sui-label as="a" ribbon="right" color="teal">Reviews</sui-label>
-      <sui-image src="/images/paragraph.png" />
+      <sui-image src="/images/wireframe/paragraph.png" />
     </sui-segment>
   </sui-grid-column>
 </sui-grid>`
@@ -596,19 +596,19 @@ export default defineComponent({
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="top">HTML</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="bottom">CSS</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="top right">Code</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
   </sui-grid-row>
@@ -617,19 +617,19 @@ export default defineComponent({
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="top left">View</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="bottom left">User View</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
     <sui-grid-column>
       <sui-segment padded>
         <sui-label attached="bottom right">Admin View</sui-label>
-        <sui-image src="/images/paragraph.png" />
+        <sui-image src="/images/wireframe/paragraph.png" />
       </sui-segment>
     </sui-grid-column>
   </sui-grid-row>
@@ -683,11 +683,11 @@ export default defineComponent({
 
     const imageIncludeCode = `<div>
   <sui-label as="a">
-    <sui-image avatar spaced="right" src="/src/assets/avatar/small/elliot.jpg" />
+    <sui-image avatar spaced="right" src="/images/avatar/small/elliot.jpg" />
     Elliot
   </sui-label>
   <sui-label as="a">
-    <img src="/src/assets/avatar/small/stevie.jpg" />
+    <img src="/images/avatar/small/stevie.jpg" />
     Stevie
   </sui-label>
 </div>`
@@ -716,7 +716,7 @@ export default defineComponent({
   <sui-label basic as="a">Basic</sui-label>
   <sui-label basic as="a" pointing>Pointing</sui-label>
   <sui-label basic as="a" image>
-    <img src="/src/assets/avatar/small/elliot.jpg" />
+    <img src="/images/avatar/small/elliot.jpg" />
     Elliot
   </sui-label>
   <sui-label basic as="a" pointing color="red">Red Pointing</sui-label>

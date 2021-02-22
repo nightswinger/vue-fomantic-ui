@@ -31,7 +31,7 @@
         description="An image"
         :code="imageCode"
       >
-        <sui-image src="/src/assets/wireframe/image.png" size="small" />
+        <sui-image src="/images/wireframe/image.png" size="small" />
       </doc-example>
 
       <doc-example
@@ -42,7 +42,7 @@
         <sui-image
           as="a"
           size="medium"
-          src="/src/assets/wireframe/image-text.png"
+          src="/images/wireframe/image-text.png"
           href="https://google.com"
           target="_blank"
         />
@@ -55,7 +55,7 @@
         description="An image can be hidden"
         :code="hiddenCode"
       >
-        <sui-image hidden src="/src/assets/wireframe/image.png" size="small" />
+        <sui-image hidden src="/images/wireframe/image.png" size="small" />
       </doc-example>
 
       <doc-example
@@ -63,7 +63,7 @@
         description="An image can show that it is disabled and cannot be selected"
         :code="disabledCode"
       >
-        <sui-image disabled src="/src/assets/wireframe/image.png" size="small" />
+        <sui-image disabled src="/images/wireframe/image.png" size="small" />
       </doc-example>
 
       <sui-header as="h2" dividing>Variations</sui-header>
@@ -74,7 +74,7 @@
         :code="avatarCode"
       >
         <div>
-          <sui-image avatar src="/src/assets/wireframe/image.png" />
+          <sui-image avatar src="/images/wireframe/image.png" />
           <span>Username</span>
         </div>
       </doc-example>
@@ -84,7 +84,7 @@
         description="An image may include a border to emphasize the edges of white or transparent content"
         :code="borderedCode"
       >
-        <sui-image bordered size="medium" src="/src/assets/wireframe/white-image.png" />
+        <sui-image bordered size="medium" src="/images/wireframe/white-image.png" />
       </doc-example>
 
       <doc-example
@@ -92,7 +92,7 @@
         description="An image can take up the width of its container"
         :code="fluidCode"
       >
-        <sui-image fluid src="/src/assets/wireframe/image.png" />
+        <sui-image fluid src="/images/wireframe/image.png" />
       </doc-example>
 
       <doc-example
@@ -100,7 +100,7 @@
         description="An image may appear rounded"
         :code="roundedCode"
       >
-        <sui-image rounded size="medium" src="/src/assets/wireframe/image.png" />
+        <sui-image rounded size="medium" src="/images/wireframe/image.png" />
       </doc-example>
 
       <doc-example
@@ -108,7 +108,7 @@
         description="An image may appear circular"
         :code="circularCode"
       >
-        <sui-image circular size="medium" src="/src/assets/wireframe/square-image.png" />
+        <sui-image circular size="medium" src="/images/wireframe/square-image.png" />
       </doc-example>
 
       <doc-example
@@ -117,13 +117,13 @@
         :code="verticallyAlignedCode"
       >
         <div>
-          <sui-image verticalAlign="top" size="tiny" src="/src/assets/wireframe/square-image.png" />
+          <sui-image verticalAlign="top" size="tiny" src="/images/wireframe/square-image.png" />
           <span>Top Aligned</span>
           <sui-divider />
-          <sui-image verticalAlign="middle" size="tiny" src="/src/assets/wireframe/square-image.png" />
+          <sui-image verticalAlign="middle" size="tiny" src="/images/wireframe/square-image.png" />
           <span>Middle Aligned</span>
           <sui-divider />
-          <sui-image verticalAlign="bottom" size="tiny" src="/src/assets/wireframe/square-image.png" />
+          <sui-image verticalAlign="bottom" size="tiny" src="/images/wireframe/square-image.png" />
           <span>Bottom Aligned</span>
         </div>
       </doc-example>
@@ -134,10 +134,10 @@
         :code="centeredCode"
       >
         <sui-segment>
-          <sui-image centered size="medium" src="/src/assets/wireframe/image.png" />
+          <sui-image centered size="medium" src="/images/wireframe/image.png" />
           <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
           <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
-          <sui-image centered size="small" src="/src/assets/wireframe/image-text.png" />
+          <sui-image centered size="small" src="/images/wireframe/image-text.png" />
           <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
         </sui-segment>
       </doc-example>
@@ -149,7 +149,7 @@
       >
         <sui-segment>
           <p>Te eum doming eirmod, nominati pertinacia 
-          <sui-image spaced size="mini" src="/src/assets/wireframe/image.png" />
+          <sui-image spaced size="mini" src="/images/wireframe/image.png" />
            argumentum ad his. Ex eam alia facete scriptorem, 
            est autem aliquip detraxit at. Usu ocurreret referrentur at, 
            cu epicurei appellantur vix. Cum ea laoreet recteque electram, 
@@ -163,13 +163,13 @@
         :code="floatedCode"
       >
         <sui-segment>
-          <sui-image floated="left" size="small" src="/src/assets/wireframe/image-text.png" />
+          <sui-image floated="left" size="small" src="/images/wireframe/image-text.png" />
           <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. 
             Ex eam alia facete scriptorem, est autem aliquip detraxit at. 
             Usu ocurreret referrentur at, cu epicurei appellantur vix. 
             Cum ea laoreet recteque electram, eos choro alterum definiebas in. 
             Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
-          <sui-image floated="right" size="small" src="/src/assets/wireframe/image-text.png" />
+          <sui-image floated="right" size="small" src="/images/wireframe/image-text.png" />
           <p>Audiam quaerendum eu sea, pro omittam definiebas ex. 
             Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, 
             his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, 
@@ -188,13 +188,13 @@
         :code="sizeCode"
       >
         <div>
-          <sui-image size="mini" src="/src/assets/wireframe/image.png" />
+          <sui-image size="mini" src="/images/wireframe/image.png" />
           <sui-divider hidden />
-          <sui-image size="tiny" src="/src/assets/wireframe/image.png" />
+          <sui-image size="tiny" src="/images/wireframe/image.png" />
           <sui-divider hidden />
-          <sui-image size="medium" src="/src/assets/wireframe/image.png" />
+          <sui-image size="medium" src="/images/wireframe/image.png" />
           <sui-divider hidden />
-          <sui-image size="large" src="/src/assets/wireframe/image.png" />
+          <sui-image size="large" src="/images/wireframe/image.png" />
         </div>
       </doc-example>
 
@@ -206,10 +206,10 @@
         :code="sizeGroupCode"
       >
         <sui-image-group size="tiny">
-          <sui-image src="/src/assets/wireframe/image.png" />
-          <sui-image src="/src/assets/wireframe/image.png" />
-          <sui-image src="/src/assets/wireframe/image.png" />
-          <sui-image src="/src/assets/wireframe/image.png" />
+          <sui-image src="/images/wireframe/image.png" />
+          <sui-image src="/images/wireframe/image.png" />
+          <sui-image src="/images/wireframe/image.png" />
+          <sui-image src="/images/wireframe/image.png" />
         </sui-image-group>
       </doc-example>
     </sui-container>
@@ -258,10 +258,10 @@ export default defineComponent({
 </div>`
 
     const centeredCode = `<sui-segment>
-  <sui-image centered size="medium" src="/src/assets/wireframe/image.png" />
+  <sui-image centered size="medium" src="/images/wireframe/image.png" />
   <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
   <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
-  <sui-image centered size="small" src="/src/assets/wireframe/image-text.png" />
+  <sui-image centered size="small" src="/images/wireframe/image-text.png" />
   <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
 </sui-segment>`
 

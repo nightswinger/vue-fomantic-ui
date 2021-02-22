@@ -89,7 +89,7 @@
         :code="imageCode"
       >
         <sui-header>
-          <sui-image src="/src/assets/icons/school.png" />
+          <sui-image src="/images/icons/school.png" />
           <sui-header-content>Learn More</sui-header-content>
         </sui-header>
       </doc-example>

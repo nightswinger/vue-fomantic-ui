@@ -471,7 +471,7 @@
         <div>
           <sui-button attached="top">Top</sui-button>
           <sui-segment attached>
-            <img src="/src/assets/paragraph.png">
+            <img src="/images/wireframe/paragraph.png">
           </sui-segment>
           <sui-button attached="bottom">Bottom</sui-button>
         </div>
@@ -484,7 +484,7 @@
             <sui-button>Two</sui-button>
           </sui-button-group>
           <sui-segment attached>
-            <img src="/src/assets/paragraph.png">
+            <img src="/images/wireframe/paragraph.png">
           </sui-segment>
           <sui-button-group attached="bottom">
             <sui-button>One</sui-button>
@@ -1025,7 +1025,7 @@ export default defineComponent({
   <div>
     <sui-button attached="top">Top</sui-button>
     <sui-segment attached>
-      <img src="/images/paragraph.png">
+      <img src="/images/wireframe/paragraph.png">
     </sui-segment>
     <sui-button attached="bottom">Bottom</sui-button>
   </div>
@@ -1038,7 +1038,7 @@ export default defineComponent({
       <sui-button>Two</sui-button>
     </sui-button-group>
     <sui-segment attached>
-      <img src="/images/paragraph.png">
+      <img src="/images/wireframe/paragraph.png">
     </sui-segment>
     <sui-button-group attached="bottom">
       <sui-button>One</sui-button>
