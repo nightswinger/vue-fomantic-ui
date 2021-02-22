@@ -15,6 +15,7 @@ import ListDoc from './pages/ListDoc.vue'
 import LoaderDoc from './pages/LoaderDoc.vue'
 import RailDoc from './pages/RailDoc.vue'
 import RevealDoc from './pages/RevealDoc.vue'
+import SegmentDoc from './pages/SegmentDoc.vue'
 
 const routes: any = [
   {
@@ -34,7 +35,8 @@ const routes: any = [
       { path: 'elements/list', component: ListDoc },
       { path: 'elements/loader', component: LoaderDoc },
       { path: 'elements/rail', component: RailDoc },
-      { path: 'elements/reveal', component: RevealDoc }
+      { path: 'elements/reveal', component: RevealDoc },
+      { path: 'elements/segment', component: SegmentDoc }
     ]
   }
 ]
