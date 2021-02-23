@@ -73,7 +73,8 @@ export default defineComponent({
     ]
 
     const collections = [
-      { name: 'Breadcrumb', path: '/collections/breadcrumb' }
+      { name: 'Breadcrumb', path: '/collections/breadcrumb' },
+      { name: 'Form', path: '/collections/form' }
     ]
 
     return { isActive, elements, collections }

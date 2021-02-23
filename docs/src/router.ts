@@ -19,6 +19,7 @@ import SegmentDoc from './pages/SegmentDoc.vue'
 import StepDoc from './pages/StepDoc.vue'
 
 import Breadcrumb from './pages/collections/BreadcrumbDoc.vue'
+import FormDoc from './pages/collections/FormDoc.vue'
 
 const routes: any = [
   {
@@ -42,7 +43,8 @@ const routes: any = [
       { path: 'elements/segment', component: SegmentDoc },
       { path: 'elements/step', component: StepDoc },
 
-      { path: 'collections/breadcrumb', component: Breadcrumb }
+      { path: 'collections/breadcrumb', component: Breadcrumb },
+      { path: 'collections/form', component: FormDoc }
     ]
   }
 ]
