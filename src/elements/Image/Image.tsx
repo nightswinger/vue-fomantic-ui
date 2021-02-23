@@ -90,10 +90,7 @@ export default defineComponent({
     }
 
     return () => (
-      h('img', {
-        class: imageClasses.value,
-        src: props.src
-      }, slots.default?.())
+      <img class={imageClasses.value} src={props.src} />
     )
   }
 })
