@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { defineComponent, h } from "vue";
-import { useSizeProps } from "../../composables/size";
 
 export default defineComponent({
   name: 'SuiForm',
@@ -11,7 +10,7 @@ export default defineComponent({
     success: Boolean,
     unstackable: Boolean,
     warning: Boolean,
-    ...useSizeProps
+    size: String
   },
   setup(props, { slots }) {
     const {
