@@ -19,6 +19,11 @@
       "require": "./dist/vue-fomantic-ui.umd.js"
     }
   },
+  "keywords": [
+    "semantic-ui",
+    "fomantic-ui",
+    "vue"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vuedx-typecheck . && vite build"
