@@ -2,16 +2,15 @@ import * as elements from "./elements";
 import * as collections from "./collections"
 import * as views from "./views"
 import * as modules from "./modules"
+import { App } from "vue";
 
-const FomanticUIVue = {
-  install(app: any, options = {}) {
-    Object.values({
-      ...elements,
-      ...collections,
-      ...views,
-      ...modules
-    }).map((component) => app.use(component))
-  },
-};
+function install(app: App) {
+  Object.values({
+    ...elements,
+    ...collections,
+    ...views,
+    ...modules
+  }).map((component) => app.use(component))
+}
 
-export default FomanticUIVue;
+export default { install };
