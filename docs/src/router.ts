@@ -18,6 +18,8 @@ import RevealDoc from './pages/RevealDoc.vue'
 import SegmentDoc from './pages/SegmentDoc.vue'
 import StepDoc from './pages/StepDoc.vue'
 
+import Breadcrumb from './pages/collections/BreadcrumbDoc.vue'
+
 const routes: any = [
   {
     path: '/', component: Home,
@@ -38,7 +40,9 @@ const routes: any = [
       { path: 'elements/rail', component: RailDoc },
       { path: 'elements/reveal', component: RevealDoc },
       { path: 'elements/segment', component: SegmentDoc },
-      { path: 'elements/step', component: StepDoc }
+      { path: 'elements/step', component: StepDoc },
+
+      { path: 'collections/breadcrumb', component: Breadcrumb }
     ]
   }
 ]

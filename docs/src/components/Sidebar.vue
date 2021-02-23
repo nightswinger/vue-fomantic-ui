@@ -23,6 +23,19 @@
             />
           </sui-menu-menu>
         </sui-menu-item>
+        <sui-menu-item>
+          <sui-menu-header content="Collections" />
+          <sui-menu-menu>
+            <sui-menu-item
+              v-for="cl in collections"
+              :key="cl.name"
+              :name="cl.name"
+              :to="cl.path"
+              :active="isActive(cl.path)"
+              as="router-link"
+            />
+          </sui-menu-menu>
+        </sui-menu-item>
       </sui-menu>
     </div>
   </div>
@@ -59,7 +72,11 @@ export default defineComponent({
       { name: 'Step', path: '/elements/step' }
     ]
 
-    return { isActive, elements }
+    const collections = [
+      { name: 'Breadcrumb', path: '/collections/breadcrumb' }
+    ]
+
+    return { isActive, elements, collections }
   }
 })
 </script>
