@@ -785,6 +785,11 @@ cliui@^7.0.2:
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -1533,6 +1538,13 @@ vscode-web-custom-data@^0.3.2:
   version "0.3.3"
   resolved "https://registry.npmjs.org/vscode-web-custom-data/-/vscode-web-custom-data-0.3.3.tgz"
   integrity sha512-orMjjj1r4efP5ocODYZm3orpANakRBsxPZPDoD5UIrFOPKDFtMJQLp6PIH1rb3AYVRD1iYXMhDQoC6tZ+DrigA==
+
+vue-fomantic-ui@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.3.0.tgz#53b2de089791f69e8f66d88dc3d87216e69bf88a"
+  integrity sha512-qHiXhXTQw0WlYni1UlFfYmFqDH9yLAci1V4GAv1gVxDGOBDr/6NhPzBwVRZi3p0o5ObKzQkmAA/+VxynHy9A1w==
+  dependencies:
+    clsx "^1.1.1"
 
 vue-prism-component@^2.0.0:
   version "2.0.0"
