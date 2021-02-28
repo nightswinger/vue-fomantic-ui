@@ -1,4 +1,12 @@
-# Install
+# VueFomanticUI
+
+VueFomanticUI is a component library for Vue.js 3.0 that wraps [Fomantic-UI](https://fomantic-ui.com/).
+
+## Documentation
+
+To check out live examples and docs, see the [Documentation](https://nightswinger.github.io/vue-fomantic-ui/).
+
+## Install
 
 You need [Vue.js](https://v3.vuejs.org/) **version 3.0+**.
 
@@ -14,7 +22,7 @@ yarn add vue-fomantic-ui
 yarn add fomantic-ui-css
 ```
 
-# Usage
+## Usage
 
 ```js
 import { createApp } from 'vue'
