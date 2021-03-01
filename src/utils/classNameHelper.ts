@@ -22,7 +22,7 @@ export const computeTextAlignProp = (value: string | undefined) => {
   return computeKeyValue(value, 'aligned')
 }
 
-export const computeWidthProp = (value: number | undefined, className: string) => {
+export const computeWidthProp = (value: number | string | undefined, className: string) => {
   if ((typeof value === 'number') && className) {
     return `${numberToEnglish(value)} ${className}`
   }
@@ -30,8 +30,18 @@ export const computeWidthProp = (value: number | undefined, className: string) =
   if ((typeof value === 'number') && !className) {
     return numberToEnglish(value)
   }
+
+  if ((typeof value === 'string') && (value === 'equal')) {
+    return `${value} width`
+  }
   
   return ''
+}
+
+export const computeResponsiveProp = (value: number | undefined, className: string) => {
+  if (!value) return ''
+
+  return `${numberToEnglish(value)} wide ${className}`
 }
   
 const numberToEnglish = (value :number) => {
