@@ -20,6 +20,7 @@ import StepDoc from './pages/StepDoc.vue'
 
 import Breadcrumb from './pages/collections/BreadcrumbDoc.vue'
 import FormDoc from './pages/collections/FormDoc.vue'
+import GridDoc from './pages/collections/GridDoc.vue'
 
 const routes: any = [
   {
@@ -44,7 +45,8 @@ const routes: any = [
       { path: 'elements/step', component: StepDoc },
 
       { path: 'collections/breadcrumb', component: Breadcrumb },
-      { path: 'collections/form', component: FormDoc }
+      { path: 'collections/form', component: FormDoc },
+      { path: 'collections/grid', component: GridDoc }
     ]
   }
 ]

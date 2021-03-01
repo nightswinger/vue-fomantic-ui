@@ -74,7 +74,8 @@ export default defineComponent({
 
     const collections = [
       { name: 'Breadcrumb', path: '/collections/breadcrumb' },
-      { name: 'Form', path: '/collections/form' }
+      { name: 'Form', path: '/collections/form' },
+      { name: 'Grid', path: '/collections/grid' }
     ]
 
     return { isActive, elements, collections }
