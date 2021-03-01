@@ -471,14 +471,14 @@
       >
         <sui-grid stackable :columns="2">
           <sui-grid-column>
-            <sui-segemnt>
+            <sui-segment>
               <sui-image src="/images/wireframe/paragraph.png" />
-            </sui-segemnt>
+            </sui-segment>
           </sui-grid-column>
           <sui-grid-column>
-            <sui-segemnt>
+            <sui-segment>
               <sui-image src="/images/wireframe/paragraph.png" />
-            </sui-segemnt>
+            </sui-segment>
           </sui-grid-column>
         </sui-grid>
       </doc-example>
@@ -490,13 +490,13 @@
       >
         <sui-grid reversed="computer vertically">
           <sui-grid-row>
-            <sui-grid-comlumn>Computer Row 3</sui-grid-comlumn>
+            <sui-grid-column>Computer Row 3</sui-grid-column>
           </sui-grid-row>
           <sui-grid-row>
-            <sui-grid-comlumn>Computer Row 2</sui-grid-comlumn>
+            <sui-grid-column>Computer Row 2</sui-grid-column>
           </sui-grid-row>
           <sui-grid-row>
-            <sui-grid-comlumn>Computer Row 1</sui-grid-comlumn>
+            <sui-grid-column>Computer Row 1</sui-grid-column>
           </sui-grid-row>
         </sui-grid>
       </doc-example>
@@ -949,26 +949,26 @@ export default defineComponent({
 
     const stackableCode = `<sui-grid stackable :columns="2">
   <sui-grid-column>
-    <sui-segemnt>
+    <sui-segment>
       <sui-image src="/images/wireframe/paragraph.png" />
-    </sui-segemnt>
+    </sui-segment>
   </sui-grid-column>
   <sui-grid-column>
-    <sui-segemnt>
+    <sui-segment>
       <sui-image src="/images/wireframe/paragraph.png" />
-    </sui-segemnt>
+    </sui-segment>
   </sui-grid-column>
 </sui-grid>`
 
     const reversedCode = `<sui-grid reversed="computer vertically">
   <sui-grid-row>
-    <sui-grid-comlumn>Computer Row 3</sui-grid-comlumn>
+    <sui-grid-column>Computer Row 3</sui-grid-column>
   </sui-grid-row>
   <sui-grid-row>
-    <sui-grid-comlumn>Computer Row 2</sui-grid-comlumn>
+    <sui-grid-column>Computer Row 2</sui-grid-column>
   </sui-grid-row>
   <sui-grid-row>
-    <sui-grid-comlumn>Computer Row 1</sui-grid-comlumn>
+    <sui-grid-column>Computer Row 1</sui-grid-column>
   </sui-grid-row>
 </sui-grid>`
 
