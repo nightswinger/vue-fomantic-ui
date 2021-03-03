@@ -12,13 +12,18 @@ export default defineComponent({
     fitted: Boolean,
     header: Boolean,
     icon: Boolean,
+    index: Number,
     link: Boolean,
     name: String,
     position: String,
     stackable: Boolean,
   },
   setup(props, { slots }) {
-    let elementType: any = props.as || 'div'
+    let elementType: any = props.as || 'a'
+
+    if (props.header) {
+      elementType = 'div'
+    }
 
     if (props.as === 'router-link') {
       elementType = resolveComponent(props.as)
