@@ -3,7 +3,7 @@ import { computed, defineComponent, watchEffect } from "vue";
 import usePopup from "./usePopup";
 
 export default defineComponent({
-  name: 'PopupContainer',
+  name: 'SuiPopupContainer',
   props: {
     position: { type: String, default: 'top left'},
     trigger: HTMLElement

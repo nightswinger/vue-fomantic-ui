@@ -2,7 +2,7 @@ import { defineComponent, onMounted, Ref, ref, Teleport } from "vue";
 import PopupContainer from "./PopupContainer";
 
 export default defineComponent({
-  name: 'Popup',
+  name: 'SuiPopup',
   props: {
     position: String
   },
