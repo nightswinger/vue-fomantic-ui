@@ -2,7 +2,7 @@
   <div class="sidemenu">
     <div style="flex: 1; overflow-y: scroll;">
       <sui-menu fluid inverted vertical>
-        <sui-menu-item>
+        <sui-menu-item as="div">
           <strong>
             Fomantic UI Vue
           </strong>
@@ -10,7 +10,7 @@
         <sui-menu-item as="router-link" to="/">
           <b>Getting Started</b>
         </sui-menu-item>
-        <sui-menu-item>
+        <sui-menu-item as="div">
           <sui-menu-header content="Elements" />
           <sui-menu-menu>
             <sui-menu-item
@@ -23,7 +23,7 @@
             />
           </sui-menu-menu>
         </sui-menu-item>
-        <sui-menu-item>
+        <sui-menu-item as="div">
           <sui-menu-header content="Collections" />
           <sui-menu-menu>
             <sui-menu-item
@@ -75,7 +75,8 @@ export default defineComponent({
     const collections = [
       { name: 'Breadcrumb', path: '/collections/breadcrumb' },
       { name: 'Form', path: '/collections/form' },
-      { name: 'Grid', path: '/collections/grid' }
+      { name: 'Grid', path: '/collections/grid' },
+      { name: 'Menu', path: '/collections/menu' }
     ]
 
     return { isActive, elements, collections }
