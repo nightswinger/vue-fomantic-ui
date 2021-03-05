@@ -1,15 +1,17 @@
 import clsx from "clsx";
 import { computed, defineComponent, resolveComponent } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiMenuItem',
   props: {
+    action: Boolean,
     active: Boolean,
     as: String,
-    color: Boolean,
+    browse: Boolean,
+    color: String,
     disabled: Boolean,
-    fitted: Boolean,
+    fitted: [Boolean, String],
     header: Boolean,
     icon: Boolean,
     index: Number,
@@ -32,11 +34,14 @@ export default defineComponent({
     const computedClass = computed(() => {
       return clsx(
         props.color,
+        props.position,
+        computeKeyOnly(props.action, 'action'),
         computeKeyOnly(props.active, 'active'),
+        computeKeyOnly(props.browse, 'browse'),
         computeKeyOnly(props.disabled, 'disabled'),
-        computeKeyOnly(props.fitted, 'fitted'),
         computeKeyOnly(props.header, 'header'),
         computeKeyOnly(props.link, 'link'),
+        computeKeyOrKeyValue(props.fitted, 'fitted'),
         'item'
       )
     })
