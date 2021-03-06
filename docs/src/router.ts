@@ -22,6 +22,7 @@ import Breadcrumb from './pages/collections/BreadcrumbDoc.vue'
 import FormDoc from './pages/collections/FormDoc.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
+import MessageDoc from './pages/collections/MessageDoc.vue'
 
 const routes: any = [
   {
@@ -48,7 +49,8 @@ const routes: any = [
       { path: 'collections/breadcrumb', component: Breadcrumb },
       { path: 'collections/form', component: FormDoc },
       { path: 'collections/grid', component: GridDoc },
-      { path: 'collections/menu', component: MenuDoc }
+      { path: 'collections/menu', component: MenuDoc },
+      { path: 'collections/message', component: MessageDoc }
     ]
   }
 ]

@@ -76,7 +76,8 @@ export default defineComponent({
       { name: 'Breadcrumb', path: '/collections/breadcrumb' },
       { name: 'Form', path: '/collections/form' },
       { name: 'Grid', path: '/collections/grid' },
-      { name: 'Menu', path: '/collections/menu' }
+      { name: 'Menu', path: '/collections/menu' },
+      { name: 'Message', path: '/collections/message' }
     ]
 
     return { isActive, elements, collections }
