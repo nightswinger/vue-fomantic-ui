@@ -77,7 +77,8 @@ export default defineComponent({
       { name: 'Form', path: '/collections/form' },
       { name: 'Grid', path: '/collections/grid' },
       { name: 'Menu', path: '/collections/menu' },
-      { name: 'Message', path: '/collections/message' }
+      { name: 'Message', path: '/collections/message' },
+      { name: 'Table', path: '/collections/table' }
     ]
 
     return { isActive, elements, collections }

@@ -23,6 +23,7 @@ import FormDoc from './pages/collections/FormDoc.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
 import MessageDoc from './pages/collections/MessageDoc.vue'
+import TableDoc from './pages/collections/TableDoc.vue'
 
 const routes: any = [
   {
@@ -50,7 +51,8 @@ const routes: any = [
       { path: 'collections/form', component: FormDoc },
       { path: 'collections/grid', component: GridDoc },
       { path: 'collections/menu', component: MenuDoc },
-      { path: 'collections/message', component: MessageDoc }
+      { path: 'collections/message', component: MessageDoc },
+      { path: 'collections/table', component: TableDoc }
     ]
   }
 ]
