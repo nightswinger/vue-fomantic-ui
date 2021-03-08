@@ -11,6 +11,7 @@ export default defineComponent({
     error: Boolean,
     negative: Boolean,
     positive: Boolean,
+    textAlign: String,
     verticalAlign: String,
     warning: Boolean
   },
@@ -24,6 +25,7 @@ export default defineComponent({
         computeKeyOnly(props.negative, 'negative'),
         computeKeyOnly(props.positive, 'positive'),
         computeKeyOnly(props.warning, 'warning'),
+        computeKeyValue(props.textAlign, 'aligned'),
         computeKeyValue(props.verticalAlign, 'aligned')
       )
     })

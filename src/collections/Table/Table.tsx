@@ -6,7 +6,7 @@ export default defineComponent({
   name: 'SuiTable',
   props: {
     attached: [Boolean, String],
-    basic: Boolean,
+    basic: [Boolean, String],
     celled: Boolean,
     color: String,
     columns: Number,
