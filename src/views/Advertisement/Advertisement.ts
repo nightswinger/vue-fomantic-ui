@@ -1,20 +1,21 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
+import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiAdvertisement',
   props: {
+    centered: Boolean,
     test: String,
     unit: String
   },
   setup(props) {
-    const { test, unit } = props
-
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        unit,
-        test ? 'test' : null,
+        props.unit,
+        computeKeyOnly(props.centered, 'centered'),
+        computeKeyOnly(!!props.test, 'test'),
         'ad'
       )
     })
