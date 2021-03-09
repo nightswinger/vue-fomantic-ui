@@ -36,6 +36,19 @@
             />
           </sui-menu-menu>
         </sui-menu-item>
+        <sui-menu-item as="div">
+          <sui-menu-header content="Views" />
+          <sui-menu-menu>
+            <sui-menu-item
+              v-for="v in views"
+              :key="v.name"
+              :name="v.name"
+              :to="v.path"
+              :active="isActive(v.path)"
+              as="router-link"
+            />
+          </sui-menu-menu>
+        </sui-menu-item>
       </sui-menu>
     </div>
   </div>
@@ -81,7 +94,11 @@ export default defineComponent({
       { name: 'Table', path: '/collections/table' }
     ]
 
-    return { isActive, elements, collections }
+    const views = [
+      { name: 'Advertisement', path: '/views/advertisement' }
+    ]
+
+    return { isActive, elements, collections, views }
   }
 })
 </script>

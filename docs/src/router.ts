@@ -25,6 +25,8 @@ import MenuDoc from './pages/collections/MenuDoc.vue'
 import MessageDoc from './pages/collections/MessageDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
+import AdvertisementDoc from './pages/views/AdvertisementDoc.vue'
+
 const routes: any = [
   {
     path: '/', component: Home,
@@ -52,7 +54,9 @@ const routes: any = [
       { path: 'collections/grid', component: GridDoc },
       { path: 'collections/menu', component: MenuDoc },
       { path: 'collections/message', component: MessageDoc },
-      { path: 'collections/table', component: TableDoc }
+      { path: 'collections/table', component: TableDoc },
+
+      { path: 'views/advertisement', component: AdvertisementDoc }
     ]
   }
 ]
