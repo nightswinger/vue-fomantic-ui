@@ -5,6 +5,7 @@ import { computeKeyOnly } from "../../utils/classNameHelper";
 export default defineComponent({
   name: 'SuiCard',
   props: {
+    centered: Boolean,
     color: String,
     fluid: Boolean,
     href: String,
@@ -12,20 +13,14 @@ export default defineComponent({
     raised: Boolean
   },
   setup(props) {
-    const {
-      color,
-      fluid,
-      link,
-      raised
-    } = props
-
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        color,
-        computeKeyOnly(fluid, 'fluid'),
-        computeKeyOnly(link, 'link'),
-        computeKeyOnly(raised, 'raised'),
+        props.color,
+        computeKeyOnly(props.centered, 'centered'),
+        computeKeyOnly(props.fluid, 'fluid'),
+        computeKeyOnly(props.link, 'link'),
+        computeKeyOnly(props.raised, 'raised'),
         'card'
       )
     })
