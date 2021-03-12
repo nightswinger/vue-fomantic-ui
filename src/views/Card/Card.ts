@@ -8,6 +8,7 @@ export default defineComponent({
     centered: Boolean,
     color: String,
     fluid: Boolean,
+    horizontal: Boolean,
     href: String,
     link: Boolean,
     raised: Boolean
@@ -19,6 +20,7 @@ export default defineComponent({
         props.color,
         computeKeyOnly(props.centered, 'centered'),
         computeKeyOnly(props.fluid, 'fluid'),
+        computeKeyOnly(props.horizontal, 'horizontal'),
         computeKeyOnly(props.link, 'link'),
         computeKeyOnly(props.raised, 'raised'),
         'card'
