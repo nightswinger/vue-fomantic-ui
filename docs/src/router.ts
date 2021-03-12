@@ -26,6 +26,7 @@ import MessageDoc from './pages/collections/MessageDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
 import AdvertisementDoc from './pages/views/AdvertisementDoc.vue'
+import CardDoc from './pages/views/CardDoc.vue'
 
 const routes: any = [
   {
@@ -56,7 +57,8 @@ const routes: any = [
       { path: 'collections/message', component: MessageDoc },
       { path: 'collections/table', component: TableDoc },
 
-      { path: 'views/advertisement', component: AdvertisementDoc }
+      { path: 'views/advertisement', component: AdvertisementDoc },
+      { path: 'views/card', component: CardDoc }
     ]
   }
 ]
