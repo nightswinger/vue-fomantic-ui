@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
@@ -11,20 +11,13 @@ export default defineComponent({
     threaded: Boolean
   },
   setup(props) {
-    const {
-      collapsed,
-      minimal,
-      size,
-      threaded
-    } = props
-
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        size,
-        computeKeyOnly(collapsed, 'collapsed'),
-        computeKeyOnly(minimal, 'minimal'),
-        computeKeyOnly(threaded, 'threaded'),
+        props.size,
+        computeKeyOnly(props.collapsed, 'collapsed'),
+        computeKeyOnly(props.minimal, 'minimal'),
+        computeKeyOnly(props.threaded, 'threaded'),
         'comments'
       )
     })
@@ -32,6 +25,10 @@ export default defineComponent({
     return { computedClass }
   },
   render() {
-    return h('div', { class: this.computedClass }, this.$slots.default?.())
+    return (
+      <div class={this.computedClass}>
+        {this.$slots.default?.()}
+      </div>
+    )
   }
 })
