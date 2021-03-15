@@ -96,7 +96,8 @@ export default defineComponent({
 
     const views = [
       { name: 'Advertisement', path: '/views/advertisement' },
-      { name: 'Card', path: '/views/card' }
+      { name: 'Card', path: '/views/card' },
+      { name: 'Comment', path: '/views/comment' }
     ]
 
     return { isActive, elements, collections, views }
