@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
@@ -8,11 +8,9 @@ export default defineComponent({
     extra: Boolean
   },
   setup(props) {
-    const { extra } = props
-
     const computedClass = computed(() => {
       return clsx(
-        computeKeyOnly(extra, 'extra'),
+        computeKeyOnly(props.extra, 'extra'),
         'content'
       )
     })
@@ -20,6 +18,10 @@ export default defineComponent({
     return { computedClass }
   },
   render() {
-    return h('div', { class: this.computedClass }, this.$slots.default?.())
+    return (
+      <div class={this.computedClass}>
+        {this.$slots.default?.()}
+      </div>
+    )
   }
 })
