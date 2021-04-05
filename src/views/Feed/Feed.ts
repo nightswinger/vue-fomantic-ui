@@ -1,18 +1,19 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
+import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiFeed',
   props: {
+    inverted: Boolean,
     size: String
   },
   setup(props) {
-    const { size } = props
-
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        size,
+        props.size,
+        computeKeyOnly(props.inverted, 'inverted'),
         'feed'
       )
     })
