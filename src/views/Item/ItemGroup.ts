@@ -6,25 +6,20 @@ export default defineComponent({
   name: 'SuiItemGroup',
   props: {
     divided: Boolean,
+    inverted: Boolean,
     link: Boolean,
     relaxed: [Boolean, String],
     unstackable: Boolean
   },
   setup(props) {
-    const {
-      divided,
-      link,
-      relaxed,
-      unstackable
-    } = props
-
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        computeKeyOnly(divided, 'divided'),
-        computeKeyOnly(link, 'link'),
-        computeKeyOnly(unstackable, 'unstackable'),
-        computeKeyOrKeyValue(relaxed, 'relaxed'),
+        computeKeyOnly(props.divided, 'divided'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.link, 'link'),
+        computeKeyOnly(props.unstackable, 'unstackable'),
+        computeKeyOrKeyValue(props.relaxed, 'relaxed'),
         'items'
       )
     })
