@@ -29,6 +29,7 @@ import AdvertisementDoc from './pages/views/AdvertisementDoc.vue'
 import CardDoc from './pages/views/CardDoc.vue'
 import CommentDoc from './pages/views/CommentDoc.vue'
 import FeedDoc from './pages/views/FeedDoc.vue'
+import ItemDoc from './pages/views/ItemDoc.vue'
 
 const routes: any = [
   {
@@ -62,7 +63,8 @@ const routes: any = [
       { path: 'views/advertisement', component: AdvertisementDoc },
       { path: 'views/card', component: CardDoc },
       { path: 'views/comment', component: CommentDoc },
-      { path: 'views/feed', component: FeedDoc }
+      { path: 'views/feed', component: FeedDoc },
+      { path: 'views/item', component: ItemDoc }
     ]
   }
 ]
