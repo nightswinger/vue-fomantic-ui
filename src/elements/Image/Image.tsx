@@ -21,6 +21,7 @@ export default defineComponent({
     fluid: Boolean,
     hidden: Boolean,
     href: String,
+    inline: Boolean,
     label: Object,
     target: String,
     wrapped: Boolean,
@@ -48,6 +49,7 @@ export default defineComponent({
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.hidden, 'hidden'),
+        computeKeyOnly(props.inline, 'inline'),
         computeKeyOnly(props.rounded, 'rounded'),
         computeKeyOrKeyValue(props.spaced, 'spaced'),
         'image'
