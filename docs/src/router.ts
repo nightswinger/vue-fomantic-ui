@@ -30,6 +30,7 @@ import CardDoc from './pages/views/CardDoc.vue'
 import CommentDoc from './pages/views/CommentDoc.vue'
 import FeedDoc from './pages/views/FeedDoc.vue'
 import ItemDoc from './pages/views/ItemDoc.vue'
+import StatisticDoc from './pages/views/StatisticDoc.vue'
 
 const routes: any = [
   {
@@ -64,7 +65,8 @@ const routes: any = [
       { path: 'views/card', component: CardDoc },
       { path: 'views/comment', component: CommentDoc },
       { path: 'views/feed', component: FeedDoc },
-      { path: 'views/item', component: ItemDoc }
+      { path: 'views/item', component: ItemDoc },
+      { path: 'views/statistic', component: StatisticDoc }
     ]
   }
 ]

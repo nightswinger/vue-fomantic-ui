@@ -99,7 +99,8 @@ export default defineComponent({
       { name: 'Card', path: '/views/card' },
       { name: 'Comment', path: '/views/comment' },
       { name: 'Feed', path: '/views/feed' },
-      { name: 'Item', path: '/views/item' }
+      { name: 'Item', path: '/views/item' },
+      { name: 'Statistic', path: '/views/statistic' }
     ]
 
     return { isActive, elements, collections, views }
