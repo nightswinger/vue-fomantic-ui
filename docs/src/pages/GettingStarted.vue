@@ -1,25 +1,9 @@
 <template>
   <div>
-    <sui-segment vertical>
-      <sui-container>
-      <div class="intro">
-        <sui-header as="h1">Getting Started
-        <sui-header-subheader>Getting up and running with Fomantic-UI Vue</sui-header-subheader>
-        </sui-header>
-
-        <sui-divider hidden></sui-divider>
-
-        <sui-menu floated="right">
-        <sui-menu-item as="a" icon>
-            <sui-icon name="edit"></sui-icon>
-        </sui-menu-item>
-        <sui-menu-item as="a" icon>
-            <sui-icon name="github"></sui-icon>
-        </sui-menu-item>
-        </sui-menu>
-      </div>
-      </sui-container>
-    </sui-segment>
+    <doc-page-header
+      title="Getting Started"
+      sub="Getting up and running with Fomantic-UI Vue"
+    />
 
     <sui-container class="main">
       <sui-header as="h2">Install</sui-header>
@@ -56,10 +40,11 @@ app.use(FomanticUI)`
 <script>
 import { defineComponent } from "vue";
 import Prism from 'vue-prism-component'
+import DocPageHeader from "../components/DocPageHeader.vue";
 
 export default defineComponent({
   name: 'GettingStarted',
-  components: { Prism }
+  components: { Prism, DocPageHeader }
 })
 </script>
 
