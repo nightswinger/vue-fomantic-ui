@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, inject } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 import StatisticLabel from "./StatisticLabel"
 import StatisticValue from "./StatisticValue"
@@ -18,24 +18,17 @@ export default defineComponent({
     value: String
   },
   setup(props) {
-    const {
-      color,
-      floated,
-      horizontal,
-      inverted,
-      size,
-      text
-    } = props
+    const ui = inject('ui', true)
 
     const computedClass = computed(() => {
       return clsx(
-        'ui',
-        color,
-        size,
-        computeKeyOnly(horizontal, 'horizontal'),
-        computeKeyOnly(inverted, 'inverted'),
-        computeKeyOnly(text, 'text'),
-        computeKeyOrKeyValue(floated, 'floated'),
+        ui && 'ui',
+        props.color,
+        props.size,
+        computeKeyOnly(props.horizontal, 'horizontal'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.text, 'text'),
+        computeKeyOrKeyValue(props.floated, 'floated'),
         'statistic'
       )
     })

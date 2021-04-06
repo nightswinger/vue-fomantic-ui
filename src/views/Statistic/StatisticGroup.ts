@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, provide } from "vue";
 import { computeKeyOnly, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
@@ -12,22 +12,16 @@ export default defineComponent({
     widths: Number
   },
   setup(props) {
-    const {
-      color,
-      horizontal,
-      inverted,
-      size,
-      widths
-    } = props
+    provide('ui', false)
 
     const computedClass = computed(() => {
       return clsx(
         'ui',
-        color,
-        size,
-        computeKeyOnly(horizontal, 'horizontal'),
-        computeKeyOnly(inverted, 'inverted'),
-        computeWidthProp(widths, ''),
+        props.color,
+        props.size,
+        computeKeyOnly(props.horizontal, 'horizontal'),
+        computeKeyOnly(props.inverted, 'inverted'),
+        computeWidthProp(props.widths, ''),
         'statistics'
       )
     })
