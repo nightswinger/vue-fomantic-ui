@@ -32,6 +32,8 @@ import FeedDoc from './pages/views/FeedDoc.vue'
 import ItemDoc from './pages/views/ItemDoc.vue'
 import StatisticDoc from './pages/views/StatisticDoc.vue'
 
+import AccordionDoc from './pages/modules/AccordionDoc.vue'
+
 const routes: any = [
   {
     path: '/', component: Home,
@@ -66,7 +68,9 @@ const routes: any = [
       { path: 'views/comment', component: CommentDoc },
       { path: 'views/feed', component: FeedDoc },
       { path: 'views/item', component: ItemDoc },
-      { path: 'views/statistic', component: StatisticDoc }
+      { path: 'views/statistic', component: StatisticDoc },
+
+      { path: 'modules/accordion', component: AccordionDoc }
     ]
   }
 ]

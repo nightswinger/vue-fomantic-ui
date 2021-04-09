@@ -49,6 +49,19 @@
             />
           </sui-menu-menu>
         </sui-menu-item>
+        <sui-menu-item as="div">
+          <sui-menu-header content="Modules" />
+          <sui-menu-menu>
+            <sui-menu-item
+              v-for="m in modules"
+              :key="m.name"
+              :name="m.name"
+              :to="m.path"
+              :active="isActive(m.path)"
+              as="router-link"
+            />
+          </sui-menu-menu>
+        </sui-menu-item>
       </sui-menu>
     </div>
   </div>
@@ -103,7 +116,11 @@ export default defineComponent({
       { name: 'Statistic', path: '/views/statistic' }
     ]
 
-    return { isActive, elements, collections, views }
+    const modules = [
+      { name: 'Accordion', path: '/modules/accordion' }
+    ]
+
+    return { isActive, elements, collections, views, modules }
   }
 })
 </script>
