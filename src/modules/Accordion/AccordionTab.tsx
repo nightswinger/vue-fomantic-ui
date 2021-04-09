@@ -11,20 +11,18 @@ export default defineComponent({
     title: String,
   },
   setup(props) {
-    const activeIndex: Ref<number> = inject('activeIndex', ref(-1))
+    const isTabActive: any = inject('isTabActive')
     const updateActiveIndex: any = inject('updateActiveIndex')
-
-    const isActive = computed(() => props.index === activeIndex.value)
 
     const titleClass = computed(() => {
       return clsx(
-        computeKeyOnly(isActive.value, 'active'),
+        computeKeyOnly(isTabActive(props.index), 'active'),
         'title'
       )
     })
 
     return {
-      isActive,
+      isTabActive,
       updateActiveIndex,
       titleClass
     }
@@ -33,12 +31,12 @@ export default defineComponent({
     return (
       <>
         <div class={this.titleClass}
-          onClick={() => this.isActive ? this.updateActiveIndex(-1) : this.updateActiveIndex(this.index)}
+          onClick={() => this.updateActiveIndex(this.index)}
         >
           <Icon name="dropdown" />
             {this.title}
           </div>
-        <AccordionContent active={this.isActive}>
+        <AccordionContent active={this.isTabActive(this.index)}>
           {this.$slots.default?.()}
         </AccordionContent>
       </>
