@@ -33,6 +33,7 @@ import ItemDoc from './pages/views/ItemDoc.vue'
 import StatisticDoc from './pages/views/StatisticDoc.vue'
 
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
+import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 
 const routes: any = [
   {
@@ -70,7 +71,8 @@ const routes: any = [
       { path: 'views/item', component: ItemDoc },
       { path: 'views/statistic', component: StatisticDoc },
 
-      { path: 'modules/accordion', component: AccordionDoc }
+      { path: 'modules/accordion', component: AccordionDoc },
+      { path: 'modules/checkbox', component: CheckboxDoc }
     ]
   }
 ]

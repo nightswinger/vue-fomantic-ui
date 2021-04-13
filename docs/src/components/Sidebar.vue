@@ -117,7 +117,8 @@ export default defineComponent({
     ]
 
     const modules = [
-      { name: 'Accordion', path: '/modules/accordion' }
+      { name: 'Accordion', path: '/modules/accordion' },
+      { name: 'Checkbox', path: '/modules/checkbox'}
     ]
 
     return { isActive, elements, collections, views, modules }
