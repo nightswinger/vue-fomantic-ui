@@ -5,7 +5,8 @@ export default defineComponent({
   name: 'SuiDropdownItem',
   props: {
     text: String,
-    description: String
+    description: String,
+    icon: String
   },
   setup() {
     const computedClass = computed(() => {
@@ -18,6 +19,12 @@ export default defineComponent({
   },
   render() {
     let children = []
+
+    if (this.icon) {
+      children.push(
+        h('i', { class: `${this.icon} icon`})
+      )
+    }
 
     if (this.description) {
       children.push(
