@@ -119,7 +119,8 @@ export default defineComponent({
     const modules = [
       { name: 'Accordion', path: '/modules/accordion' },
       { name: 'Checkbox', path: '/modules/checkbox'},
-      { name: 'Dimmer', path: '/modules/dimmer' }
+      { name: 'Dimmer', path: '/modules/dimmer' },
+      { name: 'Embed', path: '/modules/embed' }
     ]
 
     return { isActive, elements, collections, views, modules }
