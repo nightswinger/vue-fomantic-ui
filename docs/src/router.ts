@@ -36,6 +36,7 @@ import AccordionDoc from './pages/modules/AccordionDoc.vue'
 import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
+import ModalDoc from './pages/modules/ModalDoc.vue'
 
 const routes: any = [
   {
@@ -76,7 +77,8 @@ const routes: any = [
       { path: 'modules/accordion', component: AccordionDoc },
       { path: 'modules/checkbox', component: CheckboxDoc },
       { path: 'modules/dimmer', component: DimmerDoc },
-      { path: 'modules/embed', component: EmbedDoc }
+      { path: 'modules/embed', component: EmbedDoc },
+      { path: 'modules/modal', component: ModalDoc }
     ]
   }
 ]

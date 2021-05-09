@@ -120,7 +120,8 @@ export default defineComponent({
       { name: 'Accordion', path: '/modules/accordion' },
       { name: 'Checkbox', path: '/modules/checkbox'},
       { name: 'Dimmer', path: '/modules/dimmer' },
-      { name: 'Embed', path: '/modules/embed' }
+      { name: 'Embed', path: '/modules/embed' },
+      { name: 'Modal', path: '/modules/modal' }
     ]
 
     return { isActive, elements, collections, views, modules }
