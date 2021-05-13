@@ -23,24 +23,40 @@ export default (props: any) => {
     let y: number = 0
 
     const popupEl = popupRef.value! as HTMLElement
-    const triggerEl = triggerRef.value! as HTMLElement
+    const triggerEl = triggerRef.value.$el as HTMLElement
+
+    popupEl.style.transform = `translate(${x}px, ${y}px)`
+
+    const { top, left, width, height } = triggerEl.getBoundingClientRect()
+    const popupRect = popupEl.getBoundingClientRect()
+    const { pageXOffset, pageYOffset } = window
 
     if (placement.value.includes('top')) {
-      x = triggerEl.offsetLeft
-      y = triggerEl.offsetTop - popupEl.offsetTop - popupEl.offsetHeight
+      x = pageXOffset + left
+      y = pageYOffset + top - popupEl.offsetTop - popupEl.offsetHeight
     } else {
-      x = triggerEl.offsetLeft
-      y = (triggerEl.offsetTop + triggerEl.offsetHeight) - popupEl.offsetTop
+      x = left
+      y = (top + height) - popupRect.top
     }
 
     if (placement.value.includes('right')) {
-      const xOffset = triggerEl.offsetWidth - popupEl.offsetWidth
-      x = triggerEl.offsetLeft + xOffset
+      const xOffset = width - popupRect.width
+      x = left + xOffset
     }
 
     if (placement.value.includes('center')) {
-      const xOffset = (triggerEl.offsetWidth / 2) - (popupEl.offsetWidth / 2)
-      x = triggerEl.offsetLeft + xOffset
+      const xOffset = (width / 2) - (popupRect.width / 2)
+      x = left + xOffset
+    }
+
+    if (placement.value === 'right center') {
+      x = left + width
+      y = (top + (height / 2)) - popupRect.top - (popupRect.height / 2)
+    }
+
+    if (placement.value === 'left center') {
+      x = left - popupRect.width
+      y = (top + (height / 2)) - popupRect.top - (popupRect.height / 2)
     }
 
     popupEl.style.display = 'flex'
