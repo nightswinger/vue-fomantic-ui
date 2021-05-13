@@ -121,7 +121,8 @@ export default defineComponent({
       { name: 'Checkbox', path: '/modules/checkbox'},
       { name: 'Dimmer', path: '/modules/dimmer' },
       { name: 'Embed', path: '/modules/embed' },
-      { name: 'Modal', path: '/modules/modal' }
+      { name: 'Modal', path: '/modules/modal' },
+      { name: 'Popup', path: '/modules/popup' }
     ]
 
     return { isActive, elements, collections, views, modules }

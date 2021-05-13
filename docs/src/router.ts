@@ -37,6 +37,7 @@ import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import ModalDoc from './pages/modules/ModalDoc.vue'
+import PopupDoc from './pages/modules/PopupDoc.vue'
 
 const routes: any = [
   {
@@ -78,7 +79,8 @@ const routes: any = [
       { path: 'modules/checkbox', component: CheckboxDoc },
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/embed', component: EmbedDoc },
-      { path: 'modules/modal', component: ModalDoc }
+      { path: 'modules/modal', component: ModalDoc },
+      { path: 'modules/popup', component: PopupDoc }
     ]
   }
 ]
