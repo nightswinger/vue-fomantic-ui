@@ -122,7 +122,8 @@ export default defineComponent({
       { name: 'Dimmer', path: '/modules/dimmer' },
       { name: 'Embed', path: '/modules/embed' },
       { name: 'Modal', path: '/modules/modal' },
-      { name: 'Popup', path: '/modules/popup' }
+      { name: 'Popup', path: '/modules/popup' },
+      { name: 'Progress', path: '/modules/progress' }
     ]
 
     return { isActive, elements, collections, views, modules }
