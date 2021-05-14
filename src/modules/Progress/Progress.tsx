@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiProgress',
@@ -14,7 +14,7 @@ export default defineComponent({
     inverted: Boolean,
     label: String,
     percent: Number,
-    progress: Boolean,
+    progress: [Boolean, String],
     size: String,
     success: Boolean,
     warning: Boolean
@@ -37,13 +37,19 @@ export default defineComponent({
       )
     })
 
+    const barClass = computed(() => {
+      return clsx(
+        computeKeyOrKeyValue(props.progress, 'progress')
+      )
+    })
+
     return () => (
       <div
         class={computedClass.value}
         data-percent={props.percent}
       >
-        <div class="bar" style={`width: ${props.percent}%;`}>
-          {props.progress && <div class="progress">{props.percent}%</div>}
+        <div class="bar" style={`width: ${props.percent}%; transition-duration: 300ms;`}>
+          {props.progress && <div class={barClass.value}>{props.percent}%</div>}
         </div>
         {props.label && <div class="label">{props.label}</div>}
       </div>
