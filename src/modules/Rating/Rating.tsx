@@ -7,12 +7,13 @@ export default defineComponent({
   name: 'SuiRating',
   props: {
     clearable: Boolean,
+    color: String,
     defaultRating: {
       type: Number,
       default: 0
     },
     disabled: Boolean,
-    icon: String,
+    icon: { type: String, default: 'star' },
     maxRating: {
       type: Number,
       default: 1
@@ -42,6 +43,7 @@ export default defineComponent({
     const computedClass = computed(() => {
       return clsx(
         'ui',
+        props.color,
         props.icon,
         props.size,
         computeKeyOnly(props.disabled, 'disabled'),
