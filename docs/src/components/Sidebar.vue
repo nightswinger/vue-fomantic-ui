@@ -123,7 +123,8 @@ export default defineComponent({
       { name: 'Embed', path: '/modules/embed' },
       { name: 'Modal', path: '/modules/modal' },
       { name: 'Popup', path: '/modules/popup' },
-      { name: 'Progress', path: '/modules/progress' }
+      { name: 'Progress', path: '/modules/progress' },
+      { name: 'Rating', path: '/modules/rating' }
     ]
 
     return { isActive, elements, collections, views, modules }

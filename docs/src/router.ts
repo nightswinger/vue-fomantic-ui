@@ -39,6 +39,7 @@ import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import ModalDoc from './pages/modules/ModalDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import ProgressDoc from './pages/modules/ProgressDoc.vue'
+import RatingDoc from './pages/modules/RatingDoc.vue'
 
 const routes: any = [
   {
@@ -82,7 +83,8 @@ const routes: any = [
       { path: 'modules/embed', component: EmbedDoc },
       { path: 'modules/modal', component: ModalDoc },
       { path: 'modules/popup', component: PopupDoc },
-      { path: 'modules/progress', component: ProgressDoc }
+      { path: 'modules/progress', component: ProgressDoc },
+      { path: 'modules/rating', component: RatingDoc }
     ]
   }
 ]
