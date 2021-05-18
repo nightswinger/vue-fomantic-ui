@@ -7,6 +7,7 @@ import { Label } from "../Label";
 
 export default defineComponent({
   name: 'SuiInput',
+  emits: ['update:modelValue'],
   props: {
     action: String,
     disabled: Boolean,
@@ -19,11 +20,12 @@ export default defineComponent({
     label: String,
     labeled: Boolean,
     loading: Boolean,
+    modelValue: String,
     placeholder: String,
     size: String,
     transparent: Boolean
   },
-  setup(props) {
+  setup(props, { emit }) {
     const hasIcon = computed(() => {
       return ((typeof props.icon === 'string') || props.loading)
     })
@@ -51,10 +53,17 @@ export default defineComponent({
       )
     })
 
+    const onInput = (event: any) => emit('update:modelValue', event.target.value)
+
     return () => (
       <div class={computedClass.value}>
         {props.label && <Label>{props.label}</Label>}
-        <input type="text" placeholder={props.placeholder} />
+        <input
+          type="text"
+          placeholder={props.placeholder}
+          value={props.modelValue}
+          onInput={(event) => onInput(event)}
+        />
         {hasIcon.value && <Icon name={(props.icon || 'spinner')} />}
         {props.action && <Button>{props.action}</Button>}
       </div>
