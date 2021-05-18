@@ -194,8 +194,8 @@ export default defineComponent({
 
     const rangeIndex = ref(0)
 
-    const setValue = (event: MouseEvent) => {
-      let { pageX, pageY } = event
+    const setValue = (event: any) => {
+      let { pageX, pageY } = event.touches ? event.touches[0] : event
       let handleValue
       let newValue
 
@@ -271,7 +271,7 @@ export default defineComponent({
       }
     }
 
-    const onDrag = (event: MouseEvent) => {
+    const onDrag = (event: MouseEvent | TouchEvent) => {
       if (dragging.value) {
         setValue(event)
         event?.preventDefault()
@@ -285,6 +285,48 @@ export default defineComponent({
       document.addEventListener('mousemove', onDrag)
       document.addEventListener('mouseup', onDragEnd)
       event.preventDefault()
+    }
+
+    const onKeyDown = (event: KeyboardEvent, index = 0) => {
+      rangeIndex.value = index
+      switch (event.code) {
+        case "ArrowUp":
+          if (props.vertical) props.reversed ? increment() : decrement()
+          event.preventDefault()
+          break
+        case "ArrowDown":
+          if (props.vertical) props.reversed ? decrement() : increment()
+          event.preventDefault()
+          break
+        case "ArrowRight":
+          props.reversed ? decrement() : increment()
+          event.preventDefault()
+          break
+        case "ArrowLeft":
+          props.reversed ? increment() : decrement()
+          event.preventDefault()
+          break
+        default:
+          break
+      }
+    }
+
+    const increment = () => {
+      let newValue = 0
+
+      if (props.range) newValue = (props.modelValue as number[])[rangeIndex.value] + props.step
+      else newValue = props.modelValue as number + props.step
+
+      updateModel(newValue)
+    }
+
+    const decrement = () => {
+      let newValue = 0
+
+      if (props.range) newValue = (props.modelValue as number[])[rangeIndex.value] - props.step
+      else newValue = props.modelValue as number - props.step
+
+      updateModel(newValue)
     }
 
     const onClick = (event: any) => {
@@ -308,7 +350,7 @@ export default defineComponent({
       <div
         ref={(ref) => rootRef.value = ref as HTMLElement}
         class={computedClass.value}
-        style={props.vertical ? `height: ${props.verticalHeight}px;` : ''}
+        style={props.vertical ? `height: ${props.verticalHeight}px;` : ''}            
       >
         <div class="inner" onClick={onClick}>
           <div class="track" ref={(ref) => trackRef.value = ref as HTMLElement}></div>
@@ -316,12 +358,22 @@ export default defineComponent({
           <div class="thumb"
             style={thumbStyle.value}
             onMousedown={(event) => onMouseDown(event)}
+            onTouchstart={(event) => onDragStart(event)}
+            onTouchmove={(event) => onDrag(event)}
+            onTouchend={(event) => onDragEnd(event)}
+            onKeydown={(event) => onKeyDown(event)}
+            tabindex={0}
           ></div>
           {props.range && 
             <div
               class="thumb second"
               style={thumbSecondStyle.value}
               onMousedown={(event) => onMouseDown(event, 1)}
+              onTouchstart={(event) => onDragStart(event, 1)}
+              onTouchmove={(event) => onDrag(event)}
+              onTouchend={(event) => onDragEnd(event)}
+              onKeydown={(event) => onKeyDown(event, 1)}
+              tabindex={0}
             >
             </div>}
         </div>
