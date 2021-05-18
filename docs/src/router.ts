@@ -40,6 +40,7 @@ import ModalDoc from './pages/modules/ModalDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import ProgressDoc from './pages/modules/ProgressDoc.vue'
 import RatingDoc from './pages/modules/RatingDoc.vue'
+import SliderDoc from './pages/modules/SliderDoc.vue'
 
 const routes: any = [
   {
@@ -84,7 +85,8 @@ const routes: any = [
       { path: 'modules/modal', component: ModalDoc },
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: ProgressDoc },
-      { path: 'modules/rating', component: RatingDoc }
+      { path: 'modules/rating', component: RatingDoc },
+      { path: 'modules/slider', component: SliderDoc }
     ]
   }
 ]

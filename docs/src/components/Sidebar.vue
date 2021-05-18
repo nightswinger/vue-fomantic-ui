@@ -124,7 +124,8 @@ export default defineComponent({
       { name: 'Modal', path: '/modules/modal' },
       { name: 'Popup', path: '/modules/popup' },
       { name: 'Progress', path: '/modules/progress' },
-      { name: 'Rating', path: '/modules/rating' }
+      { name: 'Rating', path: '/modules/rating' },
+      { name: 'Slider', path: '/modules/slider' }
     ]
 
     return { isActive, elements, collections, views, modules }
