@@ -8,6 +8,7 @@ import Popup from "./Popup"
 import Progress from "./Progress"
 import Rating from "./Rating"
 import Search from "./Search"
+import Slider from "./Slider"
 
 export {
   Accordion,
@@ -19,5 +20,6 @@ export {
   Popup,
   Progress,
   Rating,
-  Search
+  Search,
+  Slider
 }
