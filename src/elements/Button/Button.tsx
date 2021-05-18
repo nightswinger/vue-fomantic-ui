@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, ref } from "vue";
+import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
@@ -7,7 +7,7 @@ export default defineComponent({
   props: {
     active: Boolean,
     animated: [Boolean, String],
-    as: String,
+    as: { type: String, default: 'button'},
     attached: String,
     basic: Boolean,
     circular: Boolean,
@@ -39,16 +39,12 @@ export default defineComponent({
     youtube: Boolean
   },
   setup(props) {
-    const isActive = ref(false)
-    const handleClick = () => isActive.value = !isActive.value
-
     const computedClass = computed(() => {
-
       return clsx(
         'ui',
         props.color,
         props.size,
-        computeKeyOnly(props.active || isActive.value, 'active'),
+        computeKeyOnly(props.active, 'active'),
         computeKeyOnly(props.basic, 'basic'),
         computeKeyOnly(props.circular, 'circular'),
         computeKeyOnly(props.compact, 'compact'),
@@ -82,8 +78,7 @@ export default defineComponent({
     })
 
     return {
-      computedClass,
-      handleClick
+      computedClass
     }
   },
   render() {
@@ -92,7 +87,7 @@ export default defineComponent({
     return (
       <elementType
         class={this.computedClass}
-        onClick={() => this.handleClick()}
+        role="button"
       >
         {this.$slots.default?.()}  
       </elementType>
