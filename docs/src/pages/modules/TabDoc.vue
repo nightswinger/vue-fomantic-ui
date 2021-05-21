@@ -110,6 +110,12 @@ export default defineComponent({
   </sui-tab>
 </doc-example>`
 
+    const textCode = `<sui-tab text>
+  <sui-tab-panel header="First">Content A</sui-tab-panel>
+  <sui-tab-panel header="Second">Content B</sui-tab-panel>
+  <sui-tab-panel header="Third">Content C</sui-tab-panel>
+</sui-tab>`
+
     const tabProperties = [
       { name: 'activeIndex', type: 'string', default: 0, description: 'Index of the active tab.' },
       { name: 'pointing', type: 'boolean', default: false, description: '' },
@@ -128,6 +134,7 @@ export default defineComponent({
       basicCode,
       pointingCode,
       secondaryCode,
+      textCode,
       tabProperties,
       tabPanelProperties,
       events
