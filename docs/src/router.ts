@@ -35,12 +35,14 @@ import StatisticDoc from './pages/views/StatisticDoc.vue'
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
 import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
+import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import ModalDoc from './pages/modules/ModalDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import ProgressDoc from './pages/modules/ProgressDoc.vue'
 import RatingDoc from './pages/modules/RatingDoc.vue'
 import SliderDoc from './pages/modules/SliderDoc.vue'
+import TabDoc from './pages/modules/TabDoc.vue'
 
 const routes: any = [
   {
@@ -81,12 +83,14 @@ const routes: any = [
       { path: 'modules/accordion', component: AccordionDoc },
       { path: 'modules/checkbox', component: CheckboxDoc },
       { path: 'modules/dimmer', component: DimmerDoc },
+      { path: 'modules/dropdown', component: DropdownDoc },
       { path: 'modules/embed', component: EmbedDoc },
       { path: 'modules/modal', component: ModalDoc },
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: ProgressDoc },
       { path: 'modules/rating', component: RatingDoc },
-      { path: 'modules/slider', component: SliderDoc }
+      { path: 'modules/slider', component: SliderDoc },
+      { path: 'modules/tab', component: TabDoc }
     ]
   }
 ]

@@ -120,12 +120,14 @@ export default defineComponent({
       { name: 'Accordion', path: '/modules/accordion' },
       { name: 'Checkbox', path: '/modules/checkbox'},
       { name: 'Dimmer', path: '/modules/dimmer' },
+      { name: 'Dropdown', path: '/modules/dropdown' },
       { name: 'Embed', path: '/modules/embed' },
       { name: 'Modal', path: '/modules/modal' },
       { name: 'Popup', path: '/modules/popup' },
       { name: 'Progress', path: '/modules/progress' },
       { name: 'Rating', path: '/modules/rating' },
-      { name: 'Slider', path: '/modules/slider' }
+      { name: 'Slider', path: '/modules/slider' },
+      { name: 'Tab', path: '/modules/tab' }
     ]
 
     return { isActive, elements, collections, views, modules }
