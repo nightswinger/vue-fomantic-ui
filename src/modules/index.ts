@@ -9,6 +9,7 @@ import Progress from "./Progress"
 import Rating from "./Rating"
 import Search from "./Search"
 import Slider from "./Slider"
+import Tab from "./Tab"
 
 export {
   Accordion,
@@ -21,5 +22,6 @@ export {
   Progress,
   Rating,
   Search,
-  Slider
+  Slider,
+  Tab
 }
