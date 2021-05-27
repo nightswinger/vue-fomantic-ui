@@ -238,7 +238,8 @@ export default defineComponent({
         {this.search && this.multiple && <span class="sizer"></span>}
         <DropdownText
           item={this.modelValue}
-          placeholder={this.placeholder || this.text}
+          placeholder={this.placeholder}
+          text={this.text}
           filtered={this.filteredText.length > 0}
         />
         {(!this.$props.labeled && !this.$props.icon) && <i class="dropdown icon"></i>}

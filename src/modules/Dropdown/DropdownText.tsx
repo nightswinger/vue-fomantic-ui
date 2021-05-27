@@ -17,12 +17,13 @@ export default defineComponent({
     filtered: Boolean,
     item: [Object, String],
     placeholder: String,
+    text: String,
   },
   setup(props) {
     const computedClass = computed(() => {
       return clsx(
         computeKeyOnly(props.filtered, 'filtered'),
-        computeKeyOnly(!props.item || Array.isArray(props.item) && props.item.length === 0, 'default'),
+        computeKeyOnly(!props.text && !props.item || Array.isArray(props.item) && props.item.length === 0, 'default'),
         'text'
       )
     })
@@ -47,7 +48,7 @@ export default defineComponent({
         content = this.item
       }
     } else {
-      content = this.placeholder
+      content = this.text || this.placeholder
     }
 
     const image = typeof this.item === 'object' ? (this.item as TextItem)?.image : null
