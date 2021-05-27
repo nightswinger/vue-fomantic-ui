@@ -73,21 +73,21 @@
         description="A button can appear alongside a label"
         :code="labeledExample"
       >
-        <sui-button labelPosition="right">
+        <sui-button labelPosition="right" as="div">
           <sui-button icon>
             <sui-icon name="heart" />
             Like
           </sui-button>
           <sui-label basic>2,048</sui-label>
         </sui-button>
-        <sui-button labelPosition="left">
+        <sui-button labelPosition="left" as="div">
           <sui-label basic pointing="right">2,048</sui-label>
           <sui-button icon>
             <sui-icon name="heart" />
             Like
           </sui-button>
         </sui-button>
-        <sui-button labelPosition="left">
+        <sui-button labelPosition="left" as="div">
           <sui-label basic>1,048</sui-label>
           <sui-button icon>
             <sui-icon name="fork" />
@@ -96,7 +96,7 @@
       </doc-example>
         
       <doc-example :code="labeledExample2">
-        <sui-button labelPosition="right">
+        <sui-button labelPosition="right" as="div">
           <sui-button icon color="red">
             <sui-icon name="heart" />
             Like
@@ -105,7 +105,7 @@
             1,048
           </sui-label>
         </sui-button>
-        <sui-button labelPosition="right">
+        <sui-button labelPosition="right" as="div">
           <sui-button basic icon color="blue">
             <sui-icon name="fork" />
             Forks
@@ -701,54 +701,45 @@ export default defineComponent({
   </div>
 <template>`
 
-  const labeledExample = `<template>
-  <div>
-    <sui-button labelPosition="right">
-      <sui-button icon>
-        <sui-icon name="heart" />
-        Like
-      </sui-button>
-      <sui-label basic>2,048</sui-label>
-    </sui-button>
-    <sui-button labelPosition="left">
-      <sui-label basic pointing="right">2,048</sui-label>
-      <sui-button icon>
-        <sui-icon name="heart" />
-        Like
-      </sui-button>
-    </sui-button>
-    <sui-button labelPosition="left">
-      <sui-label basic>1,048</sui-label>
-      <sui-button icon>
-        <sui-icon name="fork" />
-      </sui-button>
-    </sui-button>
-  </div>
-<template>`
+  const labeledExample = `<sui-button labelPosition="right" as="div">
+  <sui-button icon>
+    <sui-icon name="heart" />
+    Like
+  </sui-button>
+  <sui-label basic>2,048</sui-label>
+</sui-button>
+<sui-button labelPosition="left" as="div">
+  <sui-label basic pointing="right">2,048</sui-label>
+  <sui-button icon>
+    <sui-icon name="heart" />
+    Like
+  </sui-button>
+</sui-button>
+<sui-button labelPosition="left" as="div">
+  <sui-label basic>1,048</sui-label>
+  <sui-button icon>
+    <sui-icon name="fork" />
+  </sui-button>
+</sui-button>`
 
-    const labeledExample2 = `<template>
-  <div>
-    <sui-button labelPosition="right">
-      <sui-button icon color="red">
-        <sui-icon name="heart" />
-          Like
-      </sui-button>
-      <sui-label basic pointing="left" color="red">
-        1,048
-      </sui-label>
-    </sui-button>
-    <sui-button labelPosition="right">
-      <sui-button basic icon color="blue">
-        <sui-icon name="fork" />
-          Forks
-      </sui-button>
-      <sui-label basic pointing="left" color="blue">
-        1,048
-      </sui-label>
-    </sui-button>
-  </div>
-</template>
-`
+    const labeledExample2 = `<sui-button labelPosition="right" as="div">
+  <sui-button icon color="red">
+    <sui-icon name="heart" />
+    Like
+  </sui-button>
+  <sui-label basic pointing="left" color="red">
+    1,048
+  </sui-label>
+</sui-button>
+<sui-button labelPosition="right" as="div">
+  <sui-button basic icon color="blue">
+    <sui-icon name="fork" />
+    Forks
+  </sui-button>
+  <sui-label basic pointing="left" color="blue">
+    1,048
+  </sui-label>
+</sui-button>`
 
     const iconExample = `<template>
   <sui-button icon>
