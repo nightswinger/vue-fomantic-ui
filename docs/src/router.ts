@@ -33,6 +33,7 @@ import ItemDoc from './pages/views/ItemDoc.vue'
 import StatisticDoc from './pages/views/StatisticDoc.vue'
 
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
+import CalendarDoc from './pages/modules/CalendarDoc.vue'
 import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
@@ -81,6 +82,7 @@ const routes: any = [
       { path: 'views/statistic', component: StatisticDoc },
 
       { path: 'modules/accordion', component: AccordionDoc },
+      { path: 'modules/calendar', component: CalendarDoc },
       { path: 'modules/checkbox', component: CheckboxDoc },
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/dropdown', component: DropdownDoc },

@@ -118,6 +118,7 @@ export default defineComponent({
 
     const modules = [
       { name: 'Accordion', path: '/modules/accordion' },
+      { name: 'Calendar', path: '/modules/calendar' },
       { name: 'Checkbox', path: '/modules/checkbox'},
       { name: 'Dimmer', path: '/modules/dimmer' },
       { name: 'Dropdown', path: '/modules/dropdown' },
