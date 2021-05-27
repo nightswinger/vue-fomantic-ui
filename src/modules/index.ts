@@ -1,4 +1,5 @@
 import Accordion from "./Accordion"
+import Calendar from "./Calendar"
 import Checkbox from "./Checkbox"
 import Dimmer from "./Dimmer"
 import Dropdown from "./Dropdown"
@@ -13,6 +14,7 @@ import Tab from "./Tab"
 
 export {
   Accordion,
+  Calendar,
   Checkbox,
   Dimmer,
   Dropdown,
