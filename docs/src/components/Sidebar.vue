@@ -127,6 +127,7 @@ export default defineComponent({
       { name: 'Popup', path: '/modules/popup' },
       { name: 'Progress', path: '/modules/progress' },
       { name: 'Rating', path: '/modules/rating' },
+      { name: 'Sidebar', path: '/modules/sidebar' },
       { name: 'Slider', path: '/modules/slider' },
       { name: 'Tab', path: '/modules/tab' }
     ]
