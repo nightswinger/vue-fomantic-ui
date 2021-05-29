@@ -9,6 +9,7 @@ import Popup from "./Popup"
 import Progress from "./Progress"
 import Rating from "./Rating"
 import Search from "./Search"
+import Sidebar from "./Sidebar"
 import Slider from "./Slider"
 import Tab from "./Tab"
 
@@ -24,6 +25,7 @@ export {
   Progress,
   Rating,
   Search,
+  Sidebar,
   Slider,
   Tab
 }
