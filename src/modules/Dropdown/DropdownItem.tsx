@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, PropType } from "vue";
+import { computed, defineComponent, inject, PropType, withModifiers } from "vue";
 import { Image } from "../../elements/Image";
 import { Label } from "../../elements/Label";
 import { computeKeyOnly } from "../../utils/classNameHelper";
@@ -19,6 +19,8 @@ export default defineComponent({
     onSelect: Function as PropType<(event: InputEvent) => void>
   },
   setup(props, { emit }) {
+    const { state, hide } = inject('useDropdown') as any
+
     const computedClass = computed(() => {
       return clsx(
         computeKeyOnly(props.active, 'active'),
@@ -27,6 +29,7 @@ export default defineComponent({
     })
 
     const onClick = () => {
+      if (!state.multiple) hide()
       emit('select', props.item ? props.item : props.text)
     }
 
@@ -39,7 +42,7 @@ export default defineComponent({
     return (
       <div
         class={this.computedClass}
-        onClick={this.onClick}
+        onClick={withModifiers(this.onClick, ['stop'])}
       >
         {this.flag && <i class={`${this.flag} flag`}></i>}
         {this.icon && <i class={`${this.icon} icon`}></i>}

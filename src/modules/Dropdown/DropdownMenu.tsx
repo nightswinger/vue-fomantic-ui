@@ -9,55 +9,54 @@ export default defineComponent({
     search: Boolean,
     onSearch: Function as PropType<(event: InputEvent) => void>
   },
-  setup(_, { emit }) {
-    const openState: Ref<boolean> = inject('open', ref(false))
-    const upward: Ref<boolean> = inject('upward', ref(false))
-
-    const rootRef: Ref<HTMLElement|null> = ref(null)
-    const visualState = ref('closed')
-
-    watch(openState, (newValue) => {
-      visualState.value = newValue ? 'opening' : 'closing'
-    })
-
-    onMounted(() => {
-      rootRef.value?.addEventListener('animationend', onAnimationEnd, false)
-    })
-
-    onUnmounted(() => {
-      rootRef.value?.removeEventListener('animationend', onAnimationEnd)
-    })
-
-    const onAnimationEnd = () => {
-      visualState.value = openState.value ? 'open' : 'closed'
-    }
+  setup(_, { emit, slots }) {
+    const { state } = inject('useDropdown') as any
+    const container: Ref<HTMLElement|null> = ref(null)
 
     const computedClass = computed(() => {
+      let animationClass = () => {
+        if (state.visible) return `animating slide ${state.direction} in visible`
+        else return `animating slide ${state.direction} out visible`
+      }
+
       return clsx(
         'menu',
         'transition',
-        computeKeyOnly(openState.value, 'visible active'),
-        animation.value
+        computeKeyOnly(state.visible, 'visible'),
+        computeKeyOnly(!state.visible && !state.animating, 'hidden'),
+        computeKeyOnly(state.animating, animationClass())
       )
     })
 
-    const animation = computed(() => {
-      switch (visualState.value) {
-        case 'opening':
-          return `animating slide ${upward.value ? 'up' : 'down'} in visible`
-        case 'closing':
-          return `animating slide ${upward.value ? 'up' : 'down'} out visible`
-        default:
-          return ''
+    watch(() => state.visible, (newValue) => {
+      if (!newValue || !container.value) return
+
+      let parent = container.value.parentElement
+      const { top, height } = parent?.getBoundingClientRect() as DOMRect
+      const spaceAtTop = top - (items.value.length*37)
+      const spaceAtBottom = document.documentElement.clientHeight - top - height - (items.value.length*37)
+
+      state.direction = spaceAtTop > spaceAtBottom ? 'up' : 'down'
+    })
+
+    const items = computed(() => {
+      let items: any = []
+      let defaultSlot = slots.default?.()
+
+      if (defaultSlot) {
+        defaultSlot.forEach((child: any) => {
+          if (child.type.name === 'SuiSelectItem') items.push(child)
+        })
       }
+
+      return items
     })
 
     const onSearchInput = (event: any) => emit('search', event)
 
     return {
-      rootRef,
+      container,
       computedClass,
-      onAnimationEnd,
       onSearchInput
     }
   },
@@ -79,7 +78,7 @@ export default defineComponent({
 
     return (
       <div
-        ref={(ref) => this.rootRef = ref as HTMLElement}
+        ref={(ref) => this.container = ref as HTMLElement}
         class={this.computedClass}
       >
         {this.$slots.header && <div class="header">{this.$slots.header?.()}</div>}

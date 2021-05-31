@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, withModifiers } from "vue";
 import { Image } from "../../elements/Image";
 import { Label } from "../../elements/Label";
 import { computeKeyOnly } from "../../utils/classNameHelper";
@@ -13,11 +13,15 @@ type TextItem = {
 
 export default defineComponent({
   name: 'SuiDropdownText',
+  emits: ['remove'],
   props: {
+    clearable: Boolean,
     filtered: Boolean,
+    icon: { type: String, default: 'dropdown' },
     item: [Object, String],
     placeholder: String,
     text: String,
+    onRemove: Function
   },
   setup(props) {
     const computedClass = computed(() => {
@@ -55,11 +59,15 @@ export default defineComponent({
     const label = typeof this.item === 'object' ? (this.item as TextItem)?.label : null
 
     return (
-      <div class={this.computedClass}>
-        {image && <Image {...image}></Image>}
-        {label && <Label {...label}></Label>}
-        {content}
-      </div>
+      <>
+        <div class={this.computedClass}>
+          {image && <Image {...image}></Image>}
+          {label && <Label {...label}></Label>}
+          {content}
+        </div>
+        <i class={`${this.icon} icon`}></i>
+        {this.$props.clearable && <i class="remove icon" onClick={withModifiers(() =>this.$emit('remove'), ["stop"])}></i>}
+      </>
     )
   }
 })

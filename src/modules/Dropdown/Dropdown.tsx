@@ -5,6 +5,7 @@ import clickOutside from "../../directives/click-outside";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 import { pluck } from "../../utils/underscore";
 import DropdownText from "./DropdownText";
+import { useDropdown } from "./useDropdown";
 
 interface TDropdownItem {
   text: string,
@@ -45,9 +46,14 @@ export default defineComponent({
     text: String,
   },
   setup(props, { emit }) {
-    let open: Ref<boolean> = ref(false)
-    const rootRef: Ref<HTMLLIElement|null> = ref(null)
-    const upward = ref(false)
+    const api = useDropdown(props)
+    provide('useDropdown', api)
+
+    const {
+      state,
+      show,
+      hide
+    } = api
 
     const computedClass = computed(() => {
       return clsx(
@@ -68,42 +74,20 @@ export default defineComponent({
         computeKeyOnly(props.simple, 'simple'),
         computeKeyOrKeyValue(props.pointing, 'pointing'),
         'dropdown',
-        computeKeyOnly(open.value, 'active visible'),
-        computeKeyOnly(upward.value, 'upward')
+        computeKeyOnly(state.visible, 'active visible'),
+        computeKeyOnly(state.direction === 'up', 'upward')
       )
     })
+
+    const onClick = () => state.visible ? hide() : show()
 
     const openMenu = () => {
       if (props.search && inputRef.value) inputRef.value.focus() 
 
-      open.value = !open.value
+      show()
     }
 
-    const setOpenDirection = () => {
-      if (!rootRef.value) return
-
-      const menu = rootRef.value.querySelector('.menu')
-
-      if (!menu) return
-
-      const { top, height } = rootRef.value.getBoundingClientRect()
-      const spaceAtTop = top - menu.clientHeight
-      const spaceAtBottom = document.documentElement.clientHeight - top - height - menu.clientHeight
-
-      upward.value = spaceAtTop > spaceAtBottom
-    }
-
-    const closeMenu = () => {
-      if (open.value) open.value = false
-    }
-
-    onMounted(() => {
-      if (!rootRef.value) return
-
-      window.addEventListener('scroll', setOpenDirection)
-    })
-
-    onUnmounted(() => window.removeEventListener('scroll', setOpenDirection))
+    const closeMenu = () => hide()
 
     const filteredText = ref('')
     const filteredOptions = computed(() => {
@@ -120,10 +104,6 @@ export default defineComponent({
 
     const inputRef: Ref<HTMLElement|null> = ref(null)
     const onInput = (event: InputEvent) => filteredText.value = (event.target as HTMLInputElement).value
-    const clearInput = (event: MouseEvent) => {
-      event.preventDefault()
-      emit('update:modelValue', null)
-    }
     const onSelect = (event: any) => {
       filteredText.value = ''
 
@@ -147,21 +127,17 @@ export default defineComponent({
       } 
     }
 
-    provide('open', open)
-    provide('upward', upward)
     provide('selection', props.selection)
 
     return {
-      rootRef,
-      upward,
       computedClass,
+      onClick,
       openMenu,
       closeMenu,
       filteredText,
       filteredOptions,
       inputRef,
       onInput,
-      clearInput,
       onSelect,
       removeItem
     }
@@ -217,15 +193,39 @@ export default defineComponent({
       })
     }
 
+    const renderText = () => {
+      let textProps = {
+        clearable: this.clearable,
+        filtered: this.filteredText.length > 0,
+        icon: this.icon,
+        item: this.modelValue,
+        placeholder: this.placeholder,
+        text: this.text
+      }
+
+      return (
+        <DropdownText
+          {...textProps}
+          onRemove={() => this.$emit('update:modelValue', null)}
+        />
+      )
+    }
+
+    const renderMenu = () => {
+      return (
+        <DropdownMenu search={this.$props.searchInMenu} onSearch={this.onInput}>
+          {renderOptions()}
+        </DropdownMenu>
+      )
+    }
+
     return (
       <div
-        ref={(ref) => this.rootRef = ref as HTMLLIElement}
         class={this.computedClass}
-        onClick={this.openMenu}
+        onClick={this.onClick}
         v-clickoutside={this.closeMenu}
       >
         {this.$props.multiple && renderMultipleSelect()}
-        {this.$props.icon && <i class={`${this.$props.icon} icon`}></i>}
         {this.search && <input
           ref={(ref) => this.inputRef = ref as HTMLElement}
           type="text"
@@ -236,19 +236,9 @@ export default defineComponent({
           onInput={(event) => this.onInput(event as InputEvent)}
         />}
         {this.search && this.multiple && <span class="sizer"></span>}
-        <DropdownText
-          item={this.modelValue}
-          placeholder={this.placeholder}
-          text={this.text}
-          filtered={this.filteredText.length > 0}
-        />
-        {(!this.$props.labeled && !this.$props.icon) && <i class="dropdown icon"></i>}
-        {this.$props.clearable && <i class="remove icon" onClick={withModifiers(this.clearInput, ["stop"])}></i>}
 
-        {this.$props.options && !this.$slots.default?.() && <DropdownMenu search={this.$props.searchInMenu} onSearch={this.onInput}>
-          {renderOptions()}
-        </DropdownMenu>}
-        {this.$slots.default?.()}
+        {renderText()}
+        {this.$slots.default?.() || renderMenu()}
       </div>
     )
   }
