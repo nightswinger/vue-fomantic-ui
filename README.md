@@ -24,6 +24,8 @@ yarn add fomantic-ui-css
 
 ## Usage
 
+You can import all components as Vue plugin.
+
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -32,4 +34,15 @@ import 'fomantic-ui-css/semantic.min.css'
 
 const app = createApp(App)
 app.use(FomanticUI)
+```
+
+Or pick a component indivisually, add it to your `components` option.
+
+```js
+import { SuiButton } from 'vue-fomantic-ui'
+
+export default {
+  components: { SuiButton },
+  // ...
+}
 ```
