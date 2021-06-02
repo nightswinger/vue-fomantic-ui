@@ -21,6 +21,9 @@ $ yarn add fomantic-ui-css`
         }}
       </prism>
       <sui-header as="h2">Usage</sui-header>
+      <p>
+        You can import all components as Vue plugin.
+      </p>
       <prism language="js">
         {{
 `import { createApp } from 'vue'
@@ -30,6 +33,20 @@ import 'fomantic-ui-css/semantic.min.css'
 
 const app = createApp(App)
 app.use(FomanticUI)`
+        }}
+      </prism>
+      <br>
+      <p>
+        Or pick a component indivisually, add it to your components option.
+      </p>
+      <prism language="js">
+        {{
+`import { SuiButton } from 'vue-fomantic-ui'
+
+export default {
+  components: { SuiButton },
+  // ...
+}`
         }}
       </prism>
     </sui-container>
