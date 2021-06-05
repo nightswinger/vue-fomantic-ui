@@ -22,6 +22,20 @@
         </sui-breadcrumb>
       </doc-example>
 
+      <doc-example
+        description="You can do the same using shorthands"
+        :code="breadcrumbCode2"
+      >
+        <sui-breadcrumb
+          :sections="[
+            { content: 'Home', link: true },
+            { content: 'Store', link: true },
+            { content: 'T-Shirt', active: true }
+          ]"
+          icon="right angle"
+        />
+      </doc-example>
+
       <sui-header as="h2" dividing>Content</sui-header>
 
       <doc-example
@@ -128,6 +142,15 @@ export default defineComponent({
   <sui-breadcrumb-section active>T-Shirt</sui-breadcrumb-section>
 </sui-breadcrumb>`
 
+    const breadcrumbCode2 = `<sui-breadcrumb
+  :sections="[
+    { content: 'Home', link: true },
+    { content: 'Store', link: true },
+    { content: 'T-Shirt', active: true }
+  ]"
+  icon="right angle"
+/>`
+
     const dividerCode = `<sui-breadcrumb>
   <sui-breadcrumb-section link>Home</sui-breadcrumb-section>
   <sui-breadcrumb-divider icon="right chevron" />
@@ -174,6 +197,7 @@ export default defineComponent({
 
     return {
       breadcrumbCode,
+      breadcrumbCode2,
       dividerCode,
       sectionCode,
       linkCode,

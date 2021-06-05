@@ -1,12 +1,14 @@
 import clsx from 'clsx'
-import { computed, defineComponent } from "vue";
+import { computed, ConcreteComponent, defineComponent, resolveComponent } from "vue";
 import { computeKeyOnly } from '../../utils/classNameHelper';
 
 export default defineComponent({
   name: "SuiBreadcrumbSection",
   props: {
     active: Boolean,
-    link: Boolean
+    href: String,
+    link: Boolean,
+    to: String
   },
   setup(props) {
     const computedClass = computed(() => {
@@ -16,13 +18,26 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
+    const isLink = props.link || !!props.href
+
+    return { computedClass, isLink }
   },
   render() {
-    const elementType: string = this.link ? 'a' : 'div'
+    let elementType: string | ConcreteComponent = 'div'
+
+    if (this.isLink) elementType = 'a'
+    else if (this.to) elementType = resolveComponent('router-link')
+
+    const props = {
+      href: this.href,
+      to: this.to
+    }
 
     return (
-      <elementType class={this.computedClass}>
+      <elementType
+        class={this.computedClass}
+        {...props}
+      >
         {this.$slots.default?.()}
       </elementType>
     )

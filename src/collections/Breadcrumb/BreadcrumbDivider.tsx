@@ -24,7 +24,6 @@ export default defineComponent({
           aria-hidden="true"
           class={this.computedClass}
         >
-          {this.$slots.default?.()}
         </i>
       )
     }
