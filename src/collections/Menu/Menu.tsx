@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
@@ -9,6 +9,7 @@ export default defineComponent({
     borderless: Boolean,
     color: Boolean,
     compact: Boolean,
+    fixed: Boolean,
     floated: [Boolean, String],
     fluid: Boolean,
     icon: [Boolean, String],
@@ -31,6 +32,7 @@ export default defineComponent({
         props.size,
         computeKeyOnly(props.borderless, 'borderless'),
         computeKeyOnly(props.compact, 'compact'),
+        computeKeyOnly(props.fixed, 'fixed'),
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.pagination, 'pagination'),
