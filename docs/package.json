@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.26.0",
     "semantic-ui-css": "^2.4.1",
-    "vue": "^3.0.5",
+    "vue": "^3.2.29",
     "vue-fomantic-ui": "^0.11.0",
     "vue-router": "^4.0.3"
   },
@@ -18,7 +18,7 @@
     "@types/node": "^15.0.3",
     "@vitejs/plugin-vue": "^1.2.2",
     "@vitejs/plugin-vue-jsx": "^1.1.4",
-    "@vue/compiler-sfc": "^3.0.11",
+    "@vue/compiler-sfc": "^3.2.29",
     "@vuedx/typecheck": "^0.6.3",
     "@vuedx/typescript-plugin-vue": "^0.6.3",
     "typescript": "^4.2.4",
