@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
-    "prismjs": "^1.26.0",
+    "prismjs": "^1.27.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.2.29",
     "vue-fomantic-ui": "^0.11.0",
