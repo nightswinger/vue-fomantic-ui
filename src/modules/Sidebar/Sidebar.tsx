@@ -42,13 +42,16 @@ export default defineComponent({
       setTimeout(() => state.animating = false, 500)
 
       if (props.dimmed) {
-        let pusher = document.querySelector('.pusher')
+        const pusher = document.querySelector('.pusher')
         pusher && pusher.classList.toggle('dimmed')
       }
     })
 
     const onClickPusher = (event: any) => {
-      let pusher = event.path.find((el: HTMLElement) => {
+      const path = event.path || (event.composedPath && event.composedPath())
+      if (!path) return
+
+      const pusher = path.find((el: HTMLElement) => {
         return el.classList && el.classList.contains('pusher')
       })
       if (pusher) {
