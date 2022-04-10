@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { computed, defineComponent, onMounted, onUnmounted, ref, Teleport, watch } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import clsx from 'clsx'
+import { computed, defineComponent, onMounted, onUnmounted, ref, Teleport, watch } from 'vue'
+import { computeKeyOnly } from '../../utils/classNameHelper'
 
 export default defineComponent({
   name: 'SuiModal',
@@ -10,7 +10,7 @@ export default defineComponent({
     modelValue: Boolean,
     size: String
   },
-  setup(props, { emit }) {
+  setup (props, { emit }) {
     const visualState = ref(props.modelValue ? 'open' : 'closed')
     const root = ref<Element | null>(null)
 
@@ -89,14 +89,14 @@ export default defineComponent({
       root
     }
   },
-  render() {
+  render () {
     return (
       <Teleport to="body">
         <div
           class={this.dimmerClass}
           style={this.dimmerStyle}
           onClick={this.close}
-          ref={(ref) => this.root = ref as Element}
+          ref={(ref: any) => this.root = ref}
         >
           <div
             class={this.computedClass}
