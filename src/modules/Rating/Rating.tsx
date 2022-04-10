@@ -18,14 +18,18 @@ export default defineComponent({
       type: Number,
       default: 1
     },
+    modelValue: Number,
     size: String
   },
-  setup(props) {
-    const rating = ref(props.defaultRating)
+  setup(props, { emit }) {
+    const rating = ref(props.modelValue || props.defaultRating)
     const selected = ref(false)
     const selectedIndex = ref(0)
 
-    const updateRating = (value: number) => rating.value = value
+    const updateRating = (value: number) => {
+      rating.value = value
+      emit('update:modelValue', value)
+    }
     const updateSelectedIndex = (value: number) => selectedIndex.value = value
 
     const handleMouseEnter = () => {
