@@ -6,7 +6,8 @@ module.exports = {
   "extends": [
       "eslint:recommended",
       "plugin:vue/essential",
-      "plugin:@typescript-eslint/recommended"
+      "plugin:@typescript-eslint/recommended",
+      "standard"
   ],
   "parserOptions": {
       "ecmaVersion": "latest",
@@ -16,9 +17,5 @@ module.exports = {
   "plugins": [
       "vue",
       "@typescript-eslint"
-  ],
-  "rules": {
-    semi: ["error", "never", {"beforeStatementContinuationChars": "never"}],
-    quotes: ["error", "single"]
-  }
+  ]
 }
