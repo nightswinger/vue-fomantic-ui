@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import { computed, defineComponent, provide, ref } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
-import RatingIcon from "./RatingIcon";
+import clsx from 'clsx'
+import { computed, defineComponent, provide, ref } from 'vue'
+import { computeKeyOnly } from '../../utils/classNameHelper'
+import RatingIcon from './RatingIcon'
 
 export default defineComponent({
   name: 'SuiRating',
@@ -21,7 +21,7 @@ export default defineComponent({
     modelValue: Number,
     size: String
   },
-  setup(props, { emit }) {
+  setup (props, { emit }) {
     const rating = ref(props.modelValue || props.defaultRating)
     const selected = ref(false)
     const selectedIndex = ref(0)
@@ -71,11 +71,11 @@ export default defineComponent({
         onMouseleave={() => handleMouseLeave()}
       >
         {[...Array(props.maxRating)].map((_, i) => {
-            return <RatingIcon
+          return <RatingIcon
               icon={props.icon}
-              index={i+1}
+              index={i + 1}
             />
-          }
+        }
         )}
       </div>
     )
