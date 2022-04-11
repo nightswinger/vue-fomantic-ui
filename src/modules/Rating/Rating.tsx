@@ -29,6 +29,7 @@ export default defineComponent({
     const updateRating = (value: number) => {
       rating.value = value
       emit('update:modelValue', value)
+      emit('change', value)
     }
     const updateSelectedIndex = (value: number) => selectedIndex.value = value
 
