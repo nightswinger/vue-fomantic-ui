@@ -1476,10 +1476,10 @@ vscode-web-custom-data@^0.3.2:
   resolved "https://registry.yarnpkg.com/vscode-web-custom-data/-/vscode-web-custom-data-0.3.6.tgz#7ff374bd39ee4a7c05c77c997d9410520e1d02bc"
   integrity sha512-9r2DOv4YMXL/WBTBB6zxde93hmg6AM7thr7GMR6c5LvPxXe/lwD8gsrJGe0tha4CUvoz86ElUieThGVpM+4PLg==
 
-vue-fomantic-ui@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.11.0.tgz#bd700efe919d7cc459bb58c044bd506ee692e30c"
-  integrity sha512-RwbYbbQoO4tyUD4VwFwnPcU2BahqLbVLPmVRWFpMST9xzCAZI5+bJ3sjFmLsHJfR6PTBnbHsE/9FVOTpFOMUDw==
+vue-fomantic-ui@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.12.0.tgz#a5b5e3aa1cc3911e100068eedc264ec21f084e0f"
+  integrity sha512-qgLKNiANeE+pfsVRCnQQyoaGqIkb+86oNrtnIFd7cszk2f/rVPXV08/n0y+gqZItiUBz7wtFqSk2lArYRw10uw==
   dependencies:
     clsx "^1.1.1"
 
