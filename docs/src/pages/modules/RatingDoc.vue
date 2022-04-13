@@ -123,20 +123,24 @@
         <br>
         <sui-rating size="massive" :defaultRating="3" :maxRating="4" color="yellow" />
       </doc-example>
+
+      <sui-header as="h2" dividing>Properties</sui-header>
+      <property-list-table :properties="properties" />
     </sui-container>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import DocPageHeader from '../../components/DocPageHeader.vue';
 import DocExample from '../../components/DocExample.vue';
+import PropertyListTable from '../../components/PropertyListTable.vue';
 
 export default defineComponent({
   name: 'RatingDoc',
-  components: { DocPageHeader, DocExample },
+  components: { DocPageHeader, DocExample, PropertyListTable },
   setup() {
-    const ratingCode = `<sui-rating  />`
+    const ratingCode = `<sui-rating v-model="value" />`
 
     const iconCode = `<sui-rating :defaultRating="2" :maxRating="4" color="yellow" />
 <sui-rating :defaultRating="2" :maxRating="4" icon="heart" color="red" />
@@ -170,12 +174,23 @@ export default defineComponent({
 <sui-rating size="huge" :defaultRating="3" :maxRating="4" color="yellow" />
 <sui-rating size="massive" :defaultRating="3" :maxRating="4" color="yellow" />`
 
+    const properties = [
+      { name: 'color', type: 'string', default: '', description: 'A rating can have different colors' },
+      { name: 'defaultRating', type: 'number', default: 0, description: 'The initial value of rating.' },
+      { name: 'disabled', type: 'boolean', default: false, description: 'When present, it specifies that the component should be disabled.' },
+      { name: 'icon', type: 'string', default: 'star', description: 'A rating can use a set of specified icons.' },
+      { name: 'maxRating', type: 'number', default: 1, description: 'The total number of icons.' },
+      { name: 'modelValue', type: 'number', default: 'null', description: 'A value of rating.' },
+      { name: 'size', type: 'string', default: '', description: 'A rating can have different sizes.' }
+    ]
+
     return {
       ratingCode,
       iconCode,
       colorCode,
       disabledCode,
-      sizeCode
+      sizeCode,
+      properties
     }
   }
 })
