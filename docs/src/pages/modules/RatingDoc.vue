@@ -126,6 +126,23 @@
 
       <sui-header as="h2" dividing>Properties</sui-header>
       <property-list-table :properties="properties" />
+
+      <sui-header as="h2" dividing>Events</sui-header>
+
+      <sui-table celled>
+        <sui-table-header>
+          <sui-table-row>
+            <sui-table-header-cell>Name</sui-table-header-cell>
+            <sui-table-header-cell>Description</sui-table-header-cell>
+          </sui-table-row>
+        </sui-table-header>
+        <sui-table-body>
+          <sui-table-row v-for="e in events" :key="e.name">
+            <sui-table-cell>{{ e.name }}</sui-table-cell>
+            <sui-table-cell>{{ e.description }}</sui-table-cell>
+          </sui-table-row>
+        </sui-table-body>
+      </sui-table>
     </sui-container>
   </div>
 </template>
@@ -184,13 +201,18 @@ export default defineComponent({
       { name: 'size', type: 'string', default: '', description: 'A rating can have different sizes.' }
     ]
 
+    const events = [
+      { name: 'change', description: 'Callback to invoke on value change.' }
+    ]
+
     return {
       ratingCode,
       iconCode,
       colorCode,
       disabledCode,
       sizeCode,
-      properties
+      properties,
+      events
     }
   }
 })
