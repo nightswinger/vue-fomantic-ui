@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
-import { Button } from "../Button";
-import { Icon } from "../Icon";
-import { Label } from "../Label";
+import clsx from 'clsx'
+import { computed, defineComponent } from 'vue'
+import { computeKeyOnly } from '../../utils/classNameHelper'
+import { Button } from '../Button'
+import { Icon } from '../Icon'
+import { Label } from '../Label'
 
 export default defineComponent({
   name: 'SuiInput',
@@ -23,9 +23,10 @@ export default defineComponent({
     modelValue: String,
     placeholder: String,
     size: String,
-    transparent: Boolean
+    transparent: Boolean,
+    type: String
   },
-  setup(props, { emit }) {
+  setup (props, { emit }) {
     const hasIcon = computed(() => {
       return ((typeof props.icon === 'string') || props.loading)
     })
@@ -59,7 +60,7 @@ export default defineComponent({
       <div class={computedClass.value}>
         {props.label && <Label>{props.label}</Label>}
         <input
-          type="text"
+          type={props.type || 'text'}
           placeholder={props.placeholder}
           value={props.modelValue}
           onInput={(event) => onInput(event)}
