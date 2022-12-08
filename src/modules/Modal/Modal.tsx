@@ -8,7 +8,8 @@ export default defineComponent({
     basic: Boolean,
     closeIcon: Boolean,
     modelValue: Boolean,
-    size: String
+    size: String,
+    closable: Boolean
   },
   setup (props, { emit }) {
     const visualState = ref(props.modelValue ? 'open' : 'closed')
@@ -95,7 +96,7 @@ export default defineComponent({
         <div
           class={this.dimmerClass}
           style={this.dimmerStyle}
-          onClick={this.close}
+          onClick={() => {if(this.closable)this.close}}
           ref={(ref: any) => this.root = ref}
         >
           <div
