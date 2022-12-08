@@ -9,7 +9,10 @@ export default defineComponent({
     closeIcon: Boolean,
     modelValue: Boolean,
     size: String,
-    closable: Boolean
+    closable: {
+      type: Boolean,
+      default: true
+    }
   },
   setup (props, { emit }) {
     const visualState = ref(props.modelValue ? 'open' : 'closed')
