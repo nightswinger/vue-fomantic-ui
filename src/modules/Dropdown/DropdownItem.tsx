@@ -16,6 +16,7 @@ export default defineComponent({
     item: [Object, String],
     label: Object,
     text: String,
+    disabled: Boolean,
     onSelect: Function as PropType<(event: InputEvent) => void>
   },
   setup(props, { emit }) {
@@ -24,6 +25,7 @@ export default defineComponent({
     const computedClass = computed(() => {
       return clsx(
         computeKeyOnly(props.active, 'active'),
+        computeKeyOnly(props.disabled, 'disabled'),
         'item'
       )
     })

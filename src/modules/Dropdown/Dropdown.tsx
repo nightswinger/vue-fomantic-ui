@@ -12,6 +12,7 @@ interface TDropdownItem {
   value?: string | number,
   flag?: string,
   image?: {},
+  disabled?: boolean,
   label?: {
     color?: string,
     circular?: boolean,
@@ -188,6 +189,7 @@ export default defineComponent({
               : ''}
             image={(option as TDropdownItem).image}
             label={(option as TDropdownItem).label}
+            disabled={(option as TDropdownItem).disabled}
             onSelect={this.onSelect}
           />
       })
