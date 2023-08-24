@@ -49,7 +49,6 @@ export function useCalendar() {
     hour = hour % 12
     if (hour === 0) {
       hour = 12
-      hourStr = 'AM'
     }
     let minuteStr = minute.toString().padStart(2, '0')
 
