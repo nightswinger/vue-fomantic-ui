@@ -1159,10 +1159,10 @@ vite@^2.3.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-fomantic-ui@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.12.0.tgz#a5b5e3aa1cc3911e100068eedc264ec21f084e0f"
-  integrity sha512-qgLKNiANeE+pfsVRCnQQyoaGqIkb+86oNrtnIFd7cszk2f/rVPXV08/n0y+gqZItiUBz7wtFqSk2lArYRw10uw==
+vue-fomantic-ui@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.14.0.tgz#a848fd72f5b9fd819fa52210254c2949eb937b40"
+  integrity sha512-x6VJX/bXKZvHZxJhdEXiQvjNENocHmRc9SzIPuSRJ+b2POM2Z7HlA8ZxhRTHot8IuCHdyTv20erXYCz6IIcXTQ==
   dependencies:
     clsx "^1.1.1"
 
