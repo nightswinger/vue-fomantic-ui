@@ -12,7 +12,9 @@ export default defineComponent({
     closable: {
       type: Boolean,
       default: true
-    }
+    },
+    overlay: Boolean,
+    fullscreen: Boolean,
   },
   setup (props, { emit }) {
     const visualState = ref(props.modelValue ? 'open' : 'closed')
@@ -74,6 +76,8 @@ export default defineComponent({
         'ui',
         props.size,
         computeKeyOnly(props.basic, 'basic'),
+        computeKeyOnly(props.overlay, 'overlay'),
+        computeKeyOnly(props.fullscreen, 'fullscreen'),
         'modal',
         'transition',
         computeAnimationClass(visualState.value)
