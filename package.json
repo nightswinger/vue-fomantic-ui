@@ -12,10 +12,10 @@
     "dist"
   ],
   "main": "./dist/vue-fomantic-ui.umd.js",
-  "module": "./dist/vue-fomantic-ui.es.js",
+  "module": "./dist/vue-fomantic-ui.mjs",
   "exports": {
     ".": {
-      "import": "./dist/vue-fomantic-ui.es.js",
+      "import": "./dist/vue-fomantic-ui.mjs",
       "require": "./dist/vue-fomantic-ui.umd.js"
     }
   },
