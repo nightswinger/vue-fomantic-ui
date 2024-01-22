@@ -90,7 +90,7 @@ export default defineComponent({
     const thumbStyle = computed(() => {
       let value = props.range
         ? (props.modelValue as number[])[0]
-        : props.modelValue > props.max ? props.max : props.modelValue as number
+        : props.modelValue as number > props.max ? props.max : props.modelValue as number
 
       if (!props.reversed && props.vertical) {
         return {
