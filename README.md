@@ -1,5 +1,7 @@
 # VueFomanticUI
 
+[![npm version](https://badge.fury.io/js/vue-fomantic-ui.svg)](https://badge.fury.io/js/vue-fomantic-ui)
+
 VueFomanticUI is a component library for Vue.js 3.0 that wraps [Fomantic-UI](https://fomantic-ui.com/).
 
 ## Documentation
