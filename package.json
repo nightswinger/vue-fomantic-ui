@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.7.0",
+    "@storybook/addon-controls": "^7.6.10",
     "@storybook/vue3-vite": "^7.6.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
