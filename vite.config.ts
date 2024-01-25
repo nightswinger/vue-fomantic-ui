@@ -1,9 +1,10 @@
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import dts from 'vite-plugin-dts'
 
 export default {
-  plugins: [vue(), vueJsx()],
+  plugins: [vue(), vueJsx(), dts()],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
