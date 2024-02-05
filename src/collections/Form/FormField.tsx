@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
+import { useWidthClass } from "../../composables/width";
 
 export default defineComponent({
   name: 'SuiFormField',
@@ -14,14 +15,18 @@ export default defineComponent({
     placeholder: String,
     required: Boolean,
     type: String,
+    width: String || Number
   },
   setup(props, { emit }) {
+    const { widthClass } = useWidthClass(props);
+
     const computedClass = computed(() => {
       return clsx(
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.error, 'error'),
         computeKeyOnly(props.inline, 'inline'),
         computeKeyOnly(props.required, 'required'),
+        widthClass.value,
         'field'
       )
     })

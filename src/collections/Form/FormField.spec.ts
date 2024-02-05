@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 
 import FormField from "./FormField";
@@ -18,6 +18,15 @@ describe('SuiFormField', () => {
     });
 
     expect(wrapper.classes()).not.toContain('disabled');
+  });
+
+  it('renders width class based on width prop', async () => {
+    const wrapper = mount(FormField, {
+      props: { width: 'one' }
+    });
+
+    expect(wrapper.classes()).toContain('one');
+    expect(wrapper.classes()).toContain('wide');
   });
 
   it('should emit update:modelValue event when input value is changed', async () => {

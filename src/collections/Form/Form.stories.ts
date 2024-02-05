@@ -21,6 +21,7 @@ const meta: Meta<typeof FormField> = {
     disabled: false,
     label: "Label",
     placeholder: "Placeholder",
+    width: '',
   },
   argTypes: {
     "onUpdate:modelValue": { action: "update:modelValue" },
