@@ -6,6 +6,7 @@ export default defineComponent({
   name: 'SuiFormField',
   emits: ['update:modelValue'],
   props: {
+    disabled: Boolean,
     error: Boolean,
     inline: Boolean,
     label: String,
@@ -17,6 +18,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const computedClass = computed(() => {
       return clsx(
+        computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.error, 'error'),
         computeKeyOnly(props.inline, 'inline'),
         computeKeyOnly(props.required, 'required'),

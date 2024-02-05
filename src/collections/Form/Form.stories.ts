@@ -18,6 +18,7 @@ const meta: Meta<typeof FormField> = {
     `,
   }),
   args: {
+    disabled: false,
     label: "Label",
     placeholder: "Placeholder",
   },
