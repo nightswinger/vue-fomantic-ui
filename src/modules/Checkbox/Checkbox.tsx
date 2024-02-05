@@ -10,6 +10,7 @@ export default defineComponent({
     indeterminate: Boolean,
     label: String,
     modelValue: null,
+    radio: Boolean,
     readOnly: Boolean,
     slider: Boolean,
     toggle: Boolean,
@@ -22,6 +23,7 @@ export default defineComponent({
         !props.label && 'fitted',
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.indeterminate, 'indeterminate'),
+        computeKeyOnly(props.radio, 'radio'),
         computeKeyOnly(props.readOnly, 'read-only'),
         computeKeyOnly(props.slider, 'slider'),
         computeKeyOnly(props.toggle, 'toggle'),
@@ -63,7 +65,7 @@ export default defineComponent({
         onClick={this.onClick}
       >
         <input
-          type="checkbox"
+          type={this.radio ? "radio" : "checkbox"}
           class="hidden"
           checked={this.checked}
           readonly
