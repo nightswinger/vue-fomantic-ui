@@ -18,8 +18,10 @@ const meta: Meta<typeof FormField> = {
     `,
   }),
   args: {
+    disabled: false,
     label: "Label",
     placeholder: "Placeholder",
+    width: '',
   },
   argTypes: {
     "onUpdate:modelValue": { action: "update:modelValue" },
