@@ -1,6 +1,10 @@
 import clsx from 'clsx'
-import { computed, defineComponent, onMounted, onUnmounted, ref, Teleport, watch } from 'vue'
+import { computed, defineComponent, ref, Teleport } from 'vue'
+import { onClickOutside } from '@vueuse/core';
+
 import { computeKeyOnly } from '../../utils/classNameHelper'
+import { useModalAnimation } from './hooks/useModalAnimation';
+import ModalDimmer from './ModalDimmer';
 
 export default defineComponent({
   name: 'SuiModal',
@@ -17,59 +21,12 @@ export default defineComponent({
     fullscreen: Boolean,
   },
   setup (props, { emit }) {
-    const visualState = ref(props.modelValue ? 'open' : 'closed')
-    const root = ref<Element | null>(null)
+    const modalRef = ref<HTMLElement>()
 
-    const isVisible = computed(() => visualState.value !== 'closed')
-
-    watch(() => props.modelValue, (newValue) => {
-      visualState.value = newValue ? 'opening' : 'closing'
-    })
-
-    const computeAnimationClass = (visualState: string, animationType = 'scale') => {
-      switch (visualState) {
-        case 'opening':
-          return `animating ${animationType} in`
-        case 'open':
-          return 'visible active'
-        case 'closing':
-          return `visible active animating ${animationType} out`
-        case 'closed':
-          return 'hidden'
-      }
-    }
-
-    const updateVisualState = () => visualState.value = props.modelValue ? 'open' : 'closed'
-
-    onMounted(() => {
-      root.value?.addEventListener('animationend', updateVisualState, true)
-    })
-
-    onUnmounted(() => {
-      root.value?.removeEventListener('animationend', updateVisualState)
-    })
-
-    const dimmerClass = computed(() => {
-      return clsx(
-        'ui',
-        'page modals dimmer transition',
-        computeAnimationClass(visualState.value, 'fade')
-      )
-    })
-
-    const dimmerStyle = computed(() => {
-      return {
-        display: isVisible.value ? 'flex !important' : 'none !important',
-        animationDuration: '500ms'
-      }
-    })
-
-    const modalStyle = computed(() => {
-      return {
-        display: isVisible.value ? 'block !important' : 'none !important',
-        animationDuration: '500ms'
-      }
-    })
+    const {
+      animationClasses,
+      isClosed,
+    } = useModalAnimation(props);
 
     const computedClass = computed(() => {
       return clsx(
@@ -80,41 +37,42 @@ export default defineComponent({
         computeKeyOnly(props.fullscreen, 'fullscreen'),
         'modal',
         'transition',
-        computeAnimationClass(visualState.value)
+        animationClasses.value,
       )
     })
 
-    const close = () => {
-      emit('update:modelValue', false)
-    }
+    const style = computed(() => {
+      return {
+        display: isClosed.value ? 'none !important' : 'block !important',
+        animationDuration: '500ms'
+      }
+    })
+
+    const close = () => emit('update:modelValue', false)
+
+    onClickOutside(modalRef, () => props.closable && emit('update:modelValue', false))
 
     return {
-      dimmerClass,
-      dimmerStyle,
-      modalStyle,
       computedClass,
+      style,
       close,
-      root
+      modalRef,
     }
   },
   render () {
     return (
       <Teleport to="body">
-        <div
-          class={this.dimmerClass}
-          style={this.dimmerStyle}
-          onClick={() => {if(this.closable)this.close}}
-          ref={(ref: any) => this.root = ref}
-        >
+        <ModalDimmer modelValue={this.modelValue}>
           <div
             class={this.computedClass}
-            style={this.modalStyle}
+            style={this.style}
             onClick={(e) => e.stopPropagation()}
+            ref={(ref: any) => this.modalRef = ref}
           >
             {this.closeIcon && (<i aria-hidden="true" class="close icon" onClick={this.close} />)}
             {this.$slots.default?.()}
           </div>
-        </div>
+        </ModalDimmer>
       </Teleport>
     )
   }
