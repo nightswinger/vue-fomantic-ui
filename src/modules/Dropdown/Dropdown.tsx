@@ -69,9 +69,9 @@ export default defineComponent({
         computeKeyOnly(props.item, 'item'),
         computeKeyOnly(props.labeled, 'labeled'),
         computeKeyOnly(props.multiple, 'multiple'),
+        computeKeyOnly(props.search, 'search'),
         computeKeyOnly(props.scrolling, 'scrolling'),
         computeKeyOnly(props.selection, 'selection'),
-        computeKeyOnly(props.search, 'search'),
         computeKeyOnly(props.simple, 'simple'),
         computeKeyOrKeyValue(props.pointing, 'pointing'),
         'dropdown',
@@ -80,7 +80,12 @@ export default defineComponent({
       )
     })
 
-    const onClick = () => state.visible ? hide() : show()
+    const onClick = () => {
+      if (state.visible) return hide();
+
+      inputRef.value?.focus();
+      show();
+    }
 
     const openMenu = () => {
       if (props.search && inputRef.value) inputRef.value.focus() 
@@ -92,14 +97,20 @@ export default defineComponent({
 
     const filteredText = ref('')
     const filteredOptions = computed(() => {
+      const lowerCasedText = filteredText.value.toLowerCase();
+
       return (props.options as (string|TDropdownItem)[]).filter((option) => {
-        if (typeof option === 'string') return option.toLowerCase().includes(filteredText.value.toLowerCase())
-        if (props.multiple && Array.isArray(props.modelValue)) {
-          if (typeof option === 'object') return !pluck(props.modelValue, 'text').includes(option.text)
-          return props.modelValue.includes(option)
+        const optionText = typeof option === 'object' ? option.text : option;
+        const isIncludedInFilteredText = optionText.toLowerCase().includes(lowerCasedText);
+
+        if (!props.multiple) return isIncludedInFilteredText;
+
+        if (Array.isArray(props.modelValue)) {
+          const isSelected = typeof option === 'object' ? pluck(props.modelValue, 'text').includes(optionText) : props.modelValue.includes(optionText);
+          return isIncludedInFilteredText && !isSelected;
         }
 
-        return option.text.toLowerCase().includes(filteredText.value.toLowerCase())
+        return isIncludedInFilteredText;
       })
     })
 
@@ -107,6 +118,8 @@ export default defineComponent({
     const onInput = (event: InputEvent) => filteredText.value = (event.target as HTMLInputElement).value
     const onSelect = (event: any) => {
       filteredText.value = ''
+
+      if (props.search) inputRef.value?.focus();
 
       if (props.multiple) {
         let result = Array.isArray(props.modelValue) ? [...props.modelValue, event] : [event]
