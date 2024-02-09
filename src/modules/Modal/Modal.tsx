@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { computed, defineComponent, ref, Teleport } from 'vue'
+import { computed, defineComponent, PropType, ref, Teleport } from 'vue'
 import { onClickOutside } from '@vueuse/core';
 
 import { computeKeyOnly } from '../../utils/classNameHelper'
@@ -11,6 +11,7 @@ export default defineComponent({
   props: {
     basic: Boolean,
     closeIcon: Boolean,
+    dimmer: String as PropType<'inverted' | 'blurring' | undefined>,
     modelValue: Boolean,
     size: String,
     closable: {
@@ -62,7 +63,11 @@ export default defineComponent({
   render () {
     return (
       <Teleport to="body">
-        <ModalDimmer modelValue={this.modelValue}>
+        <ModalDimmer
+          blurring={this.dimmer === 'blurring'}
+          inverted={this.dimmer === 'inverted'}
+          modelValue={this.modelValue}
+        >
           <div
             class={this.computedClass}
             style={this.style}

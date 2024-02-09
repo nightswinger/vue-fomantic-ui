@@ -19,4 +19,15 @@ describe('SuiModal', () => {
 
     expect(wrapper.emitted()['update:modelValue'][0]).toEqual([false]);
   });
+
+  describe('inverted dimmer', () => {
+    it('passes the inverted prop to ModalDimmer when dimmer prop is set to "inverted"', async () => {
+      const wrapper = mount(Modal, {
+        props: { dimmer: 'inverted' }
+      });
+
+      const dimmer = wrapper.findComponent(ModalDimmer);
+      expect(dimmer.props('inverted')).toBe(true);
+    });
+  });
 });

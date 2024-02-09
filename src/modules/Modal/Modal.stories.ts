@@ -21,16 +21,24 @@ const meta: Meta<typeof Modal> = {
     },
     template: `
       <button @click="open">open</button>
-      <Modal :v-bind="args" :modelValue="isOpen" @update:modelValue="close">
-          <ModalHeader>
+      <Modal v-bind="args" :modelValue="isOpen" @update:modelValue="close">
+        <ModalHeader>
           header
-          </ModalHeader>
-          <ModalContent>
+        </ModalHeader>
+        <ModalContent>
           content
-          </ModalContent>
+        </ModalContent>
       </Modal>
-    `
-  })
+    `,
+  }),
+  args: {
+  },
+  argTypes: {
+    dimmer: {
+      control: { type: "select" },
+      options: [undefined, "inverted", "blurring"],
+    },
+  }
 };
 
 export const Default: Story = {};
