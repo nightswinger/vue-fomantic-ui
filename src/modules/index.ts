@@ -12,6 +12,7 @@ import Search from "./Search"
 import Sidebar from "./Sidebar"
 import Slider from "./Slider"
 import Tab from "./Tab"
+import Transition from "./Transition"
 
 export {
   Accordion,
@@ -27,5 +28,6 @@ export {
   Search,
   Sidebar,
   Slider,
-  Tab
+  Tab,
+  Transition,
 }
