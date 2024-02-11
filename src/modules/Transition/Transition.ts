@@ -1,4 +1,4 @@
-import { PropType, cloneVNode, defineComponent, h } from "vue";
+import { PropType, cloneVNode, defineComponent } from "vue";
 import { AnimationType, useTransition } from "./useTransition";
 
 export default defineComponent({
@@ -13,6 +13,10 @@ export default defineComponent({
       default: 500,
     },
     visible: Boolean,
+    looping: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const { classes, styles } = useTransition(props);

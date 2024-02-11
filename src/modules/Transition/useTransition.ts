@@ -39,6 +39,7 @@ type TransitionProps = {
   animation: AnimationType;
   duration: number;
   visible?: boolean;
+  looping: boolean;
 };
 
 type UseTransitionReturn = {
@@ -70,7 +71,8 @@ export function useTransition(props: TransitionProps): UseTransitionReturn {
   const classes = computed(() => {
     if (staticAnimation.includes(props.animation as typeof staticAnimation[number])) {
       return clsx(
-        computeKeyOnly(state.value === 'entering' || state.value === 'leaving', 'animating transition'),
+        computeKeyOnly(props.looping, 'looping'),
+        computeKeyOnly(state.value === 'entering' || state.value === 'leaving' || props.looping, 'animating transition'),
         props.animation,
       );
     }

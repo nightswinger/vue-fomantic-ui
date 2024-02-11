@@ -23,6 +23,7 @@ const meta: Meta<typeof Transition> = {
     animation: "fade",
     duration: 500,
     visible: true,
+    looping: false,
   },
 };
 
