@@ -1,6 +1,7 @@
-import { computed, defineComponent, PropType, Transition as VTransition } from "vue";
+import { defineComponent, PropType, Transition as VTransition } from "vue";
 
-import { AnimationType, useAnimate } from "./useAnimate";
+import { AnimationType } from "./useAnimate";
+import { useTransition } from "./useTransition";
 
 export default defineComponent({
   name: 'SuiTransition',
@@ -15,24 +16,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const [enter, leave] = useAnimate(props.animation);
-
-    const seconds = computed(() => props.duration ? props.duration / 1000 : undefined);
-
-    const onEnter = (el: Element, done: () => void) => {
-      if (!enter) return done();
-
-      const animation = enter(el, { duration: seconds.value });
-      animation.play();
-      animation.finished.then(done);
-    };
-    const onLeave = (el: Element, done: () => void) => {
-      if (!leave) return done();
-
-      const animation = leave(el, { duration: seconds.value });
-      animation.play();
-      animation.finished.then(done);
-    };
+    const { onEnter, onLeave } = useTransition(props);
 
     return {
       onEnter,
