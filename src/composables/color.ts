@@ -1,7 +1,9 @@
-import { computed } from 'vue';
-import type { Prop } from 'vue';
+import clsx from "clsx";
+import { computed } from "vue";
 
-const colors = [
+import type { PropType } from "vue";
+
+const colorValues = [
   'red',
   'orange',
   'yellow',
@@ -14,27 +16,25 @@ const colors = [
   'pink',
   'brown',
   'grey'
-]
+] as const;
 
-type Color = typeof colors[number]
+export type Color = typeof colorValues[number];
 
 export interface ColorProps {
-  color: Color
+  color?: Color
 }
 
-export const useColorProps = {
-  color: {
-    type: String,
-    validator: (value: string) => colors.includes(value)
-  } as Prop<Color>
-}
+export const makeColorProps = () => {
+  return {
+    color: {
+      type: String as PropType<Color>,
+      validator: (v: any) => colorValues.includes(v)
+    }
+  }
+};
 
-export function useColorClass(props: ColorProps) {
-  const colorClass = computed(() => {
-    if(!props.color) return null
+export const useColor = (props: ColorProps) => {
+  const colorClasses = computed(() => clsx(props.color));
 
-    return props.color
-  })
-
-  return { colorClass }
-}
+  return { colorClasses };
+};
