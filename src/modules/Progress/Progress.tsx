@@ -1,13 +1,15 @@
 import clsx from "clsx";
 import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
+
+import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
+
+import { makeAttachedProps, useAttached } from "../../composables/attached";
+import { makeColorProps, useColor } from "../../composables/color";
 
 export default defineComponent({
   name: 'SuiProgress',
   props: {
     active: Boolean,
-    attached: String,
-    color: String,
     disabled: Boolean,
     error: Boolean,
     indicating: Boolean,
@@ -17,22 +19,28 @@ export default defineComponent({
     progress: [Boolean, String],
     size: String,
     success: Boolean,
-    warning: Boolean
+    warning: Boolean,
+
+    ...makeAttachedProps(),
+    ...makeColorProps(),
   },
   setup(props) {
-    const computedClass = computed(() => {
+    const { attachedClasses } = useAttached(props);
+    const { colorClasses } = useColor(props);
+
+    const classes = computed(() => {
       return clsx(
         'ui',
-        props.color,
+        colorClasses.value,
         props.size,
-        computeKeyOnly(props.active, 'active'),
+        computeKeyOnly(props.active || props.indicating, 'active'),
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.error, 'error'),
         computeKeyOnly(props.indicating, 'indicating'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.success, 'success'),
         computeKeyOnly(props.warning, 'warning'),
-        computeKeyValue(props.attached, 'attached'),
+        attachedClasses.value,
         'progress'
       )
     })
@@ -43,13 +51,24 @@ export default defineComponent({
       )
     })
 
+    const barStyle = computed(() => {
+      if (props.progress !== 'centered') return {}
+
+      return { right: 0 }
+    })
+
     return () => (
       <div
-        class={computedClass.value}
+        class={classes.value}
         data-percent={props.percent}
       >
         <div class="bar" style={`width: ${props.percent}%; transition-duration: 300ms;`}>
-          {props.progress && <div class={barClass.value}>{props.percent}%</div>}
+          {
+            props.progress &&
+            <div class={barClass.value} style={barStyle.value}>
+              {`${props.percent}%`}
+            </div>
+          }
         </div>
         {props.label && <div class="label">{props.label}</div>}
       </div>

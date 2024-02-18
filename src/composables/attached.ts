@@ -1,28 +1,29 @@
-import { computed } from 'vue';
-import type { Prop } from 'vue';
+import clsx from "clsx";
+import { computed } from "vue";
 
-const attached = ['top', 'bottom']
+import type { PropType } from "vue";
 
-type Attached = typeof attached[number]
+const attachedValues = ['top', 'bottom'] as const;
+
+export type Attached = typeof attachedValues[number];
 
 export interface AttachedProps {
-  attached: Attached
-}
+  attached?: Attached;
+};
 
-export const useAttachedProps = {
-  attached: {
-    type: String,
-    validator: (value: string) => attached.includes(value)
-  } as Prop<Attached>
-}
+export const makeAttachedProps = () => {
+  return {
+    attached: {
+      type: String as PropType<Attached>,
+      validator: (v: any) => attachedValues.includes(v)
+    }
+  };
+};
 
-export function useAttachedClass(props: AttachedProps) {
-  const attachedClass = computed(() => {
-    if (!props.attached) return null
-    if ((props.attached === 'top') || (props.attached === 'bottom')) return `${props.attached} attached`
+export const useAttached = (props: AttachedProps) => {
+  const attachedClasses = computed(() => {
+    return clsx(props.attached, 'attached');
+  });
 
-    return 'attached'
-  })
-
-  return { attachedClass }
-}
+  return { attachedClasses };
+};
