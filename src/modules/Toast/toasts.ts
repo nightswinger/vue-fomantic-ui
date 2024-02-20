@@ -4,6 +4,7 @@ import { getCurrentInstance, h, ref, render } from "vue";
 import { Toast } from "./Toast";
 import ToastContainer from "./ToastContainer";
 
+import type { Color } from "../../composables/color";
 
 const toastTypeValues = ["success", "error", "warning", "info"] as const;
 export type ToastType = typeof toastTypeValues[number];
@@ -18,6 +19,7 @@ type ToastOptions = {
   displayTime?: number;
   position?: Position;
   showProgress?: "top" | "bottom";
+  showProgressColor?: Color;
 };
 
 const seed = ref(1);
@@ -43,6 +45,7 @@ export const getDatasetProps = (el: HTMLElement) => {
     title: el.dataset.title,
     message: el.dataset.message || "",
     showProgress: el.dataset.showProgress as "top" | "bottom",
+    showProgressColor: el.dataset.showProgressColor as Color,
   };
 };
 
@@ -87,21 +90,10 @@ const getToastContainer = ({ position = 'top right' }: { position?: Position }) 
 export const useToast = () => {
   const appContext = getCurrentInstance()?.appContext;
 
-  const toast = ({
-    type,
-    title,
-    message,
-    displayTime,
-    position,
-    showProgress,
-  }: ToastOptions) => {
+  const toast = ({ position, ...options }: ToastOptions) => {
     const newToast = {
       id: seed.value++,
-      title,
-      type,
-      message,
-      displayTime,
-      showProgress,
+      ...options,
     };
     const container = getToastContainer({ position }) || createToastContainer(appContext, { position });
     createToast(newToast, container);

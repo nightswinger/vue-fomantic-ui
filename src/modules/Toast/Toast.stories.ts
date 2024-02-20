@@ -40,10 +40,16 @@ export const Titled: Story = {
 export const ProgressBars: Story = {
   args: {
     showProgress: 'bottom',
+    showProgressColor: undefined,
     title: 'LOOK',
     message: 'See, how long i will last',
     displayTime: 3000,
   },
+  argTypes: {
+    showProgressColor: {
+      control: 'text',
+    }
+  }
 };
 
 export const ToastType: Story = {

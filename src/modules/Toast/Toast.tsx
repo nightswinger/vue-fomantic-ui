@@ -1,9 +1,10 @@
 import clsx from "clsx";
 import { PropType, computed, defineComponent, onMounted, ref } from "vue";
 
-import type { ToastType } from "./toasts";
-
 import { Progress } from "../Progress";
+
+import type { ToastType } from "./toasts";
+import type { Color } from "../../composables/color";
 
 export const Toast = defineComponent({
   name: 'SuiToast',
@@ -23,6 +24,7 @@ export const Toast = defineComponent({
     showProgress: {
       type: String as PropType<'top'|'bottom'>,
     },
+    showProgressColor: String as PropType<Color>,
   },
   setup(props, { emit }) {
     const classes = computed(() => {
@@ -66,6 +68,7 @@ export const Toast = defineComponent({
         {this.showProgress === 'top' && (
           <Progress
             inverted
+            color={this.showProgressColor}
             attached={this.showProgress}
             percent={this.progress}
           />
@@ -86,6 +89,7 @@ export const Toast = defineComponent({
         {this.showProgress === 'bottom' && (
           <Progress
             inverted
+            color={this.showProgressColor}
             attached={this.showProgress}
             percent={this.progress}
           />
