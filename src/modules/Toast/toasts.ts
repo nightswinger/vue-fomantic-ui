@@ -1,15 +1,28 @@
-import { AppContext, VNode, getCurrentInstance, h, ref, render } from "vue";
+import type { AppContext, VNode } from "vue";
+import { getCurrentInstance, h, ref, render } from "vue";
 
+import { Toast } from "./Toast";
 import ToastContainer from "./ToastContainer";
 
-type ToastItem = {
-  id: number;
-} & ToastOptions;
+
+const toastTypeValues = ["success", "error", "warning", "info"] as const;
+export type ToastType = typeof toastTypeValues[number];
+
+const positionValues = ["top right", "top center", "top left", "bottom right", "bottom center", "bottom left", "centered"] as const;
+export type Position = typeof positionValues[number];
+
+type ToastOptions = {
+  type?: ToastType;
+  title?: string;
+  message: string;
+  displayTime?: number;
+  position?: Position;
+  showProgress?: "top" | "bottom";
+};
 
 const seed = ref(1);
-const toastItems = ref<ToastItem[]>([]);
 
-const mount = (vNode: VNode, { appContext, element }: { appContext?: AppContext, element?: HTMLElement }) => {
+const mount = (vNode: VNode, { appContext, element }: { appContext?: AppContext, element?: HTMLElement } = {}) => {
   const el = element || document.createElement("div");
 
   if (appContext) {
@@ -20,8 +33,35 @@ const mount = (vNode: VNode, { appContext, element }: { appContext?: AppContext,
   return { vNode, el };
 };
 
-const createToast = (toast: ToastItem) => {
-  toastItems.value.push(toast);
+export const getDatasetProps = (el: HTMLElement) => {
+  if (!el.dataset.id) return null;
+
+  return {
+    id: Number(el.dataset.id),
+    displayTime: Number(el.dataset.displayTime) || undefined,
+    type: el.dataset.type as ToastType,
+    title: el.dataset.title,
+    message: el.dataset.message || "",
+    showProgress: el.dataset.showProgress as "top" | "bottom",
+  };
+};
+
+const setDatasetProps = (el: HTMLElement, props: Toast['$props']) => {
+  (Object.keys(props) as (keyof Toast['$props'])[]).forEach((key) => {
+    el.dataset[key] = props[key] ? props[key]!.toString() : "";
+  });
+};
+
+const createToast = (toast: Toast['$props'], element?: HTMLElement) => {
+  const vNode = h(Toast, { ...toast });
+  mount(vNode);
+
+  const el = vNode.el as HTMLElement;
+  el.style.opacity = "0";
+
+  setDatasetProps(el, toast);
+
+  element?.appendChild(el);
 
   return toast.id;
 };
@@ -39,36 +79,9 @@ const createToastContainer = (appContext?: AppContext, props?: ToastContainerPro
   return container;
 };
 
-const getToastContainer = () => {
-  return <HTMLElement>document.querySelector('.ui.toast-container');
-};
-
-export const useToastContainer = () => {
-  const removeToast = (id: number) => {
-    const index = toastItems.value.findIndex((item) => item.id === id);
-    if (index !== -1) {
-      toastItems.value.splice(index, 1);
-    }
-  };
-
-  return {
-    removeToast,
-    toastItems,
-  };
-};
-
-const toastTypeValues = ["success", "error", "warning", "info"] as const;
-export type ToastType = typeof toastTypeValues[number];
-
-const positionValues = ["top right", "top center", "top left", "bottom right", "bottom center", "bottom left", "centered"] as const;
-export type Position = typeof positionValues[number];
-
-type ToastOptions = {
-  type?: ToastType;
-  title?: string;
-  message: string;
-  displayTime?: number;
-  position?: Position;
+const getToastContainer = ({ position = 'top right' }: { position?: Position }) => {
+  const className = `.ui.toast-container.${position.split(' ').join('.')}`;
+  return <HTMLElement>document.querySelector(className);
 };
 
 export const useToast = () => {
@@ -80,6 +93,7 @@ export const useToast = () => {
     message,
     displayTime,
     position,
+    showProgress,
   }: ToastOptions) => {
     const newToast = {
       id: seed.value++,
@@ -87,12 +101,10 @@ export const useToast = () => {
       type,
       message,
       displayTime,
+      showProgress,
     };
-    const container = getToastContainer();
-    if (!container) {
-      createToastContainer(appContext, { position });
-    }
-    createToast(newToast);
+    const container = getToastContainer({ position }) || createToastContainer(appContext, { position });
+    createToast(newToast, container);
   };
 
   return {

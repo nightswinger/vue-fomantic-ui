@@ -1,12 +1,15 @@
 import clsx from "clsx";
-import { PropType, computed, defineComponent } from "vue";
+import { PropType, computed, defineComponent, onMounted, ref } from "vue";
 
-import { ToastType } from "./toasts";
+import type { ToastType } from "./toasts";
 
-export default defineComponent({
+import { Progress } from "../Progress";
+
+export const Toast = defineComponent({
   name: 'SuiToast',
   emits: ['click', 'close'],
   props: {
+    id: Number,
     displayTime: {
       type: Number,
       default: 3000,
@@ -17,6 +20,9 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    showProgress: {
+      type: String as PropType<'top'|'bottom'>,
+    },
   },
   setup(props, { emit }) {
     const classes = computed(() => {
@@ -26,10 +32,28 @@ export default defineComponent({
       );
     });
 
-    setTimeout(() => emit('close'), props.displayTime);
+    const progress = ref(100);
+
+    const animateProgressBar = () => {
+      const interval = props.displayTime / 100;
+
+      setTimeout(() => {
+        const timer = setInterval(() => {
+          if (progress.value <= 0) {
+            clearInterval(timer);
+          }
+          progress.value -= 1;
+        }, interval)
+      }, 500);
+    };
+
+    onMounted(() => props.showProgress && animateProgressBar());
+
+    setTimeout(() => emit('close'), props.displayTime + 750);
 
     return {
       classes,
+      progress,
     };
   },
   render() {
@@ -37,7 +61,15 @@ export default defineComponent({
       <div
         class="floating toast-box compact"
         style="display: block !important;"
+        onAnimationend={() => console.log('animation end')}
       >
+        {this.showProgress === 'top' && (
+          <Progress
+            inverted
+            attached={this.showProgress}
+            percent={this.progress}
+          />
+        )}
         <div
           role="alert"
           class={this.classes}
@@ -49,9 +81,18 @@ export default defineComponent({
               {this.message}
             </div>
           </div>
-          <span class="wait progressing pausable"></span>
+          {/* <span class="wait progressing pausable"></span> */}
         </div>
+        {this.showProgress === 'bottom' && (
+          <Progress
+            inverted
+            attached={this.showProgress}
+            percent={this.progress}
+          />
+        )}
       </div>
     )
   },
 });
+
+export type Toast = InstanceType<typeof Toast>;

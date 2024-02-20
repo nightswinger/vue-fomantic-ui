@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import Toast from "./Toast";
+import { Toast } from "./Toast";
 import { useToast } from "./toasts";
 
 type Story = StoryObj<typeof Toast>;
@@ -34,6 +34,15 @@ export const Titled: Story = {
   args: {
     title: 'Better ?',
     message: 'Hey look, I have a title !',
+  },
+};
+
+export const ProgressBars: Story = {
+  args: {
+    showProgress: 'bottom',
+    title: 'LOOK',
+    message: 'See, how long i will last',
+    displayTime: 3000,
   },
 };
 
