@@ -98,4 +98,19 @@ export const MessageStyle: Story = {
   }
 };
 
+export const ColorVariants: Story = {
+  args: {
+    color: 'red',
+    inverted: false,
+    message: 'I am a colorful toast',
+    showProgress: 'bottom',
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'],
+    }
+  }
+};
+
 export default meta;

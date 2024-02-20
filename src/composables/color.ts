@@ -21,7 +21,8 @@ const colorValues = [
 export type Color = typeof colorValues[number];
 
 export interface ColorProps {
-  color?: Color
+  color?: Color;
+  inverted?: boolean;
 }
 
 export const makeColorProps = () => {
@@ -34,7 +35,12 @@ export const makeColorProps = () => {
 };
 
 export const useColor = (props: ColorProps) => {
-  const colorClasses = computed(() => clsx(props.color));
+  const colorClasses = computed(() => {
+    return clsx(
+      props.inverted && 'inverted',
+      props.color,
+    );
+  });
 
   return { colorClasses };
 };

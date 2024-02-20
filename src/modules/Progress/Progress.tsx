@@ -37,7 +37,6 @@ export default defineComponent({
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.error, 'error'),
         computeKeyOnly(props.indicating, 'indicating'),
-        computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.success, 'success'),
         computeKeyOnly(props.warning, 'warning'),
         attachedClasses.value,

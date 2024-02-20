@@ -30,6 +30,7 @@ export const Toast = defineComponent({
     },
     showProgressColor: String as PropType<Color>,
     showProgressUp: Boolean,
+    inverted: Boolean,
     ...makeColorProps(),
   },
   setup(props, { emit }) {
@@ -82,8 +83,8 @@ export const Toast = defineComponent({
       >
         {this.showProgress === 'top' && (
           <Progress
-            inverted
-            color={this.showProgressColor}
+            inverted={!this.inverted}
+            color={this.showProgressColor || this.color}
             attached={this.showProgress}
             percent={this.progress}
           />
@@ -103,8 +104,8 @@ export const Toast = defineComponent({
         </div>
         {this.showProgress === 'bottom' && (
           <Progress
-            inverted
-            color={this.showProgressColor}
+            inverted={!this.inverted}
+            color={this.showProgressColor || this.color}
             attached={this.showProgress}
             percent={this.progress}
           />
