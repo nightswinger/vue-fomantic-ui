@@ -21,6 +21,7 @@ export const Toast = defineComponent({
       type: String,
       required: true,
     },
+    centered: Boolean,
     showProgress: {
       type: String as PropType<'top'|'bottom'>,
     },
@@ -29,6 +30,7 @@ export const Toast = defineComponent({
   setup(props, { emit }) {
     const classes = computed(() => {
       return clsx(
+        props.centered && 'center aligned',
         props.type || 'neutral',
         'ui toast compact'
       );

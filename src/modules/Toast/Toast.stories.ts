@@ -65,6 +65,14 @@ export const ToastType: Story = {
   },
 };
 
+export const CenterAligned: Story = {
+  args: {
+    centered: true,
+    title: 'Veronika has joined',
+    message: 'Welcome to the Fomantic-UI community!',
+  }
+};
+
 export const Duration: Story = {
   args: {
     displayTime: 5000,

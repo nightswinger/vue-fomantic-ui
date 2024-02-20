@@ -17,6 +17,7 @@ type ToastOptions = {
   title?: string;
   message: string;
   displayTime?: number;
+  centered?: boolean;
   position?: Position;
   attached?: "top" | "bottom";
   horizontal?: boolean;
@@ -46,6 +47,7 @@ export const getDatasetProps = (el: HTMLElement) => {
     type: el.dataset.type as ToastType,
     title: el.dataset.title,
     message: el.dataset.message || "",
+    centered: el.dataset.centered === "true",
     showProgress: el.dataset.showProgress as "top" | "bottom",
     showProgressColor: el.dataset.showProgressColor as Color,
   };
