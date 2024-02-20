@@ -80,4 +80,13 @@ export const Duration: Story = {
   },
 };
 
+export const MessageStyle: Story = {
+  args: {
+    messageStyle: true,
+    color: 'purple',
+    title: 'Awesome',
+    message: 'I got my style from the message class',
+  }
+};
+
 export default meta;

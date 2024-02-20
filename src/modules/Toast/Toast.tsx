@@ -3,6 +3,8 @@ import { PropType, computed, defineComponent, onMounted, ref } from "vue";
 
 import { Progress } from "../Progress";
 
+import { makeColorProps, useColor } from "../../composables/color";
+
 import type { ToastType } from "./toasts";
 import type { Color } from "../../composables/color";
 
@@ -22,17 +24,24 @@ export const Toast = defineComponent({
       required: true,
     },
     centered: Boolean,
+    messageStyle: Boolean,
     showProgress: {
       type: String as PropType<'top'|'bottom'>,
     },
     showProgressColor: String as PropType<Color>,
+    ...makeColorProps(),
   },
   setup(props, { emit }) {
+    const { colorClasses } = useColor(props);
+
     const classes = computed(() => {
       return clsx(
         props.centered && 'center aligned',
         props.type || 'neutral',
-        'ui toast compact'
+        colorClasses.value,
+        'ui',
+        props.messageStyle ? 'message' : 'toast',
+        'compact'
       );
     });
 
