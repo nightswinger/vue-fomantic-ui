@@ -7,6 +7,8 @@ import { getDatasetProps } from "./toasts";
 
 import { TransitionGroup } from "../Transition";
 
+import { makeAttachedProps, useAttached } from "../../composables/attached";
+
 const positionValues = ['top right', 'top center', 'top left', 'bottom right', 'bottom center', 'bottom left', 'centered'];
 
 type Position = typeof positionValues[number];
@@ -16,8 +18,9 @@ export default defineComponent({
   props: {
     position: {
       type: String as PropType<Position>,
-      default: "top right",
-    }
+      default: 'top right',
+    },
+    ...makeAttachedProps(),
   },
   setup(props) {
     const el = ref<HTMLElement | null>(null);
@@ -27,9 +30,11 @@ export default defineComponent({
       items.value = items.value.filter((item) => item.id !== id);
     };
 
+    const { attachedClasses } = useAttached(props);
+
     const classes = computed(() => {
       return clsx(
-        props.position,
+        attachedClasses.value || props.position,
         'ui toast-container',
       );
     });

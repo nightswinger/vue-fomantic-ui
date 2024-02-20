@@ -22,7 +22,7 @@ export const makeAttachedProps = () => {
 
 export const useAttached = (props: AttachedProps) => {
   const attachedClasses = computed(() => {
-    return clsx(props.attached, 'attached');
+    return clsx(props.attached, { attached: props.attached });
   });
 
   return { attachedClasses };

@@ -18,6 +18,7 @@ type ToastOptions = {
   message: string;
   displayTime?: number;
   position?: Position;
+  attached?: "top" | "bottom";
   showProgress?: "top" | "bottom";
   showProgressColor?: Color;
 };
@@ -82,20 +83,22 @@ const createToastContainer = (appContext?: AppContext, props?: ToastContainerPro
   return container;
 };
 
-const getToastContainer = ({ position = 'top right' }: { position?: Position }) => {
-  const className = `.ui.toast-container.${position.split(' ').join('.')}`;
+const getToastContainer = ({ position = 'top right', attached }: { position?: Position, attached?: string }) => {
+  const className = attached ?
+    `.ui.toast-container.${attached}.attached` :
+    `.ui.toast-container.${position.split(' ').join('.')}`;
   return <HTMLElement>document.querySelector(className);
 };
 
 export const useToast = () => {
   const appContext = getCurrentInstance()?.appContext;
 
-  const toast = ({ position, ...options }: ToastOptions) => {
+  const toast = ({ position, attached, ...options }: ToastOptions) => {
     const newToast = {
       id: seed.value++,
       ...options,
     };
-    const container = getToastContainer({ position }) || createToastContainer(appContext, { position });
+    const container = getToastContainer({ position, attached }) || createToastContainer(appContext, { position, attached });
     createToast(newToast, container);
   };
 

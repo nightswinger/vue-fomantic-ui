@@ -16,6 +16,7 @@ const meta: Meta<typeof ToastContainer> = {
         toast({
           message: "Look, I'm here !",
           position: args.position as Position,
+          attached: args.attached,
         });
       };
 
@@ -35,6 +36,18 @@ export const Default: Story = {
     position: {
       control: 'select',
       options: ['top right', 'top center', 'top left', 'bottom right', 'bottom center', 'bottom left', 'centered'],
+    },
+  }
+};
+
+export const AttachedPosition: Story = {
+  args: {
+    attached: "top",
+  },
+  argTypes: {
+    attached: {
+      control: 'select',
+      options: ['top', 'bottom'],
     },
   }
 };
