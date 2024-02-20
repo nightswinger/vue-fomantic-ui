@@ -52,6 +52,15 @@ export const ProgressBars: Story = {
   }
 };
 
+export const IncreasingProgressBar: Story = {
+  args: {
+    showProgress: 'top',
+    showProgressUp: true,
+    title: 'LOOK',
+    message: 'See, how long i will last',
+  },
+};
+
 export const ToastType: Story = {
   args: {
     type: 'success',

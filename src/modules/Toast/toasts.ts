@@ -25,6 +25,7 @@ type ToastOptions = {
   horizontal?: boolean;
   showProgress?: "top" | "bottom";
   showProgressColor?: Color;
+  showProgressUp?: boolean;
 };
 
 const seed = ref(1);
@@ -54,6 +55,7 @@ export const getDatasetProps = (el: HTMLElement) => {
     messageStyle: el.dataset.messageStyle === "true",
     showProgress: el.dataset.showProgress as "top" | "bottom",
     showProgressColor: el.dataset.showProgressColor as Color,
+    showProgressUp: el.dataset.showProgressUp === "true",
   };
 };
 

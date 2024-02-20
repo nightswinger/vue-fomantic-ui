@@ -29,6 +29,7 @@ export const Toast = defineComponent({
       type: String as PropType<'top'|'bottom'>,
     },
     showProgressColor: String as PropType<Color>,
+    showProgressUp: Boolean,
     ...makeColorProps(),
   },
   setup(props, { emit }) {
@@ -45,18 +46,21 @@ export const Toast = defineComponent({
       );
     });
 
-    const progress = ref(100);
+    const progress = ref(props.showProgressUp ? 0 : 100);
 
     const animateProgressBar = () => {
       const interval = props.displayTime / 100;
 
       setTimeout(() => {
         const timer = setInterval(() => {
-          if (progress.value <= 0) {
-            clearInterval(timer);
+          if (props.showProgressUp) {
+            if (progress.value >= 100) clearInterval(timer);
+            progress.value += 1;
+            return;
           }
+          if (progress.value <= 0) clearInterval(timer);
           progress.value -= 1;
-        }, interval)
+        }, interval);
       }, 500);
     };
 
