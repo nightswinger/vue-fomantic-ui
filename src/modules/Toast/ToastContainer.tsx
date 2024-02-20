@@ -20,6 +20,7 @@ export default defineComponent({
       type: String as PropType<Position>,
       default: 'top right',
     },
+    horizontal: Boolean,
     ...makeAttachedProps(),
   },
   setup(props) {
@@ -36,6 +37,7 @@ export default defineComponent({
       return clsx(
         attachedClasses.value || props.position,
         'ui toast-container',
+        props.horizontal && 'horizontal',
       );
     });
 
@@ -54,11 +56,15 @@ export default defineComponent({
     const leaveKeyframes = (el: Element) => {
       if (!(el instanceof HTMLElement)) return {};
 
+      const width = [`${el.offsetWidth}px`, 0];
       const height = [`${el.offsetHeight}px`, 0];
+
+      const direction = props.horizontal ? { width } : { height };
+
       const marginBottom = [`${parseInt(getComputedStyle(el).marginBottom, 10)}px`, 0];
 
       return {
-        height,
+        ...direction,
         marginBottom,
       };
     };

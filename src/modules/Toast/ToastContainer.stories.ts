@@ -17,13 +17,14 @@ const meta: Meta<typeof ToastContainer> = {
           message: "Look, I'm here !",
           position: args.position as Position,
           attached: args.attached,
+          horizontal: args.horizontal,
         });
       };
 
       return { args, onClick };
     },
     template: `
-      <button @click="onClick">Run</button>
+      <button @click="onClick" style="position: absolute; bottom: 0;">Run</button>
     `
   }),
 };
@@ -48,6 +49,18 @@ export const AttachedPosition: Story = {
     attached: {
       control: 'select',
       options: ['top', 'bottom'],
+    },
+  }
+};
+
+export const Direction: Story = {
+  args: {
+    position: "top left",
+    horizontal: true,
+  },
+  argTypes: {
+    horizontal: {
+      control: 'boolean',
     },
   }
 };
