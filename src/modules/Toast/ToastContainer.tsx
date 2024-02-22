@@ -8,20 +8,14 @@ import { getDatasetProps } from "./toasts";
 import { TransitionGroup } from "../Transition";
 
 import { makeAttachedProps, useAttached } from "../../composables/attached";
-
-const positionValues = ['top right', 'top center', 'top left', 'bottom right', 'bottom center', 'bottom left', 'centered'];
-
-type Position = typeof positionValues[number];
+import { makePositionProps, usePosition } from "../../composables/position";
 
 export default defineComponent({
   name: 'SuiToastContainer',
   props: {
-    position: {
-      type: String as PropType<Position>,
-      default: 'top right',
-    },
     horizontal: Boolean,
     ...makeAttachedProps(),
+    ...makePositionProps({ defaultValue: 'top right' }),
   },
   setup(props) {
     const el = ref<HTMLElement | null>(null);
@@ -32,10 +26,11 @@ export default defineComponent({
     };
 
     const { attachedClasses } = useAttached(props);
+    const { positionClasses } = usePosition(props);
 
     const classes = computed(() => {
       return clsx(
-        attachedClasses.value || props.position,
+        attachedClasses.value || positionClasses.value,
         'ui toast-container',
         props.horizontal && 'horizontal',
       );

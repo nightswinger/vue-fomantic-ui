@@ -1,28 +1,35 @@
-import { computed, Prop } from "vue"
+import { computed } from "vue";
 
-const positions = ['right', 'left']
+import type { PropType } from "vue";
 
-type Position = typeof positions[number]
+const positionValues = [
+  'top right',
+  'top center',
+  'top left',
+  'bottom right',
+  'bottom center',
+  'bottom left',
+  'centered'
+] as const;
+
+export type Position = typeof positionValues[number];
 
 export interface PositionProps {
-  position: Position
-}
+  position?: Position;
+};
 
-export const usePositionProps = {
-  position: {
-    type: String,
-    validator: (value: string) => positions.includes(value)
-  } as Prop<Position>
-}
-
-export function usePositionClass(props: PositionProps) {
-  const positionClass = computed(() => {
-    if (positions.includes(props.position)) {
-      return props.position
+export const makePositionProps = ({ defaultValue }: { defaultValue?: string } = {}) => {
+  return {
+    position: {
+      type: String as PropType<Position>,
+      validator: (v: any) => positionValues.includes(v),
+      default: defaultValue,
     }
+  };
+};
 
-    return null
-  })
+export const usePosition = (props: PositionProps) => {
+  const positionClasses = computed(() => props.position || '');
 
-  return { positionClass }
-}
+  return { positionClasses };
+};

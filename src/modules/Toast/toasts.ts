@@ -5,12 +5,10 @@ import { Toast } from "./Toast";
 import ToastContainer from "./ToastContainer";
 
 import type { Color } from "../../composables/color";
+import type { Position } from "../../composables/position";
 
 const toastTypeValues = ["success", "error", "warning", "info"] as const;
 export type ToastType = typeof toastTypeValues[number];
-
-const positionValues = ["top right", "top center", "top left", "bottom right", "bottom center", "bottom left", "centered"] as const;
-export type Position = typeof positionValues[number];
 
 type ToastOptions = {
   type?: ToastType;
