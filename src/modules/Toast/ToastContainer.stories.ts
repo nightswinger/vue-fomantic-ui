@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import ToastContainer from "./ToastContainer";
-import { Position, useToast } from "./toasts";
+import { useToast } from "./useToast";
+
+import type { Position } from "../../composables/position";
+
 
 type Story = StoryObj<typeof ToastContainer>;
 

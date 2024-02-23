@@ -15,7 +15,8 @@ const colorValues = [
   'violet',
   'pink',
   'brown',
-  'grey'
+  'grey',
+  'black',
 ] as const;
 
 export type Color = typeof colorValues[number];

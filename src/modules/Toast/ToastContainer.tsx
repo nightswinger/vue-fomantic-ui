@@ -1,9 +1,9 @@
-import { PropType, computed, defineComponent, ref } from "vue";
+import { Teleport, computed, defineComponent } from "vue";
 import clsx from "clsx";
-import { useMutationObserver } from "@vueuse/core";
 
 import { Toast } from "./Toast";
-import { getDatasetProps } from "./toasts";
+
+import { useToastController } from "./useToast";
 
 import { TransitionGroup } from "../Transition";
 
@@ -18,12 +18,7 @@ export default defineComponent({
     ...makePositionProps({ defaultValue: 'top right' }),
   },
   setup(props) {
-    const el = ref<HTMLElement | null>(null);
-    const items = ref<Toast['$props'][]>([]);
-
-    const removeToast = (id: number) => {
-      items.value = items.value.filter((item) => item.id !== id);
-    };
+    const { items, remove } = useToastController();
 
     const { attachedClasses } = useAttached(props);
     const { positionClasses } = usePosition(props);
@@ -64,43 +59,44 @@ export default defineComponent({
       };
     };
 
-    useMutationObserver(el, (mutations) => {
-      if (mutations[0].addedNodes[0]) {
-        const element = mutations[0].addedNodes[0] as HTMLElement;
-
-        const props = getDatasetProps(element);
-
-        if (!props) return;
-
-        element.remove();
-        items.value.push(props);
-      }
-    }, { childList: true });
-
-    const renderToast = (toast: Toast['$props']) => {
-      return (
-        <Toast
-          key={toast.id}
-          {...toast}
-          onClick={() => removeToast(toast.id!)}
-          onClose={() => removeToast(toast.id!)}
-        />
-      );
+    return {
+      classes,
+      items,
+      remove,
+      enterKeyframes,
+      leaveKeyframes,
     };
-
-    return () => (
-      <div
-        class={classes.value}
-        ref={ref => el.value = ref as HTMLElement}
-      >
-        <TransitionGroup
-          animation="scale"
-          enterKeyframes={enterKeyframes}
-          leaveKeyframes={leaveKeyframes}  
-        >
-          {items.value.map((item) => renderToast(item))}
-        </TransitionGroup>
-      </div>
-    );
   },
+  render() {
+    return (
+      <Teleport to="body">
+        <div
+          class={this.classes}
+        >
+          <TransitionGroup
+            animation="scale"
+            enterKeyframes={this.enterKeyframes}
+            leaveKeyframes={this.leaveKeyframes}  
+          >
+            {this.items
+              .filter(({ position, attached }) => {
+                if (this.attached) return attached === this.attached;
+                
+                return position === this.position;
+              })
+              .filter(({ horizontal }) => this.horizontal === !!horizontal)
+              .map(({id, ...rest}) => (
+                <Toast
+                  key={id}
+                  {...rest}
+                  onClick={() => this.remove(id)}
+                  onClose={() => this.remove(id)}
+                />
+              )
+            )}
+          </TransitionGroup>
+        </div>
+      </Teleport>
+    );
+  }
 });

@@ -1,7 +1,11 @@
+import { h } from "vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import { Toast } from "./Toast";
-import { useToast } from "./toasts";
+import { useToast } from "./useToast";
+
+import { Button } from "../../elements/Button";
+import { Icon } from "../../elements/Icon";
 
 type Story = StoryObj<typeof Toast>;
 
@@ -111,6 +115,50 @@ export const ColorVariants: Story = {
       options: ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'],
     }
   }
+};
+
+export const Actions: Story = {
+  render: (args) => ({
+    setup: () => {
+      const { toast } = useToast();
+
+      const actions = ({ close }) => [
+        h(Button,
+          {
+            color: 'green',
+            onclick: () => {
+              toast({ message: 'You clicked "yes", toast closes by default' });
+              close();
+            }
+          },
+          () => [h(Icon, { name: 'check' }), 'Yes']
+        ),
+        h(Button, { color: 'red', icon: true }, () => [h(Icon, { name: 'ban' })]),
+        h(Button,
+          {
+            color: 'blue',
+            onclick: () => toast({ message:'Returning false from the click handler avoids closing the toast ' }),
+          },
+          () => '?'
+        ),
+      ];
+
+      const onClick = () => {
+        toast({ ...args, actions });
+      };
+
+      return { args, onClick };
+    },
+    template: `
+      <button @click="onClick">Run</button>
+    `
+  }),
+  args: {
+    message: 'Do you really want to star Fomantic-UI?',
+    displayTime: 0,
+    color: 'black',
+
+  },
 };
 
 export default meta;

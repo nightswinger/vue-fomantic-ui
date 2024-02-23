@@ -1,12 +1,19 @@
 import clsx from "clsx";
-import { PropType, computed, defineComponent, onMounted, ref } from "vue";
+import { computed, defineComponent, onMounted, ref } from "vue";
 
 import { Progress } from "../Progress";
 
 import { makeColorProps, useColor } from "../../composables/color";
 
-import type { ToastType } from "./toasts";
+import type { PropType, VNode } from "vue";
+
 import type { Color } from "../../composables/color";
+
+const toastTypeValues = ["success", "error", "warning", "info"] as const;
+export type ToastType = typeof toastTypeValues[number];
+export type ToastActionOptions = {
+  close: () => void;
+};
 
 export const Toast = defineComponent({
   name: 'SuiToast',
@@ -25,6 +32,7 @@ export const Toast = defineComponent({
     },
     centered: Boolean,
     messageStyle: Boolean,
+    actions: Function as PropType<(options: ToastActionOptions) => VNode[]>,
     showProgress: {
       type: String as PropType<'top'|'bottom'>,
     },
@@ -67,7 +75,7 @@ export const Toast = defineComponent({
 
     onMounted(() => props.showProgress && animateProgressBar());
 
-    setTimeout(() => emit('close'), props.displayTime + 750);
+    setTimeout(() => props.displayTime > 0 && emit('close'), props.displayTime + 750);
 
     return {
       classes,
@@ -77,9 +85,8 @@ export const Toast = defineComponent({
   render() {
     return (
       <div
-        class="floating toast-box compact"
+        class={clsx("floating toast-box compact", { 'unclickable': !!this.actions })}
         style="display: block !important;"
-        onAnimationend={() => console.log('animation end')}
       >
         {this.showProgress === 'top' && (
           <Progress
@@ -92,7 +99,7 @@ export const Toast = defineComponent({
         <div
           role="alert"
           class={this.classes}
-          onClick={() => this.$emit('click')}
+          onClick={() => !this.actions && this.$emit('click')}
         >
           <div class="content">
             {this.title && <div class="ui header">{this.title}</div>}
@@ -100,7 +107,11 @@ export const Toast = defineComponent({
               {this.message}
             </div>
           </div>
-          {/* <span class="wait progressing pausable"></span> */}
+          {this.actions && (
+            <div class="actions">
+              {this.actions({close: () => this.$emit('close')})}
+            </div>
+          )}
         </div>
         {this.showProgress === 'bottom' && (
           <Progress
