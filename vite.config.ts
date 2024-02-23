@@ -4,6 +4,12 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 
 export default {
+  alias: [
+    {
+      find: '@',
+      replacement: path.resolve(__dirname, 'src'),
+    },
+  ],
   plugins: [vue(), vueJsx(), dts()],
   build: {
     lib: {
