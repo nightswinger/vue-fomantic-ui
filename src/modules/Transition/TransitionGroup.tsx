@@ -1,17 +1,23 @@
 import { computed, defineComponent, PropType, TransitionGroup as VTransitionGroup } from "vue";
 
 import { AnimationType, useAnimate } from "./useAnimate";
+import { MotionKeyframesDefinition } from "motion";
 
 export default defineComponent({
   name: 'SuiTransitionGroup',
   props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
+    tag: String,
     animation: {
       type: String as PropType<AnimationType>,
       default: 'fade',
+    },
+    enterKeyframes: {
+      type: Function as PropType<(el: Element) => MotionKeyframesDefinition>,
+      default: () => ({}),
+    },
+    leaveKeyframes: {
+      type: Function as PropType<(el: Element) => MotionKeyframesDefinition>,
+      default: () => ({}),
     },
   },
   setup(props) {
@@ -22,9 +28,8 @@ export default defineComponent({
         if (!enter) return done();
 
         const duration = 0.5;
-        const height = [0, `${el.clientHeight}px`];
   
-        const animation = enter(el, {duration, keyframesOverride: { height }});
+        const animation = enter(el, {duration, keyframesOverride: props.enterKeyframes(el)});
         animation.play();
         animation.finished.then(done);
       };
@@ -35,9 +40,8 @@ export default defineComponent({
         if (!leave) return done();
 
         const duration = 0.5;
-        const height = [`${el.clientHeight}px`, 0];
   
-        const animation = leave(el, {duration, keyframesOverride: { height }});
+        const animation = leave(el, {duration, keyframesOverride: props.leaveKeyframes(el)});
         animation.play();
         animation.finished.then(done);
       };
