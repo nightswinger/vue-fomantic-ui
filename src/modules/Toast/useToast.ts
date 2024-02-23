@@ -1,6 +1,7 @@
 import { getCurrentInstance, h, ref, render } from "vue";
 
 import ToastContainer from "./ToastContainer";
+import ToastActions from "./ToastActions";
 
 import type { AppContext, VNode } from "vue";
 
@@ -21,12 +22,13 @@ type ToastOptions = {
   messageStyle?: boolean;
   color?: Color;
   inverted?: boolean;
-  attached?: "top" | "bottom";
+  attached?: "top" | "bottom" | "left";
   horizontal?: boolean;
   showProgress?: "top" | "bottom";
   showProgressColor?: Color;
   showProgressUp?: boolean;
   actions?: (options: ToastActionOptions) => VNode[];
+  actionsProps?: InstanceType<typeof ToastActions>['$props'];
 };
 
 type CreateToastOptions = Omit<ToastOptions, 'id'>;

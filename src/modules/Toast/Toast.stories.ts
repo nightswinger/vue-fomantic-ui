@@ -157,7 +157,88 @@ export const Actions: Story = {
     message: 'Do you really want to star Fomantic-UI?',
     displayTime: 0,
     color: 'black',
+  },
+};
 
+export const ActionsBasic: Story = {
+  render: (args) => ({
+    setup: () => {
+      const { toast } = useToast();
+
+      const actions = ({ close }) => [
+        h(Button,
+          {
+            color: 'yellow',
+            onclick: () => {
+              toast({ message: 'You clicked "yes", toast closes by default' });
+              close();
+            }
+          },
+          () => 'Yes, really'
+        ),
+      ];
+
+      const onClick = () => {
+        toast({ ...args, actions });
+      };
+
+      return { args, onClick };
+    },
+    template: `
+      <button @click="onClick">Run</button>
+    `
+  }),
+  args: {
+    message: 'Do you really want to star Fomantic-UI?',
+    displayTime: 0,
+    color: 'black',
+    actionsProps: { basic: true, aligned: 'left' },
+  },
+};
+
+export const ActionsAttached: Story = {
+  render: (args) => ({
+    setup: () => {
+      const { toast } = useToast();
+
+      const actions = ({ close }) => [
+        h(Button,
+          {
+            color: 'green',
+            onclick: () => {
+              toast({ message: 'You clicked "yes", toast closes by default' });
+              close();
+            }
+          },
+          () => 'Yes, really'
+        ),
+        h(Button,
+          {
+            color: 'red',
+            onclick: () => {
+              toast({ message: 'You clicked "yes", toast closes by default' });
+              close();
+            }
+          },
+          () => 'Maybe later'
+        )
+      ];
+
+      const onClick = () => {
+        toast({ ...args, actions });
+      };
+
+      return { args, onClick };
+    },
+    template: `
+      <button @click="onClick">Run</button>
+    `
+  }),
+  args: {
+    message: 'Do you really want to star Fomantic-UI?',
+    displayTime: 0,
+    color: 'black',
+    actionsProps: { attached: 'top', vertical: false },
   },
 };
 

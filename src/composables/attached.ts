@@ -3,7 +3,7 @@ import { computed } from "vue";
 
 import type { PropType } from "vue";
 
-const attachedValues = ['top', 'bottom'] as const;
+const attachedValues = ['top', 'bottom', 'left'] as const;
 
 export type Attached = typeof attachedValues[number];
 

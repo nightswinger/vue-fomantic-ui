@@ -1,6 +1,9 @@
 import clsx from "clsx";
 import { computed, defineComponent, onMounted, ref } from "vue";
 
+import ToastActions from "./ToastActions";
+import ToastBox from "./ToastBox";
+
 import { Progress } from "../Progress";
 
 import { makeColorProps, useColor } from "../../composables/color";
@@ -8,6 +11,7 @@ import { makeColorProps, useColor } from "../../composables/color";
 import type { PropType, VNode } from "vue";
 
 import type { Color } from "../../composables/color";
+
 
 const toastTypeValues = ["success", "error", "warning", "info"] as const;
 export type ToastType = typeof toastTypeValues[number];
@@ -33,6 +37,7 @@ export const Toast = defineComponent({
     centered: Boolean,
     messageStyle: Boolean,
     actions: Function as PropType<(options: ToastActionOptions) => VNode[]>,
+    actionsProps: Object as PropType<InstanceType<typeof ToastActions>['$props']>,
     showProgress: {
       type: String as PropType<'top'|'bottom'>,
     },
@@ -51,6 +56,11 @@ export const Toast = defineComponent({
         colorClasses.value,
         'ui',
         props.messageStyle ? 'message' : 'toast',
+        props.actions && !props.actionsProps?.vertical && 'actions',
+        props.actionsProps?.attached === 'top' && 'bottom attached',
+        props.actionsProps?.attached === 'bottom' && 'top attached',
+        props.actionsProps?.attached === 'left' && 'left attached',
+        props.actionsProps?.vertical && 'vertical',
         'compact'
       );
     });
@@ -84,10 +94,7 @@ export const Toast = defineComponent({
   },
   render() {
     return (
-      <div
-        class={clsx("floating toast-box compact", { 'unclickable': !!this.actions })}
-        style="display: block !important;"
-      >
+      <ToastBox unclickable={!!this.actions} verticalAttached={this.actionsProps?.attached === 'left'}>
         {this.showProgress === 'top' && (
           <Progress
             inverted={!this.inverted}
@@ -95,6 +102,12 @@ export const Toast = defineComponent({
             attached={this.showProgress}
             percent={this.progress}
           />
+        )}
+        {this.actions &&
+          (this.actionsProps?.attached === 'top' || this.actionsProps?.attached === 'left') && (
+          <ToastActions {...this.actionsProps}>
+            {this.actions({close: () => this.$emit('close')})}
+          </ToastActions>
         )}
         <div
           role="alert"
@@ -107,12 +120,18 @@ export const Toast = defineComponent({
               {this.message}
             </div>
           </div>
-          {this.actions && (
-            <div class="actions">
+          {this.actions && !this.actionsProps?.attached && (
+            <ToastActions {...this.actionsProps}>
               {this.actions({close: () => this.$emit('close')})}
-            </div>
+            </ToastActions>
           )}
         </div>
+        {this.actions &&
+          this.actionsProps?.attached === 'bottom' && (
+          <ToastActions {...this.actionsProps}>
+            {this.actions({close: () => this.$emit('close')})}
+          </ToastActions>
+        )}
         {this.showProgress === 'bottom' && (
           <Progress
             inverted={!this.inverted}
@@ -121,7 +140,7 @@ export const Toast = defineComponent({
             percent={this.progress}
           />
         )}
-      </div>
+      </ToastBox>
     )
   },
 });
