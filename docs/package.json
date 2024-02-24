@@ -8,14 +8,15 @@
   },
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
-    "prismjs": "^1.27.0",
+    "prismjs": "^1.29.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.4.15",
-    "vue-fomantic-ui": "^0.15.1",
+    "vue-fomantic-ui": "^0.16.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^15.0.3",
+    "@types/prismjs": "^1.26.3",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/compiler-sfc": "^3.4.15",

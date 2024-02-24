@@ -7,7 +7,7 @@ import 'fomantic-ui-css/semantic.min.css'
 
 import 'prismjs'
 import 'prismjs/components/prism-bash'
-import 'prismjs/components/prism-markup'
+// import 'prismjs/components/prism-markup'
 import 'prismjs/themes/prism-okaidia.css'
 
 const app = createApp(App)

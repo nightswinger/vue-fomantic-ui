@@ -45,6 +45,7 @@ import RatingDoc from './pages/modules/RatingDoc.vue'
 import SidebarDoc from './pages/modules/SidebarDoc.vue'
 import SliderDoc from './pages/modules/SliderDoc.vue'
 import TabDoc from './pages/modules/TabDoc.vue'
+// import Toast from './pages/modules/Toast.vue'
 
 const routes: any = [
   {
@@ -94,7 +95,8 @@ const routes: any = [
       { path: 'modules/rating', component: RatingDoc },
       { path: 'modules/sidebar', component: SidebarDoc },
       { path: 'modules/slider', component: SliderDoc },
-      { path: 'modules/tab', component: TabDoc }
+      { path: 'modules/tab', component: TabDoc },
+      // { path: 'modules/toast', component: Toast },
     ]
   }
 ]
