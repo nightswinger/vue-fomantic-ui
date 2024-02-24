@@ -145,3 +145,5 @@ export { default as SuiSlider } from './modules/Slider/Slider'
 export { default as SuiTab } from './modules/Tab/Tab'
 export { default as SuiTabPanel } from './modules/Tab/TabPanel'
 export { default as SuiTransition } from './modules/Transition/Transition'
+
+export { useToast } from './modules/Toast/useToast'
