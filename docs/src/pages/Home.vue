@@ -27,7 +27,7 @@ onBeforeRouteUpdate(() => {
 })
 </script>
 
-<style>
+<style scoped>
 .article {
   margin-left: 250px;
   max-height: 100vh;
@@ -39,6 +39,12 @@ onBeforeRouteUpdate(() => {
   margin-right: 3rem !important;
   width: auto !important;
   max-width: 960px !important;
+}
+
+@media only screen and (max-width: 1272px) {
+  .article {
+    margin-left: 200px;
+  }
 }
 
 @media only screen and (max-width: 1144px) {
@@ -64,8 +70,5 @@ onBeforeRouteUpdate(() => {
 }
 .main > h2 {
   margin: 5rem 0rem 3rem;
-}
-.example {
-  padding: 2rem 0rem;
 }
 </style>

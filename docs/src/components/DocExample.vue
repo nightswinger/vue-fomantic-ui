@@ -52,3 +52,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.example {
+  padding: 2rem;
+}
+</style>

@@ -126,7 +126,7 @@ export default defineComponent({
       { name: 'Sidebar', path: '/modules/sidebar' },
       { name: 'Slider', path: '/modules/slider' },
       { name: 'Tab', path: '/modules/tab' },
-      // { name: 'Toast', path: '/modules/toast' },
+      { name: 'Toast', path: '/modules/toast' },
     ]
 
     return { isActive, elements, collections, views, modules }
