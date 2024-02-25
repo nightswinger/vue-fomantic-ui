@@ -1,20 +1,20 @@
 <template>
   <SuiGridRow>
-    <SuiGridColumn :width="15">
+    <SuiGridColumn>
       <SuiHeader as="h3" class="doc-section-text">
         {{ label }}
         <RouterLink :to="`${currentRoutePath}#${$attrs.id}`" target="_self" @click="handleAnchorLink">
           <SuiIcon name="linkify" color="grey" size="small" link fitted />
         </RouterLink>
-        <SuiHeaderSubheader>
-          <slot></slot>
-        </SuiHeaderSubheader>
       </SuiHeader>
     </SuiGridColumn>
-    <SuiGridColumn textAlign="right" :width="1">
+    <SuiGridColumn textAlign="right">
       <SuiIcon name="code" color="grey" link @click="onClick" />
     </SuiGridColumn>
   </SuiGridRow>
+  <p>
+    <slot></slot>
+  </p>
 </template>
 
 <script setup>

@@ -11,6 +11,10 @@
     "lib": ["esnext", "dom"],
     "types": ["vite/client"],
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
