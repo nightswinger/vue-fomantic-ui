@@ -2,6 +2,8 @@ import clsx from "clsx";
 import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
+import { Icon } from "@/elements/Icon";
+
 export default defineComponent({
   name: 'SuiButton',
   props: {
@@ -20,7 +22,7 @@ export default defineComponent({
     google: Boolean,
     labeled: [Boolean, String],
     labelPosition: String,
-    icon: Boolean,
+    icon: [Boolean, String],
     linkedin: Boolean,
     instagram: Boolean,
     inverted: Boolean,
@@ -52,7 +54,7 @@ export default defineComponent({
         computeKeyOnly(props.facebook, 'facebook'),
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.google, 'google'),
-        computeKeyOnly(props.icon, 'icon'),
+        computeKeyOnly(!!props.icon, 'icon'),
         computeKeyOnly(props.linkedin, 'linkedin'),
         computeKeyOnly(props.instagram, 'instagram'),
         computeKeyOnly(props.inverted, 'inverted'),
@@ -89,6 +91,7 @@ export default defineComponent({
         class={this.computedClass}
         role="button"
       >
+        {typeof this.icon === 'string' && <Icon name={this.icon} />}
         {this.$slots.default?.()}  
       </elementType>
     )
