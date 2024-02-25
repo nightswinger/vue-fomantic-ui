@@ -11,11 +11,7 @@
       {{ category }}
     </SuiHeader>
     <template v-for="(doc, i) in docs.filter(d => d.category === category)" :key="doc.label + '_' + i">
-      <div :style="{marginTop: '3rem'}">
-        <SuiGrid :columns="2">
-          <component :is="doc.component" />
-        </SuiGrid>
-      </div>
+      <component :is="doc.component" :id="doc.id" :style="{marginTop: '3rem'}" />
     </template>
   </template>
 </template>

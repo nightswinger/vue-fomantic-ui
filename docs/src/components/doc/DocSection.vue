@@ -1,10 +1,14 @@
 <template>
-  <DocSectionText :label="label" :on-click="onClick">
-    <slot name="description"></slot>
-  </DocSectionText>
-  <DocSectionCode :code="code" :hide-code="hideCode">
-    <slot name="example"></slot>
-  </DocSectionCode>
+  <section>
+    <SuiGrid :columns="2">
+      <DocSectionText :label="label" :on-click="onClick" v-bind="$attrs">
+        <slot name="description"></slot>
+      </DocSectionText>
+      <DocSectionCode :code="code" :hide-code="hideCode">
+        <slot name="example"></slot>
+      </DocSectionCode>
+    </SuiGrid>
+  </section>
 </template>
 
 <script setup>
