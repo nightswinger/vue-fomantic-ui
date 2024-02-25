@@ -25,6 +25,12 @@ import SidebarMenu from './SidebarMenu.vue';
   overflow-x: hidden;
 }
 
+@media only screen and (max-width: 1272px) {
+  .sidemenu {
+    width: 200px;
+  }
+}
+
 @media only screen and (max-width: 1144px) {
   .sidemenu {
     display: none;

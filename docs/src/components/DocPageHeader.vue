@@ -1,7 +1,7 @@
 <template>
   <sui-segment vertical>
       <sui-container class="main">
-        <div class="intro">
+        <div class="intro" :style="{padding: '2rem'}">
           <sui-header as="h1">{{ title }}
             <sui-header-subheader>
               {{ sub }}
