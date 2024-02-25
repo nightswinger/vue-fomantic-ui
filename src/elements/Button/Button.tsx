@@ -4,6 +4,8 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../uti
 
 import { Icon } from "@/elements/Icon";
 
+import type { PropType, VNode } from "vue";
+
 export default defineComponent({
   name: 'SuiButton',
   props: {
@@ -15,6 +17,7 @@ export default defineComponent({
     circular: Boolean,
     color: String,
     compact: Boolean,
+    content: [String, Array] as PropType<string|VNode[]>,
     disabled: Boolean,
     facebook: Boolean,
     floated: String,
@@ -92,7 +95,7 @@ export default defineComponent({
         role="button"
       >
         {typeof this.icon === 'string' && <Icon name={this.icon} />}
-        {this.$slots.default?.()}  
+        {this.content || this.$slots.default?.()}
       </elementType>
     )
   }

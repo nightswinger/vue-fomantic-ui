@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Button from "./Button";
 import { Icon } from "../../elements/Icon";
+import { h } from "vue";
 
 type Story = StoryObj<typeof Button>;
 
@@ -19,7 +20,11 @@ const meta: Meta<typeof Button> = {
   }),
 };
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    content: 'Button',
+  },
+};
 
 export const IconButton: Story = {
   render: (args) => ({
