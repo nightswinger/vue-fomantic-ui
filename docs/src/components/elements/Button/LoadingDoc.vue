@@ -5,9 +5,8 @@
     </template>
     <template #example>
       <SuiButton loading content="Loading" />
-      <SuiButton loading basic content="Loading" />
-      <SuiButton loading primary content="Loading" />
-      <SuiButton loading secondary content="Loading" />
+      <SuiButton loading="double" primary content="Loading" />
+      <SuiButton loading="elastic" secondary content="Loading" />
     </template>
   </DocSection>
 </template>
@@ -18,6 +17,8 @@ import DocSection from '@/components/doc/DocSection.vue'
 import { SuiButton } from 'vue-fomantic-ui'
 
 const code = `<template>
-  <SuiButton disabled icon="user" content=" Followed" />
-<\/template>`
+  <SuiButton loading content="Loading" />
+  <SuiButton loading="double" primary content="Loading" />
+  <SuiButton loading="elastic" secondary content="Loading" />
+</template>`
 </script>
