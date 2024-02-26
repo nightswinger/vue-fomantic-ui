@@ -68,6 +68,40 @@ describe('SuiButton', () => {
 
   });
 
+  describe('labeled', () => {
+    it('applies the labeled class when the labeled prop is true', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          labeled: true,
+        }
+      });
+
+      expect(wrapper.classes()).toContain('labeled');
+    });
+
+    it('applies the labeled class when the labeled prop is left', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          labeled: 'left',
+        }
+      });
+
+      expect(wrapper.classes()).toContain('left');
+      expect(wrapper.classes()).toContain('labeled');
+    });
+
+    it('applies the labeled class when the labeled prop is right', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          labeled: 'right',
+        }
+      });
+
+      expect(wrapper.classes()).toContain('right');
+      expect(wrapper.classes()).toContain('labeled');
+    });
+  });
+
   describe('loading', () => {
     it('applies the loading class when the loading prop is true', async () => {
       const wrapper = mount(Button, {
