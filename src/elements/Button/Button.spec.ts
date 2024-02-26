@@ -52,6 +52,20 @@ describe('SuiButton', () => {
       const icon = wrapper.find('i.cloud.icon')
       expect(icon.exists()).toBe(true);
     });
+
+    describe('with content', () => {
+      it('does not apply the icon class when the icon prop is true and there is content', async () => {
+        const wrapper = mount(Button, {
+          props: {
+            icon: 'heart',
+            content: 'Like',
+          }
+        });
+  
+        expect(wrapper.classes()).not.toContain('icon');
+      });
+  });
+
   });
 
   describe('loading', () => {

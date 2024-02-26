@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Button from "./Button";
 import { Icon } from "../../elements/Icon";
-import { h } from "vue";
 
 type Story = StoryObj<typeof Button>;
 
@@ -51,6 +50,20 @@ export const Loading: Story = {
       <Button loading content="Loading" />
       <Button loading="double" content="Loading" />
       <Button loading="elastic" content="Loading" />
+    `,
+  }),
+};
+
+export const Social: Story = {
+  render: (args) => ({
+    components: { Button },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Button facebook icon="facebook" content="Facebook" />
+      <Button twitter icon="twitter" content="Twitter" />
+      <Button youtube icon="youtube" content="Youtube" />
     `,
   }),
 };
