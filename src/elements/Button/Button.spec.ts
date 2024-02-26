@@ -53,4 +53,38 @@ describe('SuiButton', () => {
       expect(icon.exists()).toBe(true);
     });
   });
+
+  describe('loading', () => {
+    it('applies the loading class when the loading prop is true', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          loading: true,
+        }
+      });
+
+      expect(wrapper.classes()).toContain('loading');
+    });
+
+    it('applies the loading class when the loading prop is double', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          loading: 'double',
+        }
+      });
+
+      expect(wrapper.classes()).toContain('loading');
+      expect(wrapper.classes()).toContain('double');
+    });
+
+    it('applies the loading class when the loading prop is elastic', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          loading: 'elastic',
+        }
+      });
+
+      expect(wrapper.classes()).toContain('loading');
+      expect(wrapper.classes()).toContain('elastic');
+    });
+  });
 });

@@ -4,6 +4,8 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../uti
 
 import { Icon } from "@/elements/Icon";
 
+import { makeLoadingProps, useLoading } from "./composables/loading";
+
 import type { PropType, VNode } from "vue";
 
 export default defineComponent({
@@ -29,7 +31,6 @@ export default defineComponent({
     linkedin: Boolean,
     instagram: Boolean,
     inverted: Boolean,
-    loading: Boolean,
     negative: Boolean,
     positive: Boolean,
     primary: Boolean,
@@ -41,10 +42,13 @@ export default defineComponent({
     twitter: Boolean,
     vk: Boolean,
     whatsapp: Boolean,
-    youtube: Boolean
+    youtube: Boolean,
+    ...makeLoadingProps(),
   },
   setup(props) {
-    const computedClass = computed(() => {
+    const { loadingClasses } = useLoading(props);
+
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
@@ -61,7 +65,6 @@ export default defineComponent({
         computeKeyOnly(props.linkedin, 'linkedin'),
         computeKeyOnly(props.instagram, 'instagram'),
         computeKeyOnly(props.inverted, 'inverted'),
-        computeKeyOnly(props.loading, 'loading'),
         computeKeyOnly(props.negative, 'negative'),
         computeKeyOnly(props.positive, 'positive'),
         computeKeyOnly(props.primary, 'primary'),
@@ -78,12 +81,13 @@ export default defineComponent({
         computeKeyValue(props.labelPosition, 'labeled'),
         computeKeyOrKeyValue(props.animated, 'animated'),
         computeKeyOrKeyValue(props.labeled, 'labeled'),
+        loadingClasses.value,
         'button'
       )
     })
 
     return {
-      computedClass
+      classes
     }
   },
   render() {
@@ -91,7 +95,7 @@ export default defineComponent({
 
     return (
       <elementType
-        class={this.computedClass}
+        class={this.classes}
         role="button"
       >
         {typeof this.icon === 'string' && <Icon name={this.icon} />}

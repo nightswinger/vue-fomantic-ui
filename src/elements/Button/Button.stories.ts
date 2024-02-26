@@ -41,4 +41,18 @@ export const IconButton: Story = {
   }),
 };
 
+export const Loading: Story = {
+  render: (args) => ({
+    components: { Button },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Button loading content="Loading" />
+      <Button loading="double" content="Loading" />
+      <Button loading="elastic" content="Loading" />
+    `,
+  }),
+};
+
 export default meta;
