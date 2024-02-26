@@ -46,6 +46,16 @@ import CircularDoc from '@/components/elements/Button/CircularDoc.vue'
 import VerticallyAttachedDoc from '@/components/elements/Button/VerticallyAttachedDoc.vue'
 import HorizontallyAttachedDoc from '@/components/elements/Button/HorizontallyAttachedDoc.vue'
 
+// Group Variations
+import VerticalButtonsDoc from '@/components/elements/Button/VerticalButtonsDoc.vue'
+import StackableButtonsDoc from '@/components/elements/Button/StackableButtonsDoc.vue'
+import LabeledIconButtonsDoc from '@/components/elements/Button/LabeledIconButtonsDoc.vue'
+import MixedGroupDoc from '@/components/elements/Button/MixedGroupDoc.vue'
+import EqualWidthDoc from '@/components/elements/Button/EqualWidthDoc.vue'
+import ColoredButtonsDoc from '@/components/elements/Button/ColoredButtonsDoc.vue'
+import BasicButtonsDoc from '@/components/elements/Button/BasicButtonsDoc.vue'
+import GroupSizesDoc from '@/components/elements/Button/GroupSizesDoc.vue'
+
 const docs = [
   {
     id: 'button',
@@ -208,6 +218,54 @@ const docs = [
     label: 'Horizontally Attached',
     category: 'Variations',
     component: HorizontallyAttachedDoc,
+  },
+  {
+    id: 'vertical-buttons',
+    label: 'Vertical Buttons',
+    category: 'Group Variations',
+    component: VerticalButtonsDoc,
+  },
+  {
+    id: 'stackable-buttons',
+    label: 'Stackable Buttons',
+    category: 'Group Variations',
+    component: StackableButtonsDoc,
+  },
+  {
+    id: 'labeled-icon-buttons',
+    label: 'Labeled Icon Buttons',
+    category: 'Group Variations',
+    component: LabeledIconButtonsDoc,
+  },
+  {
+    id: 'mixed-group',
+    label: 'Mixed Group',
+    category: 'Group Variations',
+    component: MixedGroupDoc,
+  },
+  {
+    id: 'equal-width',
+    label: 'Equal Width',
+    category: 'Group Variations',
+    component: EqualWidthDoc,
+  },
+  {
+    id: 'colored-buttons',
+    label: 'Colored Buttons',
+    category: 'Group Variations',
+    component: ColoredButtonsDoc,
+  },
+  {
+    id: 'basic-buttons',
+    label: 'Basic Buttons',
+    category: 'Group Variations',
+    component: BasicButtonsDoc,
+  },
+  {
+    id: 'group-sizes',
+    label: 'Group Sizes',
+    category: 'Group Variations',
+    component: GroupSizesDoc,
   },
 ]
 </script>

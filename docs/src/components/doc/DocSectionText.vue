@@ -22,6 +22,8 @@ import { computed } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import { SuiIcon } from 'vue-fomantic-ui'
 
+defineOptions({ inheritAttrs: false })
+
 defineProps(['label', 'onClick'])
 
 const router = useRouter()
