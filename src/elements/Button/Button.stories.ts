@@ -40,6 +40,23 @@ export const IconButton: Story = {
   }),
 };
 
+export const LabeledIcon: Story = {
+  render: (args) => ({
+    components: { Button, Icon },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Button labeled icon="pause" content="Pause" />
+      <Button labeled="right" icon="right arrow" content="Next" />
+      <Button labeled icon>
+        <Icon loading name="spinner" />
+        Loading
+      </Button>
+    `,
+  }),
+};
+
 export const Loading: Story = {
   render: (args) => ({
     components: { Button },

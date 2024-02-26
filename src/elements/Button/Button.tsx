@@ -5,6 +5,7 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../uti
 import { Icon } from "@/elements/Icon";
 
 import { makeIconProps, useIcon } from "./composables/icon";
+import { makeLabeledProps, useLabeled } from "./composables/labeled";
 import { makeLoadingProps, useLoading } from "./composables/loading";
 
 import type { PropType, VNode } from "vue";
@@ -26,8 +27,6 @@ export default defineComponent({
     floated: String,
     fluid: Boolean,
     google: Boolean,
-    labeled: [Boolean, String],
-    labelPosition: String,
     linkedin: Boolean,
     instagram: Boolean,
     inverted: Boolean,
@@ -44,10 +43,12 @@ export default defineComponent({
     whatsapp: Boolean,
     youtube: Boolean,
     ...makeIconProps(),
+    ...makeLabeledProps(),
     ...makeLoadingProps(),
   },
   setup(props) {
     const { iconClasses } = useIcon(props);
+    const { labeledClasses } = useLabeled(props);
     const { loadingClasses } = useLoading(props);
 
     const classes = computed(() => {
@@ -79,10 +80,9 @@ export default defineComponent({
         computeKeyOnly(props.youtube, 'youtube'),
         computeKeyValue(props.attached, 'attached'),
         computeKeyValue(props.floated, 'floated'),
-        computeKeyValue(props.labelPosition, 'labeled'),
         computeKeyOrKeyValue(props.animated, 'animated'),
-        computeKeyOrKeyValue(props.labeled, 'labeled'),
         iconClasses.value,
+        labeledClasses.value,
         loadingClasses.value,
         'button'
       )
