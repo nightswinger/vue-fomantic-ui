@@ -7,7 +7,7 @@
       <SuiButtonGroup>
         <SuiButton labeled icon="left chevron" content="Back" />
         <SuiButton icon="stop" content="Stop" />
-        <SuiButton labeled="right">
+        <SuiButton icon labeled="right">
           <SuiIcon name="right chevron" />
           Forward
         </SuiButton>
@@ -25,7 +25,7 @@ const code = `<template>
   <SuiButtonGroup>
     <SuiButton labeled icon="left chevron" content="Back" />
     <SuiButton icon="stop" content="Stop" />
-    <SuiButton labeled="right">
+    <SuiButton icon labeled="right">
       <SuiIcon name="right chevron" />
       Forward
     </SuiButton>
