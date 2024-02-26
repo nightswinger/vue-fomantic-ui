@@ -267,12 +267,12 @@ const active = ref(false)
   <SuiButtonGroup>
     <SuiButton labeled icon="left chevron" content="Back" />
     <SuiButton icon="stop" content="Stop" />
-    <SuiButton labeled="right">
+    <SuiButton icon labeled="right">
       <SuiIcon name="right chevron" />
       Forward
     </SuiButton>
   </SuiButtonGroup>
-</template>`,Cw={__name:"MixedGroupDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Mixed Group",code:yw},{description:i(()=>[a(" Button groups can show groups of icons ")]),example:i(()=>[e(R(lt),null,{default:i(()=>[e(R(M),{labeled:"",icon:"left chevron",content:"Back"}),e(R(M),{icon:"stop",content:"Stop"}),e(R(M),{labeled:"right"},{default:i(()=>[e(R(ot),{name:"right chevron"}),a(" Forward ")]),_:1})]),_:1})]),_:1}))}},ww=`<template>
+</template>`,Cw={__name:"MixedGroupDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Mixed Group",code:yw},{description:i(()=>[a(" Button groups can show groups of icons ")]),example:i(()=>[e(R(lt),null,{default:i(()=>[e(R(M),{labeled:"",icon:"left chevron",content:"Back"}),e(R(M),{icon:"stop",content:"Stop"}),e(R(M),{icon:"",labeled:"right"},{default:i(()=>[e(R(ot),{name:"right chevron"}),a(" Forward ")]),_:1})]),_:1})]),_:1}))}},ww=`<template>
   <SuiButtonGroup :widths="5">
     <SuiButton>Overview</SuiButton>
     <SuiButton>Specs</SuiButton>
