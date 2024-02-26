@@ -4,15 +4,15 @@
       A button can appear alongside a label
     </template>
     <template #example>
-      <SuiButton labelPosition="right" as="div">
+      <SuiButton labeled="right" as="div">
         <SuiButton icon="heart" content=" Like" />
         <SuiLabel basic>2,048</SuiLabel>
       </SuiButton>
-      <SuiButton labelPosition="left" as="div">
+      <SuiButton labeled="left" as="div">
         <SuiLabel basic pointing="right">2,048</SuiLabel>
         <SuiButton icon="heart" content=" Like" />
       </SuiButton>
-      <SuiButton labelPosition="left" as="div">
+      <SuiButton labeled="left" as="div">
         <SuiLabel basic>1,048</SuiLabel>
         <SuiButton icon="fork" />
       </SuiButton>
@@ -26,15 +26,15 @@ import DocSection from '@/components/doc/DocSection.vue'
 import { SuiButton, SuiLabel } from 'vue-fomantic-ui'
 
 const code = `<template>
-  <SuiButton labelPosition="right" as="div">
+  <SuiButton labeled="right" as="div">
     <SuiButton icon="heart" content=" Like" />
     <SuiLabel basic>2,048</SuiLabel>
   </SuiButton>
-  <SuiButton labelPosition="left" as="div">
+  <SuiButton labeled="left" as="div">
     <SuiLabel basic pointing="right">2,048</SuiLabel>
     <SuiButton icon="heart" content=" Like" />
   </SuiButton>
-  <SuiButton labelPosition="left" as="div">
+  <SuiButton labeled="left" as="div">
     <SuiLabel basic>1,048</SuiLabel>
     <SuiButton icon="fork" />
   </SuiButton>
