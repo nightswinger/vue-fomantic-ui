@@ -61,7 +61,6 @@ export default defineComponent({
         computeKeyOnly(props.facebook, 'facebook'),
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.google, 'google'),
-        computeKeyOnly(!!props.icon, 'icon'),
         computeKeyOnly(props.linkedin, 'linkedin'),
         computeKeyOnly(props.instagram, 'instagram'),
         computeKeyOnly(props.inverted, 'inverted'),
@@ -81,6 +80,7 @@ export default defineComponent({
         computeKeyValue(props.labelPosition, 'labeled'),
         computeKeyOrKeyValue(props.animated, 'animated'),
         computeKeyOrKeyValue(props.labeled, 'labeled'),
+        { icon: props.icon && !props.content },
         loadingClasses.value,
         'button'
       )
