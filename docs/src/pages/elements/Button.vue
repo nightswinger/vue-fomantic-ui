@@ -32,6 +32,20 @@ import ActiveDoc from '@/components/elements/Button/ActiveDoc.vue'
 import DisabledDoc from '@/components/elements/Button/DisabledDoc.vue'
 import LoadingDoc from '@/components/elements/Button/LoadingDoc.vue'
 
+// Variations
+import SocialDoc from '@/components/elements/Button/SocialDoc.vue'
+import SizeDoc from '@/components/elements/Button/SizeDoc.vue'
+import FloatedDoc from '@/components/elements/Button/FloatedDoc.vue'
+import ColoredDoc from '@/components/elements/Button/ColoredDoc.vue'
+import CompactDoc from '@/components/elements/Button/CompactDoc.vue'
+import ToggleDoc from '@/components/elements/Button/ToggleDoc.vue'
+import PositiveDoc from '@/components/elements/Button/PositiveDoc.vue'
+import NegativeDoc from '@/components/elements/Button/NegativeDoc.vue'
+import FluidDoc from '@/components/elements/Button/FluidDoc.vue'
+import CircularDoc from '@/components/elements/Button/CircularDoc.vue'
+import VerticallyAttachedDoc from '@/components/elements/Button/VerticallyAttachedDoc.vue'
+import HorizontallyAttachedDoc from '@/components/elements/Button/HorizontallyAttachedDoc.vue'
+
 const docs = [
   {
     id: 'button',
@@ -122,6 +136,78 @@ const docs = [
     label: 'Loading',
     category: 'States',
     component: LoadingDoc,
+  },
+  {
+    id: 'social',
+    label: 'Social',
+    category: 'Variations',
+    component: SocialDoc,
+  },
+  {
+    id: 'size',
+    label: 'Size',
+    category: 'Variations',
+    component: SizeDoc,
+  },
+  {
+    id: 'floated',
+    label: 'Floated',
+    category: 'Variations',
+    component: FloatedDoc,
+  },
+  {
+    id: 'colored',
+    label: 'Colored',
+    category: 'Variations',
+    component: ColoredDoc,
+  },
+  {
+    id: 'compact',
+    label: 'Compact',
+    category: 'Variations',
+    component: CompactDoc,
+  },
+  {
+    id: 'toggle',
+    label: 'Toggle',
+    category: 'Variations',
+    component: ToggleDoc,
+  },
+  {
+    id: 'positive',
+    label: 'Positive',
+    category: 'Variations',
+    component: PositiveDoc,
+  },
+  {
+    id: 'negative',
+    label: 'Negative',
+    category: 'Variations',
+    component: NegativeDoc,
+  },
+  {
+    id: 'fluid',
+    label: 'Fluid',
+    category: 'Variations',
+    component: FluidDoc,
+  },
+  {
+    id: 'circular',
+    label: 'Circular',
+    category: 'Variations',
+    component: CircularDoc,
+  },
+  {
+    id: 'vertically-attached',
+    label: 'Vertically Attached',
+    category: 'Variations',
+    component: VerticallyAttachedDoc,
+  },
+  {
+    id: 'horizontally-attached',
+    label: 'Horizontally Attached',
+    category: 'Variations',
+    component: HorizontallyAttachedDoc,
   },
 ]
 </script>
