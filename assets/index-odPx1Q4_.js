@@ -80,19 +80,19 @@ const onClick = () => label.value = label.value === 'Follow' ? 'Following' : 'Fo
     <SuiButtonContent hidden>$12.99 a month</SuiButtonContent>
   </SuiButton>
 </template>`,hC={__name:"AnimatedDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Animated",code:gC},{description:i(()=>[a(" A button can animate to show hidden content ")]),example:i(()=>[e(R(M),{animated:""},{default:i(()=>[e(R(li),{visible:""},{default:i(()=>[a("Next")]),_:1}),e(R(li),{hidden:""},{default:i(()=>[e(R(ot),{name:"arrow right"})]),_:1})]),_:1}),e(R(M),{animated:"vertical"},{default:i(()=>[e(R(li),{visible:""},{default:i(()=>[e(R(ot),{name:"shop"})]),_:1}),e(R(li),{hidden:""},{default:i(()=>[a("Shop")]),_:1})]),_:1}),e(R(M),{animated:"fade"},{default:i(()=>[e(R(li),{visible:""},{default:i(()=>[a(" Sign-up for a Pro account ")]),_:1}),e(R(li),{hidden:""},{default:i(()=>[a("$12.99 a month")]),_:1})]),_:1})]),_:1}))}},_C=`<template>
-  <SuiButton labelPosition="right" as="div">
+  <SuiButton labeled="right" as="div">
     <SuiButton icon="heart" content=" Like" />
     <SuiLabel basic>2,048</SuiLabel>
   </SuiButton>
-  <SuiButton labelPosition="left" as="div">
+  <SuiButton labeled="left" as="div">
     <SuiLabel basic pointing="right">2,048</SuiLabel>
     <SuiButton icon="heart" content=" Like" />
   </SuiButton>
-  <SuiButton labelPosition="left" as="div">
+  <SuiButton labeled="left" as="div">
     <SuiLabel basic>1,048</SuiLabel>
     <SuiButton icon="fork" />
   </SuiButton>
-</template>`,bC={__name:"LabeledDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Labeled",code:_C},{description:i(()=>[a(" A button can appear alongside a label ")]),example:i(()=>[e(R(M),{labelPosition:"right",as:"div"},{default:i(()=>[e(R(M),{icon:"heart",content:" Like"}),e(R(Ht),{basic:""},{default:i(()=>[a("2,048")]),_:1})]),_:1}),e(R(M),{labelPosition:"left",as:"div"},{default:i(()=>[e(R(Ht),{basic:"",pointing:"right"},{default:i(()=>[a("2,048")]),_:1}),e(R(M),{icon:"heart",content:" Like"})]),_:1}),e(R(M),{labelPosition:"left",as:"div"},{default:i(()=>[e(R(Ht),{basic:""},{default:i(()=>[a("1,048")]),_:1}),e(R(M),{icon:"fork"})]),_:1})]),_:1}))}},vC=`<template>
+</template>`,bC={__name:"LabeledDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Labeled",code:_C},{description:i(()=>[a(" A button can appear alongside a label ")]),example:i(()=>[e(R(M),{labeled:"right",as:"div"},{default:i(()=>[e(R(M),{icon:"heart",content:" Like"}),e(R(Ht),{basic:""},{default:i(()=>[a("2,048")]),_:1})]),_:1}),e(R(M),{labeled:"left",as:"div"},{default:i(()=>[e(R(Ht),{basic:"",pointing:"right"},{default:i(()=>[a("2,048")]),_:1}),e(R(M),{icon:"heart",content:" Like"})]),_:1}),e(R(M),{labeled:"left",as:"div"},{default:i(()=>[e(R(Ht),{basic:""},{default:i(()=>[a("1,048")]),_:1}),e(R(M),{icon:"fork"})]),_:1})]),_:1}))}},vC=`<template>
   <SuiButton icon="cloud" />
 </template>`,yC={__name:"IconDoc",setup(t){return(l,n)=>(I(),te(he,{label:"Icon",code:vC},{description:i(()=>[a(" A button can have only an icon ")]),example:i(()=>[e(R(M),{icon:"cloud"})]),_:1}))}},CC=`<template>
   <SuiButton labeled icon="pause" content="Pause" />
