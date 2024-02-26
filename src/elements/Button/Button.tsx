@@ -4,6 +4,7 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../uti
 
 import { Icon } from "@/elements/Icon";
 
+import { makeIconProps, useIcon } from "./composables/icon";
 import { makeLoadingProps, useLoading } from "./composables/loading";
 
 import type { PropType, VNode } from "vue";
@@ -27,7 +28,6 @@ export default defineComponent({
     google: Boolean,
     labeled: [Boolean, String],
     labelPosition: String,
-    icon: [Boolean, String],
     linkedin: Boolean,
     instagram: Boolean,
     inverted: Boolean,
@@ -43,9 +43,11 @@ export default defineComponent({
     vk: Boolean,
     whatsapp: Boolean,
     youtube: Boolean,
+    ...makeIconProps(),
     ...makeLoadingProps(),
   },
   setup(props) {
+    const { iconClasses } = useIcon(props);
     const { loadingClasses } = useLoading(props);
 
     const classes = computed(() => {
@@ -80,7 +82,7 @@ export default defineComponent({
         computeKeyValue(props.labelPosition, 'labeled'),
         computeKeyOrKeyValue(props.animated, 'animated'),
         computeKeyOrKeyValue(props.labeled, 'labeled'),
-        { icon: props.icon && !props.content },
+        iconClasses.value,
         loadingClasses.value,
         'button'
       )
