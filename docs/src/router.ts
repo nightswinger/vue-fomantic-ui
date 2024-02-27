@@ -5,7 +5,7 @@ import Button from './pages/elements/Button.vue'
 import Container from './pages/elements/Container.vue'
 import Divider from './pages/elements/Divider.vue'
 import Emoji from './pages/elements/Emoji.vue'
-import FlagDoc from './pages/FlagDoc.vue'
+import Flag from './pages/elements/Flag.vue'
 import HeaderDoc from './pages/HeaderDoc.vue'
 import IconDoc from './pages/IconDoc.vue'
 import ImageDoc from './pages/ImageDoc.vue'
@@ -56,7 +56,7 @@ const routes: any = [
       { path: 'elements/container', component: Container },
       { path: 'elements/divider', component: Divider },
       { path: 'elements/emoji', component: Emoji },
-      { path: 'elements/flag', component: FlagDoc },
+      { path: 'elements/flag', component: Flag },
       { path: 'elements/header', component: HeaderDoc },
       { path: 'elements/icon', component: IconDoc },
       { path: 'elements/image', component: ImageDoc },
