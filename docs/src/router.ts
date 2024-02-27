@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
 import Button from './pages/elements/Button.vue'
-import ContainerDoc from './pages/ContainerDoc.vue'
+import Container from './pages/Container.vue'
 import Divider from './pages/elements/Divider.vue'
 import EmojiDoc from './pages/EmojiDoc.vue'
 import FlagDoc from './pages/FlagDoc.vue'
@@ -53,7 +53,7 @@ const routes: any = [
     children: [
       { path: '/', component: GettingStarted },
       { path: 'elements/button', component: Button },
-      { path: 'elements/container', component: ContainerDoc },
+      { path: 'elements/container', component: Container },
       { path: 'elements/divider', component: Divider },
       { path: 'elements/emoji', component: EmojiDoc },
       { path: 'elements/flag', component: FlagDoc },
