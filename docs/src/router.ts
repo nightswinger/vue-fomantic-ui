@@ -7,7 +7,7 @@ import Divider from './pages/elements/Divider.vue'
 import Emoji from './pages/elements/Emoji.vue'
 import Flag from './pages/elements/Flag.vue'
 import Header from './pages/elements/Header.vue'
-import IconDoc from './pages/IconDoc.vue'
+import Icon from './pages/elements/Icon.vue'
 import ImageDoc from './pages/ImageDoc.vue'
 import InputDoc from './pages/InputDoc.vue'
 import LabelDoc from './pages/LabelDoc.vue'
@@ -58,7 +58,7 @@ const routes: any = [
       { path: 'elements/emoji', component: Emoji },
       { path: 'elements/flag', component: Flag },
       { path: 'elements/header', component: Header },
-      { path: 'elements/icon', component: IconDoc },
+      { path: 'elements/icon', component: Icon },
       { path: 'elements/image', component: ImageDoc },
       { path: 'elements/input', component: InputDoc },
       { path: 'elements/label', component: LabelDoc },
