@@ -1,6 +1,10 @@
 <template>
   <div>
-    <SuiSegment vertical style="border-bottom: 1px solid #DDDDDD;">
+    <SuiSegment
+      id="masthead"
+      vertical
+      style="border-bottom: 1px solid #DDDDDD;"
+    >
       <SuiContainer class="main">
         <div class="intro">
           <SuiHeader as="h1">
@@ -56,6 +60,9 @@ defineProps(['title', 'description', 'componentDocs'])
 }
 
 @media only screen and (max-width: 1144px) {
+  #masthead {
+    padding-top: 3rem;
+  }
   .ui.container.main {
     margin-left: 2rem !important;
   }
