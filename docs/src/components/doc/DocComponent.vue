@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SuiSegment vertical>
+    <SuiSegment vertical style="border-bottom: 1px solid #DDDDDD;">
       <SuiContainer class="main">
         <div class="intro">
           <SuiHeader as="h1">

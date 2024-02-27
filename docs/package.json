@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "fomantic-ui-css": "^2.8.7",
+    "fomantic-ui-css": "2.9.0",
     "prismjs": "^1.29.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.4.15",
