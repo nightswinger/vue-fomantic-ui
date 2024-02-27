@@ -3,7 +3,7 @@ import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
 import Button from './pages/elements/Button.vue'
 import ContainerDoc from './pages/ContainerDoc.vue'
-import DividerDoc from './pages/DividerDoc.vue'
+import Divider from './pages/elements/Divider.vue'
 import EmojiDoc from './pages/EmojiDoc.vue'
 import FlagDoc from './pages/FlagDoc.vue'
 import HeaderDoc from './pages/HeaderDoc.vue'
@@ -54,7 +54,7 @@ const routes: any = [
       { path: '/', component: GettingStarted },
       { path: 'elements/button', component: Button },
       { path: 'elements/container', component: ContainerDoc },
-      { path: 'elements/divider', component: DividerDoc },
+      { path: 'elements/divider', component: Divider },
       { path: 'elements/emoji', component: EmojiDoc },
       { path: 'elements/flag', component: FlagDoc },
       { path: 'elements/header', component: HeaderDoc },
