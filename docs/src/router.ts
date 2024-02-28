@@ -9,7 +9,7 @@ import Flag from './pages/elements/Flag.vue'
 import Header from './pages/elements/Header.vue'
 import Icon from './pages/elements/Icon.vue'
 import ImageDoc from './pages/ImageDoc.vue'
-import InputDoc from './pages/InputDoc.vue'
+import Input from './pages/elements/Input.vue'
 import LabelDoc from './pages/LabelDoc.vue'
 import ListDoc from './pages/ListDoc.vue'
 import LoaderDoc from './pages/LoaderDoc.vue'
@@ -60,7 +60,7 @@ const routes: any = [
       { path: 'elements/header', component: Header },
       { path: 'elements/icon', component: Icon },
       { path: 'elements/image', component: ImageDoc },
-      { path: 'elements/input', component: InputDoc },
+      { path: 'elements/input', component: Input },
       { path: 'elements/label', component: LabelDoc },
       { path: 'elements/list', component: ListDoc },
       { path: 'elements/loader', component: LoaderDoc },
