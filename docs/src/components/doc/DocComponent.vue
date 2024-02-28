@@ -31,7 +31,7 @@
     <SuiContainer class="main">
       <SuiSegment basic fitted>
         <DocSections :docs="componentDocs" />
-        <DocTableContents />
+        <DocTableContents :title="title" :links="componentDocs" />
       </SuiSegment>
     </SuiContainer>
   </div>
