@@ -11,6 +11,7 @@ import DocComponent from '@/components/doc/DocComponent.vue'
 
 // Types
 import ListDoc from '@/components/elements/List/ListDoc.vue'
+import BulletedDoc from '@/components/elements/List/BulletedDoc.vue'
 
 const docs = [
   {
@@ -18,6 +19,12 @@ const docs = [
     label: 'List',
     category: 'Types',
     component: ListDoc,
+  },
+  {
+    id: 'bulleted',
+    label: 'Bulleted',
+    category: 'Types',
+    component: BulletedDoc,
   },
 ]
 </script>
