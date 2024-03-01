@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { computed, defineComponent, resolveComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
+import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
   name: 'SuiMenuItem',
@@ -40,6 +40,7 @@ export default defineComponent({
         computeKeyOnly(props.browse, 'browse'),
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.header, 'header'),
+        computeKeyOnly(props.icon, 'icon'),
         computeKeyOnly(props.link, 'link'),
         computeKeyOrKeyValue(props.fitted, 'fitted'),
         'item'
