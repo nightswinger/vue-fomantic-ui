@@ -10,7 +10,7 @@ import Header from './pages/elements/Header.vue'
 import Icon from './pages/elements/Icon.vue'
 import ImageDoc from './pages/ImageDoc.vue'
 import Input from './pages/elements/Input.vue'
-import LabelDoc from './pages/LabelDoc.vue'
+import Label from './pages/elements/Label.vue'
 import ListDoc from './pages/ListDoc.vue'
 import LoaderDoc from './pages/LoaderDoc.vue'
 import RailDoc from './pages/RailDoc.vue'
@@ -61,7 +61,7 @@ const routes: any = [
       { path: 'elements/icon', component: Icon },
       { path: 'elements/image', component: ImageDoc },
       { path: 'elements/input', component: Input },
-      { path: 'elements/label', component: LabelDoc },
+      { path: 'elements/label', component: Label },
       { path: 'elements/list', component: ListDoc },
       { path: 'elements/loader', component: LoaderDoc },
       { path: 'elements/rail', component: RailDoc },
