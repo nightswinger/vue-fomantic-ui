@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
+
+// Elements
 import Button from './pages/elements/Button.vue'
 import Container from './pages/elements/Container.vue'
 import Divider from './pages/elements/Divider.vue'
@@ -12,7 +14,7 @@ import ImageDoc from './pages/ImageDoc.vue'
 import Input from './pages/elements/Input.vue'
 import Label from './pages/elements/Label.vue'
 import ListDoc from './pages/ListDoc.vue'
-import LoaderDoc from './pages/LoaderDoc.vue'
+import Loader from './pages/elements/Loader.vue'
 import RailDoc from './pages/RailDoc.vue'
 import RevealDoc from './pages/RevealDoc.vue'
 import SegmentDoc from './pages/SegmentDoc.vue'
@@ -63,7 +65,7 @@ const routes: any = [
       { path: 'elements/input', component: Input },
       { path: 'elements/label', component: Label },
       { path: 'elements/list', component: ListDoc },
-      { path: 'elements/loader', component: LoaderDoc },
+      { path: 'elements/loader', component: Loader },
       { path: 'elements/rail', component: RailDoc },
       { path: 'elements/reveal', component: RevealDoc },
       { path: 'elements/segment', component: SegmentDoc },
@@ -104,6 +106,9 @@ const routes: any = [
 const router = createRouter({
   history: createWebHistory('/vue-fomantic-ui/'),
   routes,
+  scrollBehavior() {
+    document.querySelector('.article')?.scrollTo(0, 0)
+  },
 })
 
 export default router
