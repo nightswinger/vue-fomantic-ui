@@ -17,15 +17,19 @@ export default defineComponent({
     link: Boolean,
     loading: Boolean,
     name: String,
+    primary: Boolean,
     rotated: String,
+    secondary: Boolean,
     size: String
   },
   setup(props) {
-    const computedClass = computed(() => {
+    const classes = computed(() => {
       return clsx(
         props.color,
         props.name,
         props.size,
+        computeKeyOnly(props.primary, 'primary'),
+        computeKeyOnly(props.secondary, 'secondary'),
         computeKeyOnly(props.bordered, 'bordered'),
         computeKeyOnly(props.circular, 'circular'),
         computeKeyOnly(props.disabled, 'disabled'),
@@ -40,7 +44,7 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
+    return { classes }
   },
   render() {
     let elementType = this.$props.as || 'i'
@@ -49,7 +53,7 @@ export default defineComponent({
       elementType,
       {
         'aria-hidden': true,
-        class: this.computedClass
+        class: this.classes
       }
     )
   }
