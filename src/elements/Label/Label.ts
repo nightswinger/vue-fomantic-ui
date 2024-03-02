@@ -36,6 +36,7 @@ export default defineComponent({
         computeKeyOnly(props.empty, 'empty'),
         computeKeyOnly(props.floating, 'floating'),
         computeKeyOnly(props.horizontal, 'horizontal'),
+        computeKeyOnly(!!props.icon && slots.default === undefined, 'icon'), 
         computeKeyOnly(props.image, 'image'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.prompt, 'prompt'),
@@ -54,7 +55,10 @@ export default defineComponent({
       return () => (
         h(elementType, {
           class: labelClasses.value
-        }, h(Icon, { name: props.icon }))
+        }, [
+          h(Icon, { name: props.icon }),
+          slots.default?.(),
+        ])
       )
     }
 
