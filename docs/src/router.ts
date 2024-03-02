@@ -34,13 +34,14 @@ import FeedDoc from './pages/views/FeedDoc.vue'
 import ItemDoc from './pages/views/ItemDoc.vue'
 import StatisticDoc from './pages/views/StatisticDoc.vue'
 
+// Modules
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
 import CalendarDoc from './pages/modules/CalendarDoc.vue'
 import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
-import ModalDoc from './pages/modules/ModalDoc.vue'
+import Modal from './pages/modules/Modal.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import ProgressDoc from './pages/modules/ProgressDoc.vue'
 import RatingDoc from './pages/modules/RatingDoc.vue'
@@ -91,7 +92,7 @@ const routes: any = [
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/dropdown', component: DropdownDoc },
       { path: 'modules/embed', component: EmbedDoc },
-      { path: 'modules/modal', component: ModalDoc },
+      { path: 'modules/modal', component: Modal },
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: ProgressDoc },
       { path: 'modules/rating', component: RatingDoc },
@@ -106,7 +107,9 @@ const routes: any = [
 const router = createRouter({
   history: createWebHistory('/vue-fomantic-ui/'),
   routes,
-  scrollBehavior() {
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) return
+
     document.querySelector('.article')?.scrollTo(0, 0)
   },
 })
