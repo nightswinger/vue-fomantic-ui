@@ -1,19 +1,28 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
 
+import { makeSizeProps, useSize } from "@/composables/size";
+
 export default defineComponent({
   name: 'SuiFlag',
   props: {
-    name: String
+    name: String,
+    ...makeSizeProps(),
   },
   setup(props) {
-    const computedClass = computed(() => {
-      return clsx(props.name, 'flag')
+    const { sizeClass } = useSize(props)
+
+    const classes = computed(() => {
+      return clsx(
+        sizeClass.value,
+        props.name,
+        'flag'
+      )
     })
 
-    return { computedClass }
+    return { classes }
   },
   render() {
-    return h('i', { class: this.computedClass })
+    return h('i', { class: this.classes })
   }
 })
