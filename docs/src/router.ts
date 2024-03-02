@@ -20,7 +20,8 @@ import RevealDoc from './pages/RevealDoc.vue'
 import SegmentDoc from './pages/SegmentDoc.vue'
 import StepDoc from './pages/StepDoc.vue'
 
-import Breadcrumb from './pages/collections/BreadcrumbDoc.vue'
+// Collections
+import Breadcrumb from './pages/collections/Breadcrumb.vue'
 import FormDoc from './pages/collections/FormDoc.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
