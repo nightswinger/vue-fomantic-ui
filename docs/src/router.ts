@@ -10,7 +10,7 @@ import Emoji from './pages/elements/Emoji.vue'
 import Flag from './pages/elements/Flag.vue'
 import Header from './pages/elements/Header.vue'
 import Icon from './pages/elements/Icon.vue'
-import ImageDoc from './pages/ImageDoc.vue'
+import Image from './pages/elements/Image.vue'
 import Input from './pages/elements/Input.vue'
 import Label from './pages/elements/Label.vue'
 import ListDoc from './pages/ListDoc.vue'
@@ -62,7 +62,7 @@ const routes: any = [
       { path: 'elements/flag', component: Flag },
       { path: 'elements/header', component: Header },
       { path: 'elements/icon', component: Icon },
-      { path: 'elements/image', component: ImageDoc },
+      { path: 'elements/image', component: Image },
       { path: 'elements/input', component: Input },
       { path: 'elements/label', component: Label },
       { path: 'elements/list', component: ListDoc },

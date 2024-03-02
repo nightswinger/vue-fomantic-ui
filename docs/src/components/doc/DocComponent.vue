@@ -20,7 +20,7 @@
               <SuiMenuItem as="a" icon ref="el" href="https://github.com/nightswinger/vue-fomantic-ui">
                 <SuiIcon name="alternate github" />
               </SuiMenuItem>
-              <SuiPopup :trigger="el">
+              <SuiPopup :trigger="el" position="top right">
                 View Project on GitHub
               </SuiPopup>
             </SuiMenu>
