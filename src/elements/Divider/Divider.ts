@@ -1,6 +1,9 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
-import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
+
+import { makeSizeProps, useSize } from "@/composables/size";
+import { computeKeyOnly, computeKeyValue } from "@/utils/classNameHelper";
+
 
 export default defineComponent({
   name: 'SuiDivider',
@@ -12,12 +15,16 @@ export default defineComponent({
     inverted: Boolean,
     section: Boolean,
     textAlign: String,
-    vertical: Boolean
+    vertical: Boolean,
+    ...makeSizeProps(),
   },
   setup(props) {
-    const computedClass = computed(() => {
+    const { sizeClass } = useSize(props)
+
+    const classes = computed(() => {
       return clsx(
         'ui',
+        sizeClass.value,
         computeKeyOnly(props.clearing, 'clearing'),
         computeKeyOnly(props.fitted, 'fitted'),
         computeKeyOnly(props.hidden, 'hidden'),
@@ -30,12 +37,12 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
+    return { classes }
   },
   render() {
     return h(
       'div',
-      { class: this.computedClass },
+      { class: this.classes },
       this.$slots.default?.()
     )
   }
