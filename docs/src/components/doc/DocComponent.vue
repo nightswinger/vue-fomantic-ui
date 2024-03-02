@@ -30,8 +30,11 @@
 
     <SuiContainer class="main">
       <SuiSegment basic fitted>
-        <DocSections :docs="componentDocs" />
-        <DocTableContents :title="title" :links="componentDocs" />
+        <template v-if="componentDocs">
+          <DocSections :docs="componentDocs" />
+          <DocTableContents :title="title" :links="componentDocs" />
+        </template>
+        <slot></slot>
       </SuiSegment>
     </SuiContainer>
   </div>
