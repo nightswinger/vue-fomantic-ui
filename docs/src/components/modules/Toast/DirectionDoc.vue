@@ -1,7 +1,7 @@
 <template>
-  <DocSection label="Titled" :code="code">
+  <DocSection label="Direction" :code="code">
     <template #description>
-      You can add a title to your toast.
+      Toasts can stack horizontal
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue'
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { useToast } from 'vue-fomantic-ui'
 
@@ -18,8 +18,10 @@ const { toast } = useToast()
 
 const show = () => {
   toast({
-    title: 'Better ?',
-    message: 'Hey look, I have a title !'
+    horizontal: true,
+    position: 'top left',
+    title: 'Watch out!',
+    message: `Next one will open to the right`
   })
 }
 
@@ -34,9 +36,12 @@ const { toast } = useToast()
 
 const show = () => {
   toast({
-    title: 'Better ?',
-    message: 'Hey look, I have a title !'
+    horizontal: true,
+    position: 'top left',
+    title: 'Watch out!',
+    message: 'Next one will open to the right'
   })
 }
 <\/script>`
 </script>
+

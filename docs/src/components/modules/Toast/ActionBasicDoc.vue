@@ -1,7 +1,7 @@
 <template>
-  <DocSection label="Vertical" :code="code">
+  <DocSection label="Basic" :code="code">
     <template #description>
-      You can use vertical to display your actions to the right of the toast.
+      The classActions setting provides you a way to adjust the overall appearance of the action buttons. Using basic class does not lighten the actions background. left aligns the buttons to the left.
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue'
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { h } from 'vue'
 import { useToast, SuiButton } from 'vue-fomantic-ui'
@@ -25,7 +25,7 @@ const show = () => {
     actions: ({ close }) => [
       h(SuiButton,
         {
-          color: 'green',
+          color: 'yellow',
           onclick: () => {
             toast({ message: 'You clicked "yes", toast closes by default' })
             close()
@@ -33,18 +33,8 @@ const show = () => {
         },
         () => 'Yes, really'
       ),
-      h(SuiButton,
-        {
-          color: 'red',
-          onclick: () => {
-            toast({ message: 'You clicked "maybe", toast closes by default' })
-            close()
-          }
-        },
-        () => 'Maybe later'
-      )
     ],
-    actionsProps: { vertical: true },
+    actionsProps: { basic: true, aligned: 'left' },
   })
 }
 
@@ -66,7 +56,7 @@ const show = () => {
     actions: ({ close }) => [
       h(SuiButton,
         {
-          color: 'green',
+          color: 'yellow',
           onclick: () => {
             toast({ message: 'You clicked "yes", toast closes by default' })
             close()
@@ -74,18 +64,8 @@ const show = () => {
         },
         () => 'Yes, really'
       ),
-      h(SuiButton,
-        {
-          color: 'red',
-          onclick: () => {
-            toast({ message: 'You clicked "maybe", toast closes by default' })
-            close()
-          }
-        },
-        () => 'Maybe later'
-      )
     ],
-    actionsProps: { vertical: true },
+    actionsProps: { basic: true, aligned: 'left' },
   })
 }
 <\/script>`

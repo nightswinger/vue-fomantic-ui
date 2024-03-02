@@ -1,8 +1,7 @@
 <template>
-  <DocSection label="Vertical Attached" :code="code">
+  <DocSection label="Vertical" :code="code">
     <template #description>
-      Vertical actions can also be displayed as button groups using vertical attached.<br>
-      Vertical attached actions also support left.
+      You can use vertical to display your actions to the right of the toast.
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
@@ -11,7 +10,7 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue'
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { h } from 'vue'
 import { useToast, SuiButton } from 'vue-fomantic-ui'
@@ -45,7 +44,7 @@ const show = () => {
         () => 'Maybe later'
       )
     ],
-    actionsProps: { attached: 'left', vertical: true },
+    actionsProps: { vertical: true },
   })
 }
 
@@ -86,7 +85,7 @@ const show = () => {
         () => 'Maybe later'
       )
     ],
-    actionsProps: { attached: 'left', vertical: true },
+    actionsProps: { vertical: true },
   })
 }
 <\/script>`

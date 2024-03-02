@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue';
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { useToast } from 'vue-fomantic-ui';
 

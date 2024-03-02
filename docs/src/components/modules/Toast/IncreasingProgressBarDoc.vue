@@ -1,34 +1,32 @@
 <template>
-  <DocSection label="Progress Bar" :code="code">
+  <DocSection label="Increasing Progress Bar" :code="code">
     <template #description>
-      You can attach a progress bar to your toast.
+      You can use the progress bar to show the progress of a task.
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
-      <SuiButton color="red" @click="show('red')">Show</SuiButton>
     </template>
   </DocSection>
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue'
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { useToast } from 'vue-fomantic-ui'
 
 const { toast } = useToast()
 
-const show = (color) => {
+const show = () => {
   toast({
     title: 'LOOK',
     message: 'See, how long i will last',
-    showProgress: 'bottom',
-    showProgressColor: color,
+    showProgress: 'top',
+    showProgressUp: true
   })
 }
 
 const code = `<template>
   <SuiButton @click="show">Show</SuiButton>
-  <SuiButton color="red" @click="show('red')">Show</SuiButton>
 <\/template>
 
 <script setup>
@@ -36,12 +34,12 @@ import { useToast } from 'vue-fomantic-ui'
 
 const { toast } = useToast()
 
-const show = (color) => {
+const show = () => {
   toast({
     title: 'LOOK',
     message: 'See, how long i will last',
-    showProgress: 'bottom',
-    showProgressColor: color,
+    showProgress: 'top',
+    showProgressUp: true
   })
 }
 <\/script>`

@@ -1,7 +1,8 @@
 <template>
-  <DocSection label="Basic" :code="code">
+  <DocSection label="Vertical Attached" :code="code">
     <template #description>
-      The classActions setting provides you a way to adjust the overall appearance of the action buttons. Using basic class does not lighten the actions background. left aligns the buttons to the left.
+      Vertical actions can also be displayed as button groups using vertical attached.<br>
+      Vertical attached actions also support left.
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
@@ -10,7 +11,7 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue'
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { h } from 'vue'
 import { useToast, SuiButton } from 'vue-fomantic-ui'
@@ -25,7 +26,7 @@ const show = () => {
     actions: ({ close }) => [
       h(SuiButton,
         {
-          color: 'yellow',
+          color: 'green',
           onclick: () => {
             toast({ message: 'You clicked "yes", toast closes by default' })
             close()
@@ -33,8 +34,18 @@ const show = () => {
         },
         () => 'Yes, really'
       ),
+      h(SuiButton,
+        {
+          color: 'red',
+          onclick: () => {
+            toast({ message: 'You clicked "maybe", toast closes by default' })
+            close()
+          }
+        },
+        () => 'Maybe later'
+      )
     ],
-    actionsProps: { basic: true, aligned: 'left' },
+    actionsProps: { attached: 'left', vertical: true },
   })
 }
 
@@ -56,7 +67,7 @@ const show = () => {
     actions: ({ close }) => [
       h(SuiButton,
         {
-          color: 'yellow',
+          color: 'green',
           onclick: () => {
             toast({ message: 'You clicked "yes", toast closes by default' })
             close()
@@ -64,8 +75,18 @@ const show = () => {
         },
         () => 'Yes, really'
       ),
+      h(SuiButton,
+        {
+          color: 'red',
+          onclick: () => {
+            toast({ message: 'You clicked "maybe", toast closes by default' })
+            close()
+          }
+        },
+        () => 'Maybe later'
+      )
     ],
-    actionsProps: { basic: true, aligned: 'left' },
+    actionsProps: { attached: 'left', vertical: true },
   })
 }
 <\/script>`

@@ -1,7 +1,7 @@
 <template>
-  <DocSection label="Minimal" :code="code">
+  <DocSection label="Center Aligned" :code="code">
     <template #description>
-      A minimal toast will just display a message.
+      The toasts content can be shown center aligned.
     </template>
     <template #example>
       <SuiButton @click="show">Show</SuiButton>
@@ -10,14 +10,18 @@
 </template>
 
 <script setup>
-import DocSection from '../doc/DocSection.vue';
+import DocSection from '@/components/doc/DocSection.vue'
 
 import { useToast } from 'vue-fomantic-ui'
 
 const { toast } = useToast()
 
 const show = () => {
-  toast({ message: 'I am a toast, nice to meet you !' })
+  toast({
+    centered: true,
+    title: 'Veronika has joined',
+    message: 'Welcome to the Fomantic-UI community!',
+  })
 }
 
 const code = `<template>
@@ -30,7 +34,11 @@ import { useToast } from 'vue-fomantic-ui'
 const { toast } = useToast()
 
 const show = () => {
-  toast({ message: 'I am a toast, nice to meet you !' })
+  toast({
+    centered: true,
+    title: 'Veronika has joined',
+    message: 'Welcome to the Fomantic-UI community!'
+  })
 }
 <\/script>`
 </script>

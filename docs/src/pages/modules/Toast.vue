@@ -7,28 +7,28 @@
 </template>
 
 <script setup>
-import DocComponent from '../../components/doc/DocComponent.vue'
+import DocComponent from '@/components/doc/DocComponent.vue'
 
-import MinimalDoc from '../../components/Toast/MinimalDoc.vue'
-import TitledDoc from '../../components/Toast/TitledDoc.vue'
-import ProgressBarDoc from '../../components/Toast/ProgressBarDoc.vue';
+import MinimalDoc from '@/components/modules/Toast/MinimalDoc.vue'
+import TitledDoc from '@/components/modules/Toast/TitledDoc.vue'
+import ProgressBarDoc from '@/components/modules/Toast/ProgressBarDoc.vue';
 
-import ToastTypeDoc from '../../components/Toast/ToastTypeDoc.vue';
-import PositionDoc from '../../components/Toast/PositionDoc.vue';
-import AttachedPosition from '../../components/Toast/AttachedPosition.vue';
-import DirectionDoc from '../../components/Toast/DirectionDoc.vue';
-import CenterAligned from '../../components/Toast/CenterAligned.vue';
-import DurationDoc from '../../components/Toast/DurationDoc.vue';
-import MessageStyleDoc from '../../components/Toast/MessageStyleDoc.vue';
-import IncreasingProgressBarDoc from '../../components/Toast/IncreasingProgressBarDoc.vue';
-import ColorVariantsDoc from '../../components/Toast/ColorVariantsDoc.vue';
-import InvertedColorsDoc from '../../components/Toast/InvertedColorsDoc.vue';
+import ToastTypeDoc from '@/components/modules/Toast/ToastTypeDoc.vue';
+import PositionDoc from '@/components/modules/Toast/PositionDoc.vue';
+import AttachedPosition from '@/components/modules/Toast/AttachedPosition.vue';
+import DirectionDoc from '@/components/modules/Toast/DirectionDoc.vue';
+import CenterAligned from '@/components/modules/Toast/CenterAligned.vue';
+import DurationDoc from '@/components/modules/Toast/DurationDoc.vue';
+import MessageStyleDoc from '@/components/modules/Toast/MessageStyleDoc.vue';
+import IncreasingProgressBarDoc from '@/components/modules/Toast/IncreasingProgressBarDoc.vue';
+import ColorVariantsDoc from '@/components/modules/Toast/ColorVariantsDoc.vue';
+import InvertedColorsDoc from '@/components/modules/Toast/InvertedColorsDoc.vue';
 
-import ActionGeneralDoc from '../../components/Toast/ActionGeneralDoc.vue';
-import ActionBasicDoc from '../../components/Toast/ActionBasicDoc.vue';
-import ActionAttachedDoc from '../../components/Toast/ActionAttachedDoc.vue';
-import ActionVerticalDoc from '../../components/Toast/ActionVerticalDoc.vue';
-import ActionVerticalAttachedDoc from '../../components/Toast/ActionVerticalAttachedDoc.vue';
+import ActionGeneralDoc from '@/components/modules/Toast/ActionGeneralDoc.vue';
+import ActionBasicDoc from '@/components/modules/Toast/ActionBasicDoc.vue';
+import ActionAttachedDoc from '@/components/modules/Toast/ActionAttachedDoc.vue';
+import ActionVerticalDoc from '@/components/modules/Toast/ActionVerticalDoc.vue';
+import ActionVerticalAttachedDoc from '@/components/modules/Toast/ActionVerticalAttachedDoc.vue';
 
 const docs = [
   {
