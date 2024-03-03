@@ -19,4 +19,14 @@ describe('SuiFormTextarea', () => {
       expect(wrapper.find('label').exists()).toBe(false);
     });
   });
+
+  describe('rows', () => {
+    it('renders a textarea with the specified number of rows', () => {
+      const wrapper = mount(FormTextarea, {
+        props: { rows: 5 }
+      });
+
+      expect(wrapper.find('textarea').attributes('rows')).toBe('5');
+    });
+  });
 });
