@@ -22,7 +22,7 @@ import StepDoc from './pages/StepDoc.vue'
 
 // Collections
 import Breadcrumb from './pages/collections/Breadcrumb.vue'
-import FormDoc from './pages/collections/FormDoc.vue'
+import Form from './pages/collections/Form.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
 import MessageDoc from './pages/collections/MessageDoc.vue'
@@ -74,7 +74,7 @@ const routes: any = [
       { path: 'elements/step', component: StepDoc },
 
       { path: 'collections/breadcrumb', component: Breadcrumb },
-      { path: 'collections/form', component: FormDoc },
+      { path: 'collections/form', component: Form },
       { path: 'collections/grid', component: GridDoc },
       { path: 'collections/menu', component: MenuDoc },
       { path: 'collections/message', component: MessageDoc },
