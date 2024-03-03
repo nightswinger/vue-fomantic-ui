@@ -8,10 +8,10 @@ export default defineComponent({
   },
   render() {
     if (this.label) {
-      <div class="field">
+      return (<div class="field">
         <label>{this.label}</label>
         <textarea placeholder={this.placeholder}></textarea>
-      </div>
+      </div>)
     }
 
     return (
