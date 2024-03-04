@@ -15,6 +15,9 @@ import BulletedDoc from '@/components/elements/List/BulletedDoc.vue'
 import OrderedDoc from '@/components/elements/List/OrderedDoc.vue'
 import LinkDoc from '@/components/elements/List/LinkDoc.vue'
 
+// Content
+import IconDoc from '@/components/elements/List/IconDoc.vue'
+
 const docs = [
   {
     id: 'list',
@@ -39,6 +42,12 @@ const docs = [
     label: 'Link',
     category: 'Types',
     component: LinkDoc,
+  },
+  {
+    id: 'icon',
+    label: 'Icon',
+    category: 'Content',
+    component: IconDoc,
   },
 ]
 </script>
