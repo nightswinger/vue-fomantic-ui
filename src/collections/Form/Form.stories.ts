@@ -3,11 +3,13 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import Form from "./Form";
 import FormField from "./FormField";
 
-type Story = StoryObj<typeof FormField>;
+import Message from "../Message/Message";
 
-const meta: Meta<typeof FormField> = {
-  title: "FormField",
-  component: FormField,
+type Story = StoryObj<typeof Form>;
+
+const meta: Meta<typeof Form> = {
+  title: "Form",
+  component: Form,
   render: (args) => ({
     components: { Form, FormField },
     setup: () => ({ args }),
@@ -17,17 +19,30 @@ const meta: Meta<typeof FormField> = {
       </Form>
     `,
   }),
-  args: {
-    disabled: false,
-    label: "Label",
-    placeholder: "Placeholder",
-    width: '',
-  },
-  argTypes: {
-    "onUpdate:modelValue": { action: "update:modelValue" },
-  }
 };
 
 export const Default: Story = {};
+
+export const Info: Story = {
+  render: (args) => ({
+    components: { Form, FormField, Message },
+    setup: () => ({ args }),
+    template: `
+      <Form info>
+        <FormField
+          label="New Password"
+          type="password"
+          placeholder="joe@schmoe.com"
+        />
+        <Message
+          info
+          header="Requirements"
+          content="Password must contain at least 8 characters"
+        >
+        </Message>
+      </Form>
+    `,
+  }),
+};
 
 export default meta;
