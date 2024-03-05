@@ -17,7 +17,7 @@ import ListDoc from './pages/ListDoc.vue'
 import Loader from './pages/elements/Loader.vue'
 import RailDoc from './pages/RailDoc.vue'
 import Reveal from './pages/elements/Reveal.vue'
-import SegmentDoc from './pages/SegmentDoc.vue'
+import Segment from './pages/elements/Segment.vue'
 import StepDoc from './pages/StepDoc.vue'
 
 // Collections
@@ -70,7 +70,7 @@ const routes: any = [
       { path: 'elements/loader', component: Loader },
       { path: 'elements/rail', component: RailDoc },
       { path: 'elements/reveal', component: Reveal },
-      { path: 'elements/segment', component: SegmentDoc },
+      { path: 'elements/segment', component: Segment },
       { path: 'elements/step', component: StepDoc },
 
       { path: 'collections/breadcrumb', component: Breadcrumb },
