@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "sourceMap": true,
     "lib": ["esnext", "dom"],
     "types": ["vite/client"],
