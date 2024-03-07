@@ -12,7 +12,7 @@ export default {
       },
     ],
   },
-  plugins: [vue(), vueJsx(), dts()],
+  plugins: [vue(), vueJsx(), dts({ rollupTypes: true })],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
