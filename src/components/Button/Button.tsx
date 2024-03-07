@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
-import { Icon } from "@/elements/Icon";
+import { Icon } from "@/components/Icon";
 
 import { makeIconProps, useIcon } from "./composables/icon";
 import { makeLabeledProps, useLabeled } from "./composables/labeled";

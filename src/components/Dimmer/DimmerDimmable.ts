@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
-import { Segment } from "../../elements/Segment"
+import { Segment } from "@/components/Segment"
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({

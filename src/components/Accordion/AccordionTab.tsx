@@ -1,6 +1,6 @@
 import { computed, defineComponent, inject, ref, Ref } from "vue";
 import AccordionContent from "./AccordionContent"
-import Icon from "../../elements/Icon/Icon";
+import Icon from "../Icon/Icon";
 import clsx from "clsx";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
