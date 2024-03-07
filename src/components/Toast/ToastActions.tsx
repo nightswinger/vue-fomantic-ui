@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { computed, defineComponent } from "vue";
 
-import { ButtonGroup } from "../../elements/Button";
+import { ButtonGroup } from "@/components/Button";
 import { makeAttachedProps } from "../../composables/attached";
 
 import type { PropType } from "vue";

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { computed, defineComponent, inject, PropType, withModifiers } from "vue";
-import { Image } from "../../elements/Image";
-import { Label } from "../../elements/Label";
+import { Image } from "@/components/Image";
+import { Label } from "@/components/Label";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
