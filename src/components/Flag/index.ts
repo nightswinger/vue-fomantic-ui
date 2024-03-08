@@ -1,10 +1,10 @@
-import { App, Plugin } from "vue";
-import Flag from "./Flag";
+import { App, Plugin } from "vue"
+import Flag from "./Flag"
 
 export default {
   install(app: App) {
-    app.component(Flag.name, Flag);
+    app.component('SuiFlag', Flag)
   }
 } as Plugin;
 
-export { Flag };
+export { Flag }
