@@ -13,6 +13,7 @@
   ],
   "main": "./dist/vue-fomantic-ui.umd.js",
   "module": "./dist/vue-fomantic-ui.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue-fomantic-ui.mjs",
