@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Button from "./Button";
-import { Icon } from "../../elements/Icon";
+import Icon from "../Icon/Icon";
 
 type Story = StoryObj<typeof Button>;
 

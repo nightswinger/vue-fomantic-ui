@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Transition from "./Transition";
-import { Image } from "../../elements/Image";
+import { Image } from "../Image";
 import { ref } from "vue";
 
 type Story = StoryObj<typeof Transition>;

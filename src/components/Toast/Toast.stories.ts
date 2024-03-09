@@ -4,8 +4,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { Toast } from "./Toast";
 import { useToast } from "./useToast";
 
-import { Button } from "../../elements/Button";
-import { Icon } from "../../elements/Icon";
+import { Button } from "../Button";
+import { Icon } from "../Icon";
 
 type Story = StoryObj<typeof Toast>;
 

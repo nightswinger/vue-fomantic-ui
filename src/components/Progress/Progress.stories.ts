@@ -2,7 +2,7 @@ import { ref } from "vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Progress from "./Progress";
-import Segment from "../../elements/Segment/Segment";
+import Segment from "../Segment/Segment";
 
 type Story = StoryObj<typeof Progress>;
 
