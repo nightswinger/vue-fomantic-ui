@@ -3,7 +3,7 @@ import Container from "./Container";
 
 export default {
   install(app: App) {
-    app.component(Container.name, Container);
+    app.component('SuiContainer', Container);
   }
 } as Plugin;
 

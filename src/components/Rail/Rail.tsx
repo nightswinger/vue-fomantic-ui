@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiRail',
   props: {
     attached: Boolean,
     close: [Boolean, String],

@@ -3,7 +3,6 @@ import { computed, ComputedRef, defineComponent, inject, Ref, ref } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiRatingIcon',
   props: {
     icon: String,
     index: {

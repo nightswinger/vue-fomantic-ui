@@ -6,10 +6,10 @@ import MenuMenu from "./MenuMenu"
 
 export default {
   install(app :App) {
-    app.component(Menu.name, Menu)
-    app.component(MenuHeader.name, MenuHeader)
-    app.component(MenuItem.name, MenuItem)
-    app.component(MenuMenu.name, MenuMenu)
+    app.component('SuiMenu', Menu)
+    app.component('SuiMenuHeader', MenuHeader)
+    app.component('SuiMenuItem', MenuItem)
+    app.component('SuiMenuMenu', MenuMenu)
   }
 } as Plugin
 

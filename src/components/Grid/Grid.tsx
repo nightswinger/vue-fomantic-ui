@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue, computeTextAlignProp, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiGrid',
   props: {
     celled: [Boolean, String],
     centered: Boolean,

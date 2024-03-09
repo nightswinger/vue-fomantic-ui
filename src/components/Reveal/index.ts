@@ -4,8 +4,8 @@ import RevealContent from "./RevealContent"
 
 export default {
   install(app: App) {
-    app.component(Reveal.name, Reveal)
-    app.component(RevealContent.name, RevealContent)
+    app.component('SuiReveal', Reveal)
+    app.component('SuiRevealContent', RevealContent)
   }
 } as Plugin
 

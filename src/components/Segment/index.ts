@@ -5,9 +5,9 @@ import SegmentInline from "./SegmentInline"
 
 export default {
   install(app: App) {
-    app.component(Segment.name, Segment)
-    app.component(SegmentGroup.name, SegmentGroup)
-    app.component(SegmentInline.name, SegmentInline)
+    app.component('SuiSegment', Segment)
+    app.component('SuiSegmentGroup', SegmentGroup)
+    app.component('SuiSegmentInline', SegmentInline)
   }
 } as Plugin
 

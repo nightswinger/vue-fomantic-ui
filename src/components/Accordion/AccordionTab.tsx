@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiAccordionTab',
   props: {
     index: Number,
     title: String,

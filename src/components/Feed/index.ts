@@ -12,16 +12,16 @@ import FeedUser from "./FeedUser"
 
 export default {
   install(app: App) {
-    app.component(Feed.name, Feed)
-    app.component(FeedContent.name, FeedContent)
-    app.component(FeedDate.name, FeedDate)
-    app.component(FeedEvent.name, FeedEvent)
-    app.component(FeedExtra.name, FeedExtra)
-    app.component(FeedLabel.name, FeedLabel)
-    app.component(FeedLike.name, FeedLike)
-    app.component(FeedMeta.name, FeedMeta)
-    app.component(FeedSummary.name, FeedSummary)
-    app.component(FeedUser.name, FeedUser)
+    app.component('SuiFeed', Feed)
+    app.component('SuiFeedContent', FeedContent)
+    app.component('SuiFeedDate', FeedDate)
+    app.component('SuiFeedEvent', FeedEvent)
+    app.component('SuiFeedExtra', FeedExtra)
+    app.component('SuiFeedLabel', FeedLabel)
+    app.component('SuiFeedLike', FeedLike)
+    app.component('SuiFeedMeta', FeedMeta)
+    app.component('SuiFeedSummary', FeedSummary)
+    app.component('SuiFeedUser', FeedUser)
   }
 } as Plugin
 

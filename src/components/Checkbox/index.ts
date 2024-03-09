@@ -3,7 +3,7 @@ import Checkbox from "./Checkbox"
 
 export default {
   install(app: App) {
-    app.component(Checkbox.name, Checkbox)
+    app.component('SuiCheckbox', Checkbox)
   }
 } as Plugin
 

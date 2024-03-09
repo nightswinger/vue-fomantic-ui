@@ -4,8 +4,8 @@ import ImageGroup from "./ImageGroup";
 
 export default {
   install(app: App) {
-    app.component(Image.name, Image);
-    app.component(ImageGroup.name, ImageGroup);
+    app.component('SuiImage', Image)
+    app.component('SuiImageGroup', ImageGroup)
   }
 } as Plugin;
 

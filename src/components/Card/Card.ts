@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiCard',
   props: {
     centered: Boolean,
     color: String,

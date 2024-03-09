@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiButtonContent',
   props: {
     hidden: Boolean,
     visible: Boolean

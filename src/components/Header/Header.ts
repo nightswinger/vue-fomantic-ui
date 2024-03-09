@@ -4,7 +4,6 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue, computeTextAlign
 import HeaderSubheader from "./HeaderSubheader"
 
 export default defineComponent({
-  name: 'SuiHeader',
   components: { HeaderSubheader },
   props: {
     as: String,

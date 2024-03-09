@@ -4,7 +4,6 @@ import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelpe
 import DomHandler from "../../utils/domHandler";
 
 export default defineComponent({
-  name: 'SuiSlider',
   emits: ['change', 'slideend', 'update:modelValue'],
   props: {
     color: String,

@@ -3,7 +3,6 @@ import { computed, defineComponent, provide, Ref, ref } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiAccordion',
   props: {
     fluid: Boolean,
     inverted: Boolean,

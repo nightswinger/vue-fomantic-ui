@@ -3,7 +3,6 @@ import { computed, defineComponent, h, inject, onMounted, onUnmounted, PropType,
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiDropdownMenu',
   emits: ['search'],
   props: {
     search: Boolean,

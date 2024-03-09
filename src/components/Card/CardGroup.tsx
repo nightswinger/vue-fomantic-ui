@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiCardGroup',
   props: {
     centered: Boolean,
     doubling: Boolean,

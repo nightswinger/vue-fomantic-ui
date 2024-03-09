@@ -3,7 +3,7 @@ import Rating from './Rating'
 
 export default {
   install(app: App) {
-    app.component(Rating.name, Rating)
+    app.component('SuiRating', Rating)
   }
 } as Plugin
 

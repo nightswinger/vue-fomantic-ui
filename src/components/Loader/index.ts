@@ -3,7 +3,7 @@ import Loader from "./Loader"
 
 export default {
   install(app: App) {
-    app.component(Loader.name, Loader)
+    app.component('SuiLoader', Loader)
   }
 } as Plugin
 

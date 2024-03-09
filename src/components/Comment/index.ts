@@ -11,15 +11,15 @@ import CommentText from "./CommentText"
 
 export default {
   install(app: App) {
-    app.component(Comment.name, Comment)
-    app.component(CommentAction.name, CommentAction)
-    app.component(CommentActions.name, CommentActions)
-    app.component(CommentAuthor.name, CommentAuthor)
-    app.component(CommentAvatar.name, CommentAvatar)
-    app.component(CommentContent.name, CommentContent)
-    app.component(CommentGroup.name, CommentGroup)
-    app.component(CommentMetadata.name, CommentMetadata)
-    app.component(CommentText.name, CommentText)
+    app.component('SuiComment', Comment)
+    app.component('SuiCommentAction', CommentAction)
+    app.component('SuiCommentActions', CommentActions)
+    app.component('SuiCommentAuthor', CommentAuthor)
+    app.component('SuiCommentAvatar', CommentAvatar)
+    app.component('SuiCommentContent', CommentContent)
+    app.component('SuiCommentGroup', CommentGroup)
+    app.component('SuiCommentMetadata', CommentMetadata)
+    app.component('SuiCommentText', CommentText)
   }
 } as Plugin
 

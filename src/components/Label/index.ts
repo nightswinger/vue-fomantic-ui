@@ -5,9 +5,9 @@ import LabelGroup from "./LabelGroup"
 
 export default {
   install(app: App) {
-    app.component(Label.name, Label);
-    app.component(LabelDetail.name, LabelDetail)
-    app.component(LabelGroup.name, LabelGroup)
+    app.component('SuiLabel', Label)
+    app.component('SuiLabelDetail', LabelDetail)
+    app.component('SuiLabelGroup', LabelGroup)
   }
 } as Plugin;
 

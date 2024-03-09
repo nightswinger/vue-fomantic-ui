@@ -10,14 +10,14 @@ import ItemMeta from './ItemMeta'
 
 export default {
   install(app: App) {
-    app.component(Item.name, Item)
-    app.component(ItemContent.name, ItemContent)
-    app.component(ItemDescription.name, ItemDescription)
-    app.component(ItemExtra.name, ItemExtra)
-    app.component(ItemGroup.name, ItemGroup)
-    app.component(ItemHeader.name, ItemHeader)
-    app.component(ItemImage.name, ItemImage)
-    app.component(ItemMeta.name, ItemMeta)
+    app.component('SuiItem', Item)
+    app.component('SuiItemContent', ItemContent)
+    app.component('SuiItemDescription', ItemDescription)
+    app.component('SuiItemExtra', ItemExtra)
+    app.component('SuiItemGroup', ItemGroup)
+    app.component('SuiItemHeader', ItemHeader)
+    app.component('SuiItemImage', ItemImage)
+    app.component('SuiItemMeta', ItemMeta)
   }
 } as Plugin
 

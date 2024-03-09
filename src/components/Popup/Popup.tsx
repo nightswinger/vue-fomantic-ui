@@ -4,7 +4,6 @@ import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelpe
 import usePopup from "./usePopup";
 
 export default defineComponent({
-  name: 'SuiPopup',
   props: {
     basic: Boolean,
     content: String,

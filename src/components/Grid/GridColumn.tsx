@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyValue, computeResponsiveProp, computeTextAlignProp, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiGridColumn',
   props: {
     color: String,
     computer: Number,

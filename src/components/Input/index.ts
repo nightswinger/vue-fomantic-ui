@@ -3,7 +3,7 @@ import Input from './Input'
 
 export default {
   install(app: App) {
-    app.component(Input.name, Input)
+    app.component('SuiInput', Input)
   }
 } as Plugin
 

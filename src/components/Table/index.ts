@@ -9,13 +9,13 @@ import TableRow from "./TableRow"
 
 export default {
   install(app: App) {
-    app.component(Table.name, Table)
-    app.component(TableBody.name, TableBody)
-    app.component(TableCell.name, TableCell)
-    app.component(TableFooter.name, TableFooter)
-    app.component(TableHeader.name, TableHeader)
-    app.component(TableHeaderCell.name, TableHeaderCell)
-    app.component(TableRow.name, TableRow)
+    app.component('SuiTable', Table)
+    app.component('SuiTableBody', TableBody)
+    app.component('SuiTableCell', TableCell)
+    app.component('SuiTableFooter', TableFooter)
+    app.component('SuiTableHeader', TableHeader)
+    app.component('SuiTableHeaderCell', TableHeaderCell)
+    app.component('SuiTableRow', TableRow)
   }
 } as Plugin
 

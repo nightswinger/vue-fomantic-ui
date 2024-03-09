@@ -5,9 +5,9 @@ import ButtonGroup from "./ButtonGroup";
 
 export default {
   install(app: App) {
-    app.component(Button.name, Button);
-    app.component(ButtonContent.name, ButtonContent);
-    app.component(ButtonGroup.name, ButtonGroup)
+    app.component('SuiButton', Button);
+    app.component('SuiButtonContent', ButtonContent);
+    app.component('SuiButtonGroup', ButtonGroup)
   },
 } as Plugin;
 

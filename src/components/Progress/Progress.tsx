@@ -7,7 +7,6 @@ import { makeAttachedProps, useAttached } from "../../composables/attached";
 import { makeColorProps, useColor } from "../../composables/color";
 
 export default defineComponent({
-  name: 'SuiProgress',
   props: {
     active: Boolean,
     disabled: Boolean,

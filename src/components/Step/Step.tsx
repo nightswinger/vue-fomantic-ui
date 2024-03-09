@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiStep',
   props: {
     active: Boolean,
     completed: Boolean,

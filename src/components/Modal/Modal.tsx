@@ -7,7 +7,6 @@ import { useModalAnimation } from './hooks/useModalAnimation';
 import ModalDimmer from './ModalDimmer';
 
 export default defineComponent({
-  name: 'SuiModal',
   props: {
     basic: Boolean,
     closeIcon: Boolean,

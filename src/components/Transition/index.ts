@@ -5,8 +5,8 @@ import TransitionGroup from './TransitionGroup';
 
 export default {
   install(app: App) {
-    app.component(Transition.name, Transition);
-    app.component(TransitionGroup.name, TransitionGroup);
+    app.component('SuiTransition', Transition);
+    app.component('SuiTransitionGroup', TransitionGroup);
   }
 } as Plugin;
 

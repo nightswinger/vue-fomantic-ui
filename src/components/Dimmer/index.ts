@@ -4,8 +4,8 @@ import DimmerDimmable from './DimmerDimmable'
 
 export default {
   install(app: App) {
-    app.component(Dimmer.name, Dimmer)
-    app.component(DimmerDimmable.name, DimmerDimmable)
+    app.component('SuiDimmer', Dimmer)
+    app.component('SuiDimmerDimmable', DimmerDimmable)
   }
 } as Plugin
 

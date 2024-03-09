@@ -5,7 +5,6 @@ import { Label } from "@/components/Label";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiDropdownItem',
   emits: ['select'],
   props: {
     active: Boolean,

@@ -5,9 +5,9 @@ import DropdownMenu from './DropdownMenu'
 
 export default {
   install(app: App) {
-    app.component(Dropdown.name, Dropdown)
-    app.component(DropdownItem.name, DropdownItem)
-    app.component(DropdownMenu.name, DropdownMenu)
+    app.component('SuiDropdown', Dropdown)
+    app.component('SuiDropdownItem', DropdownItem)
+    app.component('SuiDropdownMenu', DropdownMenu)
   }
 } as Plugin
 

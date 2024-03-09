@@ -1,7 +1,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'SuiFormTextarea',
   props: {
     label: String,
     placeholder: String,

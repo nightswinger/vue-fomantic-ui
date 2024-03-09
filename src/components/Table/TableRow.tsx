@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiTableRow',
   props: {
     active: Boolean,
     color: String,

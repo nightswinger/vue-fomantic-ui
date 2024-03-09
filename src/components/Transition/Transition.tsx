@@ -4,7 +4,6 @@ import { AnimationType } from "./useAnimate";
 import { useTransition } from "./useTransition";
 
 export default defineComponent({
-  name: 'SuiTransition',
   props: {
     animation: {
       type: String as PropType<AnimationType>,

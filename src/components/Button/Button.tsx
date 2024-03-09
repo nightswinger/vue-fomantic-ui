@@ -11,7 +11,6 @@ import { makeLoadingProps, useLoading } from "./composables/loading";
 import type { PropType, VNode } from "vue";
 
 export default defineComponent({
-  name: 'SuiButton',
   props: {
     active: Boolean,
     animated: [Boolean, String],

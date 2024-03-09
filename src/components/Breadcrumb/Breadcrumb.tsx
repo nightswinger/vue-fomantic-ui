@@ -5,7 +5,6 @@ import BreadcrumbDivider from "./BreadcrumbDivider";
 import BreadcrumbSection from "./BreadcrumbSection";
 
 export default defineComponent({
-  name: "SuiBreadcrumb",
   props: {
     icon: String,
     inverted: Boolean,

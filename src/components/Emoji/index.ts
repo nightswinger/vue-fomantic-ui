@@ -3,7 +3,7 @@ import Emoji from "./Emoji";
 
 export default {
   install(app: App) {
-    app.component(Emoji.name, Emoji);
+    app.component('SuiEmoji', Emoji);
   }
 } as Plugin;
 

@@ -5,9 +5,9 @@ import HeaderSubheader from "./HeaderSubheader";
 
 export default {
   install(app: App) {
-    app.component(Header.name, Header);
-    app.component(HeaderContent.name, HeaderContent)
-    app.component(HeaderSubheader.name, HeaderSubheader);
+    app.component('SuiHeader', Header)
+    app.component('SuiHeaderContent', HeaderContent)
+    app.component('SuiHeaderSubheader', HeaderSubheader)
   }
 } as Plugin;
 

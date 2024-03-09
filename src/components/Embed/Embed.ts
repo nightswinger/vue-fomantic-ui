@@ -3,7 +3,6 @@ import { computed, defineComponent, h, ref } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiEmbed',
   props: {
     active: Boolean,
     aspectRatio: Boolean,

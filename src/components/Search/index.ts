@@ -3,7 +3,7 @@ import Search from './Search'
 
 export default {
   install(app: App) {
-    app.component(Search.name, Search)
+    app.component('SuiSearch', Search)
   }
 } as Plugin
 

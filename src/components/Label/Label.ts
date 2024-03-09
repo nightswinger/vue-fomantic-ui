@@ -5,7 +5,6 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '../../uti
 import { Icon } from '../Icon'
 
 export default defineComponent({
-  name: 'SuiLabel',
   props: {
     as: String,
     attached: String,

@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiCardHeader',
   props: {
     textAlign: String
   },

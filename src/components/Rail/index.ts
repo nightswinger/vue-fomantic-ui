@@ -3,7 +3,7 @@ import Rail from './Rail'
 
 export default {
   install(app: App) {
-    app.component(Rail.name, Rail)
+    app.component('SuiRail', Rail)
   }
 } as Plugin
 

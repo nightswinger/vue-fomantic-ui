@@ -3,7 +3,6 @@ import { computed, defineComponent, resolveComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiMenuItem',
   props: {
     action: Boolean,
     active: Boolean,

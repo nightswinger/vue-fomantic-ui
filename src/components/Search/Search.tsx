@@ -1,7 +1,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'SuiSearch',
   props: {
     icon: String,
     placeholder: String

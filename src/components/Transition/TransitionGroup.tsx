@@ -4,7 +4,6 @@ import { AnimationType, useAnimate } from "./useAnimate";
 import { MotionKeyframesDefinition } from "motion";
 
 export default defineComponent({
-  name: 'SuiTransitionGroup',
   props: {
     tag: String,
     animation: {

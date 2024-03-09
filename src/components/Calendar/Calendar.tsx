@@ -7,7 +7,6 @@ import { useCalendar } from "./useCalendar";
 export const CalendarKey: InjectionKey<useCalendar> = Symbol('useCalendar')
 
 export default defineComponent({
-  name: 'SuiCalendar',
   directives: { clickoutside: clickOutside },
   emits: ['update:modelValue'],
   props: {

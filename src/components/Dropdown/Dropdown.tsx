@@ -21,7 +21,6 @@ interface TDropdownItem {
 }
 
 export default defineComponent({
-  name: 'SuiDropdown',
   directives: { clickoutside: clickOutside },
   emits: ['update:modelValue'],
   props: {

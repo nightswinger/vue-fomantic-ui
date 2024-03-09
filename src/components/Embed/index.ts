@@ -3,7 +3,7 @@ import Embed from './Embed'
 
 export default {
   install(app: App) {
-    app.component(Embed.name, Embed)
+    app.component('SuiEmbed', Embed)
   }
 } as Plugin
 

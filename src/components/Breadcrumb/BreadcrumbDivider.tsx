@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { computed, defineComponent } from "vue";
 
 export default defineComponent({
-  name: "SuiBreadcrumbDivider",
   props: {
     icon: String,
   },

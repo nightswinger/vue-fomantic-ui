@@ -3,7 +3,7 @@ import Progress from './Progress'
 
 export default {
   install(app: App) {
-    app.component(Progress.name, Progress)
+    app.component('SuiProgress', Progress)
   }
 } as Plugin
 

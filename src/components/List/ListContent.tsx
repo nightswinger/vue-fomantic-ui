@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiListContent',
   props: {
     verticalAlign: String
   },

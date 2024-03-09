@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiDimmer',
   props: {
     active: Boolean,
     inverted: Boolean,

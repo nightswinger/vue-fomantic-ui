@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiTableCell',
   props: {
     active: Boolean,
     collapsing: Boolean,

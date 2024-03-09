@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiItemGroup',
   props: {
     divided: Boolean,
     inverted: Boolean,

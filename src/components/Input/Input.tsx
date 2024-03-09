@@ -6,7 +6,6 @@ import { Icon } from '../Icon'
 import { Label } from '../Label'
 
 export default defineComponent({
-  name: 'SuiInput',
   emits: ['update:modelValue'],
   props: {
     action: String,

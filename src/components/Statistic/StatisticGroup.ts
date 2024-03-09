@@ -3,7 +3,6 @@ import { computed, defineComponent, h, provide } from "vue";
 import { computeKeyOnly, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiStatisticGroup',
   props: {
     color: String,
     horizontal: Boolean,

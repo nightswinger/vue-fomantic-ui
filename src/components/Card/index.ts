@@ -8,12 +8,12 @@ import CardMeta from "./CardMeta"
 
 export default {
   install(app: App) {
-    app.component(Card.name, Card)
-    app.component(CardContent.name, CardContent)
-    app.component(CardDescription.name, CardDescription)
-    app.component(CardGroup.name, CardGroup)
-    app.component(CardHeader.name, CardHeader)
-    app.component(CardMeta.name, CardMeta)
+    app.component('SuiCard', Card)
+    app.component('SuiCardContent', CardContent)
+    app.component('SuiCardDescription', CardDescription)
+    app.component('SuiCardGroup', CardGroup)
+    app.component('SuiCardHeader', CardHeader)
+    app.component('SuiCardMeta', CardMeta)
   }
 } as Plugin
 

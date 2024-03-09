@@ -10,7 +10,6 @@ import { computeKeyOnly, computeKeyOrKeyValue } from '../../utils/classNameHelpe
 import { Label } from '../Label'
 
 export default defineComponent({
-  name: 'SuiImage',
   props: {
     as: String,
     avatar: Boolean,

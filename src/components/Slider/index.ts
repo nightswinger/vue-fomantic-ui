@@ -3,7 +3,7 @@ import Slider from "./Slider"
 
 export default {
   install(app: App) {
-    app.component(Slider.name, Slider)
+    app.component('SuiSlider', Slider)
   }
 } as Plugin
 

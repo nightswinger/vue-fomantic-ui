@@ -5,9 +5,9 @@ import GridRow from "./GridRow"
 
 export default {
   install(app: App) {
-    app.component(Grid.name, Grid)
-    app.component(GridColumn.name, GridColumn)
-    app.component(GridRow.name, GridRow)
+    app.component('Grid', Grid)
+    app.component('GridColumn', GridColumn)
+    app.component('GridRow', GridRow)
   }
 } as Plugin
 

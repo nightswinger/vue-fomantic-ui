@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly, computeTextAlignProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiContainer',
   props: {
     fluid: Boolean,
     text: Boolean,

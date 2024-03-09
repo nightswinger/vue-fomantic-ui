@@ -1,12 +1,10 @@
-import { defineComponent, h, resolveComponent } from "vue";
-import { Icon } from "../Icon"
+import { defineComponent, h } from "vue";
+import Icon from "../Icon/Icon"
 
 export default defineComponent({
-  name: 'SuiListIcon',
-  components: { Icon },
   setup(props, { slots }) {
     return () => (
-      h(resolveComponent(Icon.name), { ...props }, slots.default?.())
+      h(Icon, { ...props }, slots.default?.())
     )
   }
 })

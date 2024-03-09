@@ -3,7 +3,6 @@ import { computed, defineComponent } from 'vue'
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '../../utils/classNameHelper'
 
 export default defineComponent({
-  name: 'SuiSegment',
   props: {
     attached: [Boolean, String],
     basic: Boolean,

@@ -5,7 +5,6 @@ import StatisticLabel from "./StatisticLabel"
 import StatisticValue from "./StatisticValue"
 
 export default defineComponent({
-  name: 'SuiStatistic',
   components: { StatisticLabel, StatisticValue },
   props: {
     color: String,

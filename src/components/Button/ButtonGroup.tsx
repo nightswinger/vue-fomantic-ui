@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyValue, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiButtonGroup',
   props: {
     attached: String,
     basic: Boolean,

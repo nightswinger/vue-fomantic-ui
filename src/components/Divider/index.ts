@@ -3,7 +3,7 @@ import Divider from "./Divider";
 
 export default {
   install(app: App) {
-    app.component(Divider.name, Divider);
+    app.component('SuiDivider', Divider);
   }
 } as Plugin;
 

@@ -3,7 +3,7 @@ import Calendar from './Calendar'
 
 export default {
   install: (app: App) => {
-    app.component(Calendar.name, Calendar)
+    app.component('SuiCalendar', Calendar)
   }
 } as Plugin
 

@@ -1,7 +1,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'SuiMenuHeader',
   props: {
     as: String,
     content: String

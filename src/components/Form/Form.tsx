@@ -4,7 +4,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiForm',
   props: {
     error: Boolean,
     info: Boolean,

@@ -6,7 +6,6 @@ import { computeKeyOnly, computeKeyValue } from "@/utils/classNameHelper";
 
 
 export default defineComponent({
-  name: 'SuiDivider',
   props: {
     clearing: Boolean,
     fitted: Boolean,

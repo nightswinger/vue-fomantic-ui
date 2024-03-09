@@ -4,7 +4,6 @@ import { computeKeyOnly } from "../../utils/classNameHelper";
 import TabPanel from "./TabPanel";
 
 export default defineComponent({
-  name: 'SuiTab',
   emits: ['update:activeIndex', 'tab-change', 'tab-click'],
   props: {
     activeIndex: { type: Number, default: 0 },

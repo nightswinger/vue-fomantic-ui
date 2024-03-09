@@ -3,7 +3,6 @@ import { computed, defineComponent } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiTable',
   props: {
     attached: [Boolean, String],
     basic: [Boolean, String],

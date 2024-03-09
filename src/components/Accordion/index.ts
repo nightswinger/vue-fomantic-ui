@@ -7,11 +7,11 @@ import AccordionTitle from './AccordionTitle'
 
 export default {
   install(app: App) {
-    app.component(Accordion.name, Accordion)
-    app.component(AccordionAccordion.name, AccordionAccordion)
-    app.component(AccordionContent.name, AccordionContent)
-    app.component(AccordionTab.name, AccordionTab)
-    app.component(AccordionTitle.name, AccordionTitle)
+    app.component('SuiAccordion', Accordion)
+    app.component('SuiAccordionAccordion', AccordionAccordion)
+    app.component('SuiAccordionContent', AccordionContent)
+    app.component('SuiAccordionTab', AccordionTab)
+    app.component('SuiAccordionTitle', AccordionTitle)
   }
 } as Plugin
 

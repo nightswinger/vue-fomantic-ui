@@ -3,7 +3,6 @@ import { computed, ConcreteComponent, defineComponent, resolveComponent } from "
 import { computeKeyOnly } from '../../utils/classNameHelper';
 
 export default defineComponent({
-  name: "SuiBreadcrumbSection",
   props: {
     active: Boolean,
     href: String,

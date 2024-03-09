@@ -4,7 +4,6 @@ import { Segment } from "@/components/Segment"
 import { computeKeyOnly } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiDimmerDimmable',
   components: { Segment },
   props: {
     blurring: Boolean

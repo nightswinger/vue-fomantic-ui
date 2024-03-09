@@ -6,10 +6,10 @@ import StatisticValue from "./StatisticValue"
 
 export default {
   install(app: App) {
-    app.component(Statistic.name, Statistic)
-    app.component(StatisticGroup.name, StatisticGroup)
-    app.component(StatisticLabel.name, StatisticLabel)
-    app.component(StatisticValue.name, StatisticValue)
+    app.component('SuiStatistic', Statistic)
+    app.component('SuiStatisticGroup', StatisticGroup)
+    app.component('SuiStatisticLabel', StatisticLabel)
+    app.component('SuiStatisticValue', StatisticValue)
   }
 } as Plugin
 

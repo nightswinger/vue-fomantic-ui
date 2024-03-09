@@ -4,7 +4,6 @@ import clickOutside from "../../directives/click-outside";
 import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiSidebar',
   directives: { clickoutside: clickOutside },
   emits: ['update:visible', 'show', 'hide'],
   props: {

@@ -3,7 +3,7 @@ import Advertisement from "./Advertisement"
 
 export default {
   install(app: App) {
-    app.component(Advertisement.name, Advertisement)
+    app.component('SuiAdvertisement', Advertisement)
   }
 } as Plugin
 

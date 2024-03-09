@@ -7,10 +7,10 @@ import ModalHeader from './ModalHeader'
 
 export default {
   install(app: App) {
-    app.component(Modal.name, Modal)
-    app.component(ModalActions.name, ModalActions)
-    app.component(ModalContent.name, ModalContent)
-    app.component(ModalDescription.name, ModalDescription)
-    app.component(ModalHeader.name, ModalHeader)
+    app.component('SuiModal', Modal)
+    app.component('SuiModalActions', ModalActions)
+    app.component('SuiModalContent', ModalContent)
+    app.component('SuiModalDescription', ModalDescription)
+    app.component('SuiModalHeader', ModalHeader)
   }
 } as Plugin

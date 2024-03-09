@@ -6,7 +6,6 @@ import { computeKeyOnly } from "../../utils/classNameHelper";
 import { useModalAnimation } from "./hooks/useModalAnimation";
 
 export default defineComponent({
-  name: 'SuiModalDemmer',
   props: {
     blurring: Boolean,
     inverted: Boolean,

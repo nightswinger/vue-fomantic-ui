@@ -4,8 +4,8 @@ import TabPanel from './TabPanel'
 
 export default {
   install(app: App) {
-    app.component(Tab.name, Tab)
-    app.component(TabPanel.name, TabPanel)
+    app.component('SuiTab', Tab)
+    app.component('SuiTabPanel', TabPanel)
   }
 } as Plugin
 

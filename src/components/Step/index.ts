@@ -7,11 +7,11 @@ import StepDescription from "./StepDescription"
 
 export default {
   install(app: App) {
-    app.component(Step.name, Step)
-    app.component(StepGroup.name, StepGroup)
-    app.component(StepContent.name, StepContent)
-    app.component(StepTitle.name, StepTitle)
-    app.component(StepDescription.name, StepDescription)
+    app.component('SuiStep', Step)
+    app.component('SuiStepGroup', StepGroup)
+    app.component('SuiStepContent', StepContent)
+    app.component('SuiStepTitle', StepTitle)
+    app.component('SuiStepDescription', StepDescription)
   }
 } as Plugin
 

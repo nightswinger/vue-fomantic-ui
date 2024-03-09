@@ -6,10 +6,10 @@ import FormTextarea from './FormTextarea'
 
 export default {
   install(app: App) {
-    app.component(Form.name, Form)
-    app.component(FormField.name, FormField)
-    app.component(FormGroup.name, FormGroup)
-    app.component(FormTextarea.name, FormTextarea)
+    app.component('SuiForm', Form)
+    app.component('SuiFormField', FormField)
+    app.component('SuiFormGroup', FormGroup)
+    app.component('SuiFormTextarea', FormTextarea)
   }
 } as Plugin
 

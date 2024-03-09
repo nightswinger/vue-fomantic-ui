@@ -5,7 +5,6 @@ import { computeKeyOnly, computeKeyValue } from "../../utils/classNameHelper";
 const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
 
 export default defineComponent({
-  name: 'SuiStepGroup',
   props: {
     attached: String,
     fluid: Boolean,

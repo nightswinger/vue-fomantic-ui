@@ -3,7 +3,7 @@ import Popup from './Popup'
 
 export default {
   install(app: App) {
-    app.component(Popup.name, Popup)
+    app.component('SuiPopup', Popup)
   }
 } as Plugin
 

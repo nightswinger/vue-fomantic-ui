@@ -4,7 +4,6 @@ import { computeKeyOnly } from '../../utils/classNameHelper'
 import RatingIcon from './RatingIcon'
 
 export default defineComponent({
-  name: 'SuiRating',
   props: {
     clearable: Boolean,
     color: String,

@@ -4,7 +4,6 @@ import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelpe
 import { MessageContent, MessageHeader } from ".";
 
 export default defineComponent({
-  name: 'SuiMessage',
   props: {
     attached: [Boolean, String],
     color: String,

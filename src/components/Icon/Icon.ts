@@ -3,7 +3,6 @@ import { computed, defineComponent, h } from "vue";
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
 
 export default defineComponent({
-  name: 'SuiIcon',
   props: {
     as: String,
     bordered: Boolean,

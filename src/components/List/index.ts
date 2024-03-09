@@ -9,13 +9,13 @@ import ListList from "./ListList"
 
 export default {
   install(app: App) {
-    app.component(List.name, List)
-    app.component(ListItem.name, ListItem)
-    app.component(ListIcon.name, ListIcon)
-    app.component(ListContent.name, ListContent)
-    app.component(ListHeader.name, ListHeader)
-    app.component(ListDescription.name, ListDescription)
-    app.component(ListList.name, ListList)
+    app.component('SuiList', List)
+    app.component('SuiListItem', ListItem)
+    app.component('SuiListIcon', ListIcon)
+    app.component('SuiListContent', ListContent)
+    app.component('SuiListHeader', ListHeader)
+    app.component('SuiListDescription', ListDescription)
+    app.component('SuiListList', ListList)
   }
 } as Plugin
 

@@ -17,7 +17,7 @@ export function useAnimation(show: Ref<boolean>, options = {}) {
     el.removeEventListener('animationend', updateVisualState)
   }
 
-  const computeAnimationClass = computed((animationType = 'scale') => {
+  const computeAnimationClass = computed<string|undefined>((animationType = 'scale') => {
     switch (visualState.value) {
       case 'opening':
         return `animating ${animationType} in`

@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 
 export default {
   install: (app: App) => {
-    app.component(Sidebar.name, Sidebar)
+    app.component('SuiSidebar', Sidebar)
   }
 } as Plugin
 

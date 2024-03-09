@@ -5,9 +5,9 @@ import BreadcrumbSection from './BreadcrumbSection'
 
 export default {
   install(app: App) {
-    app.component(Breadcrumb.name, Breadcrumb)
-    app.component(BreadcrumbDivider.name, BreadcrumbDivider)
-    app.component(BreadcrumbSection.name, BreadcrumbSection)
+    app.component("SuiBreadcrumb", Breadcrumb)
+    app.component("SuiBreadcrumbDivider", BreadcrumbDivider)
+    app.component("SuiBreadcrumbSection", BreadcrumbSection)
   }
 } as Plugin
 

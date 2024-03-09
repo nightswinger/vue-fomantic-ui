@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { computed, defineComponent, h } from "vue";
 
 export default defineComponent({
-  name: 'SuiMenuMenu',
   props: {
     position: String
   },

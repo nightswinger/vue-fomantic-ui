@@ -4,7 +4,6 @@ import { computeKeyOnly } from "../../utils/classNameHelper";
 import { useWidthClass } from "../../composables/width";
 
 export default defineComponent({
-  name: 'SuiFormField',
   emits: ['update:modelValue'],
   props: {
     disabled: Boolean,

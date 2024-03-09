@@ -6,8 +6,8 @@ export type Icon = InstanceType<typeof Icon>;
 
 export default {
   install(app: App) {
-    app.component(Icon.name, Icon);
-    app.component(IconGroup.name, IconGroup);
+    app.component('SuiIcon', Icon)
+    app.component('SuiIconGroup', IconGroup)
   }
 } as Plugin;
 

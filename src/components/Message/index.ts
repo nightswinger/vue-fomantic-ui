@@ -7,11 +7,11 @@ import MessageList from "./MessageList"
 
 export default {
   install(app: App) {
-    app.component(Message.name, Message)
-    app.component(MessageContent.name, MessageContent)
-    app.component(MessageHeader.name, MessageHeader)
-    app.component(MessageItem.name, MessageItem)
-    app.component(MessageList.name, MessageList)
+    app.component('SuiMessage', Message)
+    app.component('SuiMessageContent', MessageContent)
+    app.component('SuiMessageHeader', MessageHeader)
+    app.component('SuiMessageItem', MessageItem)
+    app.component('SuiMessageList', MessageList)
   }
 } as Plugin
 
