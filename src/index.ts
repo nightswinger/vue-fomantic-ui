@@ -2,6 +2,137 @@ import { App } from "vue"
 
 import * as components from './components'
 
+import Button from './components/Button/Button'
+import ButtonContent from './components/Button/ButtonContent'
+import ButtonGroup from './components/Button/ButtonGroup'
+import Container from './components/Container/Container'
+import Divider from './components/Divider/Divider'
+import Emoji from './components/Emoji/Emoji'
+import Flag from './components/Flag/Flag'
+import Header from './components/Header/Header'
+import HeaderContent from './components/Header/HeaderContent'
+import HeaderSubheader from './components/Header/HeaderSubheader'
+import Icon from './components/Icon/Icon'
+import IconGroup from './components/Icon/IconGroup'
+import Image from './components/Image/Image'
+import ImageGroup from './components/Image/ImageGroup'
+import Input from './components/Input/Input'
+import Label from './components/Label/Label'
+import LabelDetail from './components/Label/LabelDetail'
+import LabelGroup from './components/Label/LabelGroup'
+import List from './components/List/List'
+import ListContent from './components/List/ListContent'
+import ListDescription from './components/List/ListDescription'
+import ListHeader from './components/List/ListHeader'
+import ListIcon from './components/List/ListIcon'
+import ListItem from './components/List/ListItem'
+import ListList from './components/List/ListList'
+import Loader from './components/Loader/Loader'
+import Rail from './components/Rail/Rail'
+import Reveal from './components/Reveal/Reveal'
+import RevealContent from './components/Reveal/RevealContent'
+import Segment from './components/Segment/Segment'
+import SegmentGroup from './components/Segment/SegmentGroup'
+import SegmentInline from './components/Segment/SegmentInline'
+import Step from './components/Step/Step'
+import StepContent from './components/Step/StepContent'
+import StepDescription from './components/Step/StepDescription'
+import StepGroup from './components/Step/StepGroup'
+import StepTitle from './components/Step/StepTitle'
+
+import Breadcrumb from './components/Breadcrumb/Breadcrumb'
+import BreadcrumbDivider from './components/Breadcrumb/BreadcrumbDivider'
+import BreadcrumbSection from './components/Breadcrumb/BreadcrumbSection'
+import Form from './components/Form/Form'
+import FormField from './components/Form/FormField'
+import FormGroup from './components/Form/FormGroup'
+import FormTextarea from './components/Form/FormTextarea'
+import Grid from './components/Grid/Grid'
+import GridColumn from './components/Grid/GridColumn'
+import GridRow from './components/Grid/GridRow'
+import Menu from './components/Menu/Menu'
+import MenuHeader from './components/Menu/MenuHeader'
+import MenuItem from './components/Menu/MenuItem'
+import MenuMenu from './components/Menu/MenuMenu'
+import Message from './components/Message/Message'
+import MessageContent from './components/Message/MessageContent'
+import MessageHeader from './components/Message/MessageHeader'
+import MessageItem from './components/Message/MessageItem'
+import MessageList from './components/Message/MessageList'
+import Table from './components/Table/Table'
+import TableBody from './components/Table/TableBody'
+import TableCell from './components/Table/TableCell'
+import TableFooter from './components/Table/TableFooter'
+import TableHeader from './components/Table/TableHeader'
+import TableHeaderCell from './components/Table/TableHeaderCell'
+import TableRow from './components/Table/TableRow'
+
+import Advertisement from './components/Advertisement/Advertisement'
+import Card from './components/Card/Card'
+import CardContent from './components/Card/CardContent'
+import CardDescription from './components/Card/CardDescription'
+import CardGroup from './components/Card/CardGroup'
+import CardHeader from './components/Card/CardHeader'
+import CardMeta from './components/Card/CardMeta'
+import Comment from './components/Comment/Comment'
+import CommentAction from './components/Comment/CommentAction'
+import CommentActions from './components/Comment/CommentActions'
+import CommentAuthor from './components/Comment/CommentAuthor'
+import CommentAvatar from './components/Comment/CommentAvatar'
+import CommentContent from './components/Comment/CommentContent'
+import CommentGroup from './components/Comment/CommentGroup'
+import CommentMetadata from './components/Comment/CommentMetadata'
+import CommentText from './components/Comment/CommentText'
+import Feed from './components/Feed/Feed'
+import FeedContent from './components/Feed/FeedContent'
+import FeedDate from './components/Feed/FeedDate'
+import FeedEvent from './components/Feed/FeedEvent'
+import FeedExtra from './components/Feed/FeedExtra'
+import FeedLabel from './components/Feed/FeedLabel'
+import FeedLike from './components/Feed/FeedLike'
+import FeedMeta from './components/Feed/FeedMeta'
+import FeedSummary from './components/Feed/FeedSummary'
+import FeedUser from './components/Feed/FeedUser'
+import Item from './components/Item/Item'
+import ItemContent from './components/Item/ItemContent'
+import ItemDescription from './components/Item/ItemDescription'
+import ItemExtra from './components/Item/ItemExtra'
+import ItemGroup from './components/Item/ItemGroup'
+import ItemHeader from './components/Item/ItemHeader'
+import ItemImage from './components/Item/ItemImage'
+import ItemMeta from './components/Item/ItemMeta'
+import Statistic from './components/Statistic/Statistic'
+import StatisticGroup from './components/Statistic/StatisticGroup'
+import StatisticLabel from './components/Statistic/StatisticLabel'
+import StatisticValue from './components/Statistic/StatisticValue'
+
+import Accordion from './components/Accordion/Accordion'
+import AccordionAccordion from './components/Accordion/AccordionAccordion'
+import AccordionContent from './components/Accordion/AccordionContent'
+import AccordionTab from './components/Accordion/AccordionTab'
+import AccordionTitle from './components/Accordion/AccordionTitle'
+import Calendar from './components/Calendar/Calendar'
+import Checkbox from './components/Checkbox/Checkbox'
+import Dimmer from './components/Dimmer/Dimmer'
+import DimmerDimmable from './components/Dimmer/DimmerDimmable'
+import Dropdown from './components/Dropdown/Dropdown'
+import DropdownItem from './components/Dropdown/DropdownItem'
+import DropdownMenu from './components/Dropdown/DropdownMenu'
+import Embed from './components/Embed/Embed'
+import Modal from './components/Modal/Modal'
+import ModalActions from './components/Modal/ModalActions'
+import ModalContent from './components/Modal/ModalContent'
+import ModalDescription from './components/Modal/ModalDescription'
+import ModalHeader from './components/Modal/ModalHeader'
+import Popup from './components/Popup/Popup'
+import Progress from './components/Progress/Progress'
+import Rating from './components/Rating/Rating'
+import Sidebar from './components/Sidebar/Sidebar'
+import Slider from './components/Slider/Slider'
+import Tab from './components/Tab/Tab'
+import TabPanel from './components/Tab/TabPanel'
+import Transition from './components/Transition/Transition'
+
 function install(app: App) {
   Object.values({
     ...components,
@@ -10,135 +141,135 @@ function install(app: App) {
 
 export default { install };
 
-export { default as SuiButton } from './components/Button/Button'
-export { default as SuiButtonContent } from './components/Button/ButtonContent'
-export { default as SuiButtonGroup } from './components/Button/ButtonGroup'
-export { default as SuiContainer } from './components/Container/Container'
-export { default as SuiDivider } from './components/Divider/Divider'
-export { default as SuiEmoji } from './components/Emoji/Emoji'
-export { default as SuiFlag } from './components/Flag/Flag'
-export { default as SuiHeader } from './components/Header/Header'
-export { default as SuiHeaderContent } from './components/Header/HeaderContent'
-export { default as SuiHeaderSubheader } from './components/Header/HeaderSubheader'
-export { default as SuiIcon } from './components/Icon/Icon'
-export { default as SuiIconGroup } from './components/Icon/IconGroup'
-export { default as SuiImage } from './components/Image/Image'
-export { default as SuiImageGroup } from './components/Image/ImageGroup'
-export { default as SuiInput } from './components/Input/Input'
-export { default as SuiLabel } from './components/Label/Label'
-export { default as SuiLabelDetail } from './components/Label/LabelDetail'
-export { default as SuiLabelGroup } from './components/Label/LabelGroup'
-export { default as SuiList } from './components/List/List'
-export { default as SuiListContent } from './components/List/ListContent'
-export { default as SuiListDescription } from './components/List/ListDescription'
-export { default as SuiListHeader } from './components/List/ListHeader'
-export { default as SuiListIcon } from './components/List/ListIcon'
-export { default as SuiListItem } from './components/List/ListItem'
-export { default as SuiListList } from './components/List/ListList'
-export { default as SuiLoader } from './components/Loader/Loader'
-export { default as SuiRail } from './components/Rail/Rail'
-export { default as SuiReveal } from './components/Reveal/Reveal'
-export { default as SuiRevealContent } from './components/Reveal/RevealContent'
-export { default as SuiSegment } from './components/Segment/Segment'
-export { default as SuiSegmentGroup } from './components/Segment/SegmentGroup'
-export { default as SuiSegmentInline } from './components/Segment/SegmentInline'
-export { default as SuiStep } from './components/Step/Step'
-export { default as SuiStepContent } from './components/Step/StepContent'
-export { default as SuiStepDescription } from './components/Step/StepDescription'
-export { default as SuiStepGroup } from './components/Step/StepGroup'
-export { default as SuiStepTitle } from './components/Step/StepTitle'
+export { Button as SuiButton, Button }
+export { ButtonContent as SuiButtonContent, ButtonContent }
+export { ButtonGroup as SuiButtonGroup, ButtonGroup }
+export { Container as SuiContainer, Container }
+export { Divider as SuiDivider, Divider }
+export { Emoji as SuiEmoji, Emoji }
+export { Flag as SuiFlag, Flag }
+export { Header as SuiHeader, Header }
+export { HeaderContent as SuiHeaderContent, HeaderContent }
+export { HeaderSubheader as SuiHeaderSubheader, HeaderSubheader }
+export { Icon as SuiIcon, Icon }
+export { IconGroup as SuiIconGroup, IconGroup }
+export { Image as SuiImage, Image }
+export { ImageGroup as SuiImageGroup, ImageGroup }
+export { Input as SuiInput, Input }
+export { Label as SuiLabel, Label }
+export { LabelDetail as SuiLabelDetail, LabelDetail }
+export { LabelGroup as SuiLabelGroup, LabelGroup }
+export { List as SuiList, List }
+export { ListContent as SuiListContent, ListContent }
+export { ListDescription as SuiListDescription, ListDescription }
+export { ListHeader as SuiListHeader, ListHeader }
+export { ListIcon as SuiListIcon, ListIcon }
+export { ListItem as SuiListItem, ListItem }
+export { ListList as SuiListList, ListList }
+export { Loader as SuiLoader, Loader }
+export { Rail as SuiRail, Rail }
+export { Reveal as SuiReveal, Reveal }
+export { RevealContent as SuiRevealContent, RevealContent }
+export { Segment as SuiSegment, Segment }
+export { SegmentGroup as SuiSegmentGroup, SegmentGroup }
+export { SegmentInline as SuiSegmentInline, SegmentInline }
+export { Step as SuiStep, Step }
+export { StepContent as SuiStepContent, StepContent }
+export { StepDescription as SuiStepDescription, StepDescription }
+export { StepGroup as SuiStepGroup, StepGroup }
+export { StepTitle as SuiStepTitle, StepTitle }
 
-export { default as SuiBreadcrumb } from './components/Breadcrumb/Breadcrumb'
-export { default as SuiBreadcrumbDivider } from './components/Breadcrumb/BreadcrumbDivider'
-export { default as SuiBreadcrumbSection } from './components/Breadcrumb/BreadcrumbSection'
-export { default as SuiForm } from './components/Form/Form'
-export { default as SuiFormField } from './components/Form/FormField'
-export { default as SuiFormGroup } from './components/Form/FormGroup'
-export { default as SuiFormTextarea } from './components/Form/FormTextarea'
-export { default as SuiGrid } from './components/Grid/Grid'
-export { default as SuiGridColumn } from './components/Grid/GridColumn'
-export { default as SuiGridRow } from './components/Grid/GridRow'
-export { default as SuiMenu } from './components/Menu/Menu'
-export { default as SuiMenuHeader } from './components/Menu/MenuHeader'
-export { default as SuiMenuItem } from './components/Menu/MenuItem'
-export { default as SuiMenuMenu } from './components/Menu/MenuMenu'
-export { default as SuiMessage } from './components/Message/Message'
-export { default as SuiMessageContent } from './components/Message/MessageContent'
-export { default as SuiMessageHeader } from './components/Message/MessageHeader'
-export { default as SuiMessageItem } from './components/Message/MessageItem'
-export { default as SuiMessageList } from './components/Message/MessageList'
-export { default as SuiTable } from './components/Table/Table'
-export { default as SuiTableBody } from './components/Table/TableBody'
-export { default as SuiTableCell } from './components/Table/TableCell'
-export { default as SuiTableFooter } from './components/Table/TableFooter'
-export { default as SuiTableHeader } from './components/Table/TableHeader'
-export { default as SuiTableHeaderCell } from './components/Table/TableHeaderCell'
-export { default as SuiTableRow } from './components/Table/TableRow'
+export { Breadcrumb as SuiBreadcrumb, Breadcrumb }
+export { BreadcrumbDivider as SuiBreadcrumbDivider, BreadcrumbDivider }
+export { BreadcrumbSection as SuiBreadcrumbSection, BreadcrumbSection }
+export { Form as SuiForm, Form }
+export { FormField as SuiFormField, FormField }
+export { FormGroup as SuiFormGroup, FormGroup }
+export { FormTextarea as SuiFormTextarea, FormTextarea }
+export { Grid as SuiGrid, Grid }
+export { GridColumn as SuiGridColumn, GridColumn }
+export { GridRow as SuiGridRow, GridRow }
+export { Menu as SuiMenu, Menu }
+export { MenuHeader as SuiMenuHeader, MenuHeader }
+export { MenuItem as SuiMenuItem, MenuItem }
+export { MenuMenu as SuiMenuMenu, MenuMenu }
+export { Message as SuiMessage, Message }
+export { MessageContent as SuiMessageContent, MessageContent }
+export { MessageHeader as SuiMessageHeader, MessageHeader }
+export { MessageItem as SuiMessageItem, MessageItem }
+export { MessageList as SuiMessageList, MessageList }
+export { Table as SuiTable, Table }
+export { TableBody as SuiTableBody, TableBody }
+export { TableCell as SuiTableCell, TableCell }
+export { TableFooter as SuiTableFooter, TableFooter }
+export { TableHeader as SuiTableHeader, TableHeader }
+export { TableHeaderCell as SuiTableHeaderCell, TableHeaderCell }
+export { TableRow as SuiTableRow, TableRow }
 
-export { default as SuiAdvertisement } from './components/Advertisement/Advertisement'
-export { default as SuiCard } from './components/Card/Card'
-export { default as SuiCardContent } from './components/Card/CardContent'
-export { default as SuiCardDescription} from './components/Card/CardDescription'
-export { default as SuiCardGroup } from './components/Card/CardGroup'
-export { default as SuiCardHeader } from './components/Card/CardHeader'
-export { default as SuiCardMeta } from './components/Card/CardMeta'
-export { default as SuiComment } from './components/Comment/Comment'
-export { default as SuiCommentAction } from './components/Comment/CommentAction'
-export { default as SuiCommentActions } from './components/Comment/CommentActions'
-export { default as SuiCommentAuthor } from './components/Comment/CommentAuthor'
-export { default as SuiCommentAvatar } from './components/Comment/CommentAvatar'
-export { default as SuiCommentContent } from './components/Comment/CommentContent'
-export { default as SuiCommentGroup } from './components/Comment/CommentGroup'
-export { default as SuiCommentMetadata } from './components/Comment/CommentMetadata'
-export { default as SuiCommentText } from './components/Comment/CommentText'
-export { default as SuiFeed } from './components/Feed/Feed'
-export { default as SuiFeedContent } from './components/Feed/FeedContent'
-export { default as SuiFeedDate } from './components/Feed/FeedDate'
-export { default as SuiFeedEvent } from './components/Feed/FeedEvent'
-export { default as SuiFeedExtra } from './components/Feed/FeedExtra'
-export { default as SuiFeedLabel } from './components/Feed/FeedLabel'
-export { default as SuiFeedLike } from './components/Feed/FeedLike'
-export { default as SuiFeedMeta } from './components/Feed/FeedMeta'
-export { default as SuiFeedSummary } from './components/Feed/FeedSummary'
-export { default as SuiFeedUser } from './components/Feed/FeedUser'
-export { default as SuiItem } from './components/Item/Item'
-export { default as SuiItemContent } from './components/Item/ItemContent'
-export { default as SuiItemDescription } from './components/Item/ItemDescription'
-export { default as SuiItemExtra } from './components/Item/ItemExtra'
-export { default as SuiItemGroup } from './components/Item/ItemGroup'
-export { default as SuiItemHeader } from './components/Item/ItemHeader'
-export { default as SuiItemImage } from './components/Item/ItemImage'
-export { default as SuiItemMeta } from './components/Item/ItemMeta'
-export { default as SuiStatistic } from './components/Statistic/Statistic'
-export { default as SuiStatisticGroup } from './components/Statistic/StatisticGroup'
-export { default as SuiStatisticLabel } from './components/Statistic/StatisticLabel'
-export { default as SuiStatisticValue } from './components/Statistic/StatisticValue'
+export { Advertisement as SuiAdvertisement, Advertisement }
+export { Card as SuiCard, Card }
+export { CardContent as SuiCardContent, CardContent }
+export { CardDescription as SuiCardDescription, CardDescription }
+export { CardGroup as SuiCardGroup, CardGroup }
+export { CardHeader as SuiCardHeader, CardHeader }
+export { CardMeta as SuiCardMeta, CardMeta }
+export { Comment as SuiComment, Comment }
+export { CommentAction as SuiCommentAction, CommentAction }
+export { CommentActions as SuiCommentActions, CommentActions }
+export { CommentAuthor as SuiCommentAuthor, CommentAuthor }
+export { CommentAvatar as SuiCommentAvatar, CommentAvatar }
+export { CommentContent as SuiCommentContent, CommentContent }
+export { CommentGroup as SuiCommentGroup, CommentGroup }
+export { CommentMetadata as SuiCommentMetadata, CommentMetadata }
+export { CommentText as SuiCommentText, CommentText }
+export { Feed as SuiFeed, Feed }
+export { FeedContent as SuiFeedContent, FeedContent }
+export { FeedDate as SuiFeedDate, FeedDate }
+export { FeedEvent as SuiFeedEvent, FeedEvent }
+export { FeedExtra as SuiFeedExtra, FeedExtra }
+export { FeedLabel as SuiFeedLabel, FeedLabel }
+export { FeedLike as SuiFeedLike, FeedLike }
+export { FeedMeta as SuiFeedMeta, FeedMeta }
+export { FeedSummary as SuiFeedSummary, FeedSummary }
+export { FeedUser as SuiFeedUser, FeedUser }
+export { Item as SuiItem, Item }
+export { ItemContent as SuiItemContent, ItemContent }
+export { ItemDescription as SuiItemDescription, ItemDescription }
+export { ItemExtra as SuiItemExtra, ItemExtra }
+export { ItemGroup as SuiItemGroup, ItemGroup }
+export { ItemHeader as SuiItemHeader, ItemHeader }
+export { ItemImage as SuiItemImage, ItemImage }
+export { ItemMeta as SuiItemMeta, ItemMeta }
+export { Statistic as SuiStatistic, Statistic }
+export { StatisticGroup as SuiStatisticGroup, StatisticGroup }
+export { StatisticLabel as SuiStatisticLabel, StatisticLabel }
+export { StatisticValue as SuiStatisticValue, StatisticValue }
 
-export { default as SuiAccordion } from './components/Accordion/Accordion'
-export { default as SuiAccordionAccordion } from './components/Accordion/AccordionAccordion'
-export { default as SuiAccordionContent } from './components/Accordion/AccordionContent'
-export { default as SuiAccordionTab } from './components/Accordion/AccordionTab'
-export { default as SuiAccordionTitle } from './components/Accordion/AccordionTitle'
-export { default as SuiCalendar } from './components/Calendar/Calendar'
-export { default as SuiCheckbox } from './components/Checkbox/Checkbox'
-export { default as SuiDimmer } from './components/Dimmer/Dimmer'
-export { default as SuiDimmerDimmable } from './components/Dimmer/DimmerDimmable'
-export { default as SuiDropdown } from './components/Dropdown/Dropdown'
-export { default as SuiDropdownItem } from './components/Dropdown/DropdownItem'
-export { default as SuiDropdownMenu } from './components/Dropdown/DropdownMenu'
-export { default as SuiEmbed } from './components/Embed/Embed'
-export { default as SuiModal } from './components/Modal/Modal'
-export { default as SuiModalActions } from './components/Modal/ModalActions'
-export { default as SuiModalContent } from './components/Modal/ModalContent'
-export { default as SuiModalDescription } from './components/Modal/ModalDescription'
-export { default as SuiModalHeader } from './components/Modal/ModalHeader'
-export { default as SuiPopup } from './components/Popup/Popup'
-export { default as SuiProgress } from './components/Progress/Progress'
-export { default as SuiRating } from './components/Rating/Rating'
-export { default as SuiSidebar } from './components/Sidebar/Sidebar'
-export { default as SuiSlider } from './components/Slider/Slider'
-export { default as SuiTab } from './components/Tab/Tab'
-export { default as SuiTabPanel } from './components/Tab/TabPanel'
-export { default as SuiTransition } from './components/Transition/Transition'
+export { Accordion as SuiAccordion, Accordion }
+export { AccordionAccordion as SuiAccordionAccordion, AccordionAccordion }
+export { AccordionContent as SuiAccordionContent, AccordionContent }
+export { AccordionTab as SuiAccordionTab, AccordionTab }
+export { AccordionTitle as SuiAccordionTitle, AccordionTitle }
+export { Calendar as SuiCalendar, Calendar }
+export { Checkbox as SuiCheckbox, Checkbox }
+export { Dimmer as SuiDimmer, Dimmer }
+export { DimmerDimmable as SuiDimmerDimmable, DimmerDimmable }
+export { Dropdown as SuiDropdown, Dropdown }
+export { DropdownItem as SuiDropdownItem, DropdownItem }
+export { DropdownMenu as SuiDropdownMenu, DropdownMenu }
+export { Embed as SuiEmbed, Embed }
+export { Modal as SuiModal, Modal }
+export { ModalActions as SuiModalActions, ModalActions }
+export { ModalContent as SuiModalContent, ModalContent }
+export { ModalDescription as SuiModalDescription, ModalDescription }
+export { ModalHeader as SuiModalHeader, ModalHeader }
+export { Popup as SuiPopup, Popup }
+export { Progress as SuiProgress, Progress }
+export { Rating as SuiRating, Rating }
+export { Sidebar as SuiSidebar, Sidebar }
+export { Slider as SuiSlider, Slider }
+export { Tab as SuiTab, Tab }
+export { TabPanel as SuiTabPanel, TabPanel }
+export { Transition as SuiTransition, Transition }
 
 export { useToast } from './components/Toast/useToast'
