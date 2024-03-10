@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
+import { computed, defineComponent, h } from "vue";
+
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "@/utils/classNameHelper";
 
 import { Icon } from "@/components/Icon";
 
@@ -92,16 +93,17 @@ export default defineComponent({
     }
   },
   render() {
-    let elementType = this.as || 'div'
+    const tag = this.attached ? 'div' : this.as
 
     return (
-      <elementType
-        class={this.classes}
-        role="button"
-      >
-        {typeof this.icon === 'string' && <Icon name={this.icon} />}
-        {this.content || this.$slots.default?.()}
-      </elementType>
+      h(
+        tag,
+        { class: this.classes, role: 'button' },
+        [
+          typeof this.icon === 'string' && h(Icon, { name: this.icon }),
+          this.content || this.$slots.default?.()
+        ]
+      )
     )
   }
 })

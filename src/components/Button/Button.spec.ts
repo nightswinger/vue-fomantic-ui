@@ -6,6 +6,29 @@ import { h } from "vue";
 import Button from "./Button";
 
 describe('SuiButton', () => {
+  describe('attached', () => {
+    it('applies the attached class when the attached prop is set', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          attached: 'top',
+        }
+      });
+
+      expect(wrapper.classes()).toContain('attached');
+      expect(wrapper.classes()).toContain('top');
+    });
+
+    it('renders a div element', async () => {
+      const wrapper = mount(Button, {
+        props: {
+          attached: 'top',
+        }
+      });
+
+      expect(wrapper.element.tagName).toBe('DIV');
+    });
+  });
+
   describe('content', () => {
     it('renders the content prop', async () => {
       const wrapper = mount(Button, {
