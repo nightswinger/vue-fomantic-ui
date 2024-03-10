@@ -44,6 +44,7 @@ import ClearingDoc from '@/components/elements/Segment/ClearingDoc.vue'
 import FloatedDoc from '@/components/elements/Segment/FloatedDoc.vue'
 import TextAlignmentDoc from '@/components/elements/Segment/TextAlignmentDoc.vue'
 import BasicDoc from '@/components/elements/Segment/BasicDoc.vue'
+import ScrollingDoc from '@/components/elements/Segment/ScrollingDoc.vue'
 import SizeDoc from '@/components/elements/Segment/SizeDoc.vue'
 
 const docs = [
@@ -214,6 +215,12 @@ const docs = [
     label: 'Basic',
     category: 'Variations',
     component: BasicDoc,
+  },
+  {
+    id: 'scrolling',
+    label: 'Scrolling',
+    category: 'Variations',
+    component: ScrollingDoc,
   },
   {
     id: 'size',
