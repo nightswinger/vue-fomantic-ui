@@ -5,9 +5,9 @@ import GridRow from "./GridRow"
 
 export default {
   install(app: App) {
-    app.component('Grid', Grid)
-    app.component('GridColumn', GridColumn)
-    app.component('GridRow', GridRow)
+    app.component('SuiGrid', Grid)
+    app.component('SuiGridColumn', GridColumn)
+    app.component('SuiGridRow', GridRow)
   }
 } as Plugin
 
