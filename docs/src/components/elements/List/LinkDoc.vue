@@ -4,12 +4,12 @@
       A list can be specially formatted for navigation links
     </template>
     <template #example>
-      <SuiList>
-        <SuiListItem active>Home</SuiListItem>
-        <SuiListItem as="a">About</SuiListItem>
-        <SuiListItem as="a">Jobs</SuiListItem>
-        <SuiListItem as="a">Team</SuiListItem>
-      </SuiList>
+      <List link>
+        <ListItem active>Home</ListItem>
+        <ListItem as="a">About</ListItem>
+        <ListItem as="a">Jobs</ListItem>
+        <ListItem as="a">Team</ListItem>
+      </List>
     </template>
   </DocSection>
 </template>
@@ -17,14 +17,14 @@
 <script setup>
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { SuiList, SuiListItem } from 'vue-fomantic-ui'
+import { List, ListItem } from 'vue-fomantic-ui'
 
 const code = `<template>
-  <SuiList>
-    <SuiListItem active>Home</SuiListItem>
-    <SuiListItem as="a">About</SuiListItem>
-    <SuiListItem as="a">Jobs</SuiListItem>
-    <SuiListItem as="a">Team</SuiListItem>
-  </SuiList>
+  <List link>
+    <ListItem active>Home</ListItem>
+    <ListItem as="a">About</ListItem>
+    <ListItem as="a">Jobs</ListItem>
+    <ListItem as="a">Team</ListItem>
+  </List>
 </template>`
 </script>
