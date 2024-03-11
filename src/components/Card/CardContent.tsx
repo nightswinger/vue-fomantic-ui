@@ -1,26 +1,25 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+import { computeKeyOnly } from "../../utils/classNameHelper"
 
-export default defineComponent({
-  props: {
-    extra: Boolean
-  },
-  setup(props) {
-    const computedClass = computed(() => {
-      return clsx(
-        computeKeyOnly(props.extra, 'extra'),
-        'content'
-      )
-    })
+export default defineComponent((props, { slots}) => {
+  const classes = computed(() => {
+    return clsx(
+      computeKeyOnly(props.extra, 'extra'),
+      'content'
+    )
+  })
 
-    return { computedClass }
-  },
-  render() {
+  return () => {
     return (
-      <div class={this.computedClass}>
-        {this.$slots.default?.()}
+      <div class={classes.value}>
+        {slots.default?.()}
       </div>
     )
+  }
+},
+{
+  props: {
+    extra: Boolean
   }
 })
