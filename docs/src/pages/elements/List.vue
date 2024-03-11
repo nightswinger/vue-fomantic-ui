@@ -21,6 +21,9 @@ import ImageDoc from '@/components/elements/List/ImageDoc.vue'
 import HeaderDoc from '@/components/elements/List/HeaderDoc.vue'
 import DescriptionDoc from '@/components/elements/List/DescriptionDoc.vue'
 
+// Variations
+import HorizontalDoc from '@/components/elements/List/HorizontalDoc.vue'
+
 const docs = [
   {
     id: 'list',
@@ -69,6 +72,12 @@ const docs = [
     label: 'Description',
     category: 'Content',
     component: DescriptionDoc,
+  },
+  {
+    id: 'horizontal',
+    label: 'Horizontal',
+    category: 'Variations',
+    component: HorizontalDoc,
   },
 ]
 </script>
