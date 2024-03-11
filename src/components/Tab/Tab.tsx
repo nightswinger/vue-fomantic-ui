@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { computed, defineComponent, ref, watch } from "vue";
+import { computed, defineComponent, isVNode, ref, watch } from "vue";
 import { computeKeyOnly } from "../../utils/classNameHelper";
 import TabPanel from "./TabPanel";
 
@@ -38,7 +38,7 @@ export default defineComponent({
       let tabs: any = []
       if (slots.default?.()) {
         slots.default?.().forEach((child: any) => {
-          if (child.type.name === 'SuiTabPanel') tabs.push(child)
+          if (isVNode(child)) tabs.push(child)
         })
       }
 
