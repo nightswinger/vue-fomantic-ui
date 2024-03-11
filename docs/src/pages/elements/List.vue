@@ -27,6 +27,7 @@ import InvertedDoc from '@/components/elements/List/InvertedDoc.vue'
 import SelectionDoc from '@/components/elements/List/SelectionDoc.vue'
 import AnimatedDoc from '@/components/elements/List/AnimatedDoc.vue'
 import DividedDoc from '@/components/elements/List/DividedDoc.vue'
+import CelledDoc from '@/components/elements/List/CelledDoc.vue'
 
 const docs = [
   {
@@ -106,6 +107,12 @@ const docs = [
     label: 'Divided',
     category: 'Variations',
     component: DividedDoc,
+  },
+  {
+    id: 'celled',
+    label: 'Celled',
+    category: 'Variations',
+    component: CelledDoc,
   },
 ]
 </script>
