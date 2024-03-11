@@ -23,6 +23,7 @@ import DescriptionDoc from '@/components/elements/List/DescriptionDoc.vue'
 
 // Variations
 import HorizontalDoc from '@/components/elements/List/HorizontalDoc.vue'
+import InvertedDoc from '@/components/elements/List/InvertedDoc.vue'
 
 const docs = [
   {
@@ -78,6 +79,12 @@ const docs = [
     label: 'Horizontal',
     category: 'Variations',
     component: HorizontalDoc,
+  },
+  {
+    id: 'inverted',
+    label: 'Inverted',
+    category: 'Variations',
+    component: InvertedDoc,
   },
 ]
 </script>
