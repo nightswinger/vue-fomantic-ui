@@ -19,6 +19,7 @@ import LinkDoc from '@/components/elements/List/LinkDoc.vue'
 import IconDoc from '@/components/elements/List/IconDoc.vue'
 import ImageDoc from '@/components/elements/List/ImageDoc.vue'
 import HeaderDoc from '@/components/elements/List/HeaderDoc.vue'
+import DescriptionDoc from '@/components/elements/List/DescriptionDoc.vue'
 
 const docs = [
   {
@@ -62,6 +63,12 @@ const docs = [
     label: 'Header',
     category: 'Content',
     component: HeaderDoc,
+  },
+  {
+    id: 'description',
+    label: 'Description',
+    category: 'Content',
+    component: DescriptionDoc,
   },
 ]
 </script>
