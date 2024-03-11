@@ -28,7 +28,6 @@ import MenuDoc from './pages/collections/MenuDoc.vue'
 import MessageDoc from './pages/collections/MessageDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
-import AdvertisementDoc from './pages/views/AdvertisementDoc.vue'
 import CardDoc from './pages/views/CardDoc.vue'
 import FeedDoc from './pages/views/FeedDoc.vue'
 import ItemDoc from './pages/views/ItemDoc.vue'
@@ -79,7 +78,7 @@ const routes: any = [
       { path: 'collections/message', component: MessageDoc },
       { path: 'collections/table', component: TableDoc },
 
-      { path: 'views/advertisement', component: AdvertisementDoc },
+      { path: 'views/advertisement', component: () => import('./pages/views/Advertisement.vue') },
       { path: 'views/card', component: CardDoc },
       { path: 'views/comment', component: () => import('./pages/views/Comment.vue') },
       { path: 'views/feed', component: FeedDoc },
