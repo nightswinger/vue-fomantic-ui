@@ -31,7 +31,6 @@ import TableDoc from './pages/collections/TableDoc.vue'
 import CardDoc from './pages/views/CardDoc.vue'
 import FeedDoc from './pages/views/FeedDoc.vue'
 import ItemDoc from './pages/views/ItemDoc.vue'
-import StatisticDoc from './pages/views/StatisticDoc.vue'
 
 // Modules
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
@@ -83,7 +82,7 @@ const routes: any = [
       { path: 'views/comment', component: () => import('./pages/views/Comment.vue') },
       { path: 'views/feed', component: FeedDoc },
       { path: 'views/item', component: ItemDoc },
-      { path: 'views/statistic', component: StatisticDoc },
+      { path: 'views/statistic', component: () => import('./pages/views/Statistic.vue') },
 
       { path: 'modules/accordion', component: AccordionDoc },
       { path: 'modules/calendar', component: CalendarDoc },
