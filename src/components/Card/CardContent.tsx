@@ -13,6 +13,10 @@ export default defineComponent((props, { slots}) => {
   return () => {
     return (
       <div class={classes.value}>
+        {props.header && <div class="header">{props.header}</div>}
+        {slots.header && <div class="header">{slots.header?.()}</div>}
+        {slots.meta && <div class="meta">{slots.meta?.()}</div>}
+        {slots.description && <div class="description">{slots.description?.()}</div>}
         {slots.default?.()}
       </div>
     )
@@ -20,6 +24,7 @@ export default defineComponent((props, { slots}) => {
 },
 {
   props: {
-    extra: Boolean
+    extra: Boolean,
+    header: String,
   }
 })
