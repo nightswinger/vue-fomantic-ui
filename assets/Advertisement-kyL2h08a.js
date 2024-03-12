@@ -1,4 +1,4 @@
-import{o as s,c as o,w as a,a as d,b as e,u as t,v as n,_ as m,d as p,e as u,f as l,D as _}from"./index-btfCFYTi.js";const b=p("img",{src:u},null,-1),g=`<template>
+import{o as s,c as o,w as a,a as d,b as e,u as t,v as n,_ as m,d as p,e as u,f as l,D as _}from"./index-y97KoTwB.js";const b=p("img",{src:u},null,-1),g=`<template>
   <Advertisement unit="medium rectangle">
     <img src="/images/wireframe/image.png" />
   </Advertisement>
