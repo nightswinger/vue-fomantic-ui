@@ -30,6 +30,7 @@ export default defineComponent((props, { slots}) => {
 
     return (
       <div class={classes.value}>
+        {props.title && <div class="title">{props.title}</div>}
         {slots.default?.()}
       </div>
     )
@@ -43,6 +44,7 @@ export default defineComponent((props, { slots}) => {
     fluid: Boolean,
     href: String,
     link: Boolean,
+    title: String,
     vertical: Boolean,
   }
 })
