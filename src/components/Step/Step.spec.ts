@@ -17,4 +17,32 @@ describe('Step', () => {
       expect(title.text()).toBe('Test Title')
     })
   })
+
+  describe('description', () => {
+    it('renders description when the description prop is provided', async () => {
+      const wrapper = mount(Step, {
+        props: {
+          description: 'Test Description'
+        }
+      })
+
+      const description = wrapper.find('.description')
+      expect(description.exists()).toBe(true)
+      expect(description.text()).toBe('Test Description')
+    })
+  })
+
+  describe('icon', () => {
+    it('renders icon when the icon prop is provided', async () => {
+      const wrapper = mount(Step, {
+        props: {
+          icon: 'icon'
+        }
+      })
+
+      const icon = wrapper.find('i')
+      expect(icon.exists()).toBe(true)
+      expect(icon.classes()).toContain('icon')
+    })
+  })
 })

@@ -2,6 +2,7 @@ import clsx from "clsx"
 import { computed, defineComponent } from "vue"
 
 import { computeKeyOnly } from "@/utils/classNameHelper"
+import { Icon } from "../Icon"
 
 export default defineComponent((props, { slots}) => {
   const classes = computed(() => {
@@ -30,7 +31,11 @@ export default defineComponent((props, { slots}) => {
 
     return (
       <div class={classes.value}>
-        {props.title && <div class="title">{props.title}</div>}
+        {props.icon && <Icon name={props.icon} />}
+        {(props.title || props.description) && <div class="content">
+          {props.title && <div class="title">{props.title}</div>}
+          {props.description && <div class="description">{props.description}</div>}
+        </div>}
         {slots.default?.()}
       </div>
     )
@@ -40,9 +45,11 @@ export default defineComponent((props, { slots}) => {
   props: {
     active: Boolean,
     completed: Boolean,
+    description: String,
     disabled: Boolean,
     fluid: Boolean,
     href: String,
+    icon: String,
     link: Boolean,
     title: String,
     vertical: Boolean,
