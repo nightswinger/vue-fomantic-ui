@@ -1,8 +1,41 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
 
-export default defineComponent({
+import { computeKeyOnly } from "@/utils/classNameHelper"
+
+export default defineComponent((props, { slots}) => {
+  const classes = computed(() => {
+    return clsx(
+      computeKeyOnly(props.active, 'active'),
+      computeKeyOnly(props.completed, 'completed'),
+      computeKeyOnly(props.disabled, 'disabled'),
+      computeKeyOnly(props.fluid, 'fluid'),
+      computeKeyOnly(props.link, 'link'),
+      computeKeyOnly(props.vertical, 'vertical'),
+      'step'
+    )
+  })
+
+  return () => {
+    if (props.href) {
+      return (
+        <a
+          class={classes.value}
+          href={props.href}
+        >
+          {slots.default?.()}
+        </a>
+      )
+    }
+
+    return (
+      <div class={classes.value}>
+        {slots.default?.()}
+      </div>
+    )
+  }
+},
+{
   props: {
     active: Boolean,
     completed: Boolean,
@@ -11,38 +44,5 @@ export default defineComponent({
     href: String,
     link: Boolean,
     vertical: Boolean,
-  },
-  setup(props) {
-    const computedClass = computed(() => {
-      return clsx(
-        computeKeyOnly(props.active, 'active'),
-        computeKeyOnly(props.completed, 'completed'),
-        computeKeyOnly(props.disabled, 'disabled'),
-        computeKeyOnly(props.fluid, 'fluid'),
-        computeKeyOnly(props.link, 'link'),
-        computeKeyOnly(props.vertical, 'vertical'),
-        'step'
-      )
-    })
-
-    return { computedClass }
-  },
-  render() {
-    if (this.href) {
-      return (
-        <a
-          class={this.computedClass}
-          href={this.href}
-        >
-          {this.$slots.default?.()}
-        </a>
-      )
-    }
-
-    return (
-      <div class={this.computedClass}>
-        {this.$slots.default?.()}
-      </div>
-    )
   }
 })
