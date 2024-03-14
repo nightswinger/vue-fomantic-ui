@@ -1,7 +1,7 @@
 <template>
   <DocComponent
-    title="Input"
-    description="An input is a field used to elicit a response from a user"
+    title="List"
+    description="A table displays a collections of data grouped into rows"
     :component-docs="docs"
   />
 </template>
