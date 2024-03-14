@@ -31,6 +31,7 @@ import InvertedDoc from '@/components/modules/Progress/InvertedDoc.vue'
 import AttachedDoc from '@/components/modules/Progress/AttachedDoc.vue'
 import SizeDoc from '@/components/modules/Progress/SizeDoc.vue'
 import ColorDoc from '@/components/modules/Progress/ColorDoc.vue'
+import InvertedColorDoc from '@/components/modules/Progress/InvertedColorDoc.vue'
 
 const docs = [
   {
@@ -122,6 +123,12 @@ const docs = [
     label: 'Color',
     category: 'Variations',
     component: ColorDoc,
+  },
+  {
+    id: 'inverted-color',
+    label: 'Inverted Color',
+    category: 'Variations',
+    component: InvertedColorDoc,
   },
 ]
 </script>
