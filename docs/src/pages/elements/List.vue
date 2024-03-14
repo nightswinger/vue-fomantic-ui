@@ -28,6 +28,7 @@ import SelectionDoc from '@/components/elements/List/SelectionDoc.vue'
 import AnimatedDoc from '@/components/elements/List/AnimatedDoc.vue'
 import DividedDoc from '@/components/elements/List/DividedDoc.vue'
 import CelledDoc from '@/components/elements/List/CelledDoc.vue'
+import SizeDoc from '@/components/elements/List/SizeDoc.vue'
 
 const docs = [
   {
@@ -114,5 +115,11 @@ const docs = [
     category: 'Variations',
     component: CelledDoc,
   },
+  {
+    id: 'size',
+    label: 'Size',
+    category: 'Variations',
+    component: SizeDoc,
+  }
 ]
 </script>
