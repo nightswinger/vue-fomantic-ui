@@ -26,7 +26,7 @@ export default defineComponent({
     ...makeAttachedProps(),
     ...makeColorProps(),
   },
-  setup(props) {
+  setup(props, { slots }) {
     const { attachedClasses } = useAttached(props);
     const { colorClasses } = useColor(props);
 
@@ -68,7 +68,7 @@ export default defineComponent({
           {
             props.progress &&
             <div class={barClass.value} style={barStyle.value}>
-              {`${props.percent}%`}
+              {slots.default?.() || `${props.percent}%`}
             </div>
           }
         </div>
