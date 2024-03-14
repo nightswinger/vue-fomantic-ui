@@ -30,6 +30,7 @@ import DisabledDoc from '@/components/modules/Progress/DisabledDoc.vue'
 import InvertedDoc from '@/components/modules/Progress/InvertedDoc.vue'
 import AttachedDoc from '@/components/modules/Progress/AttachedDoc.vue'
 import SizeDoc from '@/components/modules/Progress/SizeDoc.vue'
+import ColorDoc from '@/components/modules/Progress/ColorDoc.vue'
 
 const docs = [
   {
@@ -115,6 +116,12 @@ const docs = [
     label: 'Size',
     category: 'Variations',
     component: SizeDoc,
+  },
+  {
+    id: 'color',
+    label: 'Color',
+    category: 'Variations',
+    component: ColorDoc,
   },
 ]
 </script>
