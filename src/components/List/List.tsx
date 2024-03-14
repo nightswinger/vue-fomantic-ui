@@ -1,9 +1,12 @@
 import clsx from "clsx"
 import { computed, defineComponent, h } from "vue"
 
+import { makeSizeProps, useSize } from "@/composables/size"
 import { computeKeyOnly, computeKeyValue } from "@/utils/classNameHelper"
 
 export default defineComponent((props, { slots }) => {
+  const { sizeClass } = useSize(props)
+
   const classes = computed(() => {
     return clsx(
       'ui',
@@ -19,6 +22,7 @@ export default defineComponent((props, { slots }) => {
       computeKeyOnly(props.selection, 'selection'),
       computeKeyValue(props.verticalAlign, 'aligned'),
       computeKeyValue(props.floated, 'floated'),
+      sizeClass.value,
       'list'
     )
   })
@@ -46,5 +50,6 @@ export default defineComponent((props, { slots }) => {
     link: Boolean,
     selection: Boolean,
     verticalAlign: String,
+    ...makeSizeProps(),
   },
 })
