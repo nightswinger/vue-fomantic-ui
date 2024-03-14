@@ -6,11 +6,14 @@ import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelpe
 import { makeAttachedProps, useAttached } from "../../composables/attached";
 import { makeColorProps, useColor } from "../../composables/color";
 
+import type { PropType } from 'vue';
+
 export default defineComponent({
   props: {
     active: Boolean,
     disabled: Boolean,
     error: Boolean,
+    indeterminate: [Boolean, String] as PropType<boolean | 'filling' | 'sliding' | 'swinging'| 'slow' | 'fast'>,
     indicating: Boolean,
     inverted: Boolean,
     label: String,
@@ -38,6 +41,7 @@ export default defineComponent({
         computeKeyOnly(props.indicating, 'indicating'),
         computeKeyOnly(props.success, 'success'),
         computeKeyOnly(props.warning, 'warning'),
+        computeKeyOrKeyValue(props.indeterminate, 'indeterminate'),
         attachedClasses.value,
         'progress'
       )

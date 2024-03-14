@@ -45,4 +45,23 @@ describe('SuiProgress', () => {
     expect(progressText.exists()).toBe(true);
     expect(progressText.text()).toBe('75%');
   });
+
+  describe('indeterminate', () => {
+    it('applies indeterminate class correctly', () => {
+      const wrapper = mount(Progress, {
+        props: { indeterminate: true },
+      });
+
+      expect(wrapper.classes()).toContain('indeterminate');
+    });
+
+    it('applies indeterminate class correctly with string value', () => {
+      const wrapper = mount(Progress, {
+        props: { indeterminate: 'filling' },
+      });
+
+      expect(wrapper.classes()).toContain('indeterminate');
+      expect(wrapper.classes()).toContain('filling');
+    });
+  });
 });

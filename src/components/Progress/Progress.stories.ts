@@ -74,6 +74,19 @@ export const State: Story = {
   },
 };
 
+export const Indeterminate: Story = {
+  args: {
+    color: 'blue',
+    indeterminate: true,
+  },
+  argTypes: {
+    indeterminate: {
+      control: 'select',
+      options: [true, 'filling', 'sliding', 'swinging', 'slow', 'fast'],
+    }
+  },
+};
+
 export const Attached: Story = {
   render: () => ({
     components: { Progress, Segment },
