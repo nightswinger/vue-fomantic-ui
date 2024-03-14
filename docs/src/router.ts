@@ -41,7 +41,6 @@ import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import Modal from './pages/modules/Modal.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
-import ProgressDoc from './pages/modules/ProgressDoc.vue'
 import RatingDoc from './pages/modules/RatingDoc.vue'
 import SidebarDoc from './pages/modules/SidebarDoc.vue'
 import SliderDoc from './pages/modules/SliderDoc.vue'
@@ -92,7 +91,7 @@ const routes: any = [
       { path: 'modules/embed', component: EmbedDoc },
       { path: 'modules/modal', component: Modal },
       { path: 'modules/popup', component: PopupDoc },
-      { path: 'modules/progress', component: ProgressDoc },
+      { path: 'modules/progress', component: () => import('./pages/modules/Progress.vue') },
       { path: 'modules/rating', component: RatingDoc },
       { path: 'modules/sidebar', component: SidebarDoc },
       { path: 'modules/slider', component: SliderDoc },
