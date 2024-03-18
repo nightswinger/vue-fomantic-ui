@@ -9,6 +9,7 @@ export default defineComponent((props, { slots }) => {
       'ui',
       props.color,
       computeKeyOnly(props.centered, 'centered'),
+      computeKeyOnly(props.disabled, 'disabled'),
       computeKeyOnly(props.fluid, 'fluid'),
       computeKeyOnly(props.horizontal, 'horizontal'),
       computeKeyOnly(props.link, 'link'),
@@ -36,6 +37,7 @@ export default defineComponent((props, { slots }) => {
   props: {
     centered: Boolean,
     color: String,
+    disabled: Boolean,
     fluid: Boolean,
     horizontal: Boolean,
     href: String,

@@ -95,4 +95,34 @@ export const Cards: Story = {
   }),
 }
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Card, CardContent, Icon },
+    setup() {
+      return { args }
+    },
+    template: `
+      <Card v-bind="args">
+        <CardContent header="Kristy">
+          <template #meta>
+            <span>Joined in 2013</span>
+          </template>
+          <template #description>
+            Kristy is an art director living in New York.
+          </template>
+        </CardContent>
+        <CardContent extra>
+          <a>
+            <Icon name="user" />
+            22 Friends
+          </a>
+        </CardContent>
+      </Card>
+    `
+  }),
+  args: {
+    disabled: true,
+  }
+}
+
 export default meta
