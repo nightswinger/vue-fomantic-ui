@@ -23,7 +23,7 @@ export default defineComponent((props, { slots }) => {
         class={classes.value}
         href={props.href}
       >
-        {slots.href?.()}
+        {slots.default?.()}
       </a>
     }
 
