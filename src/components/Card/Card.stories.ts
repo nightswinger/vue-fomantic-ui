@@ -125,4 +125,56 @@ export const Disabled: Story = {
   }
 }
 
+export const Loading: Story = {
+  render: (args) => ({
+    components: { Card, CardContent, Icon },
+    setup() {
+      return { args }
+    },
+    template: `
+      <Card v-bind="args">
+        <CardContent header="Kristy">
+          <template #meta>
+            <span>Joined in 2013</span>
+          </template>
+          <template #description>
+            Kristy is an art director living in New York.
+          </template>
+        </CardContent>
+        <CardContent extra>
+          <a>
+            <Icon name="user" />
+            22 Friends
+          </a>
+        </CardContent>
+      </Card>
+      <Card v-bind="args" color="brown">
+        <CardContent header="Kristy">
+          <template #meta>
+            <span>Joined in 2013</span>
+          </template>
+          <template #description>
+            Kristy is an art director living in New York.
+          </template>
+        </CardContent>
+        <CardContent extra>
+          <a>
+            <Icon name="user" />
+            22 Friends
+          </a>
+        </CardContent>
+      </Card>
+    `
+  }),
+  args: {
+    loading: true,
+  },
+  argTypes: {
+    loading: {
+      control: 'select',
+      options: [true, 'double', 'usual double'],
+    }
+  }
+}
+
 export default meta

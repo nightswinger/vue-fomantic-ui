@@ -2,8 +2,11 @@ import clsx from "clsx"
 import { computed, defineComponent } from "vue"
 
 import { computeKeyOnly } from "@/utils/classNameHelper"
+import { makeLoadingProps, useLoading } from "@/composables/loading"
 
 export default defineComponent((props, { slots }) => {
+  const { loadingClasses } = useLoading(props)
+
   const classes = computed(() => {
     return clsx(
       'ui',
@@ -14,6 +17,7 @@ export default defineComponent((props, { slots }) => {
       computeKeyOnly(props.horizontal, 'horizontal'),
       computeKeyOnly(props.link, 'link'),
       computeKeyOnly(props.raised, 'raised'),
+      loadingClasses.value,
       'card'
     )
   })
@@ -42,6 +46,7 @@ export default defineComponent((props, { slots }) => {
     horizontal: Boolean,
     href: String,
     link: Boolean,
-    raised: Boolean
+    raised: Boolean,
+    ...makeLoadingProps(),
   },
 })

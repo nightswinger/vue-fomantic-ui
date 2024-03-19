@@ -3,7 +3,7 @@ import { computed } from "vue";
 
 import type { PropType } from "vue";
 
-const loadingValues = ['double', 'elastic'] as const;
+const loadingValues = ['double', 'usual double', 'elastic'] as const;
 
 export type Loading = typeof loadingValues[number];
 
