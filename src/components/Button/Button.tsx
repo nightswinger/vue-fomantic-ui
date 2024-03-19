@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icon";
 
 import { makeIconProps, useIcon } from "./composables/icon";
 import { makeLabeledProps, useLabeled } from "./composables/labeled";
-import { makeLoadingProps, useLoading } from "./composables/loading";
+import { makeLoadingProps, useLoading } from "@/composables/loading";
 
 import type { PropType, VNode } from "vue";
 
