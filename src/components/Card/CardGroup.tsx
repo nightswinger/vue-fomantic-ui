@@ -5,6 +5,7 @@ import { computeKeyOnly, computeWidthProp } from "@/utils/classNameHelper"
 
 export default defineComponent({
   props: {
+    basic: Boolean,
     centered: Boolean,
     doubling: Boolean,
     horizontal: Boolean,
@@ -16,6 +17,7 @@ export default defineComponent({
     const classes = computed(() => {
       return clsx(
         'ui',
+        computeKeyOnly(props.basic, 'basic'),
         computeKeyOnly(props.centered, 'centered'),
         computeKeyOnly(props.doubling, 'doubling'),
         computeKeyOnly(props.horizontal, 'horizontal'),

@@ -41,4 +41,31 @@ export const Default: Story = {
   }
 }
 
+export const Basic: Story = {
+  render: (args) => ({
+    components: { Card, CardGroup, CardContent },
+    setup() {
+      return { args }
+    },
+    template: `<CardGroup v-bind="args">
+      <Card color="primary">
+        <CardContent header="Elliot Fu">
+          <template #meta>
+            <a>Friends</a>
+          </template>
+          <template #description>
+            Elliot Fu is a film-maker from New York.
+          </template>
+        </CardContent>
+      </Card>
+    </CardGroup>`
+  }),
+  args: {
+    basic: true,
+  },
+  argTypes: {
+    basic: { control: { type: "boolean" } },
+  }
+}
+
 export default meta
