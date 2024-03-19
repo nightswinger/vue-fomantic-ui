@@ -1,6 +1,7 @@
-import clsx from "clsx";
-import { computed, defineComponent, h, provide } from "vue";
-import { computeKeyOnly, computeWidthProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent, h, provide } from "vue"
+
+import { computeKeyOnly, computeWidthProp } from "@/utils/classNameHelper"
 
 export default defineComponent({
   props: {
@@ -8,29 +9,31 @@ export default defineComponent({
     horizontal: Boolean,
     inverted: Boolean,
     size: String,
+    stackable: Boolean,
     widths: Number
   },
   setup(props) {
     provide('ui', false)
 
-    const computedClass = computed(() => {
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
         props.size,
         computeKeyOnly(props.horizontal, 'horizontal'),
         computeKeyOnly(props.inverted, 'inverted'),
+        computeKeyOnly(props.stackable, 'stackable'),
         computeWidthProp(props.widths, ''),
         'statistics'
       )
     })
 
-    return { computedClass }
+    return { classes }
   },
   render() {
     return h(
       'div',
-      { class: this.computedClass },
+      { class: this.classes },
       this.$slots.default?.()
     )
   }
