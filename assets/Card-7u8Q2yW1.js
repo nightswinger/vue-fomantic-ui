@@ -1,4 +1,4 @@
-import{f as g,o as n,c as l,w as e,a as r,b as t,u as a,K as d,t as c,W as i,d as o,g as k,m as D,_,r as h,q as v,h as y,F as w,i as b,j as f,k as F,$ as x,Z as j,l as A,R as M,X as $,n as I,s as G,p as E,D as N}from"./index-9Cq7k5SN.js";const V=o("span",null,"Joined in 2013",-1),H=o("span",{class:"right floated"},"14h",-1),J={class:"right floated"},B=`<template>
+import{f as g,o as n,c as l,w as e,a as r,b as t,u as a,K as d,t as c,W as i,d as o,g as k,m as D,_,r as h,q as v,h as y,F as w,i as b,j as f,k as F,$ as x,Z as j,l as A,R as M,X as $,n as I,s as G,p as E,D as N}from"./index-Ygle4ekK.js";const V=o("span",null,"Joined in 2013",-1),H=o("span",{class:"right floated"},"14h",-1),J={class:"right floated"},B=`<template>
   <Card>
     <Image src="/vue-fomantic-ui/images/avatar/large/kristy.png" />
     <CardContent header="Kristy">
