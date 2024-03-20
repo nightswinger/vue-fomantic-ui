@@ -115,4 +115,33 @@ export const Default: Story = {
   })
 }
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Feed, FeedEvent },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Feed v-bind="args">
+        <FeedEvent>
+          <template #label>
+            <img src="./avatar/small/elliot.jpg">
+          </template>
+          <template #summary>
+            <a class="user">
+              I am a feed event of a whole disabled feed
+            </a>
+          </template>
+          <template #meta>
+            <i class="like icon"></i> 4 Likes
+          </template>
+        </FeedEvent>
+      </Feed>
+    `
+  }),
+  args: {
+    disabled: true,
+  }
+}
+
 export default meta
