@@ -1,19 +1,32 @@
-import { defineComponent } from "vue";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly } from "@/utils/classNameHelper"
 
 export default defineComponent({
-  render() {
-    return <div class="event">
-      {this.$slots.label && <div class="label">{this.$slots.label()}</div>}
+  props: {
+    disabled: Boolean,
+  },
+  setup(props, { slots }) {
+    const classes = computed(() => (
+      clsx(
+        computeKeyOnly(props.disabled, 'disabled'),
+        'event'
+      )
+    ))
+
+    return () => <div class={classes.value}>
+      {slots.label && <div class="label">{slots.label()}</div>}
       {
-        (this.$slots.summary || this.$slots.meta) &&
+        (slots.summary || slots.meta) &&
         <div class="content">
-          {this.$slots.summary && <div class="summary">{this.$slots.summary()}</div>}
-          {this.$slots.extraText && <div class="extra text">{this.$slots.extraText()}</div>}
-          {this.$slots.extraImages && <div class="extra images">{this.$slots.extraImages()}</div>}
-          {this.$slots.meta && <div class="meta">{this.$slots.meta()}</div>}
+          {slots.summary && <div class="summary">{slots.summary()}</div>}
+          {slots.extraText && <div class="extra text">{slots.extraText()}</div>}
+          {slots.extraImages && <div class="extra images">{slots.extraImages()}</div>}
+          {slots.meta && <div class="meta">{slots.meta()}</div>}
         </div>
       }
-      {this.$slots.default?.()}
+      {slots.default?.()}
     </div>
   }
 })
