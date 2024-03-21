@@ -2,6 +2,7 @@ import { h, ref } from "vue"
 import type { Meta, StoryObj } from "@storybook/vue3"
 
 import Menu from "./Menu"
+import MenuItem from "./MenuItem"
 
 import Input from "../Input/Input"
 import Label from "../Label/Label"
@@ -25,6 +26,30 @@ export const Default: Story = {
       <Menu :widths="items.length" :items="items" />
     `,
   }),
+}
+
+export const SecondaryMenu: Story = {
+  render: (args) => ({
+    components: { Menu, MenuItem, Input },
+    setup: () => {
+      const items = ref(['Home', 'Messages', 'Friends'])
+
+      return { items, args }
+    },
+    template: `
+      <Menu :items="items" v-bind="args">
+        <template #right>
+          <MenuItem>
+            <Input icon="search" placeholder="Search..." />
+          </MenuItem>
+          <MenuItem>Logout</MenuItem>
+        </template>
+      </Menu>
+    `,
+  }),
+  args: {
+    secondary: true,
+  }
 }
 
 export const Text: Story = {

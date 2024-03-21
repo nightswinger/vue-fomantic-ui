@@ -90,6 +90,7 @@ export default defineComponent({
             {getText(item)}
           </MenuItem>
         ))}
+        {slots.right &&<div class="right menu">{slots.right()}</div>}
       </div>
     )
   },
