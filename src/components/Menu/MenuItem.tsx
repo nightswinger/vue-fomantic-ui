@@ -19,7 +19,8 @@ export default defineComponent({
     position: String,
     stackable: Boolean,
   },
-  setup(props, { slots }) {
+  emits: ['selected'],
+  setup(props, { slots, emit }) {
     let elementType: any = props.as || 'a'
 
     if (props.header) {
@@ -49,7 +50,10 @@ export default defineComponent({
     return () => (
       <elementType
         class={computedClass.value}
-      >{props.name || slots.default?.()}</elementType>
+        onClick={() => !props.header && emit('selected', props.index)}
+      >
+        {props.name || slots.default?.()}
+      </elementType>
     )
   }
 })

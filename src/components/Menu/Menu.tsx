@@ -1,6 +1,16 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent, ref } from "vue"
+import type { PropType, VNode } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/classNameHelper"
+
+import MenuItem from "./MenuItem"
+
+type MenuItemOption = string | {
+  header?: boolean;
+  text?: string | VNode[];
+  [key: string]: any;
+};
 
 export default defineComponent({
   props: {
@@ -13,6 +23,7 @@ export default defineComponent({
     fluid: Boolean,
     icon: [Boolean, String],
     inverted: Boolean,
+    items: Array as PropType<MenuItemOption[]>,
     pagination: Boolean,
     pointing: Boolean,
     secondary: Boolean,
@@ -23,8 +34,10 @@ export default defineComponent({
     vertical: Boolean,
     widths: Number
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { slots }) {
+    const activeIndex = ref(-1)
+
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
@@ -49,13 +62,35 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
-  },
-  render() {
-    return (
-      <div class={this.computedClass}>
-        {this.$slots.default?.()}
+    const getText = (item: MenuItemOption) => {
+      if (typeof item === 'string') {
+        return item
+      }
+      return item.text
+    }
+
+    const getValueByKey = (item: MenuItemOption, key: string) => {
+      if (typeof item === 'string') {
+        return item
+      }
+      return item[key]
+    }
+
+    return () => (
+      <div class={classes.value}>
+        {slots.default && slots.default()}
+        {props.items && props.items.map((item, index) => (
+          <MenuItem
+            index={index}
+            active={index === activeIndex.value}
+            color={getValueByKey(item, 'color')}
+            header={typeof item !== 'string' && item.header}
+            onSelected={() => activeIndex.value = index}
+          >
+            {getText(item)}
+          </MenuItem>
+        ))}
       </div>
     )
-  }
+  },
 })
