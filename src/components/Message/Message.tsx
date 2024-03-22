@@ -1,7 +1,9 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
-import { MessageContent, MessageHeader } from ".";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue } from "@/utils/classNameHelper"
+
+import Icon from "../Icon/Icon"
 
 export default defineComponent({
   props: {
@@ -13,7 +15,7 @@ export default defineComponent({
     error: Boolean,
     floating: Boolean,
     hidden: Boolean,
-    icon: Boolean,
+    icon: [Boolean, String],
     info: Boolean,
     negative: Boolean,
     positive: Boolean,
@@ -22,8 +24,8 @@ export default defineComponent({
     visible: Boolean,
     warning: Boolean,
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { slots }) {
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
@@ -32,7 +34,7 @@ export default defineComponent({
         computeKeyOnly(props.error, 'error'),
         computeKeyOnly(props.floating, 'floating'),
         computeKeyOnly(props.hidden, 'hidden'),
-        computeKeyOnly(props.icon, 'icon'),
+        computeKeyOnly(!!props.icon, 'icon'),
         computeKeyOnly(props.info, 'info'),
         computeKeyOnly(props.negative, 'negative'),
         computeKeyOnly(props.positive, 'positive'),
@@ -44,19 +46,19 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
-  },
-  render() {
-    return (
-      <div class={this.computedClass}>
-        {(this.header || this.content) && (
-          <MessageContent>
-            <MessageHeader>{this.header}</MessageHeader>
-            <p>{this.content}</p>
-          </MessageContent>
-        )}
-        {this.$slots.default?.()}
+    return () => (
+      <div class={classes.value}>
+        {typeof props.icon === 'string' && <Icon name={props.icon} />}
+        {slots.default?.()}
+        {
+          (props.content || slots.content || props.header) &&
+          <div class="content">
+            {props.header && <div class="header">{props.header}</div>}
+            {props.content && <p>{props.content}</p>}
+            {slots.content?.()}
+          </div>
+        }
       </div>
     )
-  }
+  },
 })
