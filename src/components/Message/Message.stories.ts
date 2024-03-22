@@ -49,4 +49,24 @@ export const IconMessage: Story = {
   }),
 }
 
+export const DismissableBlock: Story = {
+  render: (args) => ({
+    components: { Message, Icon },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Message
+        header="Welcome back!"
+        content="This is a special notification which you can dismiss if you're bored with it."
+        @close="() => console.log('closed')"
+        v-bind="args"
+      />
+    `,
+  }),
+  args: {
+    closable: true,
+  }
+}
+
 export default meta

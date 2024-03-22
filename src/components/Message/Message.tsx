@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { computed, defineComponent } from "vue"
+import { computed, defineComponent, ref } from "vue"
 
 import { computeKeyOnly, computeKeyOrKeyValue } from "@/utils/classNameHelper"
 
@@ -9,6 +9,7 @@ export default defineComponent({
   props: {
     attached: [Boolean, String],
     color: String,
+    closable: Boolean,
     compact: Boolean,
     content: String,
     header: String,
@@ -24,7 +25,8 @@ export default defineComponent({
     visible: Boolean,
     warning: Boolean,
   },
-  setup(props, { slots }) {
+  emits: ['close'],
+  setup(props, { emit, slots }) {
     const classes = computed(() => {
       return clsx(
         'ui',
@@ -46,8 +48,22 @@ export default defineComponent({
       )
     })
 
+    const el = ref<HTMLDivElement>()
+
+    const onClose = () => {
+      const animation = el.value?.animate([
+        { opacity: 1 },
+        { opacity: 0 },
+      ], 200)
+
+      if (!animation) return
+      animation.onfinish = () => el.value?.classList.add('hidden')
+      emit('close')
+    }
+
     return () => (
-      <div class={classes.value}>
+      <div ref={el} class={classes.value}>
+        {props.closable && <i class="close icon" onClick={onClose} />}
         {typeof props.icon === 'string' && <Icon name={props.icon} />}
         {slots.default?.()}
         {
