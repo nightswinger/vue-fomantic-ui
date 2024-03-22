@@ -18,6 +18,7 @@ export default defineComponent({
     hidden: Boolean,
     icon: [Boolean, String],
     info: Boolean,
+    list: Array,
     negative: Boolean,
     positive: Boolean,
     size: String,
@@ -67,11 +68,17 @@ export default defineComponent({
         {typeof props.icon === 'string' && <Icon name={props.icon} />}
         {slots.default?.()}
         {
-          (props.content || slots.content || props.header) &&
+          (props.content || slots.content || props.header || props.list) &&
           <div class="content">
             {props.header && <div class="header">{props.header}</div>}
             {props.content && <p>{props.content}</p>}
             {slots.content?.()}
+            {
+              Array.isArray(props.list) &&
+              <ul class="list">
+                {props.list.map((item, index) => <li key={index}>{item}</li>)}
+              </ul>
+            }
           </div>
         }
       </div>

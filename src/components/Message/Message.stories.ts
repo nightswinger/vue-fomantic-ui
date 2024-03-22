@@ -26,6 +26,24 @@ export const Default: Story = {
   }),
 }
 
+export const ListMessage: Story = {
+  render: (args) => ({
+    components: { Message },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Message
+        header="New Site Features"
+        :list="[
+          'You can now have cover images on profile pages',
+          'Drafts will now auto-save while writing',
+        ]"
+      />
+    `,
+  }),
+}
+
 export const IconMessage: Story = {
   render: (args) => ({
     components: { Message, Icon },
