@@ -23,7 +23,11 @@ export const Default: Story = {
       return { items }
     },
     template: `
-      <Menu :widths="items.length" :items="items" />
+      <Menu
+        :widths="items.length"
+        :items="items"
+        @selected="(v) => console.log(v)"
+      />
     `,
   }),
 }
@@ -82,7 +86,7 @@ export const VerticalMenu: Story = {
         { text: ['Inbox', h(Label, { color: 'teal' , pointing: 'left' }, () => 1)], color: 'teal' },
         { text: ['Spam', h(Label, {}, () => 51)] },
         { text: ['Updates', h(Label, {}, () => 1)] },
-        { text: [h(Input, { icon: 'search', placeholder: 'Search mail...', transparent: true })] },
+        { text: [h(Input, { icon: 'search', placeholder: 'Search mail...', transparent: true })], as: 'div' },
       ])
 
       return { items, args }

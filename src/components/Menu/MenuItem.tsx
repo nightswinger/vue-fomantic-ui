@@ -47,10 +47,14 @@ export default defineComponent({
       )
     })
 
+    const isSelectable = computed(() => {
+      return !props.header && !props.disabled && props.as !== 'div'
+    })
+
     return () => (
       <elementType
         class={computedClass.value}
-        onClick={() => !props.header && emit('selected', props.index)}
+        onClick={() => isSelectable.value && emit('selected', props.index)}
       >
         {props.name || slots.default?.()}
       </elementType>

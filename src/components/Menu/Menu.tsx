@@ -7,6 +7,7 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/
 import MenuItem from "./MenuItem"
 
 type MenuItemOption = string | {
+  as?: string;
   header?: boolean;
   text?: string | VNode[];
   [key: string]: any;
@@ -34,7 +35,8 @@ export default defineComponent({
     vertical: Boolean,
     widths: Number
   },
-  setup(props, { slots }) {
+  emits: ['selected'],
+  setup(props, { slots, emit }) {
     const activeIndex = ref(-1)
 
     const classes = computed(() => {
@@ -76,6 +78,11 @@ export default defineComponent({
       return item[key]
     }
 
+    const handleSelected = (index: number, item: MenuItemOption) => {
+      activeIndex.value = index
+      emit('selected', item)
+    }
+
     return () => (
       <div class={classes.value}>
         {slots.default && slots.default()}
@@ -83,9 +90,10 @@ export default defineComponent({
           <MenuItem
             index={index}
             active={index === activeIndex.value}
+            as={typeof item !== 'string' ? getValueByKey(item, 'as'): undefined}
             color={getValueByKey(item, 'color')}
             header={typeof item !== 'string' && item.header}
-            onSelected={() => activeIndex.value = index}
+            onSelected={(i) => handleSelected(i, item)}
           >
             {getText(item)}
           </MenuItem>
