@@ -43,7 +43,7 @@ export const SecondaryMenu: Story = {
     template: `
       <Menu :items="items" v-bind="args">
         <template #right>
-          <MenuItem>
+          <MenuItem as="div">
             <Input icon="search" placeholder="Search..." />
           </MenuItem>
           <MenuItem>Logout</MenuItem>
@@ -97,6 +97,49 @@ export const VerticalMenu: Story = {
   }),
   args: {
     vertical: true,
+  }
+}
+
+export const Icons: Story = {
+  render: (args) => ({
+    components: { Menu },
+    setup: () => {
+      const items = ref([
+        { icon: 'gamepad' },
+        { icon: 'video camera' },
+        { icon: 'video play' },
+      ])
+
+      return { items, args }
+    },
+    template: `
+      <Menu :items="items" v-bind="args" />
+    `,
+  }),
+  args: {
+    icon: true,
+    vertical: false,
+  }
+}
+
+export const LabeledIcon: Story = {
+  render: (args) => ({
+    components: { Menu },
+    setup: () => {
+      const items = ref([
+        { icon: 'gamepad', text: 'Games' },
+        { icon: 'video camera', text: 'Channels' },
+        { icon: 'video play', text: 'Videos' },
+      ])
+
+      return { items, args }
+    },
+    template: `
+      <Menu :items="items" v-bind="args" />
+    `,
+  }),
+  args: {
+    icon: 'labeled',
   }
 }
 

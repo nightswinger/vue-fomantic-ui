@@ -5,10 +5,12 @@ import type { PropType, VNode } from "vue"
 import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/classNameHelper"
 
 import MenuItem from "./MenuItem"
+import Icon from "../Icon/Icon"
 
 type MenuItemOption = string | {
   as?: string;
   header?: boolean;
+  icon?: string;
   text?: string | VNode[];
   [key: string]: any;
 };
@@ -73,7 +75,7 @@ export default defineComponent({
 
     const getValueByKey = (item: MenuItemOption, key: string) => {
       if (typeof item === 'string') {
-        return item
+        return undefined
       }
       return item[key]
     }
@@ -95,6 +97,7 @@ export default defineComponent({
             header={typeof item !== 'string' && item.header}
             onSelected={(i) => handleSelected(i, item)}
           >
+            {typeof item !== 'string' && item.icon && <Icon name={item.icon} />}
             {getText(item)}
           </MenuItem>
         ))}
