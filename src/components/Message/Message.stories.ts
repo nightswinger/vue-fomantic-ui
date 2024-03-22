@@ -87,4 +87,29 @@ export const DismissableBlock: Story = {
   }
 }
 
+export const Aligned: Story = {
+  render: (args) => ({
+    components: { Message },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Message
+        header="New Version is available!"
+        content="When are you going to update?"
+        v-bind="args"
+      />
+    `,
+  }),
+  args: {
+    aligned: "center",
+  },
+  argTypes: {
+    aligned: {
+      control: 'select',
+      options: ["center", "right"],
+    },
+  }
+}
+
 export default meta

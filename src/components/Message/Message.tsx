@@ -1,13 +1,15 @@
 import clsx from "clsx"
 import { computed, defineComponent, ref } from "vue"
+import type { PropType } from "vue"
 
-import { computeKeyOnly, computeKeyOrKeyValue } from "@/utils/classNameHelper"
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "@/utils/classNameHelper"
 
 import Icon from "../Icon/Icon"
 
 export default defineComponent({
   props: {
     attached: [Boolean, String],
+    aligned: String as PropType<'center' | 'right'>,
     color: String,
     closable: Boolean,
     compact: Boolean,
@@ -44,6 +46,7 @@ export default defineComponent({
         computeKeyOnly(props.success, 'success'),
         computeKeyOnly(props.visible, 'visible'),
         computeKeyOnly(props.warning, 'warning'),
+        computeKeyValue(props.aligned, 'aligned'),
         computeKeyOrKeyValue(props.attached, 'attached'),
         'message'
       )
