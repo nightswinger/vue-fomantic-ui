@@ -1,6 +1,8 @@
-import clsx from "clsx";
-import { computed, defineComponent, h, inject } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent, h, inject } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue } from "@/utils/classNameHelper"
+
 import StatisticLabel from "./StatisticLabel"
 import StatisticValue from "./StatisticValue"
 
@@ -9,6 +11,7 @@ export default defineComponent({
   props: {
     color: String,
     floated: [Boolean, String],
+    fluid: Boolean,
     horizontal: Boolean,
     inverted: Boolean,
     label: String,
@@ -24,6 +27,7 @@ export default defineComponent({
         ui && 'ui',
         props.color,
         props.size,
+        computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.horizontal, 'horizontal'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.text, 'text'),
