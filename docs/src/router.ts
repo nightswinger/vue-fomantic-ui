@@ -27,8 +27,6 @@ import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
-import ItemDoc from './pages/views/ItemDoc.vue'
-
 // Modules
 import AccordionDoc from './pages/modules/AccordionDoc.vue'
 import CalendarDoc from './pages/modules/CalendarDoc.vue'
@@ -77,7 +75,7 @@ const routes: any = [
       { path: 'views/card', component: () => import('./pages/views/Card.vue') },
       { path: 'views/comment', component: () => import('./pages/views/Comment.vue') },
       { path: 'views/feed', component: () => import('./pages/views/Feed.vue') },
-      { path: 'views/item', component: ItemDoc },
+      { path: 'views/item', component: () => import('./pages/views/Item.vue') },
       { path: 'views/statistic', component: () => import('./pages/views/Statistic.vue') },
 
       { path: 'modules/accordion', component: AccordionDoc },
