@@ -25,7 +25,6 @@ import Breadcrumb from './pages/collections/Breadcrumb.vue'
 import Form from './pages/collections/Form.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 import MenuDoc from './pages/collections/MenuDoc.vue'
-import MessageDoc from './pages/collections/MessageDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
 import ItemDoc from './pages/views/ItemDoc.vue'
@@ -71,7 +70,7 @@ const routes: any = [
       { path: 'collections/form', component: Form },
       { path: 'collections/grid', component: GridDoc },
       { path: 'collections/menu', component: MenuDoc },
-      { path: 'collections/message', component: MessageDoc },
+      { path: 'collections/message', component: () => import('./pages/collections/Message.vue') },
       { path: 'collections/table', component: TableDoc },
 
       { path: 'views/advertisement', component: () => import('./pages/views/Advertisement.vue') },

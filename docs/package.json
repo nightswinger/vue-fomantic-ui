@@ -1,17 +1,17 @@
 {
   "name": "docs",
-  "version": "0.20.0",
+  "version": "0.21.1",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "fomantic-ui-css": "2.9.0",
+    "fomantic-ui-css": "2.9.3",
     "prismjs": "^1.29.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.4.15",
-    "vue-fomantic-ui": "^0.20.0",
+    "vue-fomantic-ui": "^0.21.1",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
