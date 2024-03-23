@@ -1210,10 +1210,10 @@ vue-demi@>=0.14.7:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.7.tgz#8317536b3ef74c5b09f268f7782e70194567d8f2"
   integrity sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==
 
-vue-fomantic-ui@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.21.0.tgz#6bc1fa463a98f0d45d247cb7ab5d4bcc42d8a22d"
-  integrity sha512-qqBq0FSEeERUZzwBYgeiuMEY63MsLooqB9O9bLmgJIPT4WkFFIVaNwF5nxtAOnbTUb6b3sU/fL8vJ5oA8f5hwQ==
+vue-fomantic-ui@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/vue-fomantic-ui/-/vue-fomantic-ui-0.21.1.tgz#1420da1ba3e1d1dc93616406e0358e780eb12cc9"
+  integrity sha512-TvuHrJHSlZ4prT9d8DruaIOP9MqEF/u3aHzn5eqEFIt7Vdpqte1ylmZncBUcFIpuwuywVmjbaDAc/SdInjxC1g==
   dependencies:
     "@vueuse/core" "^10.7.2"
     clsx "^1.1.1"
