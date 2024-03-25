@@ -19,6 +19,7 @@ export default defineComponent({
     definition: Boolean,
     fixed: Boolean,
     inverted: Boolean,
+    rowError: Function,
     padded: [Boolean, String],
     selectable: Boolean,
     singleLine: Boolean,
@@ -70,6 +71,7 @@ export default defineComponent({
           <TableBody
             columns={columns.value}
             rows={props.dataSource}
+            rowError={props.rowError}
           />
         </table>
       )

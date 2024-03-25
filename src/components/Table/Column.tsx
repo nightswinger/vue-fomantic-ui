@@ -5,5 +5,6 @@ export default defineComponent({
   props: {
     field: String,
     header: String,
+    error: Function,
   },
 })

@@ -1,9 +1,12 @@
 import { defineComponent } from "vue"
 
+import TableCell from "./TableCell"
+
 export default defineComponent({
   props: {
     columns: Array,
     rows: Array,
+    rowError: Function,
   },
   setup(props, { slots }) {
     return () => {
@@ -19,19 +22,23 @@ export default defineComponent({
             props.rows?.map((row: any) => (
               <tr key={row.id}>
                 {props.columns?.map((column: any) => {
-                  const { field, header } = column.props
+                  const { field, header, error } = column.props
 
                   return (
-                    <td
+                    <TableCell
                       data-label={header}
                       key={field}
+                      error={
+                        props.rowError?.({ data: row }) ||
+                        error?.({ value: row[field] })
+                      }
                     >
                       {
                         column.children ?
                         column.children.body?.({ data: row }) :
                         row[field]
                       }
-                    </td>
+                    </TableCell>
                   )
                 })}
               </tr>

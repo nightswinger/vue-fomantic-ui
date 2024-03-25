@@ -1,6 +1,7 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "@/utils/classNameHelper"
 
 export default defineComponent({
   props: {
@@ -18,8 +19,8 @@ export default defineComponent({
     verticalAlign: String,
     warning: Boolean
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { slots }) {
+    const classes = computed(() => {
       return clsx(
         props.color,
         computeKeyOnly(props.active, 'active'),
@@ -37,19 +38,10 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
-  },
-  render() {
-    if (this.computedClass) {
-      return (
-        <td class={this.computedClass}>
-          {this.$slots.default?.()}
-        </td>
-      )
-    }
-
-    return (
-      <td>{this.$slots.default?.()}</td>
+    return () => (
+      <td class={classes.value}>
+        {slots.default?.()}
+      </td>
     )
-  }
+  },
 })

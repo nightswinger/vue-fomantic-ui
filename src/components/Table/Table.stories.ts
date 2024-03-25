@@ -5,6 +5,7 @@ import Table from "./Table"
 import Column from "./Column"
 
 import Header from "../Header/Header"
+import Icon from "../Icon/Icon"
 import Image from "../Image/Image"
 
 type Story = StoryObj<typeof Table>
@@ -73,6 +74,44 @@ export const StandardTable: Story = {
     basic: 'very',
     celled: true,
     collapsing: true,
+  }
+}
+
+export const Error: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'No Name Specified', status: 'Approved', notes: 'None' },
+        { name: 'Jimmy', status: 'Cannot pull data', notes: 'None' },
+        { name: 'Jamie', status: 'Approved', notes: 'Classified' },
+        { name: 'Jill', status: 'Approved', notes: 'None' },
+      ])
+
+      const rowError = ({ data }) => data.name === 'Jimmy'
+      const colError = ({ value }) => value === 'Classified'
+
+      return { args, dataSource, rowError, colError }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowError="rowError"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status" />
+        <Column field="notes" header="Notes" :error="colError">
+          <template #body="{ data }">
+            <Icon name="attention" v-if="data.notes === 'Classified'" />
+            {{ data.notes }}
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
   }
 }
 
