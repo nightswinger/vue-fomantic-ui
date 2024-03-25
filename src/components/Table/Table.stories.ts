@@ -191,4 +191,37 @@ export const Active: Story = {
   }
 }
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'John', status: 'Requires Action', notes: 'None' },
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'Jill', status: 'Approved', notes: 'None' },
+      ])
+
+      const rowDisabled = ({ index }) => index === 0
+      const colDisabled = ({ value }) => value === 'Jill'
+
+      return { args, dataSource, rowDisabled, colDisabled }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowDisabled="rowDisabled"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" :disabled="colDisabled" />
+        <Column field="status" header="Status" />
+        <Column field="notes" header="Notes" />
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export default meta

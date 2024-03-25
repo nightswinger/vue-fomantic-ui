@@ -7,6 +7,7 @@ export default defineComponent({
     columns: Array,
     rows: Array,
     rowActive: Function,
+    rowDisabled: Function,
     rowError: Function,
     rowWarning: Function,
   },
@@ -21,25 +22,36 @@ export default defineComponent({
       return (
         <tbody>
           {
-            props.rows?.map((row: any) => (
+            props.rows?.map((row: any, index: number) => (
               <tr key={row.id}>
                 {props.columns?.map((column: any) => {
-                  const { field, header, active, error, warning } = column.props
+                  const {
+                    field,
+                    header,
+                    active,
+                    disabled,
+                    error,
+                    warning
+                  } = column.props
 
                   return (
                     <TableCell
                       data-label={header}
                       key={field}
                       active={
-                        props.rowActive?.({ data: row }) ||
+                        props.rowActive?.({ data: row, index }) ||
                         active?.({ value: row[field] })
                       }
+                      disabled={
+                        props.rowDisabled?.({ data: row, index }) ||
+                        disabled?.({ value: row[field] })
+                      }
                       error={
-                        props.rowError?.({ data: row }) ||
+                        props.rowError?.({ data: row, index }) ||
                         error?.({ value: row[field] })
                       }
                       warning={
-                        props.rowWarning?.({ data: row }) ||
+                        props.rowWarning?.({ data: row, index }) ||
                         warning?.({ value: row[field] })
                       }
                     >
