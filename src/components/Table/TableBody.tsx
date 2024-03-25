@@ -33,7 +33,8 @@ export default defineComponent({
                     color,
                     disabled,
                     error,
-                    warning
+                    marked,
+                    warning,
                   } = column.props
 
                   return (
@@ -55,6 +56,9 @@ export default defineComponent({
                       error={
                         props.rowError?.({ data: row, index }) ||
                         error?.({ value: row[field] })
+                      }
+                      marked={
+                        marked?.({ data: row, value: row[field] })
                       }
                       warning={
                         props.rowWarning?.({ data: row, index }) ||

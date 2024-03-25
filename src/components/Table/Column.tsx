@@ -7,6 +7,7 @@ export default defineComponent({
     field: String,
     header: String,
     error: Function,
+    marked: Function,
     warning: Function,
   },
 })

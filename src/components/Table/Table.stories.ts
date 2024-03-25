@@ -271,4 +271,52 @@ export const ColoredCells: Story = {
   }
 }
 
+export const Marked: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'No Name Specified', status: 'Unknown', notes: 'None' },
+        { name: 'Jimmy', status: 'Recording session', notes: 'None' },
+        { name: 'Jamie', status: 'Unknown', notes: 'Baby Party' },
+        { name: 'Jill', status: 'Unknown', notes: 'Vacation' },
+      ])
+
+      const marked = ({ data, value }) => {
+        if (value === 'No Name Specified') return 'right blue'
+        if (data.name === 'No Name Specified' && value === 'Unknown') return 'left red'
+        if (value === 'Jimmy') return 'left green'
+        if (data.name === 'Jamie' && value === 'Unknown') return 'right orange'
+        if (value === 'Vacation') return 'right purple'
+      }
+
+      return { args, dataSource, marked }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowColor="rowColor"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" :marked="marked" />
+        <Column field="status" header="Status" :marked="marked">
+          <template #body="{ data }">
+            <Icon name="microphone" v-if="data.status === 'Recording session'" />
+            {{ data.status }}
+          </template>
+        </Column>
+        <Column field="notes" header="Notes" :marked="marked">
+          <template #body="{ data }">
+            <Icon name="child" v-if="data.notes === 'Baby Party'" />
+            {{ data.notes }}
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export default meta
