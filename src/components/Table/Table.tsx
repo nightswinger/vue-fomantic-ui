@@ -33,7 +33,7 @@ export default defineComponent({
     structured: Boolean,
     unstackable: Boolean
   },
-  setup(props, { slots }) {
+  setup(props, { emit, slots }) {
     const classes = computed(() => {
       return clsx(
         'ui',
@@ -80,6 +80,7 @@ export default defineComponent({
             rowDisabled={props.rowDisabled}
             rowError={props.rowError}
             rowWarning={props.rowWarning}
+            onRow-click={(event) => emit('row-select', { data: event.data })}
           />
         </table>
       )

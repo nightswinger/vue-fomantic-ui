@@ -319,4 +319,41 @@ export const Marked: Story = {
   }
 }
 
+export const SelectableRow: Story = {
+  render: (args) => ({
+    components: { Table, Column },
+    setup() {
+      const dataSource = ref([
+        { name: 'John', status: 'No Action', notes: 'None' },
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'Jill', status: 'Denied', notes: 'None' },
+        { name: 'John', status: 'No Action', notes: 'None' },
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'Jill', status: 'Denied', notes: 'None' },
+      ])
+
+      const rowWarning = ({ index }) => index === 3
+      const colWarning = ({ value, index }) => value === 'Requires call' && index === 4
+
+      return { args, dataSource, rowWarning, colWarning }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowWarning="rowWarning"
+        v-bind="args"
+        @row-select="(e) => console.log(e.data)"
+      >
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status" />
+        <Column field="notes" header="Notes" :warning="colWarning" />
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+    selectable: true,
+  }
+}
+
 export default meta

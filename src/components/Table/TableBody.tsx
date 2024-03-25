@@ -12,7 +12,8 @@ export default defineComponent({
     rowError: Function,
     rowWarning: Function,
   },
-  setup(props, { slots }) {
+  emits: ['row-click'],
+  setup(props, { emit, slots }) {
     return () => {
       if (!props.columns || props.columns.length === 0) {
         return (
@@ -24,7 +25,7 @@ export default defineComponent({
         <tbody>
           {
             props.rows?.map((row: any, index: number) => (
-              <tr key={row.id}>
+              <tr key={row.id} onClick={() => emit('row-click', { data: row })}>
                 {props.columns?.map((column: any) => {
                   const {
                     field,
@@ -43,26 +44,26 @@ export default defineComponent({
                       key={field}
                       active={
                         props.rowActive?.({ data: row, index }) ||
-                        active?.({ value: row[field] })
+                        active?.({ value: row[field], index })
                       }
                       color={
                         props.rowColor?.({ data: row, index }) ||
-                        color?.({ value: row[field] })
+                        color?.({ value: row[field], index })
                       }
                       disabled={
                         props.rowDisabled?.({ data: row, index }) ||
-                        disabled?.({ value: row[field] })
+                        disabled?.({ value: row[field], index })
                       }
                       error={
                         props.rowError?.({ data: row, index }) ||
-                        error?.({ value: row[field] })
+                        error?.({ value: row[field], index })
                       }
                       marked={
-                        marked?.({ data: row, value: row[field] })
+                        marked?.({ data: row, value: row[field], index })
                       }
                       warning={
                         props.rowWarning?.({ data: row, index }) ||
-                        warning?.({ value: row[field] })
+                        warning?.({ value: row[field], index })
                       }
                     >
                       {
