@@ -6,6 +6,7 @@ export default defineComponent({
   props: {
     columns: Array,
     rows: Array,
+    rowActive: Function,
     rowError: Function,
     rowWarning: Function,
   },
@@ -23,12 +24,16 @@ export default defineComponent({
             props.rows?.map((row: any) => (
               <tr key={row.id}>
                 {props.columns?.map((column: any) => {
-                  const { field, header, error, warning } = column.props
+                  const { field, header, active, error, warning } = column.props
 
                   return (
                     <TableCell
                       data-label={header}
                       key={field}
+                      active={
+                        props.rowActive?.({ data: row }) ||
+                        active?.({ value: row[field] })
+                      }
                       error={
                         props.rowError?.({ data: row }) ||
                         error?.({ value: row[field] })

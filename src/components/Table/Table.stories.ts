@@ -158,4 +158,37 @@ export const Warning: Story = {
   }
 }
 
+export const Active: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'John', status: 'Requires Action', notes: 'None' },
+        { name: 'Jamie', status: 'Approved', notes: 'Requires call' },
+        { name: 'Jill', status: 'Approved', notes: 'None' },
+      ])
+
+      const rowActive = ({ data }) => data.name === 'John'
+      const colActive = ({ value }) => value === 'Jill'
+
+      return { args, dataSource, rowActive, colActive }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowActive="rowActive"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" :active="colActive" />
+        <Column field="status" header="Status" />
+        <Column field="notes" header="Notes" />
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export default meta
