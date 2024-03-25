@@ -24,7 +24,6 @@ import StepDoc from './pages/StepDoc.vue'
 import Breadcrumb from './pages/collections/Breadcrumb.vue'
 import Form from './pages/collections/Form.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
-import MenuDoc from './pages/collections/MenuDoc.vue'
 import TableDoc from './pages/collections/TableDoc.vue'
 
 // Modules
@@ -67,7 +66,7 @@ const routes: any = [
       { path: 'collections/breadcrumb', component: Breadcrumb },
       { path: 'collections/form', component: Form },
       { path: 'collections/grid', component: GridDoc },
-      { path: 'collections/menu', component: MenuDoc },
+      { path: 'collections/menu', component: () => import('./pages/collections/Menu.vue') },
       { path: 'collections/message', component: () => import('./pages/collections/Message.vue') },
       { path: 'collections/table', component: TableDoc },
 
