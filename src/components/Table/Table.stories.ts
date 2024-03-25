@@ -224,4 +224,51 @@ export const Disabled: Story = {
   }
 }
 
+export const ColoredCells: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'No Name Specified', status: 'Unknown', notes: 'None' },
+        { name: 'Jimmy', status: 'Recording session', notes: 'None' },
+        { name: 'Jamie', status: 'Unknown', notes: 'Baby Party' },
+        { name: 'Jill', status: 'Unknown', notes: 'Vacation' },
+      ])
+
+      const rowColor = ({ data }) => data.name === 'Jimmy' ? 'blue': undefined
+      const colColor = ({ value }) => {
+        if (value === 'No Name Specified') return 'orange'
+        if (value === 'Baby Party') return 'pink'
+        if (value === 'Vacation') return 'green'
+      }
+
+      return { args, dataSource, rowColor, colColor }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowColor="rowColor"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" :color="colColor" />
+        <Column field="status" header="Status">
+          <template #body="{ data }">
+            <Icon name="microphone" v-if="data.status === 'Recording session'" />
+            {{ data.status }}
+          </template>
+        </Column>
+        <Column field="notes" header="Notes" :color="colColor">
+          <template #body="{ data }">
+            <Icon name="child" v-if="data.notes === 'Baby Party'" />
+            {{ data.notes }}
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export default meta

@@ -7,6 +7,7 @@ export default defineComponent({
     columns: Array,
     rows: Array,
     rowActive: Function,
+    rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
     rowWarning: Function,
@@ -29,6 +30,7 @@ export default defineComponent({
                     field,
                     header,
                     active,
+                    color,
                     disabled,
                     error,
                     warning
@@ -41,6 +43,10 @@ export default defineComponent({
                       active={
                         props.rowActive?.({ data: row, index }) ||
                         active?.({ value: row[field] })
+                      }
+                      color={
+                        props.rowColor?.({ data: row, index }) ||
+                        color?.({ value: row[field] })
                       }
                       disabled={
                         props.rowDisabled?.({ data: row, index }) ||

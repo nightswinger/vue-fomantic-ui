@@ -20,6 +20,7 @@ export default defineComponent({
     fixed: Boolean,
     inverted: Boolean,
     rowActive: Function,
+    rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
     rowWarning: Function,
@@ -75,6 +76,7 @@ export default defineComponent({
             columns={columns.value}
             rows={props.dataSource}
             rowActive={props.rowActive}
+            rowColor={props.rowColor}
             rowDisabled={props.rowDisabled}
             rowError={props.rowError}
             rowWarning={props.rowWarning}
