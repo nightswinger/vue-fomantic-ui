@@ -23,6 +23,8 @@ export default defineComponent({
     rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
+    rowNegative: Function,
+    rowPositive: Function,
     rowWarning: Function,
     padded: [Boolean, String],
     selectable: Boolean,
@@ -79,6 +81,8 @@ export default defineComponent({
             rowColor={props.rowColor}
             rowDisabled={props.rowDisabled}
             rowError={props.rowError}
+            rowNegative={props.rowNegative}
+            rowPositive={props.rowPositive}
             rowWarning={props.rowWarning}
             onRow-click={(event) => emit('row-select', { data: event.data })}
           />

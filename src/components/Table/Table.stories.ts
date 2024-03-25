@@ -77,6 +77,53 @@ export const StandardTable: Story = {
   }
 }
 
+export const PositiveNegative: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'No Name Specified', status: 'Unknown', notes: 'None' },
+        { name: 'Jimmy', status: 'Approved', notes: 'None' },
+        { name: 'Jamie', status: 'Unknown', notes: 'Requires call' },
+        { name: 'Jill', status: 'Unknown', notes: 'None' },
+      ])
+
+      const rowPositive = ({ index }) => index === 1
+      const colPositive = ({ value }) => value === 'Requires call'
+
+      const rowNegative = ({ index }) => index === 3
+      const colNegative = ({ value, index }) => index === 0 && value === 'None'
+
+      return { args, dataSource, rowPositive, colPositive, rowNegative, colNegative }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowPositive="rowPositive"
+        :rowNegative="rowNegative"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status">
+          <template #body="{ data }">
+            <Icon name="checkmark" v-if="data.status === 'Approved'" />
+            {{ data.status }}
+          </template>
+        </Column>
+        <Column field="notes" header="Notes" :positive="colPositive" :negative="colNegative">
+          <template #body="{ data }">
+            <Icon name="close" v-if="data.notes === 'Requires call'" />
+            {{ data.notes }}
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export const Error: Story = {
   render: (args) => ({
     components: { Table, Column, Icon },

@@ -10,6 +10,8 @@ export default defineComponent({
     rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
+    rowNegative: Function,
+    rowPositive: Function,
     rowWarning: Function,
   },
   emits: ['row-click'],
@@ -34,6 +36,8 @@ export default defineComponent({
                     color,
                     disabled,
                     error,
+                    negative,
+                    positive,
                     marked,
                     warning,
                   } = column.props
@@ -57,6 +61,14 @@ export default defineComponent({
                       error={
                         props.rowError?.({ data: row, index }) ||
                         error?.({ value: row[field], index })
+                      }
+                      negative={
+                        props.rowNegative?.({ data: row, index }) ||
+                        negative?.({ value: row[field], index })
+                      }
+                      positive={
+                        props.rowPositive?.({ data: row, index }) ||
+                        positive?.({ value: row[field], index })
                       }
                       marked={
                         marked?.({ data: row, value: row[field], index })
