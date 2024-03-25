@@ -7,6 +7,7 @@ export default defineComponent({
     columns: Array,
     rows: Array,
     rowError: Function,
+    rowWarning: Function,
   },
   setup(props, { slots }) {
     return () => {
@@ -22,7 +23,7 @@ export default defineComponent({
             props.rows?.map((row: any) => (
               <tr key={row.id}>
                 {props.columns?.map((column: any) => {
-                  const { field, header, error } = column.props
+                  const { field, header, error, warning } = column.props
 
                   return (
                     <TableCell
@@ -31,6 +32,10 @@ export default defineComponent({
                       error={
                         props.rowError?.({ data: row }) ||
                         error?.({ value: row[field] })
+                      }
+                      warning={
+                        props.rowWarning?.({ data: row }) ||
+                        warning?.({ value: row[field] })
                       }
                     >
                       {

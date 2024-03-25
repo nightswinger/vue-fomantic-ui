@@ -115,4 +115,47 @@ export const Error: Story = {
   }
 }
 
+export const Warning: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'No Name Specified', status: 'Unknown', notes: 'None' },
+        { name: 'Jimmy', status: 'Requires Action', notes: 'None' },
+        { name: 'Jamie', status: 'Unknown', notes: 'Hostile' },
+        { name: 'Jill', status: 'Unknown', notes: 'None' },
+      ])
+
+      const rowWarning = ({ data }) => data.name === 'Jimmy'
+      const colWarning = ({ value }) => value === 'Hostile'
+
+      return { args, dataSource, rowWarning, colWarning }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowWarning="rowWarning"
+        v-bind="args"
+      >
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status">
+          <template #body="{ data }">
+            <Icon name="attention" v-if="data.status === 'Requires Action'" />
+            {{ data.status }}
+          </template>
+        </Column>
+        <Column field="notes" header="Notes" :warning="colWarning">
+          <template #body="{ data }">
+            <Icon name="attention" v-if="data.notes === 'Hostile'" />
+            {{ data.notes }}
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+  }
+}
+
 export default meta
