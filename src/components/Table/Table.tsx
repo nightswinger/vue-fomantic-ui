@@ -1,6 +1,10 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/classNameHelper"
+
+import TableHeader from "./TableHeader"
+import TableBody from "./TableBody"
 
 export default defineComponent({
   props: {
@@ -11,6 +15,7 @@ export default defineComponent({
     color: String,
     columns: Number,
     compact: [Boolean, String],
+    dataSource: Array,
     definition: Boolean,
     fixed: Boolean,
     inverted: Boolean,
@@ -23,8 +28,8 @@ export default defineComponent({
     structured: Boolean,
     unstackable: Boolean
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { slots }) {
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
@@ -49,13 +54,25 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
+    const columns = computed(() => {
+      const children = slots.default?.()
+      return children?.filter((child: any) => child.type?.name === 'Column')
+    })
+
+    return () => {
+      if (!columns.value || columns.value.length === 0) {
+        return <table class={classes.value}>{slots.default?.()}</table>
+      }
+
+      return (
+        <table class={classes.value}>
+          <TableHeader columns={columns.value} />
+          <TableBody
+            columns={columns.value}
+            rows={props.dataSource}
+          />
+        </table>
+      )
+    }
   },
-  render() {
-    return (
-      <table class={this.computedClass}>
-        {this.$slots.default?.()}
-      </table>
-    )
-  }
 })
