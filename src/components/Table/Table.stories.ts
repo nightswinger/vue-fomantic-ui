@@ -501,4 +501,37 @@ export const SelectableCell: Story = {
   }
 }
 
+export const VerticalAlignment: Story = {
+  render: (args) => ({
+    components: { Table, Column },
+    setup() {
+      const dataSource = ref([
+        { name: 'John', status: 'Approved', notes: 'Notes' },
+        { name: 'Jamie', status: 'Approved', notes: 'Notes' },
+      ])
+
+      const rowClass = ({ index }) => index === 0 ? 'top aligned' : null
+      const colClass = ({ index }) => index === 1 ? 'bottom aligned' : null
+
+      return { args, dataSource, rowClass, colClass }
+    },
+    template: `
+      <Table :dataSource="dataSource" :rowClass="rowClass" v-bind="args">
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status" :cellClass="colClass" />
+        <Column field="notes" header="Notes">
+          <template #body="{ data }">
+            {{ data.notes }}<br>
+            1<br>
+            2<br>
+          </template>
+        </Column>
+      </Table>
+    `,
+  }),
+  args: {
+    striped: true,
+  }
+}
+
 export default meta

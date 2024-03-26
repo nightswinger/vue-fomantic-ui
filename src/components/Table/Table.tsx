@@ -20,6 +20,7 @@ export default defineComponent({
     fixed: Boolean,
     inverted: Boolean,
     rowActive: Function,
+    rowClass: [Boolean, Function],
     rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
@@ -74,14 +75,15 @@ export default defineComponent({
 
       return (
         <table class={classes.value}>
-          <TableHeader columns={columns.value}>
-            {slots.header?.()}
-          </TableHeader>
+          <TableHeader columns={columns.value}
+            v-slots={{ default: slots.header }}
+          />
           <TableBody
             columns={columns.value}
             rows={props.dataSource}
             rowsGroupBy={props.rowsGroupBy}
             rowActive={props.rowActive}
+            rowClass={props.rowClass}
             rowColor={props.rowColor}
             rowDisabled={props.rowDisabled}
             rowError={props.rowError}

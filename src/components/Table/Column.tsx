@@ -4,6 +4,7 @@ export default defineComponent({
   name: 'Column',
   props: {
     active: Function,
+    cellClass: [Boolean, Function],
     field: String,
     header: String,
     error: Function,

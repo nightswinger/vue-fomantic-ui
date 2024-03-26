@@ -6,6 +6,7 @@ import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "@/utils/c
 export default defineComponent({
   props: {
     active: Boolean,
+    className: String,
     collapsing: Boolean,
     color: String,
     disabled: Boolean,
@@ -24,6 +25,7 @@ export default defineComponent({
     const classes = computed(() => {
       return clsx(
         props.color,
+        props.className,
         computeKeyOnly(props.active, 'active'),
         computeKeyOnly(props.collapsing, 'collapsing'),
         computeKeyOnly(props.disabled, 'disabled'),

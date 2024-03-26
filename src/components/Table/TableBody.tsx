@@ -8,6 +8,7 @@ export default defineComponent({
     rows: Array,
     rowsGroupBy: String,
     rowActive: Function,
+    rowClass: [Boolean, Function],
     rowColor: Function,
     rowDisabled: Function,
     rowError: Function,
@@ -57,12 +58,17 @@ export default defineComponent({
         <tbody>
           {
             props.rows?.map((row: any, index: number) => (
-              <tr key={row.id} onClick={() => emit('row-click', { data: row })}>
+              <tr
+                key={row.id}
+                class={typeof props.rowClass === 'function' ? props.rowClass({ data: row, index }) : props.rowClass}
+                onClick={() => emit('row-click', { data: row })}
+              >
                 {props.columns?.map((column: any) => {
                   const {
                     field,
                     header,
                     active,
+                    cellClass,
                     color,
                     disabled,
                     error,
@@ -80,6 +86,7 @@ export default defineComponent({
                     <TableCell
                       data-label={header}
                       key={field}
+                      className={typeof cellClass === 'function' ? cellClass({ data: row, value: row[field], index }) : cellClass}
                       rowspan={rowspan}
                       active={
                         props.rowActive?.({ data: row, index }) ||
