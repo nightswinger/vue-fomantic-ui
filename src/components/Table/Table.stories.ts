@@ -28,7 +28,7 @@ export const Default: Story = {
       return { args, dataSource }
     },
     template: `
-      <Table :dataSource="dataSource" v-bind="args">
+      <Table :items="dataSource" v-bind="args">
         <Column field="name" header="Name" />
         <Column field="age" header="Age" />
         <Column field="job" header="Job" />
@@ -54,7 +54,7 @@ export const StandardTable: Story = {
       return { args, dataSource }
     },
     template: `
-      <Table :dataSource="dataSource" v-bind="args">
+      <Table :items="dataSource" v-bind="args">
         <Column field="name" header="Employee">
           <template #body="{ data }">
             <Header as="h4">
@@ -91,7 +91,7 @@ export const structured: Story = {
       return { args, dataSource }
     },
     template: `
-      <Table :dataSource="dataSource" rowsGroupBy="name" v-bind="args">
+      <Table :items="dataSource" rowsGroupBy="name" v-bind="args">
         <template #header>
           <tr>
             <th rowspan="2">Name</th>
@@ -159,7 +159,7 @@ export const PositiveNegative: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowPositive="rowPositive"
         :rowNegative="rowNegative"
         v-bind="args"
@@ -203,7 +203,7 @@ export const Error: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowError="rowError"
         v-bind="args"
       >
@@ -241,7 +241,7 @@ export const Warning: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowWarning="rowWarning"
         v-bind="args"
       >
@@ -284,7 +284,7 @@ export const Active: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowActive="rowActive"
         v-bind="args"
       >
@@ -317,7 +317,7 @@ export const Disabled: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowDisabled="rowDisabled"
         v-bind="args"
       >
@@ -354,7 +354,7 @@ export const ColoredCells: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowColor="rowColor"
         v-bind="args"
       >
@@ -402,7 +402,7 @@ export const Marked: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowColor="rowColor"
         v-bind="args"
       >
@@ -447,7 +447,7 @@ export const SelectableRow: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowWarning="rowWarning"
         v-bind="args"
         @row:select="(e) => console.log(e.data)"
@@ -485,7 +485,7 @@ export const SelectableCell: Story = {
     },
     template: `
       <Table
-        :dataSource="dataSource"
+        :items="dataSource"
         :rowWarning="rowWarning"
         v-bind="args"
         @cell:select="(e) => console.log(e.value)"
@@ -516,7 +516,7 @@ export const VerticalAlignment: Story = {
       return { args, dataSource, rowClass, colClass }
     },
     template: `
-      <Table :dataSource="dataSource" :rowClass="rowClass" v-bind="args">
+      <Table :items="dataSource" :rowClass="rowClass" v-bind="args">
         <Column field="name" header="Name" />
         <Column field="status" header="Status" :cellClass="colClass" />
         <Column field="notes" header="Notes">

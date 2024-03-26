@@ -15,10 +15,10 @@ export default defineComponent({
     color: String,
     columns: Number,
     compact: [Boolean, String],
-    dataSource: Array,
     definition: Boolean,
     fixed: Boolean,
     inverted: Boolean,
+    items: Array,
     rowActive: Function,
     rowClass: [Boolean, Function],
     rowColor: Function,
@@ -80,7 +80,7 @@ export default defineComponent({
           />
           <TableBody
             columns={columns.value}
-            rows={props.dataSource}
+            rows={props.items}
             rowsGroupBy={props.rowsGroupBy}
             rowActive={props.rowActive}
             rowClass={props.rowClass}
