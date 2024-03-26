@@ -389,7 +389,7 @@ export const SelectableRow: Story = {
         :dataSource="dataSource"
         :rowWarning="rowWarning"
         v-bind="args"
-        @row-select="(e) => console.log(e.data)"
+        @row:select="(e) => console.log(e.data)"
       >
         <Column field="name" header="Name" />
         <Column field="status" header="Status" />
@@ -400,6 +400,43 @@ export const SelectableRow: Story = {
   args: {
     celled: true,
     selectable: true,
+  }
+}
+
+export const SelectableCell: Story = {
+  render: (args) => ({
+    components: { Table, Column },
+    setup() {
+      const dataSource = ref([
+        { name: 'John', status: 'No Action', edit: 'Edit' },
+        { name: 'Jamie', status: 'Approved', edit: 'Edit' },
+        { name: 'Jill', status: 'Denied', edit: 'Edit' },
+        { name: 'John', status: 'No Action', edit: 'Requires change' },
+        { name: 'Jamie', status: 'Approved', edit: 'Approve' },
+        { name: 'Jill', status: 'Denied', edit: 'Remove' },
+      ])
+
+      const rowWarning = ({ index }) => index === 3
+      const colPositive = ({ index }) => index === 4
+      const colNegative = ({ index }) => index === 5
+
+      return { args, dataSource, rowWarning, colPositive, colNegative }
+    },
+    template: `
+      <Table
+        :dataSource="dataSource"
+        :rowWarning="rowWarning"
+        v-bind="args"
+        @cell:select="(e) => console.log(e.value)"
+      >
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status" :positive="colPositive" :negative="colNegative" />
+        <Column field="edit" header="Notes" selectable :positive="colPositive" :negative="colNegative" />
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
   }
 }
 

@@ -19,7 +19,7 @@ export default defineComponent({
     verticalAlign: String,
     warning: Boolean
   },
-  setup(props, { slots }) {
+  setup(props, { emit, slots }) {
     const classes = computed(() => {
       return clsx(
         props.color,
@@ -38,9 +38,18 @@ export default defineComponent({
       )
     })
 
+    const handleClick = () => {
+      if (!props.selectable) return
+      emit('click-cell')
+    }
+
     return () => (
-      <td class={classes.value}>
-        {slots.default?.()}
+      <td class={classes.value} onClick={handleClick}>
+        {
+          props.selectable ?
+            <a>{slots.default?.()}</a> :
+            slots.default?.()
+        }
       </td>
     )
   },

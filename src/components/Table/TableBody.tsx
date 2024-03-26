@@ -14,7 +14,7 @@ export default defineComponent({
     rowPositive: Function,
     rowWarning: Function,
   },
-  emits: ['row-click'],
+  emits: ['row-click', 'cell-click'],
   setup(props, { emit, slots }) {
     return () => {
       if (!props.columns || props.columns.length === 0) {
@@ -39,6 +39,7 @@ export default defineComponent({
                     negative,
                     positive,
                     marked,
+                    selectable,
                     warning,
                   } = column.props
 
@@ -73,10 +74,16 @@ export default defineComponent({
                       marked={
                         marked?.({ data: row, value: row[field], index })
                       }
+                      selectable={
+                        typeof selectable === 'function' ? selectable?.({ data: row, value: row[field], index }) : selectable
+                      }
                       warning={
                         props.rowWarning?.({ data: row, index }) ||
                         warning?.({ value: row[field], index })
                       }
+                      onClick-cell={() => {
+                        emit('cell-click', { data: row, value: row[field], index })
+                      }}
                     >
                       {
                         column.children ?

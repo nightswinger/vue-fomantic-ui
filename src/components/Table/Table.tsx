@@ -84,7 +84,8 @@ export default defineComponent({
             rowNegative={props.rowNegative}
             rowPositive={props.rowPositive}
             rowWarning={props.rowWarning}
-            onRow-click={(event) => emit('row-select', { data: event.data })}
+            onRow-click={(event) => props.selectable && emit('row:select', { data: event.data })}
+            onCell-click={(event) => emit('cell:select', { data: event.data, value: event.value })}
           />
         </table>
       )

@@ -11,6 +11,7 @@ export default defineComponent({
     negative: Function,
     positive: Function,
     marked: Function,
+    selectable: [Boolean, Function],
     warning: Function,
   },
 })
