@@ -5,6 +5,7 @@ import TableCell from "./TableCell"
 export default defineComponent({
   props: {
     columns: Array,
+    definitionClass: String,
     rows: Array,
     rowsGroupBy: String,
     rowActive: Function,
@@ -63,6 +64,12 @@ export default defineComponent({
                 class={typeof props.rowClass === 'function' ? props.rowClass({ data: row, index }) : props.rowClass}
                 onClick={() => emit('row-click', { data: row })}
               >
+                {
+                  slots.definition &&
+                  <TableCell className={props.definitionClass}>
+                    {slots.definition?.({ data: row })}
+                  </TableCell>
+                }
                 {props.columns?.map((column: any) => {
                   const {
                     field,

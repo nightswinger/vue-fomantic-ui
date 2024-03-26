@@ -16,6 +16,7 @@ export default defineComponent({
     columns: Number,
     compact: [Boolean, String],
     definition: Boolean,
+    definitionClass: String,
     fixed: Boolean,
     inverted: Boolean,
     items: Array,
@@ -75,11 +76,14 @@ export default defineComponent({
 
       return (
         <table class={classes.value}>
-          <TableHeader columns={columns.value}
+          <TableHeader
+            columns={columns.value}
+            definition={!!slots.definition}
             v-slots={{ default: slots.header }}
           />
           <TableBody
             columns={columns.value}
+            definitionClass={props.definitionClass}
             rows={props.items}
             rowsGroupBy={props.rowsGroupBy}
             rowActive={props.rowActive}
@@ -92,6 +96,7 @@ export default defineComponent({
             rowWarning={props.rowWarning}
             onRow-click={(event) => props.selectable && emit('row:select', { data: event.data })}
             onCell-click={(event) => emit('cell:select', { data: event.data, value: event.value })}
+            v-slots={{ definition: slots.definition }}
           />
         </table>
       )

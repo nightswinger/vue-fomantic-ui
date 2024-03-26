@@ -6,6 +6,7 @@ import { computeKeyOnly } from "@/utils/classNameHelper"
 export default defineComponent({
   props: {
     columns: Array,
+    definition: Boolean,
     fullWidth: Boolean
   },
   setup(props, { slots }) {
@@ -23,6 +24,7 @@ export default defineComponent({
           {
             slots.default ? slots.default() :
             <tr>
+              {props.definition && <th></th>}
               {props.columns.map((column: any) => {
                 const { header, field } = column.props
 

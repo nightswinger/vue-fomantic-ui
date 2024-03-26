@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from "@storybook/vue3"
 import Table from "./Table"
 import Column from "./Column"
 
+import Checkbox from "../Checkbox/Checkbox"
 import Header from "../Header/Header"
 import Icon from "../Icon/Icon"
 import Image from "../Image/Image"
@@ -77,7 +78,33 @@ export const StandardTable: Story = {
   }
 }
 
-export const structured: Story = {
+export const Definition: Story = {
+  render: (args) => ({
+    components: { Table, Column, Checkbox },
+    setup() {
+      const dataSource = ref([
+        { text: 'reset rating', arguments: 'None', description: 'Resets rating to default value' },
+        { text: 'set rating', arguments: 'rating (integer)', description: 'Sets the current star rating to specified value' },
+      ])
+
+      return { args, dataSource }
+    },
+    template: `
+      <Table :items="dataSource" definitionClass="collapsing" v-bind="args">
+        <template #definition>
+          <Checkbox fitted slider />
+        </template>
+        <Column field="arguments" header="Arguments" />
+        <Column field="description" header="Description" />
+      </Table>
+    `,
+  }),
+  args: {
+    definition: true,
+  }
+}
+
+export const Structured: Story = {
   render: (args) => ({
     components: { Table, Column, Icon },
     setup() {
