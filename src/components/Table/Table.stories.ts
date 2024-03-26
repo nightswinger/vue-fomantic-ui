@@ -77,6 +77,33 @@ export const StandardTable: Story = {
   }
 }
 
+export const structured: Story = {
+  render: (args) => ({
+    components: { Table, Column },
+    setup() {
+      const dataSource = ref([
+        { name: 'Alpha Team', type: 'Project 1', files: 2, languages: null },
+        { name: 'Beta Team', type: 'Project 1', files: 52, languages: null },
+        { name: 'Beta Team', type: 'Project 2', files: 12, languages: null },
+        { name: 'Beta Team', type: 'Project 3', files: 21, languages: null },
+      ])
+
+      return { args, dataSource }
+    },
+    template: `
+      <Table :dataSource="dataSource" rowsGroupBy="name" v-bind="args">
+        <Column field="name" header="Name" />
+        <Column field="type" header="Type" />
+        <Column field="files" header="Files" />
+      </Table>
+    `,
+  }),
+  args: {
+    celled: true,
+    structured: true,
+  }
+}
+
 export const PositiveNegative: Story = {
   render: (args) => ({
     components: { Table, Column, Icon },

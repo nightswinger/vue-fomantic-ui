@@ -26,6 +26,7 @@ export default defineComponent({
     rowNegative: Function,
     rowPositive: Function,
     rowWarning: Function,
+    rowsGroupBy: String,
     padded: [Boolean, String],
     selectable: Boolean,
     singleLine: Boolean,
@@ -77,6 +78,7 @@ export default defineComponent({
           <TableBody
             columns={columns.value}
             rows={props.dataSource}
+            rowsGroupBy={props.rowsGroupBy}
             rowActive={props.rowActive}
             rowColor={props.rowColor}
             rowDisabled={props.rowDisabled}

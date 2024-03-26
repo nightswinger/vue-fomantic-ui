@@ -13,6 +13,7 @@ export default defineComponent({
     marked: String,
     negative: Boolean,
     positive: Boolean,
+    rowspan: Number,
     selectable: Boolean,
     singleLine: Boolean,
     textAlign: String,
@@ -44,7 +45,11 @@ export default defineComponent({
     }
 
     return () => (
-      <td class={classes.value} onClick={handleClick}>
+      <td
+        class={classes.value}
+        rowspan={props.rowspan}
+        onClick={handleClick}
+      >
         {
           props.selectable ?
             <a>{slots.default?.()}</a> :
