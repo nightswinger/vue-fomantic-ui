@@ -74,7 +74,9 @@ export default defineComponent({
 
       return (
         <table class={classes.value}>
-          <TableHeader columns={columns.value} />
+          <TableHeader columns={columns.value}>
+            {slots.header?.()}
+          </TableHeader>
           <TableBody
             columns={columns.value}
             rows={props.dataSource}

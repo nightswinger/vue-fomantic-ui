@@ -79,22 +79,56 @@ export const StandardTable: Story = {
 
 export const structured: Story = {
   render: (args) => ({
-    components: { Table, Column },
+    components: { Table, Column, Icon },
     setup() {
       const dataSource = ref([
-        { name: 'Alpha Team', type: 'Project 1', files: 2, languages: null },
-        { name: 'Beta Team', type: 'Project 1', files: 52, languages: null },
-        { name: 'Beta Team', type: 'Project 2', files: 12, languages: null },
-        { name: 'Beta Team', type: 'Project 3', files: 21, languages: null },
+        { name: 'Alpha Team', type: 'Project 1', files: 2, languages: 'Ruby' },
+        { name: 'Beta Team', type: 'Project 1', files: 52, languages: 'Ruby' },
+        { name: 'Beta Team', type: 'Project 2', files: 12, languages: 'Javascript' },
+        { name: 'Beta Team', type: 'Project 3', files: 21, languages: 'Ruby' },
       ])
 
       return { args, dataSource }
     },
     template: `
       <Table :dataSource="dataSource" rowsGroupBy="name" v-bind="args">
+        <template #header>
+          <tr>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Type</th>
+            <th rowspan="2">Files</th>
+            <th colspan="3">Languages</th>
+          </tr>
+          <tr>
+            <th>Ruby</th>
+            <th>JavaScript</th>
+            <th>Python</th>
+          </tr>
+        </template>
         <Column field="name" header="Name" />
         <Column field="type" header="Type" />
         <Column field="files" header="Files" />
+        <Column field="languages">
+          <template #body="{ data }">
+            <template v-if="data.languages === 'Ruby'">
+              <Icon name="checkmark" size="large" color="green" />
+            </template>
+          </template>
+        </Column>
+        <Column field="languages">
+          <template #body="{ data }">
+            <template v-if="data.languages === 'Javascript'">
+              <Icon name="checkmark" size="large" color="green" />
+            </template>
+          </template>
+        </Column>
+        <Column field="languages">
+          <template #body="{ data }">
+            <template v-if="data.languages === 'Python'">
+              <Icon name="checkmark" size="large" color="green" />
+            </template>
+          </template>
+        </Column>
       </Table>
     `,
   }),

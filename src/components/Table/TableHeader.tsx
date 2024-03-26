@@ -20,13 +20,16 @@ export default defineComponent({
 
       return (
         <thead class={classes.value}>
-          <tr>
-            {props.columns.map((column: any) => {
-              const { header, field } = column.props
+          {
+            slots.default ? slots.default() :
+            <tr>
+              {props.columns.map((column: any) => {
+                const { header, field } = column.props
 
-              return <th key={field}>{header}</th>
-            })}
-          </tr>
+                return <th key={field}>{header}</th>
+              })}
+            </tr>
+          }
         </thead>
       )
     }
