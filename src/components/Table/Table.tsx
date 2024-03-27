@@ -2,6 +2,7 @@ import clsx from "clsx"
 import { computed, defineComponent } from "vue"
 
 import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/classNameHelper"
+import { makeScrollingProps, useScrolling } from "@/composables/scrolling"
 
 import TableHeader from "./TableHeader"
 import TableBody from "./TableBody"
@@ -38,9 +39,12 @@ export default defineComponent({
     stackable: Boolean,
     striped: Boolean,
     structured: Boolean,
-    unstackable: Boolean
+    unstackable: Boolean,
+    ...makeScrollingProps(),
   },
   setup(props, { emit, slots }) {
+    const { scrollingClasses } = useScrolling(props)
+
     const classes = computed(() => {
       return clsx(
         'ui',
@@ -62,6 +66,7 @@ export default defineComponent({
         computeKeyOrKeyValue(props.compact, 'compact'),
         computeKeyOrKeyValue(props.padded, 'padded'),
         computeWidthProp(props.columns, 'column'),
+        scrollingClasses.value,
         'table'
       )
     })
