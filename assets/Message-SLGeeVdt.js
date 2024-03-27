@@ -1,4 +1,4 @@
-import{o as i,c as r,w as a,a as s,b as e,u as t,V as o,_ as d,d as m,m as p,v as u,J as h,t as _,n as g,q as b,A as y,f,D as w}from"./index-5MvC7eWK.js";const v=`<template>
+import{o as i,c as r,w as a,a as s,b as e,u as t,E as o,_ as d,d as m,k as p,C as u,n as h,l as _,m as g,p as b,j as y,e as f,D as w}from"./index-_NJh6V5r.js";const v=`<template>
   <Message
     header="Changes in Service"
     content="We updated our privacy policy here to better service our customers. We recommend reviewing the changes."
@@ -23,19 +23,19 @@ import{o as i,c as r,w as a,a as s,b as e,u as t,V as o,_ as d,d as m,m as p,v a
     content="We're fetching that content for you.">
     <Icon name="notched circle loading" />
   </Message>
-</template>`,A=m({__name:"IconMessageDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Icon Message",code:T},{description:a(()=>[s(" A message can contain an icon. ")]),example:a(()=>[e(t(o),{icon:"inbox",header:"Have you heard about our mailing list?",content:"Get the best news in your e-mail every day."}),e(t(o),{icon:"",header:"Just one second",content:"We're fetching that content for you."},{default:a(()=>[e(t(p),{name:"notched circle loading"})]),_:1})]),_:1}))}}),F=`<template>
+</template>`,F=m({__name:"IconMessageDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Icon Message",code:T},{description:a(()=>[s(" A message can contain an icon. ")]),example:a(()=>[e(t(o),{icon:"inbox",header:"Have you heard about our mailing list?",content:"Get the best news in your e-mail every day."}),e(t(o),{icon:"",header:"Just one second",content:"We're fetching that content for you."},{default:a(()=>[e(t(p),{name:"notched circle loading"})]),_:1})]),_:1}))}}),A=`<template>
   <Message
     header="Welcome back!"
     content="This is a special notification which you can dismiss if you're bored with it."
     closable
     @close="() => console.log('Message closed')"
   />
-</template>`,V=m({__name:"DismissableBlockDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Dismissable Block",code:F},{description:a(()=>[s(" A message that the user can choose to hide ")]),example:a(()=>[e(t(o),{header:"Welcome back!",content:"This is a special notification which you can dismiss if you're bored with it.",closable:"",onClose:n[0]||(n[0]=()=>console.log("Message closed"))})]),_:1}))}}),D=`<template>
+</template>`,D=m({__name:"DismissableBlockDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Dismissable Block",code:A},{description:a(()=>[s(" A message that the user can choose to hide ")]),example:a(()=>[e(t(o),{header:"Welcome back!",content:"This is a special notification which you can dismiss if you're bored with it.",closable:"",onClose:n[0]||(n[0]=()=>console.log("Message closed"))})]),_:1}))}}),V=`<template>
   <Message
     hidden
     content="You can't see me"
   />
-</template>`,W=m({__name:"HiddenDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Hidden",code:D},{description:a(()=>[s(" A message can be hidden ")]),example:a(()=>[e(t(o),{hidden:"",content:"You can't see me"})]),_:1}))}}),k=`<template>
+</template>`,W=m({__name:"HiddenDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Hidden",code:V},{description:a(()=>[s(" A message can be hidden ")]),example:a(()=>[e(t(o),{hidden:"",content:"You can't see me"})]),_:1}))}}),k=`<template>
   <Message
     visible
     content="You can always see me"
@@ -85,14 +85,14 @@ import{o as i,c as r,w as a,a as s,b as e,u as t,V as o,_ as d,d as m,m as p,v a
     <Icon name="help" />
     Already signed up? <a href="#">Login here</a> instead.
   </Message>
-</template>`,L=m({__name:"AttachedDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Attached",code:P},{description:a(()=>[s(" A message can be formatted to attach itself to other content ")]),example:a(()=>[e(t(o),{attached:"",header:"Welcome to our site!",content:"Fill out the form below to sign-up for a new account"}),e(t(u),{attached:""},{default:a(()=>[e(t(h),null,{default:a(()=>[e(t(_),{widths:"equal"},{default:a(()=>[e(t(g),{label:"First Name",placeholder:"First Name"}),e(t(g),{label:"Last Name",placeholder:"Last Name"})]),_:1}),e(t(g),{label:"Username",placeholder:"Username"}),e(t(g),{label:"Password",type:"password",placeholder:"Password"}),e(t(g),null,{default:a(()=>[e(t(b),{label:"I agree to the Terms and Conditions"})]),_:1}),e(t(y),{primary:""},{default:a(()=>[s("Submit")]),_:1})]),_:1})]),_:1}),e(t(o),{warning:"",attached:"bottom"},{default:a(()=>[e(t(p),{name:"help"}),s(" Already signed up? "),I,s(" instead. ")]),_:1})]),_:1}))}}),H=`<template>
+</template>`,L=m({__name:"AttachedDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Attached",code:P},{description:a(()=>[s(" A message can be formatted to attach itself to other content ")]),example:a(()=>[e(t(o),{attached:"",header:"Welcome to our site!",content:"Fill out the form below to sign-up for a new account"}),e(t(u),{attached:""},{default:a(()=>[e(t(h),null,{default:a(()=>[e(t(_),{widths:"equal"},{default:a(()=>[e(t(g),{label:"First Name",placeholder:"First Name"}),e(t(g),{label:"Last Name",placeholder:"Last Name"})]),_:1}),e(t(g),{label:"Username",placeholder:"Username"}),e(t(g),{label:"Password",type:"password",placeholder:"Password"}),e(t(g),null,{default:a(()=>[e(t(b),{label:"I agree to the Terms and Conditions"})]),_:1}),e(t(y),{primary:""},{default:a(()=>[s("Submit")]),_:1})]),_:1})]),_:1}),e(t(o),{warning:"",attached:"bottom"},{default:a(()=>[e(t(p),{name:"help"}),s(" Already signed up? "),I,s(" instead. ")]),_:1})]),_:1}))}}),E=`<template>
   <Message
     warning
     header="You must register before you can do that!"
     content="Visit our registration page, then try again"
     closable
   />
-</template>`,J=m({__name:"WarningDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Warning",code:H},{description:a(()=>[s(" A message may be formatted to display warning messages. ")]),example:a(()=>[e(t(o),{warning:"",header:"You must register before you can do that!",content:"Visit our registration page, then try again",closable:""})]),_:1}))}}),O=`<template>
+</template>`,H=m({__name:"WarningDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Warning",code:E},{description:a(()=>[s(" A message may be formatted to display warning messages. ")]),example:a(()=>[e(t(o),{warning:"",header:"You must register before you can do that!",content:"Visit our registration page, then try again",closable:""})]),_:1}))}}),O=`<template>
   <Message
     info
     header="Was this what you wanted?"
@@ -115,7 +115,7 @@ import{o as i,c as r,w as a,a as s,b as e,u as t,V as o,_ as d,d as m,m as p,v a
     content="You may now log-in with the username you have chosen"
     closable
   />
-</template>`,E=m({__name:"PositiveSuccessDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Positive / Success",code:q},{description:a(()=>[s(" A message may be formatted to display a positive message. ")]),example:a(()=>[e(t(o),{positive:"",header:"You are eligible for a reward",content:"Go to your special offers page to see now.",closable:""}),e(t(o),{success:"",header:"Your user registration was successful.",content:"You may now log-in with the username you have chosen",closable:""})]),_:1}))}}),R=`<template>
+</template>`,J=m({__name:"PositiveSuccessDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Positive / Success",code:q},{description:a(()=>[s(" A message may be formatted to display a positive message. ")]),example:a(()=>[e(t(o),{positive:"",header:"You are eligible for a reward",content:"Go to your special offers page to see now.",closable:""}),e(t(o),{success:"",header:"Your user registration was successful.",content:"You may now log-in with the username you have chosen",closable:""})]),_:1}))}}),R=`<template>
   <Message
     negative
     header="We're sorry we can't apply that discount"
@@ -153,4 +153,4 @@ import{o as i,c as r,w as a,a as s,b as e,u as t,V as o,_ as d,d as m,m as p,v a
   <Message size="big" content="This is a big message." />
   <Message size="huge" content="This is a huge message." />
   <Message size="massive" content="This is a massive message." />
-</template>`,Z=m({__name:"SizeDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Size",code:X},{description:a(()=>[s(" A message can have different sizes ")]),example:a(()=>[e(t(o),{size:"mini",content:"This is a mini message."}),e(t(o),{size:"tiny",content:"This is a tiny message."}),e(t(o),{size:"small",content:"This is a small message."}),e(t(o),{size:"large",content:"This is a large message."}),e(t(o),{size:"big",content:"This is a big message."}),e(t(o),{size:"huge",content:"This is a huge message."}),e(t(o),{size:"massive",content:"This is a massive message."})]),_:1}))}}),oe={__name:"Message",setup(l){const c=[{id:"message",label:"Message",category:"Types",component:M},{id:"list-message",label:"List Message",category:"Types",component:$},{id:"icon-message",label:"Icon Message",category:"Types",component:A},{id:"dismissable-block",label:"Dismissable Block",category:"Types",component:V},{id:"hidden",label:"Hidden",category:"States",component:W},{id:"visible",label:"Visible",category:"States",component:N},{id:"aligned",label:"Aligned",category:"Variations",component:z},{id:"floating",label:"Floating",category:"Variations",component:C},{id:"compact",label:"Compact",category:"Variations",component:G},{id:"attached",label:"Attached",category:"Variations",component:L},{id:"warning",label:"Warning",category:"Variations",component:J},{id:"info",label:"Info",category:"Variations",component:U},{id:"positive-success",label:"Positive / Success",category:"Variations",component:E},{id:"negative-error",label:"Negative / Error",category:"Variations",component:j},{id:"colored",label:"Colored",category:"Variations",component:Q},{id:"size",label:"Size",category:"Variations",component:Z}];return(n,ee)=>(i(),r(w,{title:"Message",description:"A message displays information that explains nearby content","component-docs":c}))}};export{oe as default};
+</template>`,Z=m({__name:"SizeDoc",setup(l){return(c,n)=>(i(),r(d,{label:"Size",code:X},{description:a(()=>[s(" A message can have different sizes ")]),example:a(()=>[e(t(o),{size:"mini",content:"This is a mini message."}),e(t(o),{size:"tiny",content:"This is a tiny message."}),e(t(o),{size:"small",content:"This is a small message."}),e(t(o),{size:"large",content:"This is a large message."}),e(t(o),{size:"big",content:"This is a big message."}),e(t(o),{size:"huge",content:"This is a huge message."}),e(t(o),{size:"massive",content:"This is a massive message."})]),_:1}))}}),oe={__name:"Message",setup(l){const c=[{id:"message",label:"Message",category:"Types",component:M},{id:"list-message",label:"List Message",category:"Types",component:$},{id:"icon-message",label:"Icon Message",category:"Types",component:F},{id:"dismissable-block",label:"Dismissable Block",category:"Types",component:D},{id:"hidden",label:"Hidden",category:"States",component:W},{id:"visible",label:"Visible",category:"States",component:N},{id:"aligned",label:"Aligned",category:"Variations",component:z},{id:"floating",label:"Floating",category:"Variations",component:C},{id:"compact",label:"Compact",category:"Variations",component:G},{id:"attached",label:"Attached",category:"Variations",component:L},{id:"warning",label:"Warning",category:"Variations",component:H},{id:"info",label:"Info",category:"Variations",component:U},{id:"positive-success",label:"Positive / Success",category:"Variations",component:J},{id:"negative-error",label:"Negative / Error",category:"Variations",component:j},{id:"colored",label:"Colored",category:"Variations",component:Q},{id:"size",label:"Size",category:"Variations",component:Z}];return(n,ee)=>(i(),r(w,{title:"Message",description:"A message displays information that explains nearby content","component-docs":c}))}};export{oe as default};
