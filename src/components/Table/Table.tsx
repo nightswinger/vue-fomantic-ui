@@ -5,6 +5,7 @@ import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/
 
 import TableHeader from "./TableHeader"
 import TableBody from "./TableBody"
+import TableFooter from "./TableFooter"
 
 export default defineComponent({
   props: {
@@ -98,6 +99,7 @@ export default defineComponent({
             onCell-click={(event) => emit('cell:select', { data: event.data, value: event.value })}
             v-slots={{ definition: slots.definition }}
           />
+          <TableFooter v-slots={slots.footer} />
         </table>
       )
     }

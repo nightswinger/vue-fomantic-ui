@@ -561,4 +561,39 @@ export const VerticalAlignment: Story = {
   }
 }
 
+export const ColumnWidth: Story = {
+  render: (args) => ({
+    components: { Table, Column },
+    setup() {
+      const dataSource = ref([
+        { name: 'John', status: 'Approved' },
+        { name: 'Jamie', status: 'Approved' },
+        { name: 'Jill', status: 'Denied' },
+      ])
+
+      return { args, dataSource }
+    },
+    template: `
+      <Table :items="dataSource" v-bind="args">
+        <template #header>
+          <tr>
+            <th class="ten wide">Name</th>
+            <th class="six wide">Status</th>
+          </tr>
+        </template>
+
+        <Column field="name" header="Name" />
+        <Column field="status" header="Status" />
+
+        <template #footer>
+          <tr>
+            <th>3 People</th>
+            <th>2 Approved</th>
+          </tr>
+        </template>
+      </Table>
+    `,
+  }),
+}
+
 export default meta
