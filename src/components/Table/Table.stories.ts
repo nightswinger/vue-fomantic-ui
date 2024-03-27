@@ -586,6 +586,9 @@ export const CollapsingCell: Story = {
       </Table>
     `,
   }),
+  args: {
+    hideHeader: true,
+  }
 }
 
 export const ColumnWidth: Story = {

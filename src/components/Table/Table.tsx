@@ -19,6 +19,7 @@ export default defineComponent({
     definition: Boolean,
     definitionClass: String,
     fixed: Boolean,
+    hideHeader: Boolean,
     inverted: Boolean,
     items: Array,
     rowActive: Function,
@@ -77,11 +78,14 @@ export default defineComponent({
 
       return (
         <table class={classes.value}>
-          <TableHeader
-            columns={columns.value}
-            definition={!!slots.definition}
-            v-slots={{ default: slots.header }}
-          />
+          {
+            !props.hideHeader &&
+            <TableHeader
+              columns={columns.value}
+              definition={!!slots.definition}
+              v-slots={{ default: slots.header }}
+            />
+          }
           <TableBody
             columns={columns.value}
             definitionClass={props.definitionClass}
