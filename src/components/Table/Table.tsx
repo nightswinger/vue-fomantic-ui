@@ -1,6 +1,12 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue, computeWidthProp } from "@/utils/classNameHelper"
+import { makeScrollingProps, useScrolling } from "@/composables/scrolling"
+
+import TableHeader from "./TableHeader"
+import TableBody from "./TableBody"
+import TableFooter from "./TableFooter"
 
 export default defineComponent({
   props: {
@@ -12,8 +18,20 @@ export default defineComponent({
     columns: Number,
     compact: [Boolean, String],
     definition: Boolean,
+    definitionClass: String,
     fixed: Boolean,
+    hideHeader: Boolean,
     inverted: Boolean,
+    items: Array,
+    rowActive: Function,
+    rowClass: [Boolean, Function],
+    rowColor: Function,
+    rowDisabled: Function,
+    rowError: Function,
+    rowNegative: Function,
+    rowPositive: Function,
+    rowWarning: Function,
+    rowsGroupBy: String,
     padded: [Boolean, String],
     selectable: Boolean,
     singleLine: Boolean,
@@ -21,10 +39,13 @@ export default defineComponent({
     stackable: Boolean,
     striped: Boolean,
     structured: Boolean,
-    unstackable: Boolean
+    unstackable: Boolean,
+    ...makeScrollingProps(),
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { emit, slots }) {
+    const { scrollingClasses } = useScrolling(props)
+
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.color,
@@ -45,17 +66,51 @@ export default defineComponent({
         computeKeyOrKeyValue(props.compact, 'compact'),
         computeKeyOrKeyValue(props.padded, 'padded'),
         computeWidthProp(props.columns, 'column'),
+        scrollingClasses.value,
         'table'
       )
     })
 
-    return { computedClass }
+    const columns = computed(() => {
+      const children = slots.default?.()
+      return children?.filter((child: any) => child.type?.name === 'Column')
+    })
+
+    return () => {
+      if (!columns.value || columns.value.length === 0) {
+        return <table class={classes.value}>{slots.default?.()}</table>
+      }
+
+      return (
+        <table class={classes.value}>
+          {
+            !props.hideHeader &&
+            <TableHeader
+              columns={columns.value}
+              definition={!!slots.definition}
+              v-slots={{ default: slots.header }}
+            />
+          }
+          <TableBody
+            columns={columns.value}
+            definitionClass={props.definitionClass}
+            rows={props.items}
+            rowsGroupBy={props.rowsGroupBy}
+            rowActive={props.rowActive}
+            rowClass={props.rowClass}
+            rowColor={props.rowColor}
+            rowDisabled={props.rowDisabled}
+            rowError={props.rowError}
+            rowNegative={props.rowNegative}
+            rowPositive={props.rowPositive}
+            rowWarning={props.rowWarning}
+            onRow-click={(event) => props.selectable && emit('row:select', { data: event.data })}
+            onCell-click={(event) => emit('cell:select', { data: event.data, value: event.value })}
+            v-slots={{ definition: slots.definition }}
+          />
+          <TableFooter v-slots={slots.footer} />
+        </table>
+      )
+    }
   },
-  render() {
-    return (
-      <table class={this.computedClass}>
-        {this.$slots.default?.()}
-      </table>
-    )
-  }
 })

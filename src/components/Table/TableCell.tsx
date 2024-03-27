@@ -1,10 +1,12 @@
-import clsx from "clsx";
-import { computed, defineComponent } from "vue";
-import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
+
+import { computeKeyOnly, computeKeyValue, computeTextAlignProp } from "@/utils/classNameHelper"
 
 export default defineComponent({
   props: {
     active: Boolean,
+    className: String,
     collapsing: Boolean,
     color: String,
     disabled: Boolean,
@@ -12,16 +14,18 @@ export default defineComponent({
     marked: String,
     negative: Boolean,
     positive: Boolean,
+    rowspan: Number,
     selectable: Boolean,
     singleLine: Boolean,
     textAlign: String,
     verticalAlign: String,
     warning: Boolean
   },
-  setup(props) {
-    const computedClass = computed(() => {
+  setup(props, { emit, slots }) {
+    const classes = computed(() => {
       return clsx(
         props.color,
+        props.className,
         computeKeyOnly(props.active, 'active'),
         computeKeyOnly(props.collapsing, 'collapsing'),
         computeKeyOnly(props.disabled, 'disabled'),
@@ -37,19 +41,23 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
-  },
-  render() {
-    if (this.computedClass) {
-      return (
-        <td class={this.computedClass}>
-          {this.$slots.default?.()}
-        </td>
-      )
+    const handleClick = () => {
+      if (!props.selectable) return
+      emit('click-cell')
     }
 
-    return (
-      <td>{this.$slots.default?.()}</td>
+    return () => (
+      <td
+        class={classes.value}
+        rowspan={props.rowspan}
+        onClick={handleClick}
+      >
+        {
+          props.selectable ?
+            <a>{slots.default?.()}</a> :
+            slots.default?.()
+        }
+      </td>
     )
-  }
+  },
 })

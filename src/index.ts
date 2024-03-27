@@ -205,6 +205,7 @@ export { TableFooter as SuiTableFooter, TableFooter }
 export { TableHeader as SuiTableHeader, TableHeader }
 export { TableHeaderCell as SuiTableHeaderCell, TableHeaderCell }
 export { TableRow as SuiTableRow, TableRow }
+export { Column } from './components/Table'
 
 export { Advertisement as SuiAdvertisement, Advertisement }
 export { Card as SuiCard, Card }
