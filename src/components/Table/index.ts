@@ -1,4 +1,5 @@
 import { App, Plugin } from 'vue'
+
 import Table from './Table'
 import TableBody from "./TableBody"
 import TableCell from "./TableCell"
@@ -6,6 +7,7 @@ import TableFooter from "./TableFooter"
 import TableHeader from "./TableHeader"
 import TableHeaderCell from "./TableHeaderCell"
 import TableRow from "./TableRow"
+import Column from './Column'
 
 export default {
   install(app: App) {
@@ -16,6 +18,7 @@ export default {
     app.component('SuiTableHeader', TableHeader)
     app.component('SuiTableHeaderCell', TableHeaderCell)
     app.component('SuiTableRow', TableRow)
+    app.component('SuiColumn', Column)
   }
 } as Plugin
 
@@ -26,5 +29,6 @@ export {
   TableFooter,
   TableHeader,
   TableHeaderCell,
-  TableRow
+  TableRow,
+  Column,
 }
