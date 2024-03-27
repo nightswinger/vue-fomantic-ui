@@ -5,6 +5,7 @@ export default defineComponent({
   props: {
     active: Function,
     cellClass: [Boolean, Function],
+    collapsing: Boolean,
     field: String,
     header: String,
     error: Function,

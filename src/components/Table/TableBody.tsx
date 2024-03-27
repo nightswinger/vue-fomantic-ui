@@ -76,6 +76,7 @@ export default defineComponent({
                     header,
                     active,
                     cellClass,
+                    collapsing,
                     color,
                     disabled,
                     error,
@@ -99,6 +100,7 @@ export default defineComponent({
                         props.rowActive?.({ data: row, index }) ||
                         active?.({ value: row[field], index })
                       }
+                      collapsing={collapsing}
                       color={
                         props.rowColor?.({ data: row, index }) ||
                         color?.({ value: row[field], index })

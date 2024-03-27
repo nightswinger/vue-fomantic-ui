@@ -561,6 +561,33 @@ export const VerticalAlignment: Story = {
   }
 }
 
+export const CollapsingCell: Story = {
+  render: (args) => ({
+    components: { Table, Column, Icon },
+    setup() {
+      const dataSource = ref([
+        { name: 'node_modules', message: 'Initial commit', time: '10 hours ago' },
+        { name: 'test', message: 'Initial commit', time: '10 hours ago' },
+        { name: 'build', message: 'Initial commit', time: '10 hours ago' },
+      ])
+
+      return { args, dataSource }
+    },
+    template: `
+      <Table :items="dataSource" v-bind="args">
+        <Column field="name" collapsing>
+          <template #body="{ data }">
+            <Icon name="folder" />
+            {{ data.name }}
+          </template>
+        </Column>
+        <Column field="message" />
+        <Column field="time" />
+      </Table>
+    `,
+  }),
+}
+
 export const ColumnWidth: Story = {
   render: (args) => ({
     components: { Table, Column },
