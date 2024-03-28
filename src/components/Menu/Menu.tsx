@@ -17,6 +17,7 @@ type MenuItemOption = string | {
 
 export default defineComponent({
   props: {
+    activeIndex: Number,
     attached: [Boolean, String],
     borderless: Boolean,
     color: Boolean,
@@ -37,9 +38,9 @@ export default defineComponent({
     vertical: Boolean,
     widths: Number
   },
-  emits: ['selected'],
+  emits: ['selected', 'update:activeIndex'],
   setup(props, { slots, emit }) {
-    const activeIndex = ref(-1)
+    const activeIndex = ref(typeof props.activeIndex === 'number' ? props.activeIndex : -1)
 
     const classes = computed(() => {
       return clsx(
@@ -82,6 +83,7 @@ export default defineComponent({
 
     const handleSelected = (index: number, item: MenuItemOption) => {
       activeIndex.value = index
+      emit('update:activeIndex', index)
       emit('selected', item)
     }
 

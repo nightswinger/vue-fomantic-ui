@@ -15,17 +15,19 @@ const meta: Meta<typeof Menu> = {
 }
 
 export const Default: Story = {
-  render: (args) => ({
+  render: () => ({
     components: { Menu },
     setup: () => {
       const items = ref(["Editorials", "Reviews", "Upcoming Events"])
+      const active = ref(0)
 
-      return { items }
+      return { items, active }
     },
     template: `
       <Menu
         :widths="items.length"
         :items="items"
+        v-model:activeIndex="active"
         @selected="(v) => console.log(v)"
       />
     `,
@@ -37,11 +39,17 @@ export const SecondaryMenu: Story = {
     components: { Menu, MenuItem, Input },
     setup: () => {
       const items = ref(['Home', 'Messages', 'Friends'])
+      const active = ref(0)
 
-      return { items, args }
+      return { items, active, args }
     },
     template: `
-      <Menu :items="items" v-bind="args">
+      <Menu
+        :items="items"
+        v-model:activeIndex="active"
+        @selected="() => console.log(active)"
+        v-bind="args"
+      >
         <template #right>
           <MenuItem as="div">
             <Input icon="search" placeholder="Search..." />
