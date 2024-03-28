@@ -16,6 +16,7 @@ export default defineComponent({
     attached: String,
     fluid: Boolean,
     inverted: Boolean,
+    noCompleted: Boolean,
     ordered: Boolean,
     size: String,
     stackable: String,
@@ -62,7 +63,7 @@ export default defineComponent({
                 <Step
                   key={index}
                   active={index === props.activeStep}
-                  completed={index < props.activeStep}
+                  completed={props.noCompleted ? false : index < props.activeStep}
                   disabled={index > props.activeStep}
                   {...step}
                 />

@@ -53,4 +53,32 @@ export const Steps: Story = {
   }),
 }
 
+export const Stackable: Story = {
+  render: (args) => ({
+    components: { StepGroup, Button },
+    setup: () => {
+      const steps = ref([
+        { title: "Shipping", description: "Choose your shipping options", icon: "plane" },
+        { title: "Billing", description: "Enter billing information", icon: "payment" },
+        { title: "Confirm Order", description: "Verify order details", icon: "info" },
+      ])
+      const active = ref(1)
+
+      return { steps, active, args }
+    },
+    template: `
+      <StepGroup
+        :steps="steps"
+        :activeStep="active"
+        v-bind="args"
+      >
+      </StepGroup>
+    `,
+  }),
+  args: {
+    stackable: "tablet",
+    noCompleted: true,
+  },
+}
+
 export default meta
