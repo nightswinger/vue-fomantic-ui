@@ -1,4 +1,4 @@
-import{d as i,r as _,o as n,c,w as t,a as g,b as e,u as r,ab as o,j as u,_ as d,C as b,e as v,D as P}from"./index-_NJh6V5r.js";const f=`<template>
+import{d as i,r as _,o as n,c,w as t,a as g,b as e,u as r,af as o,j as u,_ as d,C as b,e as v,D as P}from"./index-RtEKpQy5.js";const f=`<template>
   <Progress progress :percent="value" label="Uploading Files" />
   <Button icon="minus" @click="value -= 10" />
   <Button icon="plus" @click="value += 10" />
