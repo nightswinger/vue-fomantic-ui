@@ -1,4 +1,4 @@
-import{o as i,c as r,w as a,a as s,b as e,u as t,R as o,_ as d,d as m,k as p,y as u,m as h,n as _,p as g,q as b,D as y,f,l as w}from"./index--kFIQ-96.js";const v=`<template>
+import{o as i,c as r,w as a,a as s,b as e,u as t,R as o,_ as d,d as m,k as p,y as u,m as h,n as _,p as g,q as b,D as y,f,l as w}from"./index-MO8VB4d8.js";const v=`<template>
   <Message
     header="Changes in Service"
     content="We updated our privacy policy here to better service our customers. We recommend reviewing the changes."

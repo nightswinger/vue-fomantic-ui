@@ -1,4 +1,4 @@
-import{o as s,c as o,w as a,a as d,b as e,u as t,J as n,_ as l,f as p,K as u,d as m,l as _}from"./index--kFIQ-96.js";const b=p("img",{src:u},null,-1),g=`<template>
+import{o as s,c as o,w as a,a as d,b as e,u as t,J as n,_ as l,f as p,K as u,d as m,l as _}from"./index-MO8VB4d8.js";const b=p("img",{src:u},null,-1),g=`<template>
   <Advertisement unit="medium rectangle">
     <img src="/images/wireframe/image.png" />
   </Advertisement>
