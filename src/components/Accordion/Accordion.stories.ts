@@ -59,6 +59,19 @@ export const BasicStyled: Story = {
   }
 }
 
+export const Compact: Story = {
+  args: {
+    compact: true,
+  },
+  argTypes: {
+    compact: {
+      control: 'select',
+      options: ['very', true],
+    }
+  },
+  decorators: [() => ({ template: '<div class="ui segment"><story /></div>' })]
+}
+
 export const Multiple: Story = {
   args: {
     multiple: true,

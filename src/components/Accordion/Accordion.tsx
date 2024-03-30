@@ -1,13 +1,15 @@
 import clsx from "clsx"
 import { computed, defineComponent, provide, ref } from "vue"
+import type { PropType } from "vue"
 
-import { computeKeyOnly } from "@/utils/classNameHelper"
+import { computeKeyOnly, computeKeyOrKeyValue } from "@/utils/classNameHelper"
 
 import AccordionTab from "./AccordionTab"
 
 export default defineComponent({
   props: {
     basic: Boolean,
+    compact: [Boolean, String] as PropType<boolean | 'very'>,
     fluid: Boolean,
     inverted: Boolean,
     multiple: Boolean,
@@ -46,6 +48,7 @@ export default defineComponent({
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.styled, 'styled'),
+        computeKeyOrKeyValue(props.compact, 'compact'),
         'accordion'
       )
     })
@@ -69,6 +72,7 @@ export default defineComponent({
         {
           tabs.value.map((tab) => (
             <AccordionTab
+              compact={!!props.compact}
               styled={props.styled}
               {...tab.props}
               v-slots={tab.slots}

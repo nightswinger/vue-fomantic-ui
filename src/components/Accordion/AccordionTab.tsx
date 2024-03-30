@@ -8,6 +8,7 @@ import Icon from "../Icon/Icon"
 
 export default defineComponent({
   props: {
+    compact: Boolean,
     index: Number,
     title: String,
     styled: Boolean,
@@ -40,6 +41,7 @@ export default defineComponent({
           </div>
         <AccordionContent
           active={this.isTabActive(this.index)}
+          compact={this.compact}
           styled={this.styled}
         >
           {this.$slots.default?.()}

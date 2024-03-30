@@ -6,13 +6,14 @@ import { computeKeyOnly } from "@/utils/classNameHelper"
 export default defineComponent({
   props: {
     active: Boolean,
+    compact: Boolean,
     styled: Boolean,
   },
   setup(props, { slots }) {
     const activeClass = ref(props.active)
 
     const paddingValue = {
-      active: props.styled ? '0.5em 1em 1.5em' : '0.5em 0px 1em',
+      active: props.styled ? '0.5em 1em 1.5em' : props.compact ? '0.25em 0px 0.5em' : '0.5em 0px 1em',
       inactive: props.styled ? '0px 1em' : '0px 0px',
     }
 
