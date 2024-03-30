@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
@@ -11,7 +11,7 @@
     "prismjs": "^1.29.0",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.4.15",
-    "vue-fomantic-ui": "^0.22.0",
+    "vue-fomantic-ui": "^0.23.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
