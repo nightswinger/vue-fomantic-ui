@@ -1,6 +1,6 @@
 <template>
   <SuiSegment class="pushable" :style="{border: 'none'}">
-    <Drawer :visible="visible" />
+    <Drawer :visible="visible" :onClickOutside="() => visible = false" />
     <div class="pusher" :style="{height: '100vh'}">
       <Sidebar />
       <Navbar :on-click="onClick" />
