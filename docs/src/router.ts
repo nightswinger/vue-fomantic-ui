@@ -26,7 +26,6 @@ import Form from './pages/collections/Form.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 
 // Modules
-import AccordionDoc from './pages/modules/AccordionDoc.vue'
 import CalendarDoc from './pages/modules/CalendarDoc.vue'
 import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
@@ -76,7 +75,7 @@ const routes: any = [
       { path: 'views/item', component: () => import('./pages/views/Item.vue') },
       { path: 'views/statistic', component: () => import('./pages/views/Statistic.vue') },
 
-      { path: 'modules/accordion', component: AccordionDoc },
+      { path: 'modules/accordion', component: () => import('./pages/modules/Accordion.vue') },
       { path: 'modules/calendar', component: CalendarDoc },
       { path: 'modules/checkbox', component: CheckboxDoc },
       { path: 'modules/dimmer', component: DimmerDoc },
