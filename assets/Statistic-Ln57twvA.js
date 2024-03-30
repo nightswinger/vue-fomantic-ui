@@ -1,4 +1,4 @@
-import{d as n,o as s,c as u,w as a,a as i,b as e,u as t,ab as l,ac as m,ad as p,_ as d,ae as b,k as _,v as S,f as v,y as f,l as h}from"./index-MO8VB4d8.js";const g=`<template>
+import{d as n,o as s,c as u,w as a,a as i,b as e,u as t,ab as l,ac as m,ad as p,_ as d,ae as b,k as _,v as S,f as v,y as f,l as h}from"./index-zxhWeOdQ.js";const g=`<template>
   <Statistic value="5,550" label="Downloads" />
   <Statistic>
     <StatisticLabel>Views</StatisticLabel>
