@@ -1,13 +1,16 @@
-import { computed, defineComponent, inject, ref, Ref } from "vue";
+import { computed, defineComponent, inject } from "vue"
+import clsx from "clsx"
+
+import { computeKeyOnly } from "@/utils/classNameHelper"
+
 import AccordionContent from "./AccordionContent"
-import Icon from "../Icon/Icon";
-import clsx from "clsx";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import Icon from "../Icon/Icon"
 
 export default defineComponent({
   props: {
     index: Number,
     title: String,
+    styled: Boolean,
   },
   setup(props) {
     const isTabActive: any = inject('isTabActive')
@@ -35,7 +38,10 @@ export default defineComponent({
           <Icon name="dropdown" />
             {this.title}
           </div>
-        <AccordionContent active={this.isTabActive(this.index)}>
+        <AccordionContent
+          active={this.isTabActive(this.index)}
+          styled={this.styled}
+        >
           {this.$slots.default?.()}
         </AccordionContent>
       </>

@@ -1,6 +1,9 @@
-import clsx from "clsx";
-import { computed, defineComponent, provide, Ref, ref } from "vue";
-import { computeKeyOnly } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent, provide, ref } from "vue"
+
+import { computeKeyOnly } from "@/utils/classNameHelper"
+
+import AccordionTab from "./AccordionTab"
 
 export default defineComponent({
   props: {
@@ -9,7 +12,7 @@ export default defineComponent({
     multiple: Boolean,
     styled: Boolean
   },
-  setup(props) {
+  setup(props, { slots }) {
     const activeIndex: any = props.multiple ? ref([]) : ref(-1)
     const isTabActive = (index: number) => {
       if (props.multiple) {
@@ -35,7 +38,7 @@ export default defineComponent({
     provide('isTabActive', isTabActive)
     provide('updateActiveIndex', updateActiveIndex)
 
-    const computedClass = computed(() => {
+    const classes = computed(() => {
       return clsx(
         'ui',
         computeKeyOnly(props.fluid, 'fluid'),
@@ -45,19 +48,32 @@ export default defineComponent({
       )
     })
 
-    return { computedClass }
-  },
-  render() {
-    const renderTabs = (tabs: any) => {
-      tabs.forEach((tab: any, i: number) => {
-        tab.props.index = i
+    const tabs = computed(() => {
+      const children = slots.default?.() || []
+      return children.map((vnode, index) => {
+        return {
+          ...vnode,
+          props: {
+            ...vnode.props,
+            index,
+          },
+          slots: vnode.children
+        }
       })
-      return tabs
-    }
-    return (
-      <div class={this.computedClass}>
-        {renderTabs(this.$slots.default?.())}
+    })
+
+    return () => (
+      <div class={classes.value}>
+        {
+          tabs.value.map((tab) => (
+            <AccordionTab
+              styled={props.styled}
+              {...tab.props}
+              v-slots={tab.slots}
+            />
+          ))
+        }
       </div>
     )
-  }
+  },
 })
