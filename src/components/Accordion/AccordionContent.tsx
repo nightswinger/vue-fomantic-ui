@@ -41,7 +41,7 @@ export default defineComponent({
     const getContentHeight = () => {
       if (!body.value) return 0
       const fontSize = window.getComputedStyle(body.value).fontSize
-      return body.value.scrollHeight + parseInt(fontSize) * 1.5
+      return body.value.scrollHeight + parseInt(fontSize) * (props.styled ? 2 : 1.5)
     }
 
     watch(() => props.active, async (newValue) => {

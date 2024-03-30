@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3"
 
-import  { ref } from "vue"
-
 import Accordion from "./Accordion"
 import AccordionTab from "./AccordionTab"
 
@@ -10,81 +8,6 @@ type Story = StoryObj<typeof Accordion>
 const meta: Meta<typeof Accordion> = {
   title: "Accordion",
   component: Accordion,
-
-}
-
-export const Default: Story = {
-  render: (args) => ({
-    components: { Accordion, AccordionTab },
-    setup: () => {
-      return { args }
-    },
-    template: `
-      <Accordion>
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-      </Accordion>
-    `,
-  }),
-}
-
-export const Styled: Story = {
-  render: (args) => ({
-    components: { Accordion, AccordionTab },
-    setup: () => {
-      return { args }
-    },
-    template: `
-      <Accordion v-bind="args">
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-        <AccordionTab
-          title="What is a dog?"
-        >
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty andfaithfulness, it can be found as a welcome guest in many households across the world.
-          </p>
-        </AccordionTab>
-      </Accordion>
-    `,
-  }),
-  args: {
-    styled: true,
-  }
-}
-
-export const BasicStyled: Story = {
   render: (args) => ({
     components: { Accordion, AccordionTab },
     setup: () => {
@@ -119,8 +42,26 @@ export const BasicStyled: Story = {
       </Accordion>
     `,
   }),
+}
+
+export const Default: Story = {}
+
+export const Styled: Story = {
+  args: {
+    styled: true,
+  }
+}
+
+export const BasicStyled: Story = {
   args: {
     basic: true,
+    styled: true,
+  }
+}
+
+export const Multiple: Story = {
+  args: {
+    multiple: true,
   }
 }
 

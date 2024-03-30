@@ -7,6 +7,7 @@ import AccordionTab from "./AccordionTab"
 
 export default defineComponent({
   props: {
+    basic: Boolean,
     fluid: Boolean,
     inverted: Boolean,
     multiple: Boolean,
@@ -41,6 +42,7 @@ export default defineComponent({
     const classes = computed(() => {
       return clsx(
         'ui',
+        computeKeyOnly(props.basic, 'basic'),
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.styled, 'styled'),
