@@ -1,4 +1,4 @@
-import{d as g,o as n,c as l,w as e,a as r,b as t,u as a,L as d,v as c,Q as i,f as o,k,g as D,_,r as h,M as v,F as y,G as w,I as b,B as f,N as F,D as x,P as A,t as j,X as I,W as $,S as M,U as G,y as E,l as N}from"./index-zxhWeOdQ.js";const V=o("span",null,"Joined in 2013",-1),J=o("span",{class:"right floated"},"14h",-1),H={class:"right floated"},B=`<template>
+import{d as g,o as n,c as l,w as e,a as r,b as t,u as a,Q as d,C as c,S as i,g as o,n as k,j as D,_,r as h,U as v,I as y,J as w,K as b,F as f,W as F,m as x,X as j,B as A,Z as I,$,e as M,f as G,y as E,D as N}from"./index-KKoLdi4t.js";const V=o("span",null,"Joined in 2013",-1),J=o("span",{class:"right floated"},"14h",-1),H={class:"right floated"},B=`<template>
   <Card>
     <Image src="/vue-fomantic-ui/images/avatar/large/kristy.png" />
     <CardContent header="Kristy">
@@ -122,7 +122,7 @@ const items = ref([
       <Button as="button">Join Project</Button>
     </CardContent>
   </Card>
-</template>`,q=g({__name:"ContentBlockDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Content Block",code:K},{description:e(()=>[r(" A card can contain blocks of content ")]),example:e(()=>[t(a(d),null,{default:e(()=>[t(a(i),null,{default:e(()=>[t(a(A),null,{default:e(()=>[r("Project Timeline")]),_:1})]),_:1}),t(a(i),null,{default:e(()=>[t(a(j),{sub:""},{default:e(()=>[r("Activity")]),_:1}),t(a(I),{size:"small"},{default:e(()=>[t(a($),null,{summary:e(()=>[Y,r(" added "),T,r(" to the project ")]),_:1}),t(a($),null,{summary:e(()=>[R,r(" was added as an "),L]),_:1}),t(a($),null,{summary:e(()=>[O,r(" added two pictures ")]),_:1})]),_:1})]),_:1}),t(a(i),{extra:""},{default:e(()=>[t(a(x),{as:"button"},{default:e(()=>[r("Join Project")]),_:1})]),_:1})]),_:1})]),_:1}))}}),Q=`<template>
+</template>`,q=g({__name:"ContentBlockDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Content Block",code:K},{description:e(()=>[r(" A card can contain blocks of content ")]),example:e(()=>[t(a(d),null,{default:e(()=>[t(a(i),null,{default:e(()=>[t(a(j),null,{default:e(()=>[r("Project Timeline")]),_:1})]),_:1}),t(a(i),null,{default:e(()=>[t(a(A),{sub:""},{default:e(()=>[r("Activity")]),_:1}),t(a(I),{size:"small"},{default:e(()=>[t(a($),null,{summary:e(()=>[Y,r(" added "),T,r(" to the project ")]),_:1}),t(a($),null,{summary:e(()=>[R,r(" was added as an "),L]),_:1}),t(a($),null,{summary:e(()=>[O,r(" added two pictures ")]),_:1})]),_:1})]),_:1}),t(a(i),{extra:""},{default:e(()=>[t(a(x),{as:"button"},{default:e(()=>[r("Join Project")]),_:1})]),_:1})]),_:1})]),_:1}))}}),Q=`<template>
   <CardGroup>
     <Card v-for="item in items">
       <template #header>
@@ -332,7 +332,7 @@ const items = ref([
       </div>
     </CardContent>
   </Card>
-</template>`,De=g({__name:"RaisedCardDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Raised Card",code:$e},{description:e(()=>[r(" A card can contain content metadata ")]),example:e(()=>[t(a(d),{raised:""},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[be,ke]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",xe,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1})]),_:1}))}}),Fe=o("span",null,"2 days ago",-1),Ae=o("a",null,"Animals",-1),je={class:"right floated"},Ie=o("span",null,"2 days ago",-1),Me=o("a",null,"Animals",-1),Ge={class:"right floated"},Ee=`<template>
+</template>`,De=g({__name:"RaisedCardDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Raised Card",code:$e},{description:e(()=>[r(" A card can contain content metadata ")]),example:e(()=>[t(a(d),{raised:""},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[be,ke]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",xe,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1})]),_:1}))}}),Fe=o("span",null,"2 days ago",-1),je=o("a",null,"Animals",-1),Ae={class:"right floated"},Ie=o("span",null,"2 days ago",-1),Me=o("a",null,"Animals",-1),Ge={class:"right floated"},Ee=`<template>
   <Card href="https://dog.com">
     <CardContent header="Cute Dog">
       <template #meta>
@@ -367,7 +367,7 @@ const items = ref([
       </div>
     </CardContent>
   </Card>
-</template>`,Ne=g({__name:"LinkCardDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Link Card",code:Ee},{description:e(()=>[r(" A card can be formatted so that the entire contents link to another page ")]),example:e(()=>[t(a(d),{href:"https://dog.com"},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[Fe,Ae]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",je,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1}),t(a(d),{link:""},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[Ie,Me]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",Ge,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1})]),_:1}))}}),Ve=o("span",{class:"right floated"},"2 days ago",-1),Je={class:"right floated"},He=`<template>
+</template>`,Ne=g({__name:"LinkCardDoc",setup(p){return(s,u)=>(n(),l(_,{label:"Link Card",code:Ee},{description:e(()=>[r(" A card can be formatted so that the entire contents link to another page ")]),example:e(()=>[t(a(d),{href:"https://dog.com"},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[Fe,je]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",Ae,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1}),t(a(d),{link:""},{default:e(()=>[t(a(i),{header:"Cute Dog"},{meta:e(()=>[Ie,Me]),description:e(()=>[t(a(c),{src:"/vue-fomantic-ui/images/wireframe/paragraph.png"})]),_:1}),t(a(i),{extra:""},{default:e(()=>[o("div",Ge,[t(a(c),{avatar:"",src:"/vue-fomantic-ui/images/avatar/small/matt.jpg"}),r(" Matt ")])]),_:1})]),_:1})]),_:1}))}}),Ve=o("span",{class:"right floated"},"2 days ago",-1),Je={class:"right floated"},He=`<template>
   <Card>
     <CardContent header="Cute Dog">
       <template #meta>
