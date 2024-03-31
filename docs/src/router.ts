@@ -18,7 +18,6 @@ import Loader from './pages/elements/Loader.vue'
 import RailDoc from './pages/RailDoc.vue'
 import Reveal from './pages/elements/Reveal.vue'
 import Segment from './pages/elements/Segment.vue'
-import StepDoc from './pages/StepDoc.vue'
 
 // Collections
 import Breadcrumb from './pages/collections/Breadcrumb.vue'
@@ -59,7 +58,7 @@ const routes: any = [
       { path: 'elements/rail', component: RailDoc },
       { path: 'elements/reveal', component: Reveal },
       { path: 'elements/segment', component: Segment },
-      { path: 'elements/step', component: StepDoc },
+      { path: 'elements/step', component: () => import('./pages/elements/Step.vue') },
 
       { path: 'collections/breadcrumb', component: Breadcrumb },
       { path: 'collections/form', component: Form },
