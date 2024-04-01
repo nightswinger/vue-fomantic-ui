@@ -3,25 +3,10 @@ import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
 
 // Elements
-import Button from './pages/elements/Button.vue'
-import Container from './pages/elements/Container.vue'
-import Divider from './pages/elements/Divider.vue'
-import Emoji from './pages/elements/Emoji.vue'
-import Flag from './pages/elements/Flag.vue'
-import Header from './pages/elements/Header.vue'
-import Icon from './pages/elements/Icon.vue'
-import Image from './pages/elements/Image.vue'
-import Input from './pages/elements/Input.vue'
-import Label from './pages/elements/Label.vue'
 import ListDoc from './pages/ListDoc.vue'
-import Loader from './pages/elements/Loader.vue'
 import RailDoc from './pages/RailDoc.vue'
-import Reveal from './pages/elements/Reveal.vue'
-import Segment from './pages/elements/Segment.vue'
 
 // Collections
-import Breadcrumb from './pages/collections/Breadcrumb.vue'
-import Form from './pages/collections/Form.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 
 // Modules
@@ -30,38 +15,36 @@ import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
-import Modal from './pages/modules/Modal.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import RatingDoc from './pages/modules/RatingDoc.vue'
 import SidebarDoc from './pages/modules/SidebarDoc.vue'
 import SliderDoc from './pages/modules/SliderDoc.vue'
 import TabDoc from './pages/modules/TabDoc.vue'
-import Toast from './pages/modules/Toast.vue'
 
 const routes: any = [
   {
     path: '/', component: Home,
     children: [
       { path: '/', component: GettingStarted },
-      { path: 'elements/button', component: Button },
-      { path: 'elements/container', component: Container },
-      { path: 'elements/divider', component: Divider },
-      { path: 'elements/emoji', component: Emoji },
-      { path: 'elements/flag', component: Flag },
-      { path: 'elements/header', component: Header },
-      { path: 'elements/icon', component: Icon },
+      { path: 'elements/button', component: () => import('./pages/elements/Button.vue') },
+      { path: 'elements/container', component: () => import('./pages/elements/Container.vue') },
+      { path: 'elements/divider', component: () => import('./pages/elements/Divider.vue') },
+      { path: 'elements/emoji', component: () => import('./pages/elements/Emoji.vue') },
+      { path: 'elements/flag', component: () => import('./pages/elements/Flag.vue') },
+      { path: 'elements/header', component: () => import('./pages/elements/Header.vue') },
+      { path: 'elements/icon', component: () => import('./pages/elements/Icon.vue') },
       { path: 'elements/image', component: Image },
-      { path: 'elements/input', component: Input },
-      { path: 'elements/label', component: Label },
+      { path: 'elements/input', component: () => import('./pages/elements/Input.vue') },
+      { path: 'elements/label', component: () => import('./pages/elements/Label.vue') },
       { path: 'elements/list', component: ListDoc },
-      { path: 'elements/loader', component: Loader },
+      { path: 'elements/loader', component: () => import('./pages/elements/Loader.vue') },
       { path: 'elements/rail', component: RailDoc },
-      { path: 'elements/reveal', component: Reveal },
-      { path: 'elements/segment', component: Segment },
+      { path: 'elements/reveal', component: () => import('./pages/elements/Reveal.vue') },
+      { path: 'elements/segment', component: () => import('./pages/elements/Segment.vue') },
       { path: 'elements/step', component: () => import('./pages/elements/Step.vue') },
 
-      { path: 'collections/breadcrumb', component: Breadcrumb },
-      { path: 'collections/form', component: Form },
+      { path: 'collections/breadcrumb', component: () => import('./pages/collections/Breadcrumb.vue') },
+      { path: 'collections/form', component: () => import('./pages/collections/Form.vue') },
       { path: 'collections/grid', component: GridDoc },
       { path: 'collections/menu', component: () => import('./pages/collections/Menu.vue') },
       { path: 'collections/message', component: () => import('./pages/collections/Message.vue') },
@@ -80,14 +63,14 @@ const routes: any = [
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/dropdown', component: DropdownDoc },
       { path: 'modules/embed', component: EmbedDoc },
-      { path: 'modules/modal', component: Modal },
+      { path: 'modules/modal', component: () => import('./pages/modules/Modal.vue') },
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: () => import('./pages/modules/Progress.vue') },
       { path: 'modules/rating', component: RatingDoc },
       { path: 'modules/sidebar', component: SidebarDoc },
       { path: 'modules/slider', component: SliderDoc },
       { path: 'modules/tab', component: TabDoc },
-      { path: 'modules/toast', component: Toast },
+      { path: 'modules/toast', component: () => import('./pages/modules/Toast.vue') },
     ]
   }
 ]
