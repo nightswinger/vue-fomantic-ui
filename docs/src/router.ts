@@ -3,7 +3,6 @@ import Home from './pages/Home.vue'
 import GettingStarted from './pages/GettingStarted.vue'
 
 // Elements
-import ListDoc from './pages/ListDoc.vue'
 import RailDoc from './pages/RailDoc.vue'
 
 // Collections
@@ -36,7 +35,7 @@ const routes: any = [
       { path: 'elements/image', component: Image },
       { path: 'elements/input', component: () => import('./pages/elements/Input.vue') },
       { path: 'elements/label', component: () => import('./pages/elements/Label.vue') },
-      { path: 'elements/list', component: ListDoc },
+      { path: 'elements/list', component: () => import('./pages/elements/List.vue') },
       { path: 'elements/loader', component: () => import('./pages/elements/Loader.vue') },
       { path: 'elements/rail', component: RailDoc },
       { path: 'elements/reveal', component: () => import('./pages/elements/Reveal.vue') },
