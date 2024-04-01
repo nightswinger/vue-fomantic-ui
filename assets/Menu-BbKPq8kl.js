@@ -1,4 +1,4 @@
-import{R as u,r as _,o as r,c,w as e,a as o,b as t,u as n,V as s,F as i,m as h,y as I,d as x,S,a5 as A,a6 as M,a7 as g,A as v,D as b,a8 as y,a9 as w,aa as f,ab as D,e as k,f as L}from"./index-DXf-rKoW.js";import{_ as p}from"./DocSection-C2fGI9ub.js";const C=`<template>
+import{O as u,r as _,o as r,c,w as e,a as o,b as t,u as n,V as s,F as i,m as h,y as I,d as x,a1 as S,a9 as A,aa as M,ab as g,A as v,D as b,ac as y,ad as w,ae as f,af as D,e as k,f as L}from"./index-Bk7GY-tj.js";import{_ as p}from"./DocSection-D3vdzv11.js";const C=`<template>
   <Menu
     :items="items"
     :widths="items.length"

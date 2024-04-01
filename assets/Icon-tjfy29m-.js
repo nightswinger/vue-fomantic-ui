@@ -1,4 +1,4 @@
-import{o as i,c as s,w as n,a as c,b as e,u as o,e as r,d as m,v as d,f as p}from"./index-DXf-rKoW.js";import{_ as u}from"./DocSection-C2fGI9ub.js";const _=`<template>
+import{o as i,c as s,w as n,a as c,b as e,u as o,e as r,d as m,v as d,f as p}from"./index-Bk7GY-tj.js";import{_ as u}from"./DocSection-D3vdzv11.js";const _=`<template>
   <SuiIcon name="users" disabled />
 </template>`,I={__name:"DisabledDoc",setup(t){return(a,l)=>(i(),s(u,{label:"Disabled",code:_},{description:n(()=>[c(" An icon can show that it is disabled ")]),example:n(()=>[e(o(r),{name:"users",disabled:""})]),_:1}))}},b=`<template>
   <SuiIcon name="spinner" loading />

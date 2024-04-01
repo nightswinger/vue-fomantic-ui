@@ -1,4 +1,4 @@
-import{o,c as l,w as r,a,b as e,u as i,n as u,x as t,y as p,i as v,j as h,k as D,l as f,D as S,d as g,m as w,e as _,h as m,f as z}from"./index-DXf-rKoW.js";import{_ as d}from"./DocSection-C2fGI9ub.js";const b=`<template>
+import{o,c as l,w as r,a,b as e,u as i,n as u,x as t,y as p,i as v,j as h,k as D,l as f,D as S,d as g,m as w,e as _,h as m,f as z}from"./index-Bk7GY-tj.js";import{_ as d}from"./DocSection-D3vdzv11.js";const b=`<template>
   <SuiImage wireframe src="/images/wireframe/short-paragraph.png" />
   <SuiDivider />
   <SuiImage wireframe src="/images/wireframe/short-paragraph.png" />

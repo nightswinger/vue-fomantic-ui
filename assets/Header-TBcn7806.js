@@ -1,4 +1,4 @@
-import{o as d,c as n,w as e,a,b as t,u as r,h as o,e as _,q as m,s as h,d as p,n as H,y as u,f as S}from"./index-DXf-rKoW.js";import{_ as s}from"./DocSection-C2fGI9ub.js";const f=`<template>
+import{o as d,c as n,w as e,a,b as t,u as r,h as o,e as _,q as m,s as h,d as p,n as H,y as u,f as S}from"./index-Bk7GY-tj.js";import{_ as s}from"./DocSection-D3vdzv11.js";const f=`<template>
   <SuiHeader as="h1">First Header</SuiHeader>
   <SuiHeader as="h2">Second Header</SuiHeader>
   <SuiHeader as="h3">Third Header</SuiHeader>

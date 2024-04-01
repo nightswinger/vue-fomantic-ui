@@ -1,4 +1,4 @@
-import{r as b,o as c,c as l,w as t,a as i,b as e,u as o,D as n,t as g,Y as p,e as _,A as m,y as f,I as d,d as B,f as v}from"./index-DXf-rKoW.js";import{_ as s}from"./DocSection-C2fGI9ub.js";const h=`<template>
+import{r as b,o as c,c as l,w as t,a as i,b as e,u as o,D as n,t as g,Y as p,e as _,A as m,y as f,I as d,d as B,f as v}from"./index-Bk7GY-tj.js";import{_ as s}from"./DocSection-D3vdzv11.js";const h=`<template>
   <SuiButton @click="onClick">{{ label }}</SuiButton>
 </template>
 

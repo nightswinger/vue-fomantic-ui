@@ -1,4 +1,4 @@
-import{r as p,o as n,c as d,w as e,a as l,b as o,u as a,D as u,aE as f,aF as S,aG as v,n as h,aH as g,h as w,aI as M,d as r,e as k,f as B}from"./index-DXf-rKoW.js";import{_}from"./DocSection-C2fGI9ub.js";const b=r("p",null," We've found the following gravatar image associated with your e-mail address. ",-1),y=r("p",null,"Is it okay to use this photo?",-1),C=`<template>
+import{r as p,o as n,c as d,w as e,a as l,b as o,u as a,D as u,aF as f,aG as S,aH as v,n as h,aI as g,h as w,aJ as M,d as r,e as k,f as B}from"./index-Bk7GY-tj.js";import{_}from"./DocSection-D3vdzv11.js";const b=r("p",null," We've found the following gravatar image associated with your e-mail address. ",-1),y=r("p",null,"Is it okay to use this photo?",-1),C=`<template>
   <SuiButton @click="show = true">Show Modal</SuiButton>
   <SuiModal v-model="show">
     <SuiModalHeader>Select a Photo</SuiModalHeader>

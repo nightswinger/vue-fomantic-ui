@@ -1,4 +1,4 @@
-import{o as l,c as m,w as e,a as c,b as a,u as t,L as u,N as i,n,f as v}from"./index-DXf-rKoW.js";import{_ as d}from"./DocSection-C2fGI9ub.js";const g=`<template>
+import{o as l,c as m,w as e,a as c,b as a,u as t,W as u,X as i,n,f as v}from"./index-Bk7GY-tj.js";import{_ as d}from"./DocSection-D3vdzv11.js";const g=`<template>
   <SuiReveal animated="fade">
     <SuiRevealContent visible>
       <SuiImage size="small" src="/images/wireframe/square-image.png" />

@@ -1,4 +1,4 @@
-import{o as s,c as l,w as i,a as t,b as e,u as a,H as n,h as d,D as u,A as _,f as p}from"./index-DXf-rKoW.js";import{_ as r}from"./DocSection-C2fGI9ub.js";const g=`<template>
+import{o as s,c as l,w as i,a as t,b as e,u as a,H as n,h as d,D as u,A as _,f as p}from"./index-Bk7GY-tj.js";import{_ as r}from"./DocSection-D3vdzv11.js";const g=`<template>
   <SuiEmoji name="anguished" disabled />
 </template>`,b={__name:"DisabledDoc",setup(m){return(o,c)=>(s(),l(r,{label:"Disabled",code:g},{description:i(()=>[t(" An emoji can show that it is disabled ")]),example:i(()=>[e(a(n),{name:"anguished",disabled:""})]),_:1}))}},x=`<template>
   <SuiEmoji name="angel" loading />

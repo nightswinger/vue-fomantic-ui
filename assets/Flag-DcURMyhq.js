@@ -1,4 +1,4 @@
-import{o as l,c as o,w as s,a as t,b as e,u as a,p as i,h as u,D as p,A as d,f as _}from"./index-DXf-rKoW.js";import{_ as r}from"./DocSection-C2fGI9ub.js";const z=`<template>
+import{o as l,c as o,w as s,a as t,b as e,u as a,p as i,h as u,D as p,A as d,f as _}from"./index-Bk7GY-tj.js";import{_ as r}from"./DocSection-D3vdzv11.js";const z=`<template>
   <SuiFlag name="de" size="small" />
   <SuiFlag name="fr" size="medium" />
   <SuiFlag name="li" size="large" />
