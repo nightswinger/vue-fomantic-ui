@@ -32,7 +32,7 @@ const routes: any = [
       { path: 'elements/flag', component: () => import('./pages/elements/Flag.vue') },
       { path: 'elements/header', component: () => import('./pages/elements/Header.vue') },
       { path: 'elements/icon', component: () => import('./pages/elements/Icon.vue') },
-      { path: 'elements/image', component: Image },
+      { path: 'elements/image', component: () => import('./pages/elements/Image.vue') },
       { path: 'elements/input', component: () => import('./pages/elements/Input.vue') },
       { path: 'elements/label', component: () => import('./pages/elements/Label.vue') },
       { path: 'elements/list', component: () => import('./pages/elements/List.vue') },
