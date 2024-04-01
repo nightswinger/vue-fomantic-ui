@@ -1,5 +1,10 @@
 <template>
-  <sui-sidebar dimmed inverted :style="{width: '250px'}">
+  <sui-sidebar
+    dimmed
+    inverted
+    ref="elementRef"
+    :style="{width: '250px'}"
+  >
     <sui-menu-item as="div">
       <strong>
         Fomantic UI Vue
@@ -64,12 +69,15 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue"
 import { useRoute } from 'vue-router'
+
+import { useClickOutside } from '@/composables/useClickOutside'
 
 export default defineComponent({
   name: 'Sidebar',
-  setup() {
+  props: ['onClickOutside'],
+  setup(props) {
     const route = useRoute()
     const isActive = (path) => {
       return route.path === path
@@ -128,6 +136,9 @@ export default defineComponent({
       { name: 'Tab', path: '/modules/tab' },
       { name: 'Toast', path: '/modules/toast' },
     ]
+
+    const elementRef = ref()
+    useClickOutside(elementRef, props.onClickOutside)
 
     return { isActive, elements, collections, views, modules }
   }

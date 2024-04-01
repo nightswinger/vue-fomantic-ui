@@ -20,7 +20,9 @@ import LinkDoc from '@/components/elements/Icon/LinkDoc.vue'
 import FlippedDoc from '@/components/elements/Icon/FlippedDoc.vue'
 import RotatedDoc from '@/components/elements/Icon/RotatedDoc.vue'
 import CircularDoc from '@/components/elements/Icon/CircularDoc.vue'
+import CircularColoredDoc from '@/components/elements/Icon/CircularColoredDoc.vue'
 import BorderedDoc from '@/components/elements/Icon/BorderedDoc.vue'
+import BorderedColoredDoc from '@/components/elements/Icon/BorderedColoredDoc.vue'
 import ColoredDoc from '@/components/elements/Icon/ColoredDoc.vue'
 import InvertedDoc from '@/components/elements/Icon/InvertedDoc.vue'
 
@@ -78,10 +80,22 @@ const docs = [
     component: CircularDoc,
   },
   {
+    id: 'circular-colored',
+    label: 'Circular Colored',
+    category: 'Variations',
+    component: CircularColoredDoc,
+  },
+  {
     id: 'bordered',
     label: 'Bordered',
     category: 'Variations',
     component: BorderedDoc,
+  },
+  {
+    id: 'bordered-colored',
+    label: 'Bordered Colored',
+    category: 'Variations',
+    component: BorderedColoredDoc,
   },
   {
     id: 'colored',

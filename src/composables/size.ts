@@ -1,17 +1,25 @@
-import { computed } from 'vue';
-import type { Prop } from 'vue';
+import { computed } from "vue"
+import type { PropType } from "vue"
 
-const sizes = ['huge', 'large', 'medium', 'small', 'tiny'];
+const sizeValues = ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive'] as const
 
-type Size = typeof sizes[number];
+export type Size = typeof sizeValues[number]
 
 export interface SizeProps {
-  size: Size
+  size?: Size;
 }
 
-export const useSizeProps = {
-  size: {
-    type: String,
-    validator: (value: string) => sizes.includes(value)
-  } as Prop<Size>,
+export const makeSizeProps = () => {
+  return {
+    size: {
+      type: String as PropType<Size>,
+      validator: (value: string) => sizeValues.includes(value as Size)
+    }
+  }
+}
+
+export const useSize = (props: SizeProps) => {
+  const sizeClass = computed(() => props.size)
+
+  return { sizeClass }
 }

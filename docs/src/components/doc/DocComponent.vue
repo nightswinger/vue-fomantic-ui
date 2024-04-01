@@ -16,13 +16,13 @@
 
             <SuiDivider hidden />
 
-            <SuiMenu floated="right">
-              <SuiMenuItem as="a" icon>
-                <SuiIcon name="edit" />
+            <SuiMenu icon floated="right">
+              <SuiMenuItem as="a" icon ref="el" href="https://github.com/nightswinger/vue-fomantic-ui">
+                <SuiIcon name="alternate github" />
               </SuiMenuItem>
-              <SuiMenuItem as="a" icon>
-                <SuiIcon name="github" />
-              </SuiMenuItem>
+              <SuiPopup :trigger="el" position="top right">
+                View Project on GitHub
+              </SuiPopup>
             </SuiMenu>
         </div>
       </SuiContainer>
@@ -30,18 +30,25 @@
 
     <SuiContainer class="main">
       <SuiSegment basic fitted>
-        <DocSections :docs="componentDocs" />
-        <DocTableContents :title="title" :links="componentDocs" />
+        <template v-if="componentDocs">
+          <DocSections :docs="componentDocs" />
+          <DocTableContents :title="title" :links="componentDocs" />
+        </template>
+        <slot></slot>
       </SuiSegment>
     </SuiContainer>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import DocSections from './DocSections.vue';
 import DocTableContents from './DocTableContents.vue';
 
 defineProps(['title', 'description', 'componentDocs'])
+
+const el = ref()
 </script>
 
 <style scoped>
