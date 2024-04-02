@@ -185,4 +185,29 @@ export const Link: Story = {
   }),
 }
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Item, ItemGroup, ItemContent, FHeader, FImage },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <ItemGroup>
+        <Item v-bind="args">
+          <FImage as="a" size="tiny" src="./avatar/large/stevie.jpg" />
+          <ItemContent>
+            <FHeader as="a">Stevie Feliciano</FHeader>
+            <template #description>
+              <p>Stevie Feliciano is a <a>library scientist</a> living in New York City. She likes to spend her time reading, running, and writing.</p>
+            </template>
+          </ItemContent>
+        </Item>
+      </ItemGroup>
+    `,
+  }),
+  args: {
+    disabled: true,
+  }
+}
+
 export default meta

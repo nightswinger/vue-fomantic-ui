@@ -1,9 +1,18 @@
-import { defineComponent } from "vue"
+import clsx from "clsx"
+import { computed, defineComponent } from "vue"
 
 export default defineComponent({
-  setup(_, { slots }) {
+  props: {
+    disabled: Boolean,
+  },
+  setup(props, { slots }) {
+    const classes = computed(() => clsx(
+      props.disabled && 'disabled',
+      'item'
+    ))
+
     return () => (
-      <div class="item">
+      <div class={classes.value}>
         {slots.image && <div class="image">{slots.image()}</div>}
         {
           (slots.header || slots.metadata || slots.description || slots.extra) &&
