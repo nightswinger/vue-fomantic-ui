@@ -126,6 +126,30 @@ export const Disabled: Story = {
   }
 }
 
+export const Colored: Story = {
+  render: (args) => ({
+    components: { Menu },
+    setup: () => {
+      const items = ref([
+        { text: 'Red', color: 'red' },
+        { text: 'Orange', color: 'orange' },
+        { text: 'Yellow', color: 'yellow' },
+        { text: 'Green', color: 'green' },
+        { text: 'Teal', color: 'teal' },
+      ])
+      const active = ref(0)
+
+      return { args, items, active }
+    },
+    template: `
+      <Menu
+        :items="items"
+        v-model:activeIndex="active"
+      />
+    `,
+  }),
+}
+
 export const Icons: Story = {
   render: (args) => ({
     components: { Menu },

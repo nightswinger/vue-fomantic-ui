@@ -4,14 +4,7 @@
       Additional colors can be specified
     </template>
     <template #example>
-      <Menu>
-        <MenuItem active color="red">Red</MenuItem>
-        <MenuItem color="orange">Orange</MenuItem>
-        <MenuItem color="yellow">Yellow</MenuItem>
-        <MenuItem color="olive">Olive</MenuItem>
-        <MenuItem color="green">Green</MenuItem>
-        <MenuItem color="teal">Teal</MenuItem>
-      </Menu>
+      <Menu :items="items" v-model:active-index="active" />
     </template>
   </DocSection>
 </template>
@@ -19,16 +12,36 @@
 <script setup lang="ts">
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { Menu, MenuItem } from 'vue-fomantic-ui'
+import { ref } from 'vue'
+import { Menu } from 'vue-fomantic-ui'
+
+const items = ref([
+  { text: 'Red', color: 'red' },
+  { text: 'Orange', color: 'orange' },
+  { text: 'Yellow', color: 'yellow' },
+  { text: 'Green', color: 'green' },
+  { text: 'Teal', color: 'teal' },
+])
+const active = ref(0)
 
 const code = `<template>
-  <Menu>
-    <MenuItem active color="red">Red</MenuItem>
-    <MenuItem color="orange">Orange</MenuItem>
-    <MenuItem color="yellow">Yellow</MenuItem>
-    <MenuItem color="olive">Olive</MenuItem>
-    <MenuItem color="green">Green</MenuItem>
-    <MenuItem color="teal">Teal</MenuItem>
-  </Menu>
-<\/template>`
+  <Menu
+    :items="items"
+    v-model:active-index="active"
+  />
+<\/template>
+
+<script setup>
+import { ref } from 'vue'
+import { Menu } from 'vue-fomantic-ui'
+
+const items = ref([
+  { text: 'Red', color: 'red' },
+  { text: 'Orange', color: 'orange' },
+  { text: 'Yellow', color: 'yellow' },
+  { text: 'Green', color: 'green' },
+  { text: 'Teal', color: 'teal' },
+])
+const active = ref(0)
+<\/script>`
 </script>
