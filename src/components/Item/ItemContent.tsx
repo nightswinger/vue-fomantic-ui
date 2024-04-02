@@ -23,6 +23,7 @@ export default defineComponent({
         {slots.header && <div class="header">{slots.header()}</div>}
         {slots.metadata && <div class="meta">{slots.metadata()}</div>}
         {slots.description && <div class="description">{slots.description()}</div>}
+        {slots.extra && <div class="extra">{slots.extra()}</div>}
       </div>
     )
   },

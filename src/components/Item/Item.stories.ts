@@ -6,6 +6,7 @@ import ItemContent from "./ItemContent"
 
 import FHeader from "../Header/Header"
 import FImage from "../Image/Image"
+import Button from "../Button/Button"
 
 type Story = StoryObj<typeof Item>
 
@@ -208,6 +209,33 @@ export const Disabled: Story = {
   args: {
     disabled: true,
   }
+}
+
+export const FloatedContent: Story = {
+  render: (args) => ({
+    components: { Item, ItemGroup, ItemContent, FImage, Button },
+    setup: () => {
+      return { args }
+    },
+    template: `
+    <ItemGroup>
+      <Item v-for="text in ['A', 'B', 'C']">
+        <FImage wrapped size="small" src="./wireframe/image.png" />
+        <ItemContent verticalAlign="middle">
+          <template #header>
+            Content {{ text }}
+          </template>
+          <template #description>
+            <img src="./wireframe/short-paragraph.png">
+          </template>
+          <template #extra>
+            <Button floated="right">Action</Button>
+          </template>
+        </ItemContent>
+      </Item>
+    </ItemGroup>
+    `,
+  }),
 }
 
 export default meta
