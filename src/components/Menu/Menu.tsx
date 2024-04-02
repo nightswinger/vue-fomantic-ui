@@ -96,6 +96,7 @@ export default defineComponent({
             active={index === activeIndex.value}
             as={typeof item !== 'string' ? getValueByKey(item, 'as'): undefined}
             color={getValueByKey(item, 'color')}
+            disabled={getValueByKey(item, 'disabled')}
             header={typeof item !== 'string' && item.header}
             onSelected={(i) => handleSelected(i, item)}
           >

@@ -108,6 +108,24 @@ export const VerticalMenu: Story = {
   }
 }
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Menu },
+    setup: () => {
+      const items = ref([
+        { text: 'Link', disabled: true },
+      ])
+      return { args, items }
+    },
+    template: `
+      <Menu :items="items" v-bind="args" />
+    `,
+  }),
+  args: {
+    compact: true,
+  }
+}
+
 export const Icons: Story = {
   render: (args) => ({
     components: { Menu },
