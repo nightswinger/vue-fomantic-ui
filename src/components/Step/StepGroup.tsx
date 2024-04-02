@@ -14,6 +14,7 @@ export default defineComponent({
       default: 0,
     },
     attached: String,
+    evenlyDivided: Boolean,
     fluid: Boolean,
     inverted: Boolean,
     noCompleted: Boolean,
@@ -34,6 +35,7 @@ export default defineComponent({
       return clsx(
         'ui',
         widths && numbers[widths - 1],
+        props.steps && props.evenlyDivided && numbers[props.steps.length - 1],
         props.size,
         computeKeyOnly(props.fluid, 'fluid'),
         computeKeyOnly(props.inverted, 'inverted'),

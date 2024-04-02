@@ -81,4 +81,32 @@ export const Stackable: Story = {
   },
 }
 
+export const EvenlyDivided: Story = {
+  render: (args) => ({
+    components: { StepGroup, Button },
+    setup: () => {
+      const steps = ref([
+        { title: "Shipping", icon: "truck" },
+        { title: "Billing", icon: "payment" },
+        { title: "Confirm Order", icon: "info" },
+      ])
+      const active = ref(1)
+
+      return { steps, active, args }
+    },
+    template: `
+      <StepGroup
+        :steps="steps"
+        :activeStep="active"
+        v-bind="args"
+      >
+      </StepGroup>
+    `,
+  }),
+  args: {
+    evenlyDivided: true,
+    noCompleted: true,
+  },
+}
+
 export default meta
