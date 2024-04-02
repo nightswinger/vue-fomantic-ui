@@ -1,6 +1,8 @@
-import clsx from "clsx";
-import { computed, defineComponent, h } from "vue";
-import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "../../utils/classNameHelper";
+import clsx from "clsx"
+import { computed, defineComponent, h } from "vue"
+
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from "@/utils/classNameHelper"
+import { makeAlignedProps, useAligned } from "@/composables/aligned"
 
 export default defineComponent({
   props: {
@@ -20,9 +22,12 @@ export default defineComponent({
     primary: Boolean,
     rotated: String,
     secondary: Boolean,
-    size: String
+    size: String,
+    ...makeAlignedProps(),
   },
   setup(props) {
+    const { alignedClasses } = useAligned(props)
+
     const classes = computed(() => {
       return clsx(
         props.color,
@@ -41,6 +46,7 @@ export default defineComponent({
         computeKeyValue(props.flipped, 'flipped'),
         computeKeyValue(props.rotated, 'rotated'),
         computeKeyOrKeyValue(props.corner, 'corner'),
+        alignedClasses.value,
         'icon'
       )
     })
