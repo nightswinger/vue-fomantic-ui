@@ -15,7 +15,6 @@ import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 import SidebarDoc from './pages/modules/SidebarDoc.vue'
-import SliderDoc from './pages/modules/SliderDoc.vue'
 import TabDoc from './pages/modules/TabDoc.vue'
 
 const routes: any = [
@@ -65,7 +64,7 @@ const routes: any = [
       { path: 'modules/progress', component: () => import('./pages/modules/Progress.vue') },
       { path: 'modules/rating', component: () => import('./pages/modules/Rating.vue') },
       { path: 'modules/sidebar', component: SidebarDoc },
-      { path: 'modules/slider', component: SliderDoc },
+      { path: 'modules/slider', component: () => import('./pages/modules/Slider.vue') },
       { path: 'modules/tab', component: TabDoc },
       { path: 'modules/toast', component: () => import('./pages/modules/Toast.vue') },
     ]
