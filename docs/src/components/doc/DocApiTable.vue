@@ -7,11 +7,17 @@
     {{ docKey }}
   </Header>
   <template
-    v-for="key in Object.keys(data[docKey])"
-    :key="key"
+    v-for="(key, i) in Object.keys(data[docKey])"
+    :key="i"
   >
     <template v-if="key === 'props'">
-      <Header as="h3">
+      <Header
+        as="h3"
+        :style="{
+          marginTop: i !== 0 ? '5rem' : '0',
+          paddingTop: '2rem',
+        }"
+      >
         Props
       </Header>
       <Table definition celled :items="data[docKey][key]">

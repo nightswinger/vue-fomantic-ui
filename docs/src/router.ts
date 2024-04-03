@@ -14,7 +14,6 @@ import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
-import RatingDoc from './pages/modules/RatingDoc.vue'
 import SidebarDoc from './pages/modules/SidebarDoc.vue'
 import SliderDoc from './pages/modules/SliderDoc.vue'
 import TabDoc from './pages/modules/TabDoc.vue'
@@ -64,7 +63,7 @@ const routes: any = [
       { path: 'modules/modal', component: () => import('./pages/modules/Modal.vue') },
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: () => import('./pages/modules/Progress.vue') },
-      { path: 'modules/rating', component: RatingDoc },
+      { path: 'modules/rating', component: () => import('./pages/modules/Rating.vue') },
       { path: 'modules/sidebar', component: SidebarDoc },
       { path: 'modules/slider', component: SliderDoc },
       { path: 'modules/tab', component: TabDoc },
