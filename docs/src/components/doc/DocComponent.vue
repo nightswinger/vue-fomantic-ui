@@ -25,15 +25,27 @@
               </SuiPopup>
             </SuiMenu>
         </div>
+        <Menu
+          v-if="componentDocs && apiDocs"
+          :items="['Definition', 'API']" :widths="2"
+          :style="{ marginTop: '3rem', marginBottom: '2rem' }"
+          v-model:active-index="menu"
+        />
       </SuiContainer>
     </SuiSegment>
 
     <SuiContainer class="main">
       <SuiSegment basic fitted>
-        <template v-if="componentDocs">
+
+        <template v-if="componentDocs && menu === 0">
           <DocSections :docs="componentDocs" />
           <DocTableContents :title="title" :links="componentDocs" />
         </template>
+
+        <template v-if="apiDocs && menu === 1">
+          <DocApiTable :data="apiDocs" />
+        </template>
+
         <slot></slot>
       </SuiSegment>
     </SuiContainer>
@@ -41,14 +53,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { Menu } from 'vue-fomantic-ui'
 
-import DocSections from './DocSections.vue';
-import DocTableContents from './DocTableContents.vue';
+import DocApiTable from './DocApiTable.vue'
+import DocSections from './DocSections.vue'
+import DocTableContents from './DocTableContents.vue'
 
-defineProps(['title', 'description', 'componentDocs'])
+defineProps(['title', 'description', 'componentDocs', 'apiDocs'])
 
 const el = ref()
+const menu = ref(0)
 </script>
 
 <style scoped>

@@ -10,7 +10,6 @@ import GridDoc from './pages/collections/GridDoc.vue'
 
 // Modules
 import CalendarDoc from './pages/modules/CalendarDoc.vue'
-import CheckboxDoc from './pages/modules/CheckboxDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
@@ -58,7 +57,7 @@ const routes: any = [
 
       { path: 'modules/accordion', component: () => import('./pages/modules/Accordion.vue') },
       { path: 'modules/calendar', component: CalendarDoc },
-      { path: 'modules/checkbox', component: CheckboxDoc },
+      { path: 'modules/checkbox', component: () => import('./pages/modules/Checkbox.vue') },
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/dropdown', component: DropdownDoc },
       { path: 'modules/embed', component: EmbedDoc },
