@@ -5,7 +5,7 @@ import type { PropType } from "vue"
 import { makeSizeProps, useSize } from "@/composables/size"
 import { computeKeyOnly, computeKeyValue } from "@/utils/classNameHelper"
 
-import Component from "./Component"
+import Component from "../Component/Component"
 import ListItem from "./ListItem"
 
 export default defineComponent({

@@ -1,8 +1,10 @@
-import { computed, defineComponent, h } from 'vue'
+import { computed, defineComponent } from 'vue'
 import clsx from 'clsx'
 
-import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '../../utils/classNameHelper'
+import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '@/utils/classNameHelper'
+
 import { Icon } from '../Icon'
+import Component from '../Component/Component'
 
 export default defineComponent({
   props: {
@@ -25,7 +27,7 @@ export default defineComponent({
     tag: Boolean
   },
   setup(props, { slots }) {
-    const labelClasses = computed(() => {
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.size,
@@ -48,23 +50,13 @@ export default defineComponent({
       )
     })
 
-    let elementType = props.as || 'div'
-
-    if (props.icon) {
-      return () => (
-        h(elementType, {
-          class: labelClasses.value
-        }, [
-          h(Icon, { name: props.icon }),
-          slots.default?.(),
-        ])
-      )
-    }
+    const tag = props.as || 'div'
 
     return () => (
-      h(elementType, {
-        class: labelClasses.value
-      }, slots.default?.())
+      <Component is={tag} class={classes.value}>
+        {props.icon && <Icon name={props.icon} />}
+        {slots.default?.()}
+      </Component>
     )
   }
 })

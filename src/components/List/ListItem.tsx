@@ -4,7 +4,7 @@ import type { PropType } from "vue"
 
 import { computeKeyOnly } from "@/utils/classNameHelper"
 
-import Component from "./Component"
+import Component from "../Component/Component"
 import ListHeader from "./ListHeader"
 
 import Icon from "../Icon/Icon"
