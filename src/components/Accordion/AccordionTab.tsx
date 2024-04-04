@@ -9,6 +9,7 @@ import Icon from "../Icon/Icon"
 export default defineComponent({
   props: {
     compact: Boolean,
+    icon: String,
     index: Number,
     title: String,
     styled: Boolean,
@@ -36,7 +37,7 @@ export default defineComponent({
         <div class={this.titleClass}
           onClick={() => this.updateActiveIndex(this.index)}
         >
-          <Icon name="dropdown" />
+          <Icon name={this.icon ?? 'dropdown'} />
             {this.title}
           </div>
         <AccordionContent
