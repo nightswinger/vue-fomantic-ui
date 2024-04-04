@@ -13,6 +13,7 @@ export default defineComponent({
     basic: Boolean,
     circular: Boolean,
     color: String,
+    content: String,
     corner: String,
     empty: Boolean,
     floating: Boolean,
@@ -37,7 +38,7 @@ export default defineComponent({
         computeKeyOnly(props.empty, 'empty'),
         computeKeyOnly(props.floating, 'floating'),
         computeKeyOnly(props.horizontal, 'horizontal'),
-        computeKeyOnly(!!props.icon && slots.default === undefined, 'icon'), 
+        computeKeyOnly(!!props.icon && !props.content && !slots.default, 'icon'), 
         computeKeyOnly(props.image, 'image'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.prompt, 'prompt'),
@@ -55,6 +56,7 @@ export default defineComponent({
     return () => (
       <Component is={tag} class={classes.value}>
         {props.icon && <Icon name={props.icon} />}
+        {props.content}
         {slots.default?.()}
       </Component>
     )

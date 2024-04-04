@@ -18,7 +18,22 @@ const meta: Meta<typeof Label> = {
   }),
 };
 
-export const Default: Story = {};
+export const Default: Story = {
+  name: "Label",
+  render: (args) => ({
+    components: { Label },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Label v-bind="args" />
+    `,
+  }),
+  args: {
+    icon: 'mail',
+    content: '23',
+  },
+};
 
 export const Icon: Story = {
   render: (args) => ({
@@ -27,7 +42,7 @@ export const Icon: Story = {
       return { args }
     },
     template: `
-      <Label v-bind="args">23
+      <Label v-bind="args">
       </Label>
     `,
   }),
