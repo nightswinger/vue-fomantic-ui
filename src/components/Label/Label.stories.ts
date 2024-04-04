@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import Label from "./Label";
 
+import FIcon from "../Icon/Icon";
+
 type Story = StoryObj<typeof Label>;
 
 const meta: Meta<typeof Label> = {
@@ -37,18 +39,20 @@ export const Default: Story = {
 
 export const Icon: Story = {
   render: (args) => ({
-    components: { Label },
+    components: { Label, FIcon },
     setup: () => {
       return { args }
     },
     template: `
-      <Label v-bind="args">
+      <Label icon="mail" />
+      <Label icon="checkmark" content="Test Passed" />
+      <Label icon="dog" content="Dog" iconPos="right" />
+      <Label iconPos="right">
+        Cat
+        <FIcon name="cat" />
       </Label>
     `,
   }),
-  args: {
-    icon: "user",
-  },
 };
 
 export default meta;

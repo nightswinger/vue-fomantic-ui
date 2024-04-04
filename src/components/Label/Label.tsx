@@ -1,6 +1,8 @@
 import { computed, defineComponent } from 'vue'
 import clsx from 'clsx'
 
+import type { PropType } from 'vue'
+
 import { computeKeyOnly, computeKeyOrKeyValue, computeKeyValue } from '@/utils/classNameHelper'
 
 import { Icon } from '../Icon'
@@ -19,6 +21,7 @@ export default defineComponent({
     floating: Boolean,
     horizontal: Boolean,
     icon: String,
+    iconPos: String as PropType<'right'>,
     image: Boolean,
     inverted: Boolean,
     pointing: [Boolean, String],
@@ -39,6 +42,7 @@ export default defineComponent({
         computeKeyOnly(props.floating, 'floating'),
         computeKeyOnly(props.horizontal, 'horizontal'),
         computeKeyOnly(!!props.icon && !props.content && !slots.default, 'icon'), 
+        computeKeyOnly(props.iconPos === 'right', 'right icon'),
         computeKeyOnly(props.image, 'image'),
         computeKeyOnly(props.inverted, 'inverted'),
         computeKeyOnly(props.prompt, 'prompt'),
@@ -55,9 +59,10 @@ export default defineComponent({
 
     return () => (
       <Component is={tag} class={classes.value}>
-        {props.icon && <Icon name={props.icon} />}
+        {props.icon && props.iconPos !== 'right' && <Icon name={props.icon} />}
         {props.content}
         {slots.default?.()}
+        {props.icon && props.iconPos === 'right' && <Icon name={props.icon} />}
       </Component>
     )
   }
