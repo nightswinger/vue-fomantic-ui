@@ -44,3 +44,18 @@ export const Inline: Story = {
     inline: true,
   }
 }
+
+export const Inverted: Story = {
+  render: (args) => ({
+    components: { Calendar },
+    setup() {
+      const date = ref(new Date())
+      return { args, date }
+    },
+    template: `<Calendar v-model="date" v-bind="args" />`
+  }),
+  args: {
+    locale: 'en-US',
+    inverted: true,
+  }
+}

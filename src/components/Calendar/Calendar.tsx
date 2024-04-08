@@ -83,6 +83,7 @@ export default defineComponent({
       const classes = computed(() => clsx(
         !props.inline && 'ui popup visible',
         show.value && 'active',
+        props.inverted && 'inverted',
         'calendar',
         placement.value === 'top-start' && 'top left',
         placement.value === 'bottom-start' && 'bottom left',
@@ -105,14 +106,14 @@ export default defineComponent({
             undefined
           }
         >
-          {currentView.value === 'hour' && <HourView />}
-          {currentView.value === 'day' && <DayView />}
+          {currentView.value === 'hour' && <HourView class={props.inverted ? 'inverted' : ''} />}
+          {currentView.value === 'day' && <DayView class={props.inverted ? 'inverted' : ''} />}
           {
             currentView.value === 'month' &&
-            <MonthView localeFirstDayOfYear={props.localeFirstDayOfYear} />
+            <MonthView localeFirstDayOfYear={props.localeFirstDayOfYear} class={props.inverted ? 'inverted' : ''} />
           }
-          {currentView.value === 'year' && <YearView />}
-          {currentView.value === 'decade' && <DecadeView />}
+          {currentView.value === 'year' && <YearView class={props.inverted ? 'inverted' : ''} />}
+          {currentView.value === 'decade' && <DecadeView class={props.inverted ? 'inverted' : ''} />}
         </div>
       )
     }
