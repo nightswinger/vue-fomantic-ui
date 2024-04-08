@@ -14,6 +14,7 @@ import Embed from "./Embed";
 import Emoji from "./Emoji";
 import Feed from "./Feed";
 import Flag from "./Flag";
+import Flyout from "./Flyout";
 import Form from "./Form";
 import Grid from "./Grid";
 import Header from "./Header";
@@ -58,6 +59,7 @@ export {
   Emoji,
   Feed,
   Flag,
+  Flyout,
   Form,
   Grid,
   Header,

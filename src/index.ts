@@ -119,6 +119,7 @@ import Dropdown from './components/Dropdown/Dropdown'
 import DropdownItem from './components/Dropdown/DropdownItem'
 import DropdownMenu from './components/Dropdown/DropdownMenu'
 import Embed from './components/Embed/Embed'
+import Flyout from './components/Flyout/Flyout'
 import Modal from './components/Modal/Modal'
 import ModalActions from './components/Modal/ModalActions'
 import ModalContent from './components/Modal/ModalContent'
@@ -259,6 +260,7 @@ export { Dropdown as SuiDropdown, Dropdown }
 export { DropdownItem as SuiDropdownItem, DropdownItem }
 export { DropdownMenu as SuiDropdownMenu, DropdownMenu }
 export { Embed as SuiEmbed, Embed }
+export { Flyout }
 export { Modal as SuiModal, Modal }
 export { ModalActions as SuiModalActions, ModalActions }
 export { ModalContent as SuiModalContent, ModalContent }
