@@ -9,7 +9,6 @@ import RailDoc from './pages/RailDoc.vue'
 import GridDoc from './pages/collections/GridDoc.vue'
 
 // Modules
-import CalendarDoc from './pages/modules/CalendarDoc.vue'
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
@@ -53,7 +52,7 @@ const routes: any = [
       { path: 'views/statistic', component: () => import('./pages/views/Statistic.vue') },
 
       { path: 'modules/accordion', component: () => import('./pages/modules/Accordion.vue') },
-      { path: 'modules/calendar', component: CalendarDoc },
+      { path: 'modules/calendar', component: () => import('./pages/modules/Calendar.vue') },
       { path: 'modules/checkbox', component: () => import('./pages/modules/Checkbox.vue') },
       { path: 'modules/dimmer', component: DimmerDoc },
       { path: 'modules/dropdown', component: DropdownDoc },
