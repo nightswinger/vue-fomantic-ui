@@ -1,76 +1,109 @@
-import clsx from "clsx";
-import { computed, defineComponent, reactive, watch } from "vue";
-import clickOutside from "../../directives/click-outside";
-import { computeKeyOnly, computeKeyOrKeyValue } from "../../utils/classNameHelper";
+import clsx from 'clsx'
+import { Teleport, computed, defineComponent, onMounted, ref, watch } from 'vue'
+import { onClickOutside, useElementSize, useParentElement } from '@vueuse/core'
+
+import Overlay from '../Overlay/Overlay'
+import Menu from '../Menu/Menu'
+
+import type { PropType } from 'vue'
 
 export default defineComponent({
-  directives: { clickoutside: clickOutside },
-  emits: ['update:visible', 'show', 'hide'],
   props: {
-    animation: { type: String, default: 'overlay' },
-    dimmed: Boolean,
-    direction: { type: String, default: 'left' },
+    animation: {
+      type: String,
+      default: 'overlay'
+    },
+    dimmed: {
+      type: Boolean,
+      default: true
+    },
     icon: [Boolean, String],
-    inverted: Boolean,
-    visible: Boolean
+    items: {
+      type: Array as PropType<any[]>,
+      default: () => []
+    },
+    mountOnBody: {
+      type: Boolean,
+      default: true
+    },
+    direction: {
+      type: String as PropType<'left' | 'right'>,
+      default: 'left'
+    },
+    visible: {
+      type: Boolean,
+      default: false
+    },
   },
-  setup(props, { emit }) {
-    const state = reactive({
-      animating: false
-    })
+  emits: ['update:visible', 'show', 'hide'],
+  setup(props, { emit, slots }) {
+    const elementRef = ref<HTMLElement>()
+    const parentEl = useParentElement()
 
-    const computedClass = computed(() => {
-      const isVertical = props.direction === 'right' || props.direction === 'left'
+    const { width } = useElementSize(elementRef)
 
-      return clsx(
-        'ui',
-        'sidebar',
-        props.direction,
-        props.animation,
-        computeKeyOnly(props.inverted, 'inverted'),
-        computeKeyOnly(props.visible, 'visible'),
-        computeKeyOnly(state.animating, 'animating'),
-        computeKeyOnly(isVertical, 'vertical'),
-        computeKeyOrKeyValue(props.icon, 'icon'),
-        'menu'
-      )
-    })
+    const classes = computed(() => clsx(
+      'ui',
+      'sidebar',
+      'animating',
+      props.animation,
+      props.direction,
+      props.visible && 'visible'
+    ))
 
-    watch(() => props.visible, () => {
-      state.animating = true
-      setTimeout(() => state.animating = false, 500)
+    const close = () => {
+      emit('update:visible', false)
+    }
 
-      if (props.dimmed) {
-        const pusher = document.querySelector('.pusher')
-        pusher && pusher.classList.toggle('dimmed')
-      }
-    })
+    onClickOutside(elementRef, () => props.mountOnBody && close())
 
-    const onClickPusher = (event: any) => {
-      const path = event.path || (event.composedPath && event.composedPath())
-      if (!path) return
+    onMounted(() => {
+      if (props.mountOnBody || !parentEl.value) return
 
-      const pusher = path.find((el: HTMLElement) => {
-        return el.classList && el.classList.contains('pusher')
-      })
+      parentEl.value.style.overflowX = 'hidden'
+      parentEl.value.style.transform = 'translate3d(0, 0, 0)'
+
+      const pusher = parentEl.value.querySelector<HTMLElement>('.pusher')
       if (pusher) {
-        props.visible && emit('update:visible', false)
-      }
-    }
+        pusher.style.position = 'relative'
+        pusher.style.transition = 'transform 0.5s ease'
+        pusher.style.transform = 'translate3d(0, 0, 0)'
+        pusher.style.backfaceVisibility = 'hidden'
+        pusher.style.minHeight = '100%'
 
-    return {
-      computedClass,
-      onClickPusher
-    }
-  },
-  render() {
-    return (
-      <div
-        class={this.computedClass}
-        v-clickoutside={this.onClickPusher}
-      >
-        {this.$slots.default?.()}
-      </div>
+        pusher.addEventListener('click', close)
+      }
+    })
+
+    watch(() => props.visible, (value) => {
+      emit(value ? 'show' : 'hide')
+
+      if (props.mountOnBody || !parentEl.value) return
+
+      const pusher = parentEl.value.querySelector<HTMLElement>('.pusher')
+      if (pusher) {
+        const x = props.direction === 'right' ? -width.value : width.value
+        pusher.style.transform = value ? `translate3d(${x}px, 0, 0)` : 'translate3d(0, 0, 0)'
+      }
+    })
+
+    return () => (
+      <Teleport to="body" disabled={!props.mountOnBody}>
+        <Menu
+          ref={elementRef}
+          class={classes.value}
+          icon={props.icon}
+          items={props.items}
+          inverted
+          vertical
+        >
+          {slots.default?.()}
+        </Menu>
+        {
+          props.dimmed &&
+          <Overlay show={props.visible} onClick={() => !props.mountOnBody && close()} />
+        }
+      </Teleport>
     )
   }
 })
