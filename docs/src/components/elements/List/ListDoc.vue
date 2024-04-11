@@ -4,25 +4,27 @@
       A list groups related content
     </template>
     <template #example>
-      <SuiList>
-        <SuiListItem>Apples</SuiListItem>
-        <SuiListItem>Oranges</SuiListItem>
-        <SuiListItem>Bananas</SuiListItem>
-      </SuiList>
+      <List :items="items" />
     </template>
   </DocSection>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { SuiList, SuiListItem } from 'vue-fomantic-ui'
+import { ref } from 'vue'
+import { List } from 'vue-fomantic-ui'
+
+const items = ref(['Apples', 'Pears', 'Oranges'])
 
 const code = `<template>
-  <SuiList>
-    <SuiListItem>Apples</SuiListItem>
-    <SuiListItem>Oranges</SuiListItem>
-    <SuiListItem>Bananas</SuiListItem>
-  </SuiList>
-</template>`
+  <List :items="items" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { List } from 'vue-fomantic-ui'
+
+const items = ref(['Apples', 'Pears', 'Oranges'])
+<\/script>`
 </script>

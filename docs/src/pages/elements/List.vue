@@ -11,6 +11,8 @@ import DocComponent from '@/components/doc/DocComponent.vue'
 
 // Types
 import ListDoc from '@/components/elements/List/ListDoc.vue'
+import ListWithIconDoc from '@/components/elements/List/ListWithIconDoc.vue'
+import ListWithHeaderDescriptionDoc from '@/components/elements/List/ListWithHeaderDescriptionDoc.vue'
 import BulletedDoc from '@/components/elements/List/BulletedDoc.vue'
 import OrderedDoc from '@/components/elements/List/OrderedDoc.vue'
 import LinkDoc from '@/components/elements/List/LinkDoc.vue'
@@ -35,7 +37,7 @@ const docs = [
     id: 'list',
     label: 'List',
     category: 'Types',
-    component: ListDoc,
+    component: [ListDoc, ListWithIconDoc, ListWithHeaderDescriptionDoc],
   },
   {
     id: 'bulleted',
