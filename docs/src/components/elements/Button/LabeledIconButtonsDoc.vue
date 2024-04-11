@@ -1,28 +1,28 @@
 <template>
-  <DocSection label="Icon Buttons" :code="code">
+  <DocSection label="Labeled Icon Buttons" :code="code">
     <template #description>
       Groups can be formatted as labeled icons
     </template>
     <template #example>
-      <SuiButtonGroup vertical labeled icon>
-        <SuiButton icon="pause" content="Pause" />
-        <SuiButton icon="play" content="Play" />
-        <SuiButton icon="shuffle" content="Shuffle" />
-      </SuiButtonGroup>
+      <ButtonGroup vertical labeled icon>
+        <Button icon="pause" content="Pause" />
+        <Button icon="play" content="Play" />
+        <Button icon="shuffle" content="Shuffle" />
+      </ButtonGroup>
     </template>
   </DocSection>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { SuiButton, SuiButtonGroup } from 'vue-fomantic-ui'
+import { Button, ButtonGroup } from 'vue-fomantic-ui'
 
 const code = `<template>
-  <SuiButtonGroup vertical labeled icon>
-    <SuiButton icon="pause" content="Pause" />
-    <SuiButton icon="play" content="Play" />
-    <SuiButton icon="shuffle" content="Shuffle" />
-  </SuiButtonGroup>
+  <ButtonGroup vertical labeled icon>
+    <Button icon="pause" content="Pause" />
+    <Button icon="play" content="Play" />
+    <Button icon="shuffle" content="Shuffle" />
+  </ButtonGroup>
 <\/template>`
 </script>
