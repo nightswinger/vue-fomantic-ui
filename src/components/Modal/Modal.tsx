@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import { computed, defineComponent, PropType, ref, Teleport } from 'vue'
-import { onClickOutside } from '@vueuse/core';
+import { onClickOutside } from '@vueuse/core'
 
-import { computeKeyOnly } from '../../utils/classNameHelper'
-import { useModalAnimation } from './hooks/useModalAnimation';
-import ModalDimmer from './ModalDimmer';
+import { computeKeyOnly } from '@/utils/classNameHelper'
+
+import { useModalAnimation } from './hooks/useModalAnimation'
+import ModalDimmer from './ModalDimmer'
 
 export default defineComponent({
   props: {
@@ -20,7 +21,7 @@ export default defineComponent({
     overlay: Boolean,
     fullscreen: Boolean,
   },
-  setup (props, { emit }) {
+  setup (props, { emit, slots }) {
     const modalRef = ref<HTMLElement>()
 
     const {
@@ -28,7 +29,7 @@ export default defineComponent({
       isClosed,
     } = useModalAnimation(props);
 
-    const computedClass = computed(() => {
+    const classes = computed(() => {
       return clsx(
         'ui',
         props.size,
@@ -52,32 +53,27 @@ export default defineComponent({
 
     onClickOutside(modalRef, () => props.closable && emit('update:modelValue', false))
 
-    return {
-      computedClass,
-      style,
-      close,
-      modalRef,
-    }
-  },
-  render () {
-    return (
+    return () => (
       <Teleport to="body">
         <ModalDimmer
-          blurring={this.dimmer === 'blurring'}
-          inverted={this.dimmer === 'inverted'}
-          modelValue={this.modelValue}
+          blurring={props.dimmer === 'blurring'}
+          inverted={props.dimmer === 'inverted'}
+          modelValue={props.modelValue}
         >
           <div
-            class={this.computedClass}
-            style={this.style}
+            class={classes.value}
+            style={style.value}
             onClick={(e) => e.stopPropagation()}
-            ref={(ref: any) => this.modalRef = ref}
+            ref={modalRef}
           >
-            {this.closeIcon && (<i aria-hidden="true" class="close icon" onClick={this.close} />)}
-            {this.$slots.default?.()}
+            {props.closeIcon && (<i aria-hidden="true" class="close icon" onClick={close} />)}
+            {slots.header && <div class="header">{slots.header?.()}</div>}
+            {slots.content && <div class="content">{slots.content?.()}</div>}
+            {slots.actions && <div class="actions">{slots.actions?.()}</div>}
+            {slots.default?.()}
           </div>
         </ModalDimmer>
       </Teleport>
     )
-  }
+  },
 })
