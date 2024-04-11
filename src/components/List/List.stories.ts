@@ -159,4 +159,33 @@ export const ListTree: Story = {
   }),
 }
 
+export const Bulleted: Story = {
+  render: (args) => ({
+    components: { List },
+    setup: () => {
+      const items = ref([
+        { text: 'Gaining Access' },
+        { text: 'Inviting Friends' },
+        {
+          text: 'Benefits',
+          children: [
+            { text: 'Link to somewhere', as: 'a' },
+            { text: 'Rebates' },
+            { text: 'Discounts' },
+          ]
+        },
+        { text: 'Warranty' },
+      ])
+      return { args, items }
+    },
+    template: `
+      <List v-bind="args" :items="items">
+      </List>
+    `,
+  }),
+  args: {
+    bulleted: true,
+  }
+}
+
 export default meta

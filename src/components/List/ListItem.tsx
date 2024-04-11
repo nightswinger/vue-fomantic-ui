@@ -19,6 +19,7 @@ const ListItem = defineComponent({
     disabled: Boolean,
     header: String,
     icon: String,
+    text: String,
   },
   setup: (props, { slots }) => {
     const classes = computed(() => {
@@ -38,6 +39,7 @@ const ListItem = defineComponent({
       >
         {slots.prepend && slots.prepend()}
         {props.icon && <Icon name={props.icon} />}
+        {props.text && props.text}
         <div class="content">
           {props.header && <ListHeader>{props.header}</ListHeader>}
           {props.description && <div class="description">{props.description}</div>}
