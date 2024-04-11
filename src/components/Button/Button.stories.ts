@@ -57,6 +57,28 @@ export const LabeledIcon: Story = {
   }),
 };
 
+export const Active: Story = {
+  render: (args) => ({
+    components: { Button },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Button v-bind="args" icon="user" content="Follow" />
+    `,
+  }),
+  args: {
+    active: true,
+    iconPos: 'left',
+  },
+  argTypes: {
+    iconPos: {
+      control: 'select',
+      options: ['left', 'right'],
+    }
+  }
+}
+
 export const Loading: Story = {
   render: (args) => ({
     components: { Button },

@@ -100,8 +100,9 @@ export default defineComponent({
         tag,
         { class: this.classes, role: 'button' },
         [
-          typeof this.icon === 'string' && h(Icon, { name: this.icon }),
-          this.content || this.$slots.default?.()
+          typeof this.icon === 'string' && this.iconPos !== 'right' && h(Icon, { name: this.icon }),
+          this.content || this.$slots.default?.(),
+          typeof this.icon === 'string' && this.iconPos === 'right' && h(Icon, { name: this.icon, class: 'right' }),
         ]
       )
     )
