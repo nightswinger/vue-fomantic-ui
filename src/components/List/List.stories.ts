@@ -188,4 +188,35 @@ export const Bulleted: Story = {
   }
 }
 
+export const IconDoc: Story = {
+  render: (args) => ({
+    components: { List },
+    setup: () => {
+      const items = ref([
+        {
+          icon: 'help',
+          as: 'a',
+          header: 'Floated Icon',
+          description: 'This text will always have a left margin to make sure it sits alongside your icon'
+        },
+        {
+          icon: 'right triangle',
+          as: 'a',
+          header: 'Icon Alignment',
+          description: 'Floated icons are by default top aligned. To have an icon top aligned try this example.'
+        },
+        {
+          icon: 'help',
+          text: 'Inline Text',
+        }
+      ])
+      return { args, items }
+    },
+    template: `
+      <List v-bind="args" :items="items">
+      </List>
+    `,
+  }),
+}
+
 export default meta

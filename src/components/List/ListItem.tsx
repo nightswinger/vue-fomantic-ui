@@ -40,22 +40,32 @@ const ListItem = defineComponent({
         {slots.prepend && slots.prepend()}
         {props.icon && <Icon name={props.icon} />}
         {props.text && props.text}
-        <div class="content">
-          {props.header && <ListHeader>{props.header}</ListHeader>}
-          {props.description && <div class="description">{props.description}</div>}
-          {props.content}
-          {slots.content && slots.content()}
-          {
-            props.children && (
-              <div class="list">
-                {props.children.map((child, index) => (
-                  <ListItem key={index} {...child} />
-                ))}
-              </div>
-            )
-          }
-          {slots.default?.()}
-        </div>
+        {
+          (
+            props.content ||
+            props.header ||
+            props.description ||
+            props.children ||
+            slots.default ||
+            slots.content
+          ) &&
+          <div class="content">
+            {props.header && <ListHeader>{props.header}</ListHeader>}
+            {props.description && <div class="description">{props.description}</div>}
+            {props.content}
+            {slots.content && slots.content()}
+            {
+              props.children && (
+                <div class="list">
+                  {props.children.map((child, index) => (
+                    <ListItem key={index} {...child} />
+                  ))}
+                </div>
+              )
+            }
+            {slots.default?.()}
+          </div>
+        }
       </Component>
     )
   },
