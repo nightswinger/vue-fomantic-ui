@@ -13,7 +13,6 @@ import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
-import SidebarDoc from './pages/modules/SidebarDoc.vue'
 
 const routes: any = [
   {
@@ -61,7 +60,7 @@ const routes: any = [
       { path: 'modules/popup', component: PopupDoc },
       { path: 'modules/progress', component: () => import('./pages/modules/Progress.vue') },
       { path: 'modules/rating', component: () => import('./pages/modules/Rating.vue') },
-      { path: 'modules/sidebar', component: SidebarDoc },
+      { path: 'modules/sidebar', component: () => import('./pages/modules/Sidebar.vue') },
       { path: 'modules/slider', component: () => import('./pages/modules/Slider.vue') },
       { path: 'modules/tab', component: () => import('./pages/modules/Tab.vue') },
       { path: 'modules/toast', component: () => import('./pages/modules/Toast.vue') },
