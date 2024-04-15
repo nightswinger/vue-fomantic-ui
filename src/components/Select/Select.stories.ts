@@ -223,3 +223,31 @@ export const Multiple: Story = {
     clearable: false,
   }
 }
+
+export const MultipleWithFlags: Story = {
+  render: (args) => ({
+    components: { Select },
+    setup() {
+      const selected = ref([])
+      const options = [
+        { value: 'af', flag: 'af', text: 'Afghanistan' },
+        { value: 'ax', flag: 'ax', text: 'Aland Islands' },
+        { value: 'al', flag: 'al', text: 'Albania' },
+        { value: 'dz', flag: 'dz', text: 'Algeria' },
+        { value: 'as', flag: 'as', text: 'American Samoa' },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      <Select
+        v-bind="args"
+        v-model="selected"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    placeholder: 'Select Country',
+    multiple: true,
+  }
+}

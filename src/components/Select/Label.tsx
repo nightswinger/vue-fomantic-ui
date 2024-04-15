@@ -24,6 +24,8 @@ export default defineComponent({
     const text = computed(() => typeof props.option === 'string' ? props.option : props.option?.text)
     const value = computed(() => typeof props.option === 'string' ? props.option : props.option?.value)
 
+    const flag = computed(() => typeof props.option === 'object' ? props.option?.flag : undefined)
+
     onMounted(() => {
       if (!el.value) return
 
@@ -44,6 +46,7 @@ export default defineComponent({
         data-value={value.value}
         onClick={withModifiers(() => props.onClick && props.onClick(props.option), ['stop'])}
       >
+        {flag.value && <i class={`${flag.value} flag`} />}
         {text.value}
         <i
           class="delete icon"

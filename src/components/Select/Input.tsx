@@ -112,6 +112,7 @@ export default defineComponent({
             !Array.isArray(props.value) &&
             typeof props.value === 'object' &&
             <>
+              {props.value?.flag && <i class={`${props.value.flag} flag`} />}
               {props.value?.image && <Image {...props.value.image} />}
               {props.value?.text}
             </>
