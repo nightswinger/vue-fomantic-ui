@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref, withModifiers } from 'vue'
+import { computed, defineComponent, onMounted, ref, withModifiers } from 'vue'
 
 import type { PropType } from 'vue'
 import type { OptionItem } from './Item'
@@ -23,6 +23,18 @@ export default defineComponent({
 
     const text = computed(() => typeof props.option === 'string' ? props.option : props.option?.text)
     const value = computed(() => typeof props.option === 'string' ? props.option : props.option?.value)
+
+    onMounted(() => {
+      if (!el.value) return
+
+      el.value.animate([
+        { transform: 'scale(0)' },
+        { transform: 'scale(1)' },
+      ], {
+        duration: 100,
+        easing: 'ease-out',
+      })
+    })
 
     return () => (
       <a
