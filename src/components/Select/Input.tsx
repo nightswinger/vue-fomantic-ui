@@ -1,11 +1,12 @@
-import { defineComponent, ref, watch } from 'vue'
+import { computed, defineComponent, ref, watch, withModifiers } from 'vue'
+import clsx from 'clsx'
+
+import LabelGroup from './LabelGroup'
 
 import Image from '../Image/Image'
 
 import type { PropType } from 'vue'
-
 import type { OptionItem } from './Item'
-import clsx from 'clsx'
 
 export default defineComponent({
   props: {
@@ -14,11 +15,33 @@ export default defineComponent({
     placeholder: String,
     search: Boolean,
     searchText: String,
-    value: [String, Object] as PropType<OptionItem>,
+    value: [String, Object] as PropType<OptionItem|OptionItem[]>,
   },
-  emits: ['clear', 'update:searchText'],
+  emits: ['clear', 'remove', 'dropdown', 'update:searchText'],
   setup(props, { emit }) {
     const searchRef = ref<HTMLInputElement>()
+
+    const inputValue = computed(() => {
+      if (typeof props.value === 'string') return props.value
+      if (Array.isArray(props.value))
+        return props.value.map((v) => typeof v === 'string' ? v : v.text).join(', ')
+
+      return props.value?.text
+    })
+
+    const showPlaceholder = computed(() => {
+      if (props.value === undefined || props.value === null) return true
+      if (Array.isArray(props.value) && props.value.length === 0) return true
+
+      return false
+    })
+
+    const clearText = () => {
+      if (props.search && searchRef.value) {
+        searchRef.value.value = ''
+        emit('update:searchText', '')
+      }
+    }
 
     const onClick = (event: Event) => {
       if (!props.active) return
@@ -28,19 +51,23 @@ export default defineComponent({
     }
 
     const onClear = (event: Event) => {
-      if (props.active) return
-
       event.preventDefault()
       event.stopPropagation()
       emit('clear')
     }
 
     watch(() => props.active, (active) => {
-      if (active) return
+      if (active) return searchRef.value?.focus()
 
-      if (props.search && searchRef.value) {
-        searchRef.value.value = ''
-        emit('update:searchText', '')
+      clearText()
+    })
+
+    watch(() => props.value, (newValue, oldValue) => {
+      if (!Array.isArray(newValue) || !Array.isArray(oldValue)) return
+
+      if (newValue.length > oldValue.length) {
+        searchRef.value?.focus()
+        clearText()
       }
     })
 
@@ -48,14 +75,20 @@ export default defineComponent({
       <>
         <input
           type="hidden"
-          value={
-            typeof props.value === 'string' ?
-            props.value :
-            props.value?.text
-          }
+          value={inputValue.value}
         />
-        <i class="dropdown icon"></i>
+        <i
+          class="dropdown icon"
+          onClick={withModifiers(() => emit('dropdown'), ['stop'])}
+        />
         {props.clearable && <i class="remove icon" onClick={onClear}></i>}
+        {
+          Array.isArray(props.value) &&
+          <LabelGroup
+            items={props.value}
+            onRemove={(item) => emit('remove', item)}
+          />
+        }
         {
           props.search &&
           <input
@@ -68,20 +101,20 @@ export default defineComponent({
         }
         <div
           class={clsx(
-            !props.value && 'default',
+            showPlaceholder.value && 'default',
             props.searchText && 'filtered',
             'text'
           )}
         >
+          {showPlaceholder.value && props.placeholder}
+          {typeof props.value === 'string' && props.value}
           {
-            props.value === undefined || props.value === null ?
-            props.placeholder :
-            typeof props.value === 'string' ?
-              props.value :
-              <>
-                {props.value?.image && <Image {...props.value.image} /> }
-                {props.value?.text}
-              </>
+            !Array.isArray(props.value) &&
+            typeof props.value === 'object' &&
+            <>
+              {props.value?.image && <Image {...props.value.image} />}
+              {props.value?.text}
+            </>
           }
         </div>
       </>
