@@ -1,6 +1,8 @@
 import { computed, defineComponent, ref } from 'vue'
 import { useElementBounding, useWindowSize } from '@vueuse/core'
 
+import Label from '../Label/Label'
+
 import ItemGroup from './ItemGroup'
 
 import type { PropType } from 'vue'
@@ -9,6 +11,7 @@ export type DropdownItem = string | {
   text: string;
   icon?: string;
   description?: string;
+  label?: InstanceType<typeof Label>['$props'];
   children?: DropdownItem[];
   divider?: boolean;
 }
@@ -61,6 +64,10 @@ const Item = defineComponent({
             {
               typeof props.item === 'object' && props.item.description &&
               <span class="description">{props.item?.description}</span>
+            }
+            {
+              typeof props.item === 'object' && props.item.label &&
+              <Label {...props.item.label} />
             }
             {text.value}
             {

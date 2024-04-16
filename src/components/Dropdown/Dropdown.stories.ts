@@ -94,4 +94,68 @@ export const Search: Story = {
   }
 }
 
+export const SearchInMenu: Story = {
+  render: (args) => ({
+    components: { Dropdown },
+    setup() {
+      const selected = ref()
+      const options = [
+        {
+          text: 'Important',
+          label: { color: 'red', empty: true, circular: true },
+        },
+        {
+          text: 'Announcement',
+          label: { color: 'blue', empty: true, circular: true },
+        },
+        {
+          text: 'Cannot Fix',
+          label: { color: 'black', empty: true, circular: true },
+        },
+        {
+          text: 'News',
+          label: { color: 'purple', empty: true, circular: true },
+        },
+        {
+          text: 'Enhancement',
+          label: { color: 'orange', empty: true, circular: true },
+        },
+        {
+          text: 'Change Declined',
+          label: { empty: true, circular: true },
+        },
+        {
+          text: 'Off Topic',
+          label: { color: 'yellow', empty: true, circular: true },
+        },
+        {
+          text: 'Interesting',
+          label: { color: 'pink', empty: true, circular: true },
+        },
+        {
+          text: 'Discussion',
+          label: { color: 'green', empty: true, circular: true },
+        },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      <Dropdown
+        v-bind="args"
+        v-model="selected"
+        text="Filter Posts"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    button: true,
+    floating: true,
+    labeled: true,
+    searchInMenu: true,
+    selectable: true,
+    icon: "filter",
+  }
+}
+
 export default meta

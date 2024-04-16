@@ -30,7 +30,9 @@ export default defineComponent({
     },
     placeholder: String,
     search: Boolean,
+    searchInMenu: Boolean,
     selection: Boolean,
+    selectable: Boolean,
     text: String,
   },
   emits: ['update:modelValue'],
@@ -46,7 +48,10 @@ export default defineComponent({
     const text = computed(() => {
       const modelValue = props.modelValue as DropdownItem
 
+      console.log(modelValue)
+
       if (!modelValue) return props.text
+      if (!props.search && !props.selectable) return props.text
 
       if (typeof modelValue === 'string') {
         return modelValue
@@ -56,7 +61,7 @@ export default defineComponent({
     })
 
     const options = computed(() => {
-      if (!props.search) return props.options
+      if (!props.search && !props.searchInMenu) return props.options
       return props.options.filter((option) => {
         if (typeof option === 'string') {
           return option.toLowerCase().includes(inputText.value.toLowerCase())
@@ -80,7 +85,7 @@ export default defineComponent({
     const onClick = () => active.value = !active.value
 
     const onSelect = (item: DropdownItem) => {
-      if (props.search) inputText.value = ''
+      if (props.search || props.searchInMenu) inputText.value = ''
       emit('update:modelValue', item)
     }
 
@@ -108,21 +113,26 @@ export default defineComponent({
             }
             <Text
               icon={props.icon}
-              filtered={inputText.value !== ''}
+              label={typeof props.modelValue === 'object' ? (props.modelValue as any).label : undefined}
+              filtered={!props.searchInMenu && inputText.value !== ''}
             >
               {text.value}
             </Text>
             <ItemGroup
               active={active.value}
             >
-              {
-                options.value.map((item) => (
-                  <Item
-                    item={item as DropdownItem}
-                    onSelect={onSelect}
-                  />
-                ))
-              }
+              {{
+                search: () => <SearchInput inMenu={props.searchInMenu} v-model={inputText.value} />,
+                [props.searchInMenu ? 'inMenu' : 'default']: () => (
+                  <>
+                    {options.value.map((item) =>
+                    <Item
+                      item={item as DropdownItem}
+                      onSelect={onSelect}
+                    />)}
+                  </>
+                )
+              }}
             </ItemGroup>
           </div>
         }
