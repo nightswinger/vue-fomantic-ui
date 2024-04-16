@@ -53,4 +53,45 @@ export const Default: Story = {
   }),
 }
 
+export const Search: Story = {
+  render: (args) => ({
+    components: { Dropdown },
+    setup() {
+      const selected = ref()
+      const options = [
+        { text: 'Arabic' },
+        { text: 'Chinese' },
+        { text: 'Dutch' },
+        { text: 'English' },
+        { text: 'French' },
+        { text: 'German' },
+        { text: 'Italian' },
+        { text: 'Japanese' },
+        { text: 'Korean' },
+        { text: 'Portuguese' },
+        { text: 'Russian' },
+        { text: 'Spanish' },
+        { text: 'Thai' },
+        { text: 'Turkish' },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      <Dropdown
+        v-bind="args"
+        v-model="selected"
+        text="Select Language"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    button: true,
+    floating: true,
+    labeled: true,
+    search: true,
+    icon: "world",
+  }
+}
+
 export default meta

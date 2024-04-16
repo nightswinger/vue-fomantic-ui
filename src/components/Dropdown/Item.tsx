@@ -1,7 +1,9 @@
-import { computed, defineComponent, onMounted, ref, watch } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
+import { useElementBounding, useWindowSize } from '@vueuse/core'
+
+import ItemGroup from './ItemGroup'
 
 import type { PropType } from 'vue'
-import ItemGroup from './ItemGroup';
 
 export type DropdownItem = string | {
   text: string;
@@ -15,11 +17,30 @@ const Item = defineComponent({
   props: {
     item: [String, Object] as PropType<DropdownItem>,
   },
-  setup(props) {
+  emits: ['select'],
+  setup(props, { emit }) {
+    const el = ref<HTMLDivElement>()
     const hovering = ref(false)
+
+    const direction = ref<'up' | 'down'>('down')
 
     const text = computed(() => typeof props.item === 'string' ? props.item : props.item?.text)
     const divider = computed(() => typeof props.item === 'object' && props.item.divider)
+    
+    const onMouseenter = () => {
+      if (!el.value || typeof props.item !== 'object') return
+      if (!props.item.children) return
+
+      const { height } = useWindowSize()
+      const { top, height: elementHeight } = useElementBounding(el)
+      
+      const spaceAtBottom = height.value - top.value
+      const childrenHeight = props.item?.children?.length * elementHeight.value
+
+      direction.value = spaceAtBottom < childrenHeight ? 'up' : 'down'
+
+      hovering.value = true
+    }
 
     return () => (
       <>
@@ -27,8 +48,10 @@ const Item = defineComponent({
           divider.value ?
           <div class="divider"></div> :
           <div
+            ref={el}
             class="item"
-            onMouseenter={() => hovering.value = true}
+            onClick={() => emit('select', props.item)}
+            onMouseenter={onMouseenter}
             onMouseleave={() => hovering.value = false}
           >
             {
@@ -44,6 +67,7 @@ const Item = defineComponent({
               typeof props.item === 'object' && props.item.children &&
               <ItemGroup
                 active={hovering.value}
+                direction={direction.value}
               >
                 {
                   props.item.children.map((item) => (

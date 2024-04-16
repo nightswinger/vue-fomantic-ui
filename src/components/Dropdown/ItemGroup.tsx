@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { computed, defineComponent, ref, watch } from 'vue'
 
 import type { PropType } from 'vue'
@@ -13,6 +14,11 @@ export default defineComponent({
   setup(props, { slots }) {
     const el = ref<HTMLDivElement>()
     const visible = ref(false)
+
+    const classes = computed(() => clsx(
+      props.direction === 'up' && 'upward',
+      'menu',
+    ))
 
     const styles = computed(() => ({
       display: visible.value ? 'block' : 'none',
@@ -44,7 +50,7 @@ export default defineComponent({
     return () => (
       <div
         ref={el}
-        class="menu"
+        class={classes.value}
         style={styles.value}
       >
         {slots.default?.()}
