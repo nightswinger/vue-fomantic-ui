@@ -21,6 +21,7 @@ export default defineComponent({
     floating: Boolean,
     fluid: Boolean,
     icon: String,
+    inline: Boolean,
     labeled: Boolean,
     modelValue: [Object, String, Array],
     multiple: Boolean,
@@ -48,10 +49,8 @@ export default defineComponent({
     const text = computed(() => {
       const modelValue = props.modelValue as DropdownItem
 
-      console.log(modelValue)
-
       if (!modelValue) return props.text
-      if (!props.search && !props.selectable) return props.text
+      if (!props.search && !props.selectable && !props.inline) return props.text
 
       if (typeof modelValue === 'string') {
         return modelValue
@@ -78,6 +77,7 @@ export default defineComponent({
       props.floating && 'floating',
       props.labeled && 'labeled',
       props.icon && 'icon',
+      props.inline && 'inline',
       props.search && 'search',
       'dropdown',
     ))
@@ -114,6 +114,7 @@ export default defineComponent({
             <Text
               icon={props.icon}
               label={typeof props.modelValue === 'object' ? (props.modelValue as any).label : undefined}
+              image={typeof props.modelValue === 'object' ? (props.modelValue as any).image : undefined}
               filtered={!props.searchInMenu && inputText.value !== ''}
             >
               {text.value}
@@ -127,6 +128,7 @@ export default defineComponent({
                   <>
                     {options.value.map((item) =>
                     <Item
+                      active={JSON.stringify(item) === JSON.stringify(props.modelValue)}
                       item={item as DropdownItem}
                       onSelect={onSelect}
                     />)}

@@ -158,4 +158,48 @@ export const SearchInMenu: Story = {
   }
 }
 
+export const Inline: Story = {
+  render: (args) => ({
+    components: { Dropdown },
+    setup() {
+      const selected = ref()
+      const options = [
+        {
+          text: 'Jenny Hess',
+          value: 'Jenny Hess',
+          image: { avatar: true, src: './avatar/small/jenny.jpg' },
+        },
+        {
+          text: 'Elliot Fu',
+          value: 'Elliot Fu',
+          image: { avatar: true, src: './avatar/small/elliot.jpg' },
+        },
+        {
+          text: 'Stevie Feliciano',
+          value: 'Stevie Feliciano',
+          image: { avatar: true, src: './avatar/small/stevie.jpg' },
+        },
+        {
+          text: 'Christian',
+          value: 'Christian',
+          image: { avatar: true, src: './avatar/small/christian.jpg' },
+        },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      Show me posts by
+      <Dropdown
+        v-bind="args"
+        v-model="selected"
+        text="Select Language"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    inline: true,
+  }
+}
+
 export default meta
