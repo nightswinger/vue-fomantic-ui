@@ -162,7 +162,6 @@ export const Inline: Story = {
   render: (args) => ({
     components: { Dropdown },
     setup() {
-      const selected = ref()
       const options = [
         {
           text: 'Jenny Hess',
@@ -185,6 +184,8 @@ export const Inline: Story = {
           image: { avatar: true, src: './avatar/small/christian.jpg' },
         },
       ]
+      const selected = ref(options[1])
+
       return { args, selected, options }
     },
     template: `
@@ -192,13 +193,43 @@ export const Inline: Story = {
       <Dropdown
         v-bind="args"
         v-model="selected"
-        text="Select Language"
         :options="options"
       />
     `,
   }),
   args: {
     inline: true,
+  }
+}
+
+export const Header: Story = {
+  render: (args) => ({
+    components: { Dropdown },
+    setup() {
+      const selected = ref()
+      const options = [
+        { header: 'Filter by tag', icon: 'tags' },
+        { text: 'Important' },
+        { text: 'Announcement' },
+        { text: 'Discussion' },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      <Dropdown
+        v-bind="args"
+        v-model="selected"
+        text="Filter"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    button: true,
+    floating: true,
+    labeled: true,
+    icon: "filter",
+    selectable: true,
   }
 }
 

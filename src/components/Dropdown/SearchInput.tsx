@@ -15,7 +15,6 @@ export default defineComponent({
           <i class="search icon"></i>
           <input
             type="text"
-            placeholder="Search tags..."
             value={props.modelValue}
             onClick={withModifiers(() => {}, ['stop'])}
             onInput={(event) => emit('update:modelValue', (event.target as HTMLInputElement).value)}

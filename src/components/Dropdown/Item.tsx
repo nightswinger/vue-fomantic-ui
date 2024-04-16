@@ -1,4 +1,5 @@
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref, withModifiers } from 'vue'
+import clsx from 'clsx'
 import { useElementBounding, useWindowSize } from '@vueuse/core'
 
 import Label from '../Label/Label'
@@ -7,10 +8,10 @@ import Image from '../Image/Image'
 import ItemGroup from './ItemGroup'
 
 import type { PropType } from 'vue'
-import clsx from 'clsx'
 
 export type DropdownItem = string | {
   text: string;
+  header?: string;
   icon?: string;
   description?: string;
   label?: InstanceType<typeof Label>['$props'];
@@ -33,6 +34,7 @@ const Item = defineComponent({
 
     const text = computed(() => typeof props.item === 'string' ? props.item : props.item?.text)
     const divider = computed(() => typeof props.item === 'object' && props.item.divider)
+    const header = computed(() => typeof props.item === 'object' && props.item.header)
 
     const classes = computed(() => clsx(
       props.active && 'active',
@@ -56,9 +58,20 @@ const Item = defineComponent({
 
     return () => (
       <>
+        {divider.value && <div class="divider"></div>}
         {
-          divider.value ?
-          <div class="divider"></div> :
+          header.value && typeof props.item === 'object' &&
+          <div
+            class="header"
+            onClick={withModifiers(() => {}, ['stop'])}
+          >
+            {props.item?.icon && <i class={`${props.item.icon} icon`}></i>}
+            {props.item?.header}
+          </div>
+        }
+        {
+          !divider.value &&
+          !header.value &&
           <div
             ref={el}
             class={classes.value}
