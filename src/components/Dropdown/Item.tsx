@@ -10,7 +10,7 @@ import ItemGroup from './ItemGroup'
 import type { PropType } from 'vue'
 
 export type DropdownItem = string | {
-  text: string;
+  text?: string;
   header?: string;
   icon?: string;
   description?: string;

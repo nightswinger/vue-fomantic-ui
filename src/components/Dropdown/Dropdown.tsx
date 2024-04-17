@@ -69,7 +69,7 @@ export default defineComponent({
           return option.toLowerCase().includes(inputText.value.toLowerCase())
         }
 
-        return option.text.toLowerCase().includes(inputText.value.toLowerCase())
+        return option.text?.toLowerCase().includes(inputText.value.toLowerCase())
       })
     })
 
