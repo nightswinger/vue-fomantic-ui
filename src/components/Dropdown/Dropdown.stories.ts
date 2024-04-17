@@ -202,6 +202,49 @@ export const Inline: Story = {
   }
 }
 
+export const Pointing: Story = {
+  render: (args) => ({
+    components: { Dropdown },
+    setup() {
+      const selected = ref()
+      const options = [
+        { header: "DISPLAY DENSITY" },
+        { text: "Comfortable" },
+        { text: "Save as..." },
+        { text: "Cozy" },
+        { text: "Make a copy" },
+        { text: "Compact" },
+        { divider: true },
+        { text: "Settings" },
+        {
+          text: "Upload Settings",
+          icon: "dropdown",
+          children: [
+            { text: "Convert Updated Files to PDF", icon: "check" },
+            { text: "Digitize Text from Uploaded Files", icon: "check" },
+          ],
+        },
+        { text: "Manage Apps" },
+        { text: "Keyboard Shortcuts" },
+        { text: "Help" },
+      ]
+      return { args, selected, options }
+    },
+    template: `
+      <Dropdown
+        v-bind="args"
+        v-model="selected"
+        :options="options"
+      />
+    `,
+  }),
+  args: {
+    button: true,
+    pointing: "top left",
+    icon: "wrench",
+  }
+}
+
 export const Header: Story = {
   render: (args) => ({
     components: { Dropdown },

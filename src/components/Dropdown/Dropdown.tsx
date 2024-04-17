@@ -30,6 +30,7 @@ export default defineComponent({
       default: () => []
     },
     placeholder: String,
+    pointing: [String, Boolean] as PropType<boolean|'bottom right'|'top left'|'left'|'right'|'top right'|'bottom right'>,
     search: Boolean,
     searchInMenu: Boolean,
     selection: Boolean,
@@ -78,6 +79,7 @@ export default defineComponent({
       props.labeled && 'labeled',
       props.icon && 'icon',
       props.inline && 'inline',
+      props.pointing && `${props.pointing} pointing`,
       props.search && 'search',
       'dropdown',
     ))
