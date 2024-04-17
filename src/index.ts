@@ -116,8 +116,6 @@ import Checkbox from './components/Checkbox/Checkbox'
 import Dimmer from './components/Dimmer/Dimmer'
 import DimmerDimmable from './components/Dimmer/DimmerDimmable'
 import Dropdown from './components/Dropdown/Dropdown'
-import DropdownItem from './components/Dropdown/DropdownItem'
-import DropdownMenu from './components/Dropdown/DropdownMenu'
 import Embed from './components/Embed/Embed'
 import Flyout from './components/Flyout/Flyout'
 import Modal from './components/Modal/Modal'
@@ -257,8 +255,6 @@ export { Checkbox as SuiCheckbox, Checkbox }
 export { Dimmer as SuiDimmer, Dimmer }
 export { DimmerDimmable as SuiDimmerDimmable, DimmerDimmable }
 export { Dropdown as SuiDropdown, Dropdown }
-export { DropdownItem as SuiDropdownItem, DropdownItem }
-export { DropdownMenu as SuiDropdownMenu, DropdownMenu }
 export { Embed as SuiEmbed, Embed }
 export { Flyout }
 export { Modal as SuiModal, Modal }
