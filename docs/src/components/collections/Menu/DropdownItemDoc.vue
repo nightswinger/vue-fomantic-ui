@@ -5,12 +5,11 @@
     </template>
     <template #example>
       <Menu vertical>
-        <Dropdown item text="Categories">
-          <DropdownMenu>
-            <DropdownItem text="Electoronics" />
-            <DropdownItem text="Automotive" />
-            <DropdownItem text="Home" />
-          </DropdownMenu>
+        <Dropdown
+          item
+          text="Categories"
+          :options="[ 'Electoronics', 'Automotive', 'Home' ]"
+        >
         </Dropdown>
       </Menu>
     </template>
@@ -20,16 +19,15 @@
 <script setup lang="ts">
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { Menu, Dropdown, DropdownMenu, DropdownItem } from 'vue-fomantic-ui'
+import { Menu, Dropdown } from 'vue-fomantic-ui'
 
 const code = `<template>
   <Menu vertical>
-    <Dropdown item text="Categories">
-      <DropdownMenu>
-        <DropdownItem text="Electoronics" />
-        <DropdownItem text="Automotive" />
-        <DropdownItem text="Home" />
-      </DropdownMenu>
+    <Dropdown
+      item
+      text="Categories"
+      :options="[ 'Electoronics', 'Automotive', 'Home' ]"
+    >
     </Dropdown>
   </Menu>
 <\/template>`

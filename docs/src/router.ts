@@ -10,7 +10,6 @@ import GridDoc from './pages/collections/GridDoc.vue'
 
 // Modules
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
-import DropdownDoc from './pages/modules/DropdownDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
 import PopupDoc from './pages/modules/PopupDoc.vue'
 
@@ -54,7 +53,7 @@ const routes: any = [
       { path: 'modules/calendar', component: () => import('./pages/modules/Calendar.vue') },
       { path: 'modules/checkbox', component: () => import('./pages/modules/Checkbox.vue') },
       { path: 'modules/dimmer', component: DimmerDoc },
-      { path: 'modules/dropdown', component: DropdownDoc },
+      { path: 'modules/dropdown', component: () => import('./pages/modules/Dropdown.vue') },
       { path: 'modules/embed', component: EmbedDoc },
       { path: 'modules/modal', component: () => import('./pages/modules/Modal.vue') },
       { path: 'modules/popup', component: PopupDoc },

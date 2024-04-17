@@ -21,13 +21,11 @@
           Browse
         </MenuItem>
         <MenuItem>Messages</MenuItem>
-        <Dropdown item text="More">
-          <DropdownMenu>
-            <DropdownItem icon="edit" text="Edit Profile" />
-            <DropdownItem icon="globe" text="Choose Language" />
-            <DropdownItem icon="settings" text="Account Settings" />
-          </DropdownMenu>
-        </Dropdown>
+        <Dropdown
+          item
+          text="More"
+          :options="[ 'Edit Profile', 'Choose Language', 'Account Settings' ]"
+        />
       </Menu>
     </template>
   </DocSection>
@@ -36,7 +34,6 @@
 <script setup lang="ts">
 import DocSection from '@/components/doc/DocSection.vue'
 
-import { ref } from 'vue'
 import {
   Menu,
   MenuItem,
@@ -44,8 +41,6 @@ import {
   Icon,
   Input,
   Dropdown,
-  DropdownMenu,
-  DropdownItem,
 } from 'vue-fomantic-ui'
 
 const code = `<template>
@@ -66,13 +61,11 @@ const code = `<template>
       Browse
     </MenuItem>
     <MenuItem>Messages</MenuItem>
-    <Dropdown item text="More">
-      <DropdownMenu>
-        <DropdownItem icon="edit" text="Edit Profile" />
-        <DropdownItem icon="globe" text="Choose Language" />
-        <DropdownItem icon="settings" text="Account Settings" />
-      </DropdownMenu>
-    </Dropdown>
+    <Dropdown
+      item
+      text="More"
+      :options="[ 'Edit Profile', 'Choose Language', 'Account Settings' ]"
+    />
   </Menu>
 <\/template>`
 </script>
