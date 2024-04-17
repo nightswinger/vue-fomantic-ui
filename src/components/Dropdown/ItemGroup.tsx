@@ -16,7 +16,6 @@ export default defineComponent({
     const visible = ref(false)
 
     const classes = computed(() => clsx(
-      props.direction === 'up' && 'upward',
       'menu',
     ))
 

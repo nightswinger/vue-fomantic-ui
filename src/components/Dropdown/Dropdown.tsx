@@ -1,6 +1,6 @@
-import { computed, defineComponent, ref, watch } from 'vue'
+import { computed, defineComponent, ref, watch, watchEffect } from 'vue'
 import clsx from 'clsx'
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside, useElementBounding, useWindowSize } from '@vueuse/core'
 
 import Select from '../Select/Select'
 
@@ -45,6 +45,8 @@ export default defineComponent({
 
     const inputText = ref('')
 
+    const direction = ref<'up' | 'down'>('down')
+
     watch(modelValue, (value) => emit('update:modelValue', value))
 
     const text = computed(() => {
@@ -71,9 +73,20 @@ export default defineComponent({
       })
     })
 
+    const { height } = useWindowSize()
+    const { top, bottom } = useElementBounding(el)
+
+    watchEffect(() => {
+      const spaceAtTop = top.value
+      const spaceAtBottom = height.value - bottom.value
+
+      direction.value = spaceAtTop > 240 && spaceAtBottom < 240 ? 'up' : 'down'
+    })
+
     const classes = computed(() => clsx(
       'ui',
       active.value && 'active',
+      direction.value === 'up' && 'upward',
       props.button && 'button',
       props.floating && 'floating',
       props.labeled && 'labeled',
@@ -124,6 +137,7 @@ export default defineComponent({
             </Text>
             <ItemGroup
               active={active.value}
+              direction={direction.value}
             >
               {{
                 search: () => <SearchInput inMenu={props.searchInMenu} v-model={inputText.value} />,
