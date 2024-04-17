@@ -14,6 +14,7 @@ export type DropdownItem = string | {
   header?: string;
   icon?: string;
   description?: string;
+  action?: () => void;
   label?: InstanceType<typeof Label>['$props'];
   image?: InstanceType<typeof Image>['$props'];
   children?: DropdownItem[];
@@ -40,7 +41,15 @@ const Item = defineComponent({
       props.active && 'active',
       'item',
     ))
-    
+
+    const onClick = (item: DropdownItem) => {
+      if (typeof item === 'object' && item.action) {
+        item.action()
+      }
+
+      emit('select', item)
+    }
+
     const onMouseenter = () => {
       if (!el.value || typeof props.item !== 'object') return
       if (!props.item.children) return
@@ -75,7 +84,7 @@ const Item = defineComponent({
           <div
             ref={el}
             class={classes.value}
-            onClick={() => emit('select', props.item)}
+            onClick={() => onClick(props.item!)}
             onMouseenter={onMouseenter}
             onMouseleave={() => hovering.value = false}
           >
