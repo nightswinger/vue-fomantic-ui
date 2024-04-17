@@ -98,6 +98,7 @@ export default defineComponent({
         {props.selection ?
           <Select
             v-model={modelValue.value}
+            clearable={props.clearable}
             fluid={props.fluid}
             multiple={props.multiple}
             placeholder={props.placeholder}
