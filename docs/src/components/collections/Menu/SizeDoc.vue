@@ -8,13 +8,7 @@
         <MenuItem active>Home</MenuItem>
         <MenuItem>Messages</MenuItem>
         <MenuMenu position="right">
-          <Dropdown item text="Language">
-            <DropdownMenu>
-              <DropdownItem text="English" />
-              <DropdownItem text="Russian" />
-              <DropdownItem text="Spanish" />
-            </DropdownMenu>
-          </Dropdown>
+          <Dropdown item text="Language" :options="[ 'English', 'Russian', 'Spanish' ]" />
           <MenuItem as="div">
             <Button color="primary">Sign up</Button>
           </MenuItem>
@@ -32,8 +26,6 @@ import {
   MenuItem,
   MenuMenu,
   Dropdown,
-  DropdownMenu,
-  DropdownItem,
   Button,
 } from 'vue-fomantic-ui'
 
@@ -42,13 +34,7 @@ const code = `<template>
     <MenuItem active>Home</MenuItem>
     <MenuItem>Messages</MenuItem>
     <MenuMenu position="right">
-      <Dropdown item text="Language">
-        <DropdownMenu>
-          <DropdownItem text="English" />
-          <DropdownItem text="Russian" />
-          <DropdownItem text="Spanish" />
-        </DropdownMenu>
-      </Dropdown>
+      <Dropdown item text="Language" :options="[ 'English', 'Russian', 'Spanish' ]" />
       <MenuItem as="div">
         <Button color="primary">Sign up</Button>
       </MenuItem>
