@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref, watch, watchEffect } from 'vue'
+import { computed, defineComponent, ref, watchEffect } from 'vue'
 import clsx from 'clsx'
 import { onClickOutside, useElementBounding, useWindowSize } from '@vueuse/core'
 
@@ -42,13 +42,10 @@ export default defineComponent({
   setup(props, { emit }) {
     const el = ref<HTMLDivElement>()
     const active = ref(false)
-    const modelValue = ref(props.modelValue)
 
     const inputText = ref('')
 
     const direction = ref<'up' | 'down'>('down')
-
-    watch(modelValue, (value) => emit('update:modelValue', value))
 
     const text = computed(() => {
       const modelValue = props.modelValue as DropdownItem
@@ -112,7 +109,8 @@ export default defineComponent({
       <>
         {props.selection ?
           <Select
-            v-model={modelValue.value}
+            modelValue={props.modelValue as OptionItem}
+            {...{'onUpdate:modelValue': (value: OptionItem) => emit('update:modelValue', value)}}
             clearable={props.clearable}
             fluid={props.fluid}
             multiple={props.multiple}
