@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { computed, defineComponent, ref, watch } from 'vue'
+import { useParentElement } from '@vueuse/core'
 
 import type { PropType } from 'vue'
 
@@ -15,8 +16,12 @@ export default defineComponent({
     const el = ref<HTMLDivElement>()
     const visible = ref(false)
 
+    const parentEl = useParentElement(el)
+
+    const isChildren = computed(() => !parentEl.value?.classList.contains('ui'))
+
     const classes = computed(() => clsx(
-      props.direction === 'up' && 'upward',
+      isChildren.value && props.direction === 'up' && 'upward',
       'menu',
     ))
 
