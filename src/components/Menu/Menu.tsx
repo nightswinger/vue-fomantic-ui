@@ -38,7 +38,7 @@ export default defineComponent({
     vertical: Boolean,
     widths: Number
   },
-  emits: ['selected', 'update:activeIndex'],
+  emits: ['selected', 'update:activeIndex', 'transitionend'],
   setup(props, { slots, emit }) {
     const activeIndex = ref(typeof props.activeIndex === 'number' ? props.activeIndex : -1)
 
@@ -88,7 +88,10 @@ export default defineComponent({
     }
 
     return () => (
-      <div class={classes.value}>
+      <div
+        class={classes.value}
+        onTransitionend={(e) => emit('transitionend', e)}
+      >
         {slots.default && slots.default()}
         {props.items && props.items.map((item, index) => (
           <MenuItem

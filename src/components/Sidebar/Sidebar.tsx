@@ -42,10 +42,12 @@ export default defineComponent({
 
     const { width } = useElementSize(elementRef)
 
+    const animating = ref(false)
+
     const classes = computed(() => clsx(
       'ui',
       'sidebar',
-      'animating',
+      animating.value && 'animating',
       props.animation,
       props.direction,
       props.visible && 'visible'
@@ -96,6 +98,7 @@ export default defineComponent({
           items={props.items}
           inverted
           vertical
+          onTransitionend={() => animating.value = props.visible}
         >
           {slots.default?.()}
         </Menu>
