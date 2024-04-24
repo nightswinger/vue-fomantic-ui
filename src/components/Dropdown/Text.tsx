@@ -15,6 +15,7 @@ export default defineComponent({
     },
     label: Object as PropType<InstanceType<typeof Label>['$props']>,
     image: Object as PropType<InstanceType<typeof Image>['$props']>,
+    selectable: Boolean,
   },
   setup(props, { slots }) {
     const classes = computed(() => clsx(
@@ -25,8 +26,8 @@ export default defineComponent({
     return () => (
       <>
         <div class={classes.value}>
-          {props.label && <Label {...props.label} />}
-          {props.image && <Image {...props.image} />}
+          {props.selectable && props.label && <Label {...props.label} />}
+          {props.selectable && props.image && <Image {...props.image} />}
           {slots.default?.()}
         </div>
         <i class={clsx(props.icon, 'icon')}></i>

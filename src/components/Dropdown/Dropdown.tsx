@@ -132,6 +132,7 @@ export default defineComponent({
               label={typeof props.modelValue === 'object' ? (props.modelValue as any).label : undefined}
               image={typeof props.modelValue === 'object' ? (props.modelValue as any).image : undefined}
               filtered={!props.searchInMenu && inputText.value !== ''}
+              selectable={props.search || props.selectable || props.inline}
             >
               {text.value}
             </Text>
