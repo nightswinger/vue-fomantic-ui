@@ -15,6 +15,7 @@ import SelectionDoc from '@/components/modules/Dropdown/SelectionDoc.vue'
 import SearchSelectionDoc from '@/components/modules/Dropdown/SearchSelectionDoc.vue'
 import ClearableSelectionDoc from '@/components/modules/Dropdown/ClearableSelectionDoc.vue'
 import MultipleSelectionDoc from '@/components/modules/Dropdown/MultipleSelectionDoc.vue'
+import MultipleSearchSelectionDoc from '@/components/modules/Dropdown/MultipleSearchSelectionDoc.vue'
 import SearchDropdownDoc from '@/components/modules/Dropdown/SearchDropdownDoc.vue'
 import SearchInMenuDoc from '@/components/modules/Dropdown/SearchInMenuDoc.vue'
 import InlineDoc from '@/components/modules/Dropdown/InlineDoc.vue'
@@ -51,6 +52,12 @@ const docs = [
     label: 'Multiple Selection',
     category: 'Types',
     component: MultipleSelectionDoc,
+  },
+  {
+    id: 'multiple-search-selection',
+    label: 'Multiple Search Selection',
+    category: 'Types',
+    component: MultipleSearchSelectionDoc,
   },
   {
     id: 'search-dropdown',
