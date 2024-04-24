@@ -22,6 +22,13 @@ import InlineDoc from '@/components/modules/Dropdown/InlineDoc.vue'
 import PointingDoc from '@/components/modules/Dropdown/PointingDoc.vue'
 import FloatingDoc from '@/components/modules/Dropdown/FloatingDoc.vue'
 
+// Content
+import HeaderDoc from '@/components/modules/Dropdown/HeaderDoc.vue'
+import DividerDoc from '@/components/modules/Dropdown/DividerDoc.vue'
+import IconDoc from '@/components/modules/Dropdown/IconDoc.vue'
+import LabelDoc from '@/components/modules/Dropdown/LabelDoc.vue'
+import ImageDoc from '@/components/modules/Dropdown/ImageDoc.vue'
+
 const docs = [
   {
     id: 'dropdown',
@@ -88,6 +95,36 @@ const docs = [
     label: 'Floating',
     category: 'Types',
     component: FloatingDoc,
+  },
+  {
+    id: 'header',
+    label: 'Header',
+    category: 'Content',
+    component: HeaderDoc,
+  },
+  {
+    id: 'divider',
+    label: 'Divider',
+    category: 'Content',
+    component: DividerDoc,
+  },
+  {
+    id: 'icon',
+    label: 'Icon',
+    category: 'Content',
+    component: IconDoc,
+  },
+  {
+    id: 'label',
+    label: 'Label',
+    category: 'Content',
+    component: LabelDoc,
+  },
+  {
+    id: 'image',
+    label: 'Image',
+    category: 'Content',
+    component: ImageDoc,
   },
 ]
 </script>
