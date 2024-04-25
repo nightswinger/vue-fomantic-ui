@@ -5,9 +5,6 @@ import GettingStarted from './pages/GettingStarted.vue'
 // Elements
 import RailDoc from './pages/RailDoc.vue'
 
-// Collections
-import GridDoc from './pages/collections/GridDoc.vue'
-
 // Modules
 import DimmerDoc from './pages/modules/DimmerDoc.vue'
 import EmbedDoc from './pages/modules/EmbedDoc.vue'
@@ -37,7 +34,7 @@ const routes: any = [
 
       { path: 'collections/breadcrumb', component: () => import('./pages/collections/Breadcrumb.vue') },
       { path: 'collections/form', component: () => import('./pages/collections/Form.vue') },
-      { path: 'collections/grid', component: GridDoc },
+      { path: 'collections/grid', component: () => import('./pages/collections/Grid.vue') },
       { path: 'collections/menu', component: () => import('./pages/collections/Menu.vue') },
       { path: 'collections/message', component: () => import('./pages/collections/Message.vue') },
       { path: 'collections/table', component: () => import('./pages/collections/Table.vue') },
