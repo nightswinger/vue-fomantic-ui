@@ -23,6 +23,7 @@ import ExtraContentDoc from '@/components/views/Item/ExtraContentDoc.vue'
 import RatingDoc from '@/components/views/Item/RatingDoc.vue'
 
 // States
+import DisabledDoc from '@/components/views/Item/DisabledDoc.vue'
 
 // Variations
 import StackingDoc from '@/components/views/Item/StackingDoc.vue'
@@ -87,6 +88,12 @@ const docs = [
     label: 'Rating',
     category: 'Content',
     component: RatingDoc,
+  },
+  {
+    id: 'disabled',
+    label: 'Disabled',
+    category: 'States',
+    component: DisabledDoc,
   },
   {
     id: 'stacking',
