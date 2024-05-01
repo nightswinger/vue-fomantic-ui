@@ -144,4 +144,77 @@ export const Disabled: Story = {
   }
 }
 
+export const Connected: Story = {
+  render: (args) => ({
+    components: { Feed, FeedEvent },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <Feed v-bind="args">
+        <FeedEvent>
+          <template #label>
+            <img src="./avatar/small/elliot.jpg">
+          </template>
+          <template #summary>
+            <a class="user">
+              Elliot Fu
+            </a> added you as a friend
+            <div class="date">
+              1 hour ago
+            </div>
+          </template>
+          <template #meta>
+            <a class="like">
+              <i class="like icon"></i> 4 Likes
+            </a>
+          </template>
+        </FeedEvent>
+        <FeedEvent>
+          <template #label>
+            <i class="pencil icon"></i>
+          </template>
+          <template #summary>
+            You submitted a new post to the page
+            <div class="date">
+              3 days ago
+            </div>
+          </template>
+          <template #extraText>
+            I'm having a BBQ this weekend. Come by around 4pm if you can.
+          </template>
+          <template #meta>
+            <a class="like">
+              <i class="like icon"></i> 11 Likes
+            </a>
+          </template>
+        </FeedEvent>
+        <FeedEvent>
+          <template #label>
+            <img src="./avatar/small/helen.jpg">
+          </template>
+          <template #summary>
+            <a>Helen Troy</a> added <a>2 new illustrations</a>
+            <div class="date">
+              4 days ago
+            </div>
+          </template>
+          <template #extraImages>
+            <a><img src="./wireframe/image.png"></a>
+            <a><img src="./wireframe/image.png"></a>
+          </template>
+          <template #meta>
+            <a class="like">
+              <i class="like icon"></i> 1 Like
+            </a>
+          </template>
+        </FeedEvent>
+      </Feed>
+    `
+  }),
+  args: {
+    connected: true,
+  }
+}
+
 export default meta

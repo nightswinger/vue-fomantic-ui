@@ -5,6 +5,7 @@ import { computeKeyOnly } from "@/utils/classNameHelper"
 
 export default defineComponent({
   props: {
+    connected: Boolean,
     disabled: Boolean,
     inverted: Boolean,
     size: String
@@ -14,6 +15,7 @@ export default defineComponent({
       return clsx(
         'ui',
         props.size,
+        computeKeyOnly(props.connected, 'connected'),
         computeKeyOnly(props.disabled, 'disabled'),
         computeKeyOnly(props.inverted, 'inverted'),
         'feed'
