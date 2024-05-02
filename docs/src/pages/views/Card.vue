@@ -23,6 +23,7 @@ import DescriptionDoc from '@/components/views/Card/DescriptionDoc.vue'
 import ExtraContentDoc from '@/components/views/Card/ExtraContentDoc.vue'
 
 // States
+import DisabledDoc from '@/components/views/Card/DisabledDoc.vue'
 
 // Variations
 import FluidCardDoc from '@/components/views/Card/FluidCardDoc.vue'
@@ -92,6 +93,12 @@ const docs = [
     label: 'Extra Content',
     category: 'Content',
     component: ExtraContentDoc,
+  },
+  {
+    id: 'disabled',
+    label: 'Disabled',
+    category: 'States',
+    component: DisabledDoc,
   },
   {
     id: 'fluid-card',
