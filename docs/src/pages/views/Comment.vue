@@ -23,6 +23,7 @@ import CollapsedDoc from '@/components/views/Comment/CollapsedDoc.vue'
 // Variations
 import ThreadedDoc from '@/components/views/Comment/ThreadedDoc.vue'
 import MinimalDoc from '@/components/views/Comment/MinimalDoc.vue'
+import SizeDoc from '@/components/views/Comment/SizeDoc.vue'
 import InvertedDoc from '@/components/views/Comment/InvertedDoc.vue'
 
 const docs = [
@@ -67,6 +68,12 @@ const docs = [
     label: 'Minimal',
     category: 'Variations',
     component: MinimalDoc,
+  },
+  {
+    id: 'size',
+    label: 'Size',
+    category: 'Variations',
+    component: SizeDoc,
   },
   {
     id: 'inverted',
