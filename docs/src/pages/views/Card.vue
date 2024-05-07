@@ -40,6 +40,7 @@ import ColoredDoc from '@/components/views/Card/ColoredDoc.vue'
 import ColumnCountDoc from '@/components/views/Card/ColumnCountDoc.vue'
 import StackableDoc from '@/components/views/Card/StackableDoc.vue'
 import DoublingDoc from '@/components/views/Card/DoublingDoc.vue'
+import SizeDoc from '@/components/views/Card/SizeDoc.vue'
 
 const docs = [
   {
@@ -179,6 +180,12 @@ const docs = [
     label: 'Doubling',
     category: 'Variations',
     component: DoublingDoc,
+  },
+  {
+    id: 'size',
+    label: 'Size',
+    category: 'Variations',
+    component: SizeDoc,
   },
 ]
 </script>
