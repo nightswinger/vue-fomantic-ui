@@ -1,41 +1,49 @@
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue"
+import clsx from "clsx"
 
-import CommentAvatar from "./CommentAvatar";
+import CommentAvatar from "./CommentAvatar"
 
 export default defineComponent({
-  name: 'SuiComment',
-  render() {
-    return (
-      <div class="comment">
-        {this.$slots.avatar && (
+  props: {
+    disabled: Boolean,
+  },
+  setup(props, { slots }) {
+    const classes = computed(() => clsx(
+      props.disabled && 'disabled',
+      'comment',
+    ))
+
+    return () => (
+      <div class={classes.value}>
+        {slots.avatar && (
            <CommentAvatar as="a">
-              {this.$slots.avatar()}
+              {slots.avatar()}
            </CommentAvatar>
         )}
         <div class="content">
-          {this.$slots.author && (
+          {slots.author && (
             <a class="author">
-              {this.$slots.author()}
+              {slots.author()}
             </a>
           )}
-          {this.$slots.metadata && (
+          {slots.metadata && (
             <div class="metadata">
-              {this.$slots.metadata()}
+              {slots.metadata()}
             </div>
           )}
-          {this.$slots.text && (
+          {slots.text && (
             <div class="text">
-              {this.$slots.text()}
+              {slots.text()}
             </div>
           )}
-          {this.$slots.actions && (
+          {slots.actions && (
             <div class="actions">
-              {this.$slots.actions()}
+              {slots.actions()}
             </div>
           )}
         </div>
-        {this.$slots.default && this.$slots.default()}
+        {slots.default && slots.default()}
       </div>
     )
-  }
+  },
 })

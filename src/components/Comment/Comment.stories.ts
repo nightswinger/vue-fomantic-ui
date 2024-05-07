@@ -165,4 +165,37 @@ export const ReplyForm: Story = {
   }),
 };
 
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Comment, CommentGroup },
+    setup: () => {
+      return { args }
+    },
+    template: `
+      <CommentGroup>
+        <Comment v-bind="args">
+          <template #avatar>
+            <img src="./avatar/small/elliot.jpg" alt="avatar" />
+          </template>
+          <template #author>
+            Elliot Fu
+          </template>
+          <template #metadata>
+            1 days ago
+          </template>
+          <template #text>
+            No, it wont
+          </template>
+          <template #actions>
+            <a class="reply">Reply</a>
+          </template>
+        </Comment>
+      </CommentGroup>
+    `,
+  }),
+  args: {
+    disabled: true,
+  }
+};
+
 export default meta;
