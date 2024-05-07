@@ -24,6 +24,8 @@ import ExtraContentDoc from '@/components/views/Card/ExtraContentDoc.vue'
 
 // States
 import DisabledDoc from '@/components/views/Card/DisabledDoc.vue'
+import LoadingDoc from '@/components/views/Card/LoadingDoc.vue'
+import LoadingVariantDoc from '@/components/views/Card/LoadingVariantDoc.vue'
 
 // Variations
 import FluidCardDoc from '@/components/views/Card/FluidCardDoc.vue'
@@ -99,6 +101,12 @@ const docs = [
     label: 'Disabled',
     category: 'States',
     component: DisabledDoc,
+  },
+  {
+    id: 'loading',
+    label: 'Loading',
+    category: 'States',
+    component: [LoadingDoc, LoadingVariantDoc],
   },
   {
     id: 'fluid-card',
