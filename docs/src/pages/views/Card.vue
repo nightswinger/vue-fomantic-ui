@@ -37,6 +37,7 @@ import FloatedContentDoc from '@/components/views/Card/FloatedContentDoc.vue'
 import TextAlignmentDoc from '@/components/views/Card/TextAlignmentDoc.vue'
 import InvertedDoc from '@/components/views/Card/InvertedDoc.vue'
 import ColoredDoc from '@/components/views/Card/ColoredDoc.vue'
+import BasicDoc from '@/components/views/Card/BasicDoc.vue'
 import ColumnCountDoc from '@/components/views/Card/ColumnCountDoc.vue'
 import StackableDoc from '@/components/views/Card/StackableDoc.vue'
 import DoublingDoc from '@/components/views/Card/DoublingDoc.vue'
@@ -162,6 +163,12 @@ const docs = [
     label: 'Colored',
     category: 'Variations',
     component: ColoredDoc,
+  },
+  {
+    id: 'basic',
+    label: 'Basic',
+    category: 'Variations',
+    component: BasicDoc,
   },
   {
     id: 'column-count',
