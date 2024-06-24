@@ -2,6 +2,7 @@ import { computed, defineComponent } from 'vue'
 
 import type { PropType } from 'vue'
 
+import Icon from '../Icon/Icon'
 import Image from '../Image/Image'
 
 export type OptionItem = string | {
@@ -9,6 +10,7 @@ export type OptionItem = string | {
   value: string | number;
   flag?: string;
   image?: { avatar?: boolean; src?: string };
+  icon?: string;
 }
 
 export default defineComponent({
@@ -28,6 +30,7 @@ export default defineComponent({
 
     const flag = computed(() => typeof props.option === 'object' ? props.option?.flag : undefined)
     const image = computed(() => typeof props.option === 'object' ? props.option?.image : undefined)
+    const icon = computed(() => typeof props.option === 'object' ? props.option?.icon : undefined)
 
     return () => (
       <div
@@ -35,6 +38,7 @@ export default defineComponent({
         data-value={value.value}
         onClick={() => emit('select', props.option)}
       >
+        {icon.value && <Icon name={icon.value} />}
         {flag.value && <i class={`${flag.value} flag`} />}
         {image.value && <Image {...image.value} />}
         {text.value}
