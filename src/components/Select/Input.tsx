@@ -2,7 +2,7 @@ import { computed, defineComponent, ref, watch, withModifiers } from 'vue'
 import clsx from 'clsx'
 
 import LabelGroup from './LabelGroup'
-
+import Icon from '../Icon/Icon'
 import Image from '../Image/Image'
 
 import type { PropType } from 'vue'
@@ -112,6 +112,7 @@ export default defineComponent({
             !Array.isArray(props.value) &&
             typeof props.value === 'object' &&
             <>
+              {props.value?.icon && <Icon name={props.value.icon} />}
               {props.value?.flag && <i class={`${props.value.flag} flag`} />}
               {props.value?.image && <Image {...props.value.image} />}
               {props.value?.text}
