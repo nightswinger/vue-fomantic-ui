@@ -12,6 +12,7 @@ import DocComponent from '@/components/doc/DocComponent.vue'
 // Types
 import DropdownDoc from '@/components/modules/Dropdown/DropdownDoc.vue'
 import SelectionDoc from '@/components/modules/Dropdown/SelectionDoc.vue'
+import SelectionIconDoc from '@/components/modules/Dropdown/SelectionIconDoc.vue'
 import SearchSelectionDoc from '@/components/modules/Dropdown/SearchSelectionDoc.vue'
 import ClearableSelectionDoc from '@/components/modules/Dropdown/ClearableSelectionDoc.vue'
 import MultipleSelectionDoc from '@/components/modules/Dropdown/MultipleSelectionDoc.vue'
@@ -41,6 +42,12 @@ const docs = [
     label: 'Selection',
     category: 'Types',
     component: SelectionDoc,
+  },
+  {
+    id: 'selection-icon',
+    label: 'Selection Icon',
+    category: 'Types',
+    component: SelectionIconDoc,
   },
   {
     id: 'search-selection',
