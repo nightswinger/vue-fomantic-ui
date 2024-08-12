@@ -11,6 +11,7 @@ export type OptionItem = string | {
   flag?: string;
   image?: { avatar?: boolean; src?: string };
   icon?: string;
+  disabled?: boolean;
 }
 
 export default defineComponent({
@@ -22,6 +23,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const classes = computed(() => [
       'item',
+      (typeof props.option === 'object' && props.option?.disabled) ? 'disabled' : undefined,
       { active: props.active }
     ])
 
