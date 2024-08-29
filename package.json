@@ -14,9 +14,9 @@
   ],
   "main": "./dist/vue-fomantic-ui.umd.cjs",
   "module": "./dist/vue-fomantic-ui.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue-fomantic-ui.js",
       "require": "./dist/vue-fomantic-ui.umd.cjs"
     }
