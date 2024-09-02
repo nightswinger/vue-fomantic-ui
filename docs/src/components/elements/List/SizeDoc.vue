@@ -28,7 +28,7 @@ import {
   Image,
 } from 'vue-fomantic-ui'
 
-const sizes = ref(['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'])
+const sizes = ref<('mini' | 'tiny' | 'small' | 'large' | 'big' | 'huge' | 'massive')[]>(['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'])
 
 const items = ref([
   {
