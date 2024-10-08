@@ -22,6 +22,7 @@ export default defineComponent({
     },
     placeholder: String,
     search: Boolean,
+    disabled: Boolean,
   },
   setup(props, { emit }) {
     const el = ref<HTMLDivElement>()
@@ -39,6 +40,7 @@ export default defineComponent({
       props.fluid && 'fluid',
       props.multiple && 'multiple',
       props.search && 'search',
+      props.disabled && 'disabled',
       'selection dropdown'
     ))
 

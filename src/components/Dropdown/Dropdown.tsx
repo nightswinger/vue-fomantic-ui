@@ -36,6 +36,7 @@ export default defineComponent({
     searchInMenu: Boolean,
     selection: Boolean,
     selectable: Boolean,
+    disabled: Boolean,
     text: String,
   },
   emits: ['update:modelValue'],
@@ -93,6 +94,7 @@ export default defineComponent({
       props.item && 'item',
       props.pointing && `${props.pointing} pointing`,
       props.search && 'search',
+      props.disabled && 'disabled',
       'dropdown',
     ))
 
@@ -116,6 +118,7 @@ export default defineComponent({
             multiple={props.multiple}
             placeholder={props.placeholder}
             search={props.search}
+            disabled={props.disabled}
             options={props.options as OptionItem[]}
           /> :
           <div
