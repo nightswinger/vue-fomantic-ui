@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'docs/**'
+      - 'packages/docs/**'
 
 jobs:
   build-docs:
@@ -13,26 +13,30 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
 
       - name: Set Node.js version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: yarn install
+          node-version: 20
+          cache: 'pnpm'
 
       - name: Install dependencies in docs
-        run: yarn install
-        working-directory: ./docs
+        run: pnpm --filter docs install
+        working-directory: ./packages/docs
 
       - name: Build docs
-        run: yarn run build
-        working-directory: ./docs
+        run: pnpm --filter docs build
+        working-directory: ./packages/docs
 
       - name: Push docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/dist
+          publish_dir: ./packages/docs/dist
