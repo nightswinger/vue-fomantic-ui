@@ -81,7 +81,7 @@ export default defineComponent({
           class="dropdown icon"
           onClick={withModifiers(() => emit('dropdown'), ['stop'])}
         />
-        {props.clearable && <i class="remove icon" onClick={onClear}></i>}
+        {props.clearable && !showPlaceholder.value && <i class="remove icon" onClick={onClear}></i>}
         {
           Array.isArray(props.value) &&
           <LabelGroup
