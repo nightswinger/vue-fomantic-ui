@@ -56,6 +56,8 @@
     "fomantic-ui-css": "^2.9.3",
     "happy-dom": "^14.11.0",
     "prettier": "^3.2.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "storybook": "^8.1.2",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
